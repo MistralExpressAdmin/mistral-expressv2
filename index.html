@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <!-- Basics -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <title>Mistral Express — Traiteur premium livré à bord (Côte d’Azur)</title>
+  <meta name="description" content="Livraison traiteur premium à bord — Ports de Beaulieu, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer. Prix livraison incluse. Service discret et ponctuel." />
+
+  <!-- Canonical + robots -->
+  <link rel="canonical" href="./" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mistral Express" />
+  <meta property="og:title" content="Mistral Express — Traiteur premium livré à bord" />
+  <meta property="og:description" content="Service discret, ponctuel et haut de gamme. Beaulieu, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer. Prix livraison incluse." />
+  <meta property="og:url" content="./" />
+  <!-- À remplacer par une image réelle -->
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mistral Express — Traiteur premium livré à bord" />
+  <meta name="twitter:description" content="Livraison traiteur premium à bord — Côte d’Azur. Prix livraison incluse." />
+  <meta name="twitter:image" content="assets/img/og-cover.jpg" />
+
+  <!-- Favicons (à ajouter côté assets si pas encore fait) -->
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <!-- Performance: preconnect (si weather.js appelle une API externe, ajoute son domaine ici) -->
+  <!-- Exemple: <link rel="preconnect" href="https://api.open-meteo.com" crossorigin /> -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mistral Express",
+    "description": "Traiteur premium livré directement à bord sur la Côte d’Azur.",
+    "areaServed": [
+      "Beaulieu-sur-Mer",
+      "Saint-Jean-Cap-Ferrat",
+      "Villefranche-sur-Mer"
+    ],
+    "url": "./",
+    "serviceType": "Yacht Catering Delivery",
+    "priceRange": "€€€"
+  }
+  </script>
+
+  <!-- JS (defer = OK, ordre conservé) -->
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/weather.js" defer></script>
+  <script src="assets/js/include.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <!-- Accessibilité : lien “skip” -->
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
+
+  <!-- Header injecté -->
+  <div id="site-header" role="banner"></div>
+
+  <main id="main" class="page" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="home.eyebrow">Yacht Catering Delivery • Côte d’Azur</p>
+
+          <h1 id="hero-title" data-i18n="home.h1">Traiteur premium livré directement à bord.</h1>
+
+          <p class="lead" data-i18n="home.lead">
+            Service discret, ponctuel et haut de gamme pour vos journées en mer. Beaulieu, Saint-Jean-Cap-Ferrat &amp; Villefranche-sur-Mer.
+          </p>
+
+          <div class="hero-ctas" role="group" aria-label="Actions principales">
+            <a class="btn btn-primary" href="carte.html" data-i18n="home.ctaMenu">Voir la carte</a>
+            <a class="btn btn-ghost" href="contact.html" data-i18n="home.ctaQuote">Demander un devis</a>
+          </div>
+
+          <div class="pill-row" aria-label="Points clés">
+            <span class="pill" data-i18n="home.pill1">Prix livraison incluse</span>
+            <span class="pill" data-i18n="home.pill2">Commande simple</span>
+            <span class="pill" data-i18n="home.pill3">Packaging premium</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <section class="card glass" aria-labelledby="weather-title">
+            <header class="card-head">
+              <h2 id="weather-title" class="h3" data-i18n="home.weatherTitle">Météo en direct — Ports</h2>
+              <p class="muted" data-i18n="home.weatherSub">Actualisée automatiquement</p>
+            </header>
+
+            <!-- A11y : zone live (mise à jour JS) -->
+            <div class="weather-grid" id="weatherGrid" aria-live="polite" aria-busy="true">
+              <p class="muted" data-i18n="home.weatherLoading">Chargement de la météo…</p>
+            </div>
+
+            <p class="card-note" data-i18n="home.weatherNote">
+              Indication confort à titre informatif.
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="service-title">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="service-title" data-i18n="home.h2">Un service pensé pour les clients exigeants.</h2>
+          <p class="muted" data-i18n="home.h2sub">
+            Du petit-déjeuner au sunset apéritif : qualité, simplicité, zéro surprise.
+          </p>
+        </header>
+
+        <div class="cards-3" role="list">
+          <article class="card" role="listitem">
+            <h3 data-i18n="home.b1t">Livraison à bord</h3>
+            <p data-i18n="home.b1d">Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.</p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 data-i18n="home.b2t">Sélection traiteur</h3>
+            <p data-i18n="home.b2d">Produits frais, options végétariennes et sans alcool. Présentation soignée.</p>
+          </article>
+
+          <article class="card" role="listitem">
+            <h3 data-i18n="home.b3t">Prix tout compris</h3>
+            <p data-i18n="home.b3d">Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="partner-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <h2 id="partner-title" data-i18n="home.partnerTitle">Partenaire</h2>
+            <p class="muted" data-i18n="home.partnerDesc">
+              En collaboration avec un loueur de bateaux sélectionné.
+            </p>
+
+            <!-- Sécurité: noopener ok, + "noreferrer" optionnel -->
+            <a
+              class="btn btn-secondary"
+              id="partnerLink"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="home.partnerCta"
+            >
+              Découvrir le partenaire
+            </a>
+
+            <p class="tiny muted" data-i18n="home.partnerNote">Lien externe — ouverture dans un nouvel onglet.</p>
+          </div>
+
+          <section class="card glass" aria-labelledby="process-title">
+            <h3 id="process-title" data-i18n="home.processTitle">Comment ça marche</h3>
+
+            <ol class="steps">
+              <li data-i18n="home.step1">Choisissez vos produits sur la carte.</li>
+              <li data-i18n="home.step2">Indiquez le port + nom du bateau + créneau.</li>
+              <li data-i18n="home.step3">Nous confirmons et livrons à bord.</li>
+            </ol>
+
+            <a class="link" href="zones.html" data-i18n="home.processLink">Voir les zones &amp; délais →</a>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta2-title">
+      <div class="container">
+        <div class="cta-wide" role="region" aria-label="Contact express">
+          <div>
+            <h2 id="cta2-title" data-i18n="home.cta2Title">Besoin d’une livraison aujourd’hui ?</h2>
+            <p class="muted" data-i18n="home.cta2Desc">Contact express : réponse rapide, service clair.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html" data-i18n="home.cta2Btn">Contacter Mistral Express</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer injecté -->
+  <div id="site-footer" role="contentinfo"></div>
+
+  <!-- Noscript (utile si include.js/i18n.js indispensables) -->
+  <noscript>
+    <div class="noscript">
+      Ce site nécessite JavaScript pour certaines fonctionnalités (langue, météo, panier). Activez JavaScript pour une expérience complète.
+    </div>
+  </noscript>
+</body>
+</html>

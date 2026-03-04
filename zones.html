@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mistral Express — Zones & Délais</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/weather.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/include.js" defer></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-i18n="zones.eyebrow">Zones</p>
+        <h1 data-i18n="zones.h1">Ports desservis</h1>
+        <p class="lead" data-i18n="zones.lead">Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cards-3">
+          <article class="card">
+            <h3 data-i18n="zones.b1t">Créneaux</h3>
+            <p data-i18n="zones.b1d">Créneaux sur demande. Confirmation par message après validation.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="zones.b2t">Point de livraison</h3>
+            <p data-i18n="zones.b2d">Ponton + nom du bateau + contact à bord pour une livraison fluide.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="zones.b3t">Prix tout compris</h3>
+            <p data-i18n="zones.b3d">Les prix incluent la livraison. Aucun supplément ajouté au checkout.</p>
+          </article>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="card glass">
+          <div class="card-head">
+            <h3 data-i18n="zones.weatherTitle">Météo en direct — les 3 ports</h3>
+            <p class="muted" data-i18n="zones.weatherSub">Vent / température / état du ciel</p>
+          </div>
+          <div class="weather-grid" id="weatherGrid"></div>
+          <p class="tiny muted" data-i18n="zones.weatherLegal">
+            Données météo fournies à titre informatif.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

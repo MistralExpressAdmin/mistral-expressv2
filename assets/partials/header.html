@@ -1,0 +1,95 @@
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Mistral Express — Accueil">
+      <span class="brand-mark" aria-hidden="true">ME</span>
+      <span class="brand-name">Mistral Express</span>
+    </a>
+
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="carte.html" data-i18n="nav.menu">Carte</a>
+      <a href="zones.html" data-i18n="nav.zones">Zones</a>
+      <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Language -->
+      <div class="lang">
+        <button
+          class="btn btn-chip"
+          id="langBtn"
+          type="button"
+          aria-haspopup="menu"
+          aria-controls="langMenu"
+          aria-expanded="false"
+        >
+          <span id="langLabel">FR</span> <span aria-hidden="true">▾</span>
+        </button>
+
+        <div class="lang-menu" id="langMenu" role="menu" aria-label="Choisir une langue">
+          <button type="button" class="lang-item" data-lang="fr" role="menuitemradio" aria-checked="true">Français</button>
+          <button type="button" class="lang-item" data-lang="en" role="menuitemradio" aria-checked="false">English</button>
+          <button type="button" class="lang-item" data-lang="ru" role="menuitemradio" aria-checked="false">Русский</button>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <button class="cart-btn" id="cartOpenBtn" type="button" aria-label="Panier" aria-controls="cartDrawer">
+        <span class="cart-ic" aria-hidden="true">🧺</span>
+        <span data-i18n="nav.cart">Panier</span>
+        <span class="cart-badge" id="cartCount" aria-label="Nombre d’articles">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Drawer panier -->
+<div class="drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+
+  <aside
+    class="drawer-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cartTitle"
+    tabindex="-1"
+  >
+    <div class="drawer-head">
+      <h3 id="cartTitle" data-i18n="cart.title">Votre panier</h3>
+      <button class="icon-btn" id="cartCloseBtn" type="button" aria-label="Fermer">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Votre panier est vide.</div>
+    </div>
+
+    <div class="drawer-foot">
+      <div class="total">
+        <span data-i18n="cart.total">Total</span>
+        <strong id="cartTotal">0€</strong>
+      </div>
+
+      <p class="tiny muted" data-i18n="cart.included">
+        Prix livraison incluse — aucun frais supplémentaire.
+      </p>
+
+      <a
+        class="btn btn-primary"
+        id="checkoutWhatsApp"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="cart.checkout"
+      >
+        Valider sur WhatsApp
+      </a>
+
+      <p class="tiny muted" data-i18n="cart.note">
+        Après validation, indiquez : port, ponton, nom du bateau et créneau.
+      </p>
+    </div>
+  </aside>
+</div>

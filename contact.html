@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mistral Express — Contact</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/include.js" defer></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h1 data-i18n="contact.h1">Demande express</h1>
+        <p class="lead" data-i18n="contact.lead">Nous répondons rapidement. Communication concise et efficace.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="card">
+            <h3 data-i18n="contact.formTitle">Formulaire</h3>
+            <form class="form" id="contactForm">
+              <label>
+                <span data-i18n="contact.name">Nom</span>
+                <input name="name" required />
+              </label>
+              <label>
+                <span data-i18n="contact.email">Email</span>
+                <input name="email" type="email" required />
+              </label>
+              <label>
+                <span data-i18n="contact.message">Message</span>
+                <textarea name="message" rows="6" required></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit" data-i18n="contact.send">Envoyer</button>
+              <p class="tiny muted" data-i18n="contact.privacyNote">
+                En envoyant ce message, vous acceptez notre politique de confidentialité.
+              </p>
+              <a class="link" href="confidentialite.html" data-i18n="contact.privacyLink">Lire la politique de confidentialité →</a>
+            </form>
+          </div>
+
+          <div class="card glass">
+            <h3 data-i18n="contact.directTitle">Contact direct</h3>
+            <p class="muted" data-i18n="contact.directDesc">Pour une commande rapide : WhatsApp recommandé.</p>
+
+            <!-- Remplace le numéro par le tien -->
+            <a class="btn btn-secondary" id="whatsappLink" href="#" target="_blank" rel="noopener">
+              WhatsApp
+            </a>
+
+            <div class="spacer-sm"></div>
+
+            <p class="muted" data-i18n="contact.directPorts">Ports : Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche</p>
+            <p class="tiny muted" data-i18n="contact.deliveryIncluded">Prix livraison incluse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+    // Form -> mailto (simple & sans backend)
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const subject = encodeURIComponent('Mistral Express — Demande');
+      const body = encodeURIComponent(
+        `Nom: ${data.get('name')}\nEmail: ${data.get('email')}\n\nMessage:\n${data.get('message')}`
+      );
+
+      // Remplace par ton email pro
+      window.location.href = `mailto:contact@mistral-express.fr?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
