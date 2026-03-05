@@ -5,47 +5,64 @@
       <span class="brand-name">Mistral Express</span>
     </a>
 
-    <nav class="menu" aria-label="Navigation principale">
-      <a href="index.html" data-i18n="nav.home">Accueil</a>
-      <a href="carte.html" data-i18n="nav.menu">Carte</a>
-      <a href="zones.html" data-i18n="nav.zones">Zones</a>
-      <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
-      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
-      <a href="contact.html" data-i18n="nav.contact">Contact</a>
-    </nav>
+    <!-- ✅ Burger (mobile) -->
+    <button class="nav-toggle" id="navToggle"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-controls="primaryNav"
+      aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
 
-    <div class="nav-actions">
-      <!-- Language -->
-      <div class="lang">
-        <button
-          class="btn btn-chip"
-          id="langBtn"
-          type="button"
-          aria-haspopup="menu"
-          aria-controls="langMenu"
-          aria-expanded="false"
-        >
-          <span id="langLabel">FR</span> <span aria-hidden="true">▾</span>
-        </button>
+    <!-- ✅ Nav wrapper (desktop = inline, mobile = drawer) -->
+    <div class="nav-panel" id="primaryNav" data-open="false">
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="carte.html" data-i18n="nav.menu">Carte</a>
+        <a href="zones.html" data-i18n="nav.zones">Zones</a>
+        <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+      </nav>
 
-        <div class="lang-menu" id="langMenu" role="menu" aria-label="Choisir une langue">
-          <button type="button" class="lang-item" data-lang="fr" role="menuitemradio" aria-checked="true">Français</button>
-          <button type="button" class="lang-item" data-lang="en" role="menuitemradio" aria-checked="false">English</button>
-          <button type="button" class="lang-item" data-lang="ru" role="menuitemradio" aria-checked="false">Русский</button>
+      <div class="nav-actions">
+        <!-- Language -->
+        <div class="lang">
+          <button
+            class="btn btn-chip"
+            id="langBtn"
+            type="button"
+            aria-haspopup="menu"
+            aria-controls="langMenu"
+            aria-expanded="false"
+          >
+            <span id="langLabel">FR</span> <span aria-hidden="true">▾</span>
+          </button>
+
+          <div class="lang-menu" id="langMenu" role="menu" aria-label="Choisir une langue">
+            <button type="button" class="lang-item" data-lang="fr" role="menuitemradio" aria-checked="true">Français</button>
+            <button type="button" class="lang-item" data-lang="en" role="menuitemradio" aria-checked="false">English</button>
+            <button type="button" class="lang-item" data-lang="ru" role="menuitemradio" aria-checked="false">Русский</button>
+          </div>
         </div>
-      </div>
 
-      <!-- Cart -->
-      <button class="cart-btn" id="cartOpenBtn" type="button" aria-label="Panier" aria-controls="cartDrawer">
-        <span class="cart-ic" aria-hidden="true">🧺</span>
-        <span data-i18n="nav.cart">Panier</span>
-        <span class="cart-badge" id="cartCount" aria-label="Nombre d’articles">0</span>
-      </button>
+        <!-- Cart -->
+        <button class="cart-btn" id="cartOpenBtn" type="button" aria-label="Panier" aria-controls="cartDrawer">
+          <span class="cart-ic" aria-hidden="true">🧺</span>
+          <span data-i18n="nav.cart">Panier</span>
+          <span class="cart-badge" id="cartCount" aria-label="Nombre d’articles">0</span>
+        </button>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- Drawer panier -->
+<!-- ✅ Backdrop mobile menu -->
+<div class="nav-backdrop" id="navBackdrop" hidden></div>
+
+<!-- Drawer panier (inchangé) -->
 <div class="drawer" id="cartDrawer" aria-hidden="true">
   <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"></div>
 
@@ -76,12 +93,10 @@
         Prix livraison incluse — aucun frais supplémentaire.
       </p>
 
-      <!-- ✅ Stripe Checkout -->
       <button class="btn btn-primary" id="checkoutStripe" type="button">
         Payer par carte (Stripe)
       </button>
 
-      <!-- ✅ Option WhatsApp (tu peux garder en 2e option) -->
       <a
         class="btn btn-ghost"
         id="checkoutWhatsApp"

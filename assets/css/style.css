@@ -1,52 +1,46 @@
-/* =========================
-   Mistral Express — Premium UI Kit
-   THEME C: RIVIERA (Crème + Sauge + Or doux)
-   - Plus “Maison gastronomique”, moins “tech”
-   - Compatible avec tes classes HTML/JS existantes
-   ========================= */
-
-/* ---------- Design tokens ---------- */
 :root{
-  /* Surfaces (light, warm) */
-  --bg:    #F7F2EA;   /* crème */
-  --bg2:   #EFE7DD;   /* crème plus chaude */
-  --surface:#FFFFFF;  /* blanc propre */
-  --card:  rgba(19,32,40,.03);
-  --stroke:rgba(19,32,40,.12);
+  /* Surfaces */
+  --bg: #041b2d;          /* navy profond */
+  --bg2:#05263d;
+  --surface:#071f33;
+  --card: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.12);
 
   /* Text */
-  --text:  #132028;                 /* anthracite chaud */
-  --muted: rgba(19,32,40,.64);
+  --text:#f4f7fb;
+  --muted: rgba(244,247,251,.72);
 
   /* Accents */
-  --sea:   #2F5D50;  /* sauge profonde */
-  --sea2:  #244A40;  /* hover / depth */
-  --sand:  #F7F2EA;  /* crème (utile pour contrastes) */
-  --gold:  #C9A35B;  /* or doux premium */
+  --sea:#0e5e6f;          /* teal élégant */
+  --sea2:#0b8aa0;         /* accent */
+  --sand:#f6f1e9;         /* ivoire */
+  --gold:#c9a66b;         /* touche premium */
 
   /* Radii */
   --r: 18px;
   --r2: 24px;
 
-  /* Shadows (soft, premium) */
-  --shadow: 0 18px 45px rgba(19,32,40,.10);
+  /* Shadows */
+  --shadow: 0 18px 50px rgba(0,0,0,.38);
 
   /* Layout */
   --container: 1120px;
 
   /* Focus */
-  --focus: rgba(47,93,80,.95);
-  --focus-ring: 0 0 0 3px rgba(47,93,80,.20);
+  --focus: rgba(11,138,160,.9);
+  --focus-ring: 0 0 0 3px rgba(11,138,160,.35);
 
   /* Motion */
   --ease: cubic-bezier(.2,.8,.2,1);
   --t-fast: 150ms;
   --t-med: 250ms;
-
-  /* Sticky offsets (ajuste si besoin) */
-  --header-offset: 72px;
-  --menu-tabs-offset: 132px;
 }
+
+/* Optional: if you ever want a light theme later
+@media (prefers-color-scheme: light){
+  :root{ ... }
+}
+*/
 
 /* ---------- Base reset ---------- */
 *,
@@ -66,13 +60,10 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color:var(--text);
   line-height:1.5;
-
-  /* Riviera background: crème + halos sauge/or */
   background:
-    radial-gradient(1200px 650px at 18% 10%, rgba(47,93,80,.10), transparent 58%),
-    radial-gradient(900px 520px at 85% 15%, rgba(201,163,91,.14), transparent 56%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 70%, #FAF7F2 100%);
-
+    radial-gradient(1200px 600px at 18% 10%, rgba(14,94,111,.35), transparent 55%),
+    radial-gradient(900px 500px at 85% 15%, rgba(201,166,107,.20), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #031625 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -92,13 +83,13 @@ button,input,textarea,select{
 }
 
 ::selection{
-  background: rgba(47,93,80,.18);
+  background: rgba(11,138,160,.35);
 }
 
 :focus-visible{
   outline: none;
   box-shadow: var(--focus-ring);
-  border-color: rgba(47,93,80,.35) !important;
+  border-color: rgba(11,138,160,.55) !important;
 }
 
 /* Reduced motion */
@@ -119,9 +110,9 @@ button,input,textarea,select{
 
 .section{ padding:56px 0; }
 .section.alt{
-  background: rgba(255,255,255,.55);
-  border-top:1px solid rgba(19,32,40,.10);
-  border-bottom:1px solid rgba(19,32,40,.10);
+  background: rgba(255,255,255,.03);
+  border-top:1px solid var(--stroke);
+  border-bottom:1px solid var(--stroke);
 }
 .spacer{ height:28px; }
 .spacer-sm{ height:14px; }
@@ -137,10 +128,10 @@ button,input,textarea,select{
   z-index:9999;
   padding:10px 12px;
   border-radius: 12px;
-  background: rgba(255,255,255,.95);
-  color: var(--text);
-  border:1px solid rgba(19,32,40,.12);
-  box-shadow: 0 12px 30px rgba(19,32,40,.12);
+  background: rgba(246,241,233,.95);
+  color: #061426;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
   transform: translateY(-200%);
   transition: transform var(--t-fast) var(--ease);
 }
@@ -153,9 +144,9 @@ button,input,textarea,select{
   width:min(var(--container), calc(100% - 40px));
   padding:12px 14px;
   border-radius: 14px;
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.70);
-  color: rgba(19,32,40,.85);
+  border:1px solid rgba(246,241,233,.18);
+  background: rgba(255,255,255,.06);
+  color: rgba(246,241,233,.92);
 }
 
 /* ---------- Typography ---------- */
@@ -163,11 +154,11 @@ button,input,textarea,select{
   letter-spacing:.18em;
   text-transform:uppercase;
   font-size:12px;
-  color: rgba(19,32,40,.55);
+  color:rgba(246,241,233,.78);
 }
 .lead{
   font-size:18px;
-  color: rgba(19,32,40,.62);
+  color:var(--muted);
   line-height:1.55;
 }
 
@@ -176,30 +167,24 @@ h1{
   line-height:1.05;
   margin:10px 0 14px;
   letter-spacing: -0.02em;
-  color: rgba(19,32,40,.98);
 }
-h2{
-  font-size:30px;
-  margin:0 0 10px;
-  letter-spacing: -0.01em;
-  color: rgba(19,32,40,.98);
-}
-h3{ font-size:18px; margin:0 0 8px; color: rgba(19,32,40,.94); }
-h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
+h2{ font-size:30px; margin:0 0 10px; letter-spacing: -0.01em; }
+h3{ font-size:18px; margin:0 0 8px; }
+h4{ font-size:14px; margin:0 0 8px; color:rgba(246,241,233,.9); }
 
 /* When using <h2 class="h3"> */
 .h3{ font-size:18px; margin:0 0 8px; font-weight: 800; }
 
 /* ---------- Cards ---------- */
 .card{
-  background: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.05);
   border:1px solid var(--stroke);
   border-radius: var(--r);
   padding:18px;
   box-shadow: var(--shadow);
 }
 .card.glass{
-  background: rgba(255,255,255,.78);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
   backdrop-filter: blur(10px);
 }
 .card-head{
@@ -209,7 +194,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:14px;
   margin-bottom:12px;
 }
-.card-note{ margin-top:10px; font-size:12px; color: rgba(19,32,40,.62); }
+.card-note{ margin-top:10px; font-size:12px; color:rgba(246,241,233,.7); }
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -221,7 +206,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   padding:12px 16px;
   border:1px solid transparent;
   cursor:pointer;
-  font-weight:800;
+  font-weight:700;
   transition:
     transform var(--t-fast) var(--ease),
     box-shadow var(--t-fast) var(--ease),
@@ -235,49 +220,49 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
 .btn-primary{
   background: linear-gradient(135deg, var(--sea) 0%, var(--sea2) 100%);
-  color:#fff;
-  box-shadow: 0 14px 30px rgba(47,93,80,.18);
+  color:var(--sand);
+  box-shadow: 0 14px 30px rgba(14,94,111,.34);
 }
-.btn-primary:hover{ box-shadow: 0 18px 42px rgba(47,93,80,.22); }
+.btn-primary:hover{ box-shadow: 0 18px 42px rgba(14,94,111,.38); }
 
 .btn-secondary{
-  background: rgba(255,255,255,.78);
-  border-color: rgba(19,32,40,.12);
-  color: rgba(19,32,40,.92);
+  background: rgba(246,241,233,.10);
+  border-color: rgba(246,241,233,.18);
+  color: var(--sand);
 }
 
 .btn-ghost{
-  background: rgba(255,255,255,.55);
-  border-color: rgba(19,32,40,.12);
-  color: rgba(19,32,40,.92);
+  background: transparent;
+  border-color: rgba(246,241,233,.18);
+  color: var(--sand);
 }
 
 .btn-chip{
-  background: rgba(19,32,40,.03);
-  border:1px solid rgba(19,32,40,.12);
+  background: rgba(255,255,255,.06);
+  border-color: var(--stroke);
   padding:10px 12px;
-  color: rgba(19,32,40,.92);
+  color: var(--sand);
 }
 
 .icon-btn{
-  background: rgba(19,32,40,.03);
-  border:1px solid rgba(19,32,40,.12);
-  color: rgba(19,32,40,.92);
+  background: rgba(255,255,255,.06);
+  border:1px solid var(--stroke);
+  color: var(--sand);
   border-radius: 12px;
   padding:10px 12px;
   cursor:pointer;
   transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
 }
-.icon-btn:hover{ transform: translateY(-1px); background: rgba(19,32,40,.05); }
+.icon-btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); }
 
 /* ---------- Header / Nav ---------- */
 .site-header{
   position:sticky;
   top:0;
   z-index:30;
-  background: rgba(247,242,234,.88);
-  border-bottom:1px solid rgba(19,32,40,.10);
-  backdrop-filter: blur(14px);
+  background: rgba(4,27,45,.72);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(12px);
 }
 
 .nav{
@@ -295,13 +280,12 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   border-radius:12px;
   display:grid;
   place-items:center;
-  background: linear-gradient(135deg, rgba(201,163,91,.22), rgba(47,93,80,.14));
-  border:1px solid rgba(201,163,91,.35);
+  background: linear-gradient(135deg, rgba(201,166,107,.22), rgba(14,94,111,.30));
+  border:1px solid rgba(201,166,107,.20);
   font-weight:900;
   letter-spacing:.06em;
-  color: rgba(19,32,40,.95);
 }
-.brand-name{ font-weight:900; letter-spacing:.02em; color: rgba(19,32,40,.96); }
+.brand-name{ font-weight:900; letter-spacing:.02em; }
 
 .menu{
   display:flex;
@@ -310,17 +294,14 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 }
 
 .menu a{
-  color: rgba(19,32,40,.80);
-  font-weight:800;
+  color: rgba(246,241,233,.82);
+  font-weight:700;
   font-size:14px;
   padding:10px 10px;
   border-radius:999px;
   transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
-.menu a:hover{
-  background: rgba(47,93,80,.08);
-  color: rgba(19,32,40,.95);
-}
+.menu a:hover{ background: rgba(255,255,255,.06); color: rgba(246,241,233,.96); }
 
 /* Actions */
 .nav-actions{
@@ -329,7 +310,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:12px;
 }
 
-/* ---------- Language dropdown ---------- */
+/* ---------- Language dropdown (UNIFIÉ, cohérent dark) ---------- */
 .lang{ position:relative; }
 
 #langBtn{
@@ -349,9 +330,9 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   z-index:9999;
   display:none;
 
-  background: rgba(247,242,234,.98);
-  border:1px solid rgba(19,32,40,.12);
-  box-shadow: 0 18px 45px rgba(19,32,40,.14);
+  background: rgba(4,27,45,.96);
+  border:1px solid var(--stroke);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
 }
 
@@ -365,11 +346,10 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   border:0;
   background:transparent;
   cursor:pointer;
-  color: rgba(19,32,40,.92);
-  font-weight:800;
+  color: rgba(246,241,233,.92);
 }
-.lang-item:hover{ background: rgba(47,93,80,.08); }
-.lang-item.active{ font-weight:900; }
+.lang-item:hover{ background: rgba(255,255,255,.06); }
+.lang-item.active{ font-weight:800; }
 
 /* ---------- Cart ---------- */
 .cart-btn{
@@ -378,13 +358,13 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:10px;
   border-radius:999px;
   padding:12px 14px;
-  border:1px solid rgba(201,163,91,.35);
-  background: rgba(255,255,255,.70);
-  color: rgba(19,32,40,.92);
-  box-shadow: 0 12px 26px rgba(19,32,40,.12);
+  border:1px solid rgba(201,166,107,.28);
+  background: linear-gradient(135deg, rgba(201,166,107,.18), rgba(14,94,111,.14));
+  color: var(--sand);
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
   cursor:pointer;
 }
-.cart-ic{ filter: saturate(1.05); }
+.cart-ic{ filter: saturate(1.1); }
 
 .cart-badge{
   min-width:22px;
@@ -394,8 +374,8 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   align-items:center;
   justify-content:center;
   border-radius:999px;
-  background: rgba(201,163,91,.95);
-  color: rgba(19,32,40,.95);
+  background: rgba(14,138,160,.95);
+  color: var(--sand);
   font-size:12px;
   font-weight:900;
 }
@@ -428,9 +408,9 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
 .pill{
   font-size:12px;
-  color: rgba(19,32,40,.78);
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.65);
+  color: rgba(246,241,233,.86);
+  border:1px solid rgba(246,241,233,.18);
+  background: rgba(255,255,255,.04);
   padding:8px 10px;
   border-radius:999px;
 }
@@ -454,14 +434,14 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 .steps{
   margin:10px 0 0;
   padding-left:18px;
-  color: rgba(19,32,40,.82);
+  color:rgba(246,241,233,.86);
 }
 .steps li{ margin:8px 0; }
 
 /* ---------- Page hero / toolbar ---------- */
 .page-hero{
   padding:36px 0 10px;
-  border-bottom: 1px solid rgba(19,32,40,.10);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .toolbar{
@@ -475,34 +455,32 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
 .chips{ display:flex; gap:8px; flex-wrap:wrap; }
 
-/* chips */
 .chip{
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.65);
-  color: rgba(19,32,40,.92);
+  border:1px solid rgba(246,241,233,.18);
+  background: rgba(255,255,255,.04);
+  color: rgba(246,241,233,.9);
   padding:10px 12px;
   border-radius:999px;
   cursor:pointer;
-  font-weight:900;
+  font-weight:800;
   font-size:13px;
   transition: background var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
-.chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.78); }
+.chip:hover{ transform: translateY(-1px); }
 .chip.active{
-  background: rgba(47,93,80,.10);
-  border-color: rgba(47,93,80,.28);
-  color: rgba(47,93,80,.95);
+  background: rgba(14,138,160,.22);
+  border-color: rgba(14,138,160,.35);
 }
 
 .search input{
   width:min(320px, 80vw);
   padding:12px 14px;
   border-radius: 14px;
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.78);
-  color: rgba(19,32,40,.92);
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.04);
+  color: var(--sand);
 }
-.search input::placeholder{ color: rgba(19,32,40,.45); }
+.search input::placeholder{ color: rgba(246,241,233,.55); }
 
 /* ---------- Products ---------- */
 .product-grid{
@@ -517,15 +495,14 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:10px;
   padding:16px;
   border-radius: var(--r);
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.88);
-  box-shadow: 0 14px 34px rgba(19,32,40,.08);
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.05);
   transition: transform var(--t-med) var(--ease), border-color var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease);
 }
 .product:hover{
   transform: translateY(-4px);
-  border-color: rgba(201,163,91,.45);
-  box-shadow: 0 22px 52px rgba(19,32,40,.12);
+  border-color: rgba(201,166,107,.35);
+  box-shadow: 0 22px 52px rgba(0,0,0,.40);
 }
 
 .product .meta{
@@ -537,21 +514,21 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
 .price{
   font-weight:900;
-  color: rgba(47,93,80,.95);
+  color: rgba(246,241,233,.96);
 }
 
 .badge{
   display:inline-flex;
   padding:6px 10px;
   border-radius:999px;
-  background: rgba(201,163,91,.18);
-  border:1px solid rgba(201,163,91,.32);
-  color: rgba(60,42,16,.92);
+  background: rgba(201,166,107,.16);
+  border:1px solid rgba(201,166,107,.24);
+  color: rgba(246,241,233,.92);
   font-size:12px;
   font-weight:900;
 }
 
-.product .desc{ color: rgba(19,32,40,.62); line-height:1.45; }
+.product .desc{ color:var(--muted); line-height:1.45; }
 
 .product .actions{
   display:flex;
@@ -565,13 +542,13 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:8px;
   padding:10px 12px;
   border-radius: 14px;
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.78);
+  border:1px solid var(--stroke);
+  background: rgba(255,255,255,.04);
 }
 .qty button{
   background:transparent;
   border:0;
-  color: rgba(19,32,40,.92);
+  color:var(--sand);
   font-size:18px;
   cursor:pointer;
 }
@@ -594,21 +571,21 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   align-items:center;
   padding:12px 12px;
   border-radius: 14px;
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.70);
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
   transition: transform var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease), background var(--t-fast) var(--ease);
 }
 .weather:hover{
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(19,32,40,.12);
-  background: rgba(255,255,255,.82);
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  background: rgba(255,255,255,.06);
 }
 
 .weather .w-title{ font-weight:900; }
-.weather .w-sub{ font-size:12px; color: rgba(19,32,40,.62); }
+.weather .w-sub{ font-size:12px; color:rgba(246,241,233,.72); }
 .weather .w-right{ text-align:right; }
 .weather .w-temp{ font-weight:900; }
-.weather .w-wind{ font-size:12px; color: rgba(19,32,40,.62); }
+.weather .w-wind{ font-size:12px; color:rgba(246,241,233,.72); }
 
 /* ---------- CTA ---------- */
 .cta-wide{
@@ -618,15 +595,15 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:14px;
   padding:18px;
   border-radius: var(--r2);
-  border:1px solid rgba(201,163,91,.24);
-  background: linear-gradient(135deg, rgba(201,163,91,.14), rgba(47,93,80,.08));
+  border:1px solid rgba(201,166,107,.18);
+  background: linear-gradient(135deg, rgba(201,166,107,.10), rgba(14,94,111,.12));
 }
 
 /* ---------- Footer ---------- */
 .site-footer{
   margin-top:30px;
-  border-top:1px solid rgba(19,32,40,.10);
-  background: rgba(247,242,234,.70);
+  border-top:1px solid rgba(255,255,255,.10);
+  background: rgba(3,18,30,.55);
 }
 
 .footer-grid{
@@ -644,12 +621,12 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap:8px;
 }
 
-.footer-links a{ color: rgba(19,32,40,.72); }
-.footer-links a:hover{ color: rgba(19,32,40,.92); }
+.footer-links a{ color: rgba(246,241,233,.80); }
+.footer-links a:hover{ color: rgba(246,241,233,.98); }
 
 .footer-bottom{
   padding:14px 0;
-  border-top:1px solid rgba(19,32,40,.10);
+  border-top:1px solid rgba(255,255,255,.08);
 }
 .footer-brand{ margin-bottom:8px; }
 
@@ -660,15 +637,15 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 .drawer-backdrop{
   position:absolute;
   inset:0;
-  background: rgba(19,32,40,.35);
+  background: rgba(0,0,0,.52);
 }
 
 .drawer-panel{
   position:absolute;
   top:0; right:0; height:100%;
   width:min(420px, 100%);
-  background: rgba(247,242,234,.96);
-  border-left:1px solid rgba(19,32,40,.12);
+  background: rgba(4,27,45,.96);
+  border-left:1px solid rgba(255,255,255,.12);
   backdrop-filter: blur(14px);
   display:flex;
   flex-direction:column;
@@ -679,17 +656,17 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   align-items:center;
   justify-content:space-between;
   padding:16px;
-  border-bottom:1px solid rgba(19,32,40,.10);
+  border-bottom:1px solid rgba(255,255,255,.10);
 }
 .drawer-body{ padding:14px 16px; overflow:auto; flex:1; }
-.drawer-foot{ padding:14px 16px; border-top:1px solid rgba(19,32,40,.10); }
+.drawer-foot{ padding:14px 16px; border-top:1px solid rgba(255,255,255,.10); }
 
 .total{
   display:flex;
   justify-content:space-between;
   align-items:center;
   font-size:16px;
-  font-weight:900;
+  font-weight:800;
 }
 
 .cart-item{
@@ -697,27 +674,27 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   justify-content:space-between;
   gap:12px;
   padding:12px;
-  border:1px solid rgba(19,32,40,.10);
-  background: rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
   border-radius: 14px;
   margin-bottom:10px;
 }
 
 .cart-item .ci-name{ font-weight:900; }
-.cart-item .ci-sub{ font-size:12px; color: rgba(19,32,40,.62); }
+.cart-item .ci-sub{ font-size:12px; color:rgba(246,241,233,.72); }
 .cart-item .ci-right{ text-align:right; }
 .cart-item .ci-actions{ display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
 
-.cart-empty{ display:none; padding:12px; color: rgba(19,32,40,.62); }
+.cart-empty{ display:none; padding:12px; color:rgba(246,241,233,.72); }
 .cart-empty.show{ display:block; }
 
 /* ---------- FAQ ---------- */
 .faq{ display:grid; gap:10px; }
 
 .faq-item{
-  border:1px solid rgba(19,32,40,.12);
+  border:1px solid rgba(255,255,255,.10);
   border-radius: 14px;
-  background: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.04);
   padding:12px 12px;
 }
 
@@ -727,7 +704,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 }
 
 .faq-item p{
-  color: rgba(19,32,40,.62);
+  color:var(--muted);
   margin:10px 0 0;
 }
 
@@ -739,20 +716,20 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   width:100%;
   padding:12px 12px;
   border-radius: 14px;
-  border:1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.78);
-  color: rgba(19,32,40,.92);
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: var(--sand);
 }
 
 .form input::placeholder,
 .form textarea::placeholder{
-  color: rgba(19,32,40,.45);
+  color: rgba(246,241,233,.55);
 }
 
 .form span{
   display:block;
   font-size:12px;
-  color: rgba(19,32,40,.68);
+  color:rgba(246,241,233,.75);
   margin-bottom:6px;
 }
 
@@ -765,21 +742,21 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
 .ph{
   border-radius: var(--r);
-  border:1px dashed rgba(19,32,40,.18);
-  background: rgba(255,255,255,.60);
+  border:1px dashed rgba(246,241,233,.22);
+  background: rgba(255,255,255,.03);
   padding:18px;
   min-height:140px;
   display:grid;
   place-items:center;
-  color: rgba(19,32,40,.62);
+  color:rgba(246,241,233,.70);
 }
 
 /* ---------- Links ---------- */
 .link{
-  color: rgba(47,93,80,.95);
+  color: rgba(201,166,107,.92);
   font-weight:900;
 }
-.link:hover{ color: rgba(201,163,91,.95); }
+.link:hover{ color: rgba(246,241,233,.95); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px){
@@ -806,20 +783,9 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 .me-product-media{
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(19,32,40,.10);
-  background: rgba(19,32,40,.02);
-  position: relative;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
 }
-
-/* petite “finition” photo */
-.me-product-media::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(19,32,40,.10) 100%);
-  pointer-events:none;
-}
-
 .me-product-media img{
   width: 100%;
   height: 180px;
@@ -852,7 +818,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 .me-modal__backdrop{
   position:absolute;
   inset:0;
-  background: rgba(19,32,40,.35);
+  background: rgba(0,0,0,.55);
 }
 
 .me-modal__panel{
@@ -861,10 +827,10 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(860px, calc(100% - 32px));
-  background: rgba(247,242,234,.98);
-  border: 1px solid rgba(19,32,40,.12);
+  background: rgba(4,27,45,.97);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: 18px;
-  box-shadow: 0 24px 70px rgba(19,32,40,.18);
+  box-shadow: 0 24px 70px rgba(0,0,0,.55);
   backdrop-filter: blur(14px);
   overflow: hidden;
 }
@@ -875,7 +841,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   justify-content:space-between;
   gap: 12px;
   padding: 14px 14px;
-  border-bottom: 1px solid rgba(19,32,40,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
 .me-modal__body{
@@ -890,7 +856,7 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   height: 320px;
   object-fit: cover;
   border-radius: 14px;
-  border: 1px solid rgba(19,32,40,.10);
+  border: 1px solid rgba(255,255,255,.10);
 }
 
 .me-modal__meta{
@@ -913,19 +879,21 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 }
 
 /* ==========================================================
-   MENU NAVIGATION (Tabs + Sticky)
+   MENU NAVIGATION (Tabs + Sticky) — add at end of file
    ========================================================== */
 
+/* Sticky bar under header (header height varies; 76px works with your nav padding) */
 .menu-navigation{
   position: sticky;
-  top: var(--header-offset);
+  top: 72px;                 /* adjust if needed: 64–86 depending your header */
   z-index: 25;
   padding: 12px 0;
-  background: rgba(247,242,234,.86);
+  background: rgba(4,27,45,.72);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(19,32,40,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
 }
 
+/* Tabs */
 .menu-tabs{
   display:flex;
   gap:10px;
@@ -941,9 +909,9 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 
   padding: 11px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(19,32,40,.12);
-  background: rgba(255,255,255,.65);
-  color: rgba(19,32,40,.92);
+  border: 1px solid rgba(246,241,233,.18);
+  background: rgba(255,255,255,.04);
+  color: rgba(246,241,233,.92);
 
   cursor:pointer;
   font-weight:900;
@@ -959,26 +927,26 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 }
 .tab-btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.06);
 }
 .tab-btn:active{
   transform: translateY(0) scale(.99);
 }
 .tab-btn.active{
-  background: linear-gradient(135deg, rgba(201,163,91,.18), rgba(47,93,80,.10));
-  border-color: rgba(201,163,91,.38);
-  box-shadow: 0 14px 34px rgba(19,32,40,.12);
+  background: linear-gradient(135deg, rgba(201,166,107,.22), rgba(14,94,111,.16));
+  border-color: rgba(201,166,107,.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,.28);
 }
 
-/* Chips rail */
+/* Make chips container feel like premium "category rail" */
 #menuChips{
   position: sticky;
-  top: var(--menu-tabs-offset);
+  top: 132px;                 /* header + tabs */
   z-index: 20;
   padding: 12px 0;
-  background: rgba(247,242,234,.72);
+  background: rgba(4,27,45,.55);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(19,32,40,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 /* chips row more usable on mobile: horizontal scroll */
@@ -992,14 +960,14 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
 /* Slightly larger chips for tap */
 .chip{
   padding: 11px 14px;
-  min-height: 42px;
+  min-height: 42px;           /* good tap size */
   white-space: nowrap;
 }
 
-/* Menu sections - more “restaurant” layout */
+/* Menu sections - more "restaurant" layout */
 .menu-section{
   margin: 28px 0 44px;
-  scroll-margin-top: 170px;
+  scroll-margin-top: 170px;   /* offset for sticky header + tabs */
 }
 
 .menu-section__head{
@@ -1009,32 +977,54 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   gap: 14px;
   margin-bottom: 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(19,32,40,.10);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.menu-section__head h2{ margin:0; }
+.menu-section__head h2{
+  margin:0;
+}
+
 .menu-section__head .muted{
   margin:0;
   font-size: 13px;
 }
 
-/* Disabled products */
-.product[data-disabled="1"]{
-  opacity: .82;
+/* Product cards: refine */
+.product{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
 }
+
+.product[data-disabled="1"]{
+  opacity: .88;
+}
+
+.product[data-disabled="1"] .price{
+  color: rgba(246,241,233,.82);
+}
+
 .product[data-disabled="1"] .me-add{
   opacity: .55;
 }
 
-/* Mobile sticky tuning */
-@media (max-width: 820px){
-  :root{
-    --header-offset: 66px;
-    --menu-tabs-offset: 122px;
-  }
+/* Product image polish */
+.me-product-media{
+  position: relative;
+}
+.me-product-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.28) 100%);
+  pointer-events:none;
 }
 
-/* Small phones: tabs scroll */
+/* Modal: better spacing on small */
+@media (max-width: 820px){
+  .menu-navigation{ top: 66px; }
+  #menuChips{ top: 122px; }
+}
+
+/* Small phones */
 @media (max-width: 420px){
   .menu-tabs{
     flex-wrap: nowrap;
@@ -1045,124 +1035,263 @@ h4{ font-size:14px; margin:0 0 8px; color: rgba(19,32,40,.88); }
   .menu-tabs::-webkit-scrollbar{ display:none; }
   .tab-btn{ white-space: nowrap; }
 }
-/* =========================
-   FINITIONS THEME C (Header/Footer/Index polish)
-   Colle ce bloc tout en bas du fichier
-   ========================= */
 
-/* 1) Header: état actif + micro-luxe */
-.menu a{
-  position: relative;
+/* ==========================================================
+   MOBILE FIX PACK — Header / Nav drawer / Layout
+   (intégré) — Burger + drawer nav + mobile layout
+   ========================================================== */
+
+/* -------- Global mobile comfort -------- */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+.container{
+  width: min(var(--container), calc(100% - 32px));
 }
 
-.menu a::after{
-  content:"";
-  position:absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 6px;
-  height: 1px;
-  background: rgba(201,163,91,.0);
-  transform: scaleX(.85);
-  transform-origin:center;
-  transition: background var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+/* Tap targets */
+a, button{
+  touch-action: manipulation;
 }
 
-/* Auto-active si tu ajoutes class="active" sur la page courante (optionnel) */
-.menu a.active{
-  color: rgba(19,32,40,.96);
-  background: rgba(47,93,80,.08);
-}
-.menu a.active::after{
-  background: rgba(201,163,91,.85);
-  transform: scaleX(1);
+/* -------- Header layout: allow wrap on small -------- */
+.nav{
+  gap: 12px;
 }
 
-/* 2) Brand mark: plus “signature” */
-.brand-mark{
-  box-shadow: 0 10px 22px rgba(19,32,40,.10);
-}
+/* Burger button hidden by default (desktop) */
+.nav-toggle{ display:none; }
 
-/* 3) Hero card (tu as .hero-card dans l’index) */
-.hero-card{
+/* Nav panel default desktop layout */
+.nav-panel{
   display:flex;
-}
-.hero-card .card{
-  width: 100%;
-}
-
-/* 4) Cards: un peu plus “papier premium” */
-.card{
-  background: rgba(255,255,255,.92);
-}
-.card.glass{
-  background: rgba(255,255,255,.82);
+  align-items:center;
+  gap: 12px;
 }
 
-/* 5) Footer: plus chic (moins “bloc”) */
-.site-footer{
-  background:
-    radial-gradient(900px 380px at 18% 0%, rgba(47,93,80,.08), transparent 60%),
-    radial-gradient(900px 380px at 85% 0%, rgba(201,163,91,.10), transparent 60%),
-    rgba(247,242,234,.78);
+/* Keep menu in one line on desktop */
+.menu{
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
-.site-footer h4{
-  letter-spacing:.08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(19,32,40,.70);
+/* -------- Mobile NAV drawer behavior -------- */
+@media (max-width: 980px){
+  /* Show burger */
+  .nav-toggle{
+    display:inline-flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+    background: rgba(255,255,255,.05);
+    align-items:center;
+    justify-content:center;
+    gap: 6px;
+    cursor:pointer;
+    padding: 10px;
+  }
+
+  .nav-toggle__bar{
+    display:block;
+    width: 18px;
+    height: 2px;
+    background: rgba(246,241,233,.9);
+    border-radius: 999px;
+  }
+
+  /* Hide inline desktop menu by turning it into a drawer */
+  .nav-panel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(360px, 88vw);
+    z-index: 80;
+
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 14px;
+
+    padding: 18px 16px;
+    background: rgba(4,27,45,.98);
+    border-left: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(14px);
+
+    transform: translateX(110%);
+    transition: transform var(--t-med) var(--ease);
+    box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  }
+
+  /* Open state toggled by JS: data-open="true" */
+  .nav-panel[data-open="true"]{
+    transform: translateX(0);
+  }
+
+  /* Backdrop */
+  .nav-backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: 70;
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Make menu vertical */
+  .menu{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    white-space: normal;
+  }
+
+  .menu a{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    padding: 12px 12px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+    font-size: 15px;
+  }
+
+  /* Actions stack */
+  .nav-actions{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .cart-btn{
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Sticky header a bit tighter on mobile */
+  .site-header .nav{
+    padding: 12px 0;
+  }
+
+  /* Prevent page scroll when nav open (JS adds .nav-open on <html>) */
+  html.nav-open, html.nav-open body{
+    overflow: hidden;
+  }
 }
 
-.footer-links a{
-  padding: 6px 0;
-  display:inline-block;
-  transition: color var(--t-fast) var(--ease);
-}
-.footer-links a:hover{
-  color: rgba(47,93,80,.95);
+/* -------- HERO & sections on mobile -------- */
+@media (max-width: 980px){
+  .hero{ padding: 34px 0 12px; }
+  h1{ font-size: 34px; line-height:1.08; }
+  .lead{ font-size: 16px; }
+
+  .section{ padding: 34px 0; }
 }
 
-/* 6) CTA wide: “ruban” élégant */
-.cta-wide{
-  box-shadow: 0 18px 50px rgba(19,32,40,.10);
+/* -------- Product grid: better mobile cards -------- */
+@media (max-width: 980px){
+  .product-grid{
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product{
+    padding: 14px;
+  }
+
+  .me-product-media img{
+    height: 200px;
+  }
+
+  .product .actions{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .qty{
+    justify-content: space-between;
+  }
+
+  .qty button{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+
+  .btn{
+    width: 100%;
+  }
 }
 
-/* 7) Drawer: rendu premium + bouton Stripe */
-.drawer-panel{
-  box-shadow: -18px 0 60px rgba(19,32,40,.16);
+/* -------- Menu navigation sticky offsets on mobile -------- */
+@media (max-width: 980px){
+  .menu-navigation{
+    top: 64px;
+    padding: 10px 0;
+  }
+
+  #menuChips{
+    top: 116px;
+  }
+
+  .menu-tabs{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .menu-tabs::-webkit-scrollbar{ display:none; }
+
+  .tab-btn{
+    white-space: nowrap;
+    min-height: 42px;
+  }
+
+  .chips{
+    overflow-x:auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{ display:none; }
 }
 
-.drawer-head h3{
-  margin:0;
+/* -------- Drawer cart: full width on very small -------- */
+@media (max-width: 420px){
+  .drawer-panel{
+    width: 100%;
+  }
 }
 
-#checkoutStripe{
-  width:100%;
+/* -------- Footer: stack properly -------- */
+@media (max-width: 980px){
+  .footer-grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 26px 0;
+  }
+
+  .footer-bottom{
+    padding: 12px 0;
+  }
 }
 
-/* WhatsApp bouton: plus “secondaire chic” */
-#checkoutWhatsApp{
-  width:100%;
+/* -------- Modal: mobile comfort -------- */
+@media (max-width: 820px){
+  .me-modal__panel{
+    width: min(860px, calc(100% - 18px));
+  }
+  .me-modal__media img{
+    height: 220px;
+  }
 }
 
-/* 8) Boutons: alignement visuel */
-.btn{
-  letter-spacing: .01em;
-}
-.btn-secondary{
-  box-shadow: 0 12px 26px rgba(19,32,40,.08);
-}
-
-/* 9) Produits: prix plus “menu restaurant” */
-.price{
-  font-variant-numeric: tabular-nums;
-}
-
-/* 10) Petits détails: inputs (search etc.) */
-.search input:focus-visible,
-.form input:focus-visible,
-.form textarea:focus-visible{
-  box-shadow: var(--focus-ring);
-  border-color: rgba(47,93,80,.28) !important;
+/* -------- Small polish: reduce excessive shadows on mobile -------- */
+@media (max-width: 980px){
+  .card{ box-shadow: 0 14px 38px rgba(0,0,0,.34); }
+  .product:hover{ transform: none; } /* no hover jump on touch */
 }
