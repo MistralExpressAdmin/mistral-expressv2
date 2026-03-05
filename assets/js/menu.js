@@ -16,17 +16,19 @@
       title: "Produits Premium",
       subtitle: "Sélection prestige",
       items: [
+        // Oscietre (déjà OK chez toi)
         { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre premium.", price: 120, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
         { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre premium.", price: 250, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
         { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre premium.", price: 500, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
 
-        { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection.", price: null, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection.", price: null, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-250", name: "Caviar Baeri 250g", desc: "Caviar Baeri sélection.", price: null, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        // Baeri (test premium mais légèrement moins cher)
+        { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection.", price: 85,  badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection.", price: 195, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        { id: "caviar-baeri-250", name: "Caviar Baeri 250g", desc: "Caviar Baeri sélection.", price: 420, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
 
-        { id: "foie-gras-castaing",   name: "Foie Gras Castaing 2 × 40g", desc: "Foie gras Castaing.", price: null, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
-        { id: "saumon-barthouil-100", name: "Saumon fumé Maison Barthouil 100g", desc: "Saumon fumé Barthouil.", price: null, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" },
-        { id: "saumon-barthouil-200", name: "Saumon fumé Maison Barthouil 200g", desc: "Saumon fumé Barthouil.", price: null, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" }
+        { id: "foie-gras-castaing",   name: "Foie Gras Castaing 2 × 40g", desc: "Foie gras Castaing.", price: 48, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
+        { id: "saumon-barthouil-100", name: "Saumon fumé Maison Barthouil 100g", desc: "Saumon fumé Barthouil.", price: 32, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" },
+        { id: "saumon-barthouil-200", name: "Saumon fumé Maison Barthouil 200g", desc: "Saumon fumé Barthouil.", price: 58, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" }
       ]
     },
 
@@ -36,9 +38,9 @@
       title: "Tartares",
       subtitle: "Préparés minute",
       items: [
-        { id: "tartare-saumon", name: "Tartare saumon", desc: "Préparé minute, assaisonnement premium.", price: null, badge: "Frais", img: "assets/img/menu/tartare-saumon.jpg" },
-        { id: "tartare-thon",   name: "Tartare thon",   desc: "Découpe fine, texture parfaite.",        price: null, badge: "Signature", img: "assets/img/menu/tartare-thon.jpg" },
-        { id: "tartare-boeuf",  name: "Tartare de bœuf", desc: "Classique premium, goût net.",          price: null, badge: "Classique", img: "assets/img/menu/tartare-boeuf.jpg" }
+        { id: "tartare-saumon", name: "Tartare saumon", desc: "Préparé minute, assaisonnement premium.", price: 26, badge: "Frais", img: "assets/img/menu/tartare-saumon.jpg" },
+        { id: "tartare-thon",   name: "Tartare thon",   desc: "Découpe fine, texture parfaite.",        price: 29, badge: "Signature", img: "assets/img/menu/tartare-thon.jpg" },
+        { id: "tartare-boeuf",  name: "Tartare de bœuf", desc: "Classique premium, goût net.",          price: 27, badge: "Classique", img: "assets/img/menu/tartare-boeuf.jpg" }
       ]
     },
 
@@ -48,9 +50,9 @@
       title: "Salades",
       subtitle: "Fraîches & équilibrées",
       items: [
-        { id: "salade-cesar",   name: "Salade César",   desc: "Poulet, croûtons, parmesan, sauce.", price: null, badge: "Best-seller", img: "assets/img/menu/salade-cesar.jpg" },
-        { id: "salade-nicoise", name: "Salade niçoise", desc: "Fraîche, méditerranéenne.",          price: null, badge: "Local",       img: "assets/img/menu/salade-nicoise.jpg" },
-        { id: "salade-pates",   name: "Salade de pâtes", desc: "Généreuse, idéale à bord.",         price: null, badge: "Pratique",    img: "assets/img/menu/salade-pates.jpg" }
+        { id: "salade-cesar",   name: "Salade César",    desc: "Poulet, croûtons, parmesan, sauce.", price: 19, badge: "Best-seller", img: "assets/img/menu/salade-cesar.jpg" },
+        { id: "salade-nicoise", name: "Salade niçoise",  desc: "Fraîche, méditerranéenne.",          price: 18, badge: "Local",       img: "assets/img/menu/salade-nicoise.jpg" },
+        { id: "salade-pates",   name: "Salade de pâtes", desc: "Généreuse, idéale à bord.",          price: 16, badge: "Pratique",    img: "assets/img/menu/salade-pates.jpg" }
       ]
     },
 
@@ -60,13 +62,13 @@
       title: "Planches & Mix",
       subtitle: "À partager — apéritif à bord",
       items: [
-        { id: "mix-charcuterie", name: "Mix de charcuterie", desc: "Sélection fine, tranchée prête à servir.", price: null, badge: "Apéro", img: "assets/img/menu/mix-charcuterie.jpg" },
-        { id: "mix-fromages",    name: "Mix de fromages français", desc: "Assortiment français premium.",      price: null, badge: "Fromages", img: "assets/img/menu/mix-fromages.jpg" },
+        { id: "mix-charcuterie", name: "Mix de charcuterie", desc: "Sélection fine, tranchée prête à servir.", price: 34, badge: "Apéro", img: "assets/img/menu/mix-charcuterie.jpg" },
+        { id: "mix-fromages",    name: "Mix de fromages français", desc: "Assortiment français premium.",      price: 32, badge: "Fromages", img: "assets/img/menu/mix-fromages.jpg" },
 
-        { id: "plateau-caviar-service", name: "Plateau Caviar Service", desc: "Service premium prêt à déguster (présentation élégante).", price: null, badge: "Premium", img: "assets/img/menu/plateau-caviar.jpg" },
-        { id: "plateau-fromages-fr",    name: "Plateau Fromages Français", desc: "Sélection de fromages français — prêt à servir.",       price: null, badge: "Maison",  img: "assets/img/menu/plateau-fromages.jpg" },
-        { id: "plateau-charcuterie-iberique", name: "Plateau Charcuterie Ibérique", desc: "Sélection ibérique premium — prêt à servir.",  price: null, badge: "Apéro",   img: "assets/img/menu/plateau-charcuterie.jpg" },
-        { id: "plateau-fruits-premium", name: "Plateau Fruits Premium", desc: "Fruits de saison, sélection premium — parfait au mouillage.", price: null, badge: "Frais", img: "assets/img/menu/plateau-fruits.jpg" }
+        { id: "plateau-caviar-service", name: "Plateau Caviar Service", desc: "Service premium prêt à déguster (présentation élégante).", price: 95, badge: "Premium", img: "assets/img/menu/plateau-caviar.jpg" },
+        { id: "plateau-fromages-fr",    name: "Plateau Fromages Français", desc: "Sélection de fromages français — prêt à servir.",       price: 62, badge: "Maison",  img: "assets/img/menu/plateau-fromages.jpg" },
+        { id: "plateau-charcuterie-iberique", name: "Plateau Charcuterie Ibérique", desc: "Sélection ibérique premium — prêt à servir.",  price: 68, badge: "Apéro",   img: "assets/img/menu/plateau-charcuterie.jpg" },
+        { id: "plateau-fruits-premium", name: "Plateau Fruits Premium", desc: "Fruits de saison, sélection premium — parfait au mouillage.", price: 44, badge: "Frais", img: "assets/img/menu/plateau-fruits.jpg" }
       ]
     },
 
@@ -76,9 +78,9 @@
       title: "Brochettes",
       subtitle: "Finger food élégant",
       items: [
-        { id: "brochettes-melon-jambon", name: "Brochettes melon & jambon de pays", desc: "Sucré-salé chic.", price: null, badge: "Sunset", img: "assets/img/menu/brochettes-melon-jambon.jpg" },
-        { id: "brochettes-fruits",       name: "Brochettes de fruits de saison",    desc: "Frais, léger, élégant.", price: null, badge: "Frais", img: "assets/img/menu/brochettes-fruits.jpg" },
-        { id: "brochettes-tomate-mozza", name: "Brochettes tomates & mozzarella",   desc: "Simple, premium, parfait à bord.", price: null, badge: "Végé", img: "assets/img/menu/brochettes-tomate-mozza.jpg" }
+        { id: "brochettes-melon-jambon", name: "Brochettes melon & jambon de pays", desc: "Sucré-salé chic.", price: 18, badge: "Sunset", img: "assets/img/menu/brochettes-melon-jambon.jpg" },
+        { id: "brochettes-fruits",       name: "Brochettes de fruits de saison",    desc: "Frais, léger, élégant.", price: 16, badge: "Frais", img: "assets/img/menu/brochettes-fruits.jpg" },
+        { id: "brochettes-tomate-mozza", name: "Brochettes tomates & mozzarella",   desc: "Simple, premium, parfait à bord.", price: 17, badge: "Végé", img: "assets/img/menu/brochettes-tomate-mozza.jpg" }
       ]
     },
 
@@ -88,8 +90,8 @@
       title: "Wraps",
       subtitle: "On-the-go — parfait en mer",
       items: [
-        { id: "wrap-poulet", name: "Wrap de poulet", desc: "Pratique, gourmand, service rapide.", price: null, badge: "On-the-go", img: "assets/img/menu/wrap-poulet.jpg" },
-        { id: "wrap-saumon", name: "Wrap de saumon", desc: "Saumon premium, texture douce.",      price: null, badge: "Premium",   img: "assets/img/menu/wrap-saumon.jpg" }
+        { id: "wrap-poulet", name: "Wrap de poulet", desc: "Pratique, gourmand, service rapide.", price: 15, badge: "On-the-go", img: "assets/img/menu/wrap-poulet.jpg" },
+        { id: "wrap-saumon", name: "Wrap de saumon", desc: "Saumon premium, texture douce.",      price: 17, badge: "Premium",   img: "assets/img/menu/wrap-saumon.jpg" }
       ]
     },
 
@@ -102,14 +104,14 @@
       title: "Champagnes",
       subtitle: "Du moins cher au plus cher",
       items: [
-        { id: "champ-extra-brut-bdn",     name: "Extra brut Blanc de Noirs",       desc: "Champagne — sélection.",       price: null, badge: "Champagne", img: "assets/img/menu/champagne-1.jpg" },
-        { id: "champ-neuville-autolyse",  name: "Brut de Neuville Autolyse",       desc: "Champagne — sélection.",       price: null, badge: "Champagne", img: "assets/img/menu/champagne-2.jpg" },
-        { id: "champ-neuville-2012",      name: "Brut de Neuville Millésimé 2012", desc: "Champagne — millésime.",       price: null, badge: "Millésime",  img: "assets/img/menu/champagne-3.jpg" },
-        { id: "champ-roederer-246",       name: "Louis Roederer Collection 246",   desc: "Champagne — collection.",      price: null, badge: "Prestige",  img: "assets/img/menu/champagne-4.jpg" },
-        { id: "champ-ruinart-bdb",        name: "Ruinart Blanc de Blanc",          desc: "Champagne — blanc de blancs.", price: null, badge: "Iconique",  img: "assets/img/menu/champagne-5.jpg" },
-        { id: "champ-roederer-bdb",       name: "Louis Roederer Blanc de Blanc",   desc: "Champagne — blanc de blancs.", price: null, badge: "Prestige",  img: "assets/img/menu/champagne-6.jpg" },
-        { id: "champ-perrier-jouet-2016", name: "Perrier Jouet 2016",              desc: "Champagne — millésime.",       price: null, badge: "Millésime", img: "assets/img/menu/champagne-7.jpg" },
-        { id: "champ-cristal",            name: "Cristal Roederer",                desc: "Champagne — ultra prestige.",  price: null, badge: "Ultra",     img: "assets/img/menu/champagne-8.jpg" }
+        { id: "champ-extra-brut-bdn",     name: "Extra brut Blanc de Noirs",       desc: "Champagne — sélection.",       price: 62,  badge: "Champagne", img: "assets/img/menu/champagne-1.jpg" },
+        { id: "champ-neuville-autolyse",  name: "Brut de Neuville Autolyse",       desc: "Champagne — sélection.",       price: 68,  badge: "Champagne", img: "assets/img/menu/champagne-2.jpg" },
+        { id: "champ-neuville-2012",      name: "Brut de Neuville Millésimé 2012", desc: "Champagne — millésime.",       price: 95,  badge: "Millésime", img: "assets/img/menu/champagne-3.jpg" },
+        { id: "champ-roederer-246",       name: "Louis Roederer Collection 246",   desc: "Champagne — collection.",      price: 110, badge: "Prestige",  img: "assets/img/menu/champagne-4.jpg" },
+        { id: "champ-ruinart-bdb",        name: "Ruinart Blanc de Blanc",          desc: "Champagne — blanc de blancs.", price: 135, badge: "Iconique",  img: "assets/img/menu/champagne-5.jpg" },
+        { id: "champ-roederer-bdb",       name: "Louis Roederer Blanc de Blanc",   desc: "Champagne — blanc de blancs.", price: 145, badge: "Prestige",  img: "assets/img/menu/champagne-6.jpg" },
+        { id: "champ-perrier-jouet-2016", name: "Perrier Jouet 2016",              desc: "Champagne — millésime.",       price: 165, badge: "Millésime", img: "assets/img/menu/champagne-7.jpg" },
+        { id: "champ-cristal",            name: "Cristal Roederer",                desc: "Champagne — ultra prestige.",  price: 360, badge: "Ultra",     img: "assets/img/menu/champagne-8.jpg" }
       ]
     },
 
@@ -119,9 +121,9 @@
       title: "Vins blancs",
       subtitle: "Fraîcheur & élégance",
       items: [
-        { id: "blanc-minuty-prestige-2024", name: "Minuty Prestige 2024", desc: "Vin blanc — sélection.", price: null, badge: "Blanc", img: "assets/img/menu/vin-blanc-1.jpg" },
-        { id: "blanc-minuty-blanc-or-2024", name: "Blanc et Or Minuty 2024", desc: "Vin blanc — premium.", price: null, badge: "Premium", img: "assets/img/menu/vin-blanc-2.jpg" },
-        { id: "blanc-secret-lunes-chardo",  name: "Secret de Lunès Chardonnay", desc: "Chardonnay — élégant.", price: null, badge: "Chardonnay", img: "assets/img/menu/vin-blanc-3.jpg" }
+        { id: "blanc-minuty-prestige-2024", name: "Minuty Prestige 2024",        desc: "Vin blanc — sélection.", price: 26, badge: "Blanc",      img: "assets/img/menu/vin-blanc-1.jpg" },
+        { id: "blanc-minuty-blanc-or-2024", name: "Blanc et Or Minuty 2024",     desc: "Vin blanc — premium.",   price: 42, badge: "Premium",    img: "assets/img/menu/vin-blanc-2.jpg" },
+        { id: "blanc-secret-lunes-chardo",  name: "Secret de Lunès Chardonnay",  desc: "Chardonnay — élégant.",  price: 22, badge: "Chardonnay", img: "assets/img/menu/vin-blanc-3.jpg" }
       ]
     },
 
@@ -131,9 +133,9 @@
       title: "Vins rosés",
       subtitle: "L’iconique Côte d’Azur",
       items: [
-        { id: "rose-minuty-prestige-2024", name: "Minuty Prestige 2024", desc: "Vin rosé — sélection.", price: null, badge: "Rosé", img: "assets/img/menu/vin-rose-1.jpg" },
-        { id: "rose-minuty-rose-or-2024",  name: "Rose et Or Minuty 2024", desc: "Vin rosé — premium.", price: null, badge: "Premium", img: "assets/img/menu/vin-rose-2.jpg" },
-        { id: "rose-chateau-281",          name: "Château 281", desc: "Vin rosé — iconique.", price: null, badge: "Iconique", img: "assets/img/menu/vin-rose-3.jpg" }
+        { id: "rose-minuty-prestige-2024", name: "Minuty Prestige 2024",    desc: "Vin rosé — sélection.", price: 26, badge: "Rosé",     img: "assets/img/menu/vin-rose-1.jpg" },
+        { id: "rose-minuty-rose-or-2024",  name: "Rose et Or Minuty 2024",  desc: "Vin rosé — premium.",   price: 42, badge: "Premium",  img: "assets/img/menu/vin-rose-2.jpg" },
+        { id: "rose-chateau-281",          name: "Château 281",             desc: "Vin rosé — iconique.",  price: 95, badge: "Iconique", img: "assets/img/menu/vin-rose-3.jpg" }
       ]
     },
 
@@ -143,14 +145,14 @@
       title: "Softs & Energy",
       subtitle: "Canettes 33cl",
       items: [
-        { id: "coca-33",         name: "Coca Cola 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/coca.jpg" },
-        { id: "coca-zero-33",    name: "Coca Cola Zero 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/coca-zero.jpg" },
-        { id: "sprite-33",       name: "Sprite 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/sprite.jpg" },
-        { id: "fanta-33",        name: "Fanta 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/fanta.jpg" },
-        { id: "oasis-33",        name: "Oasis 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/oasis.jpg" },
-        { id: "fuze-tea-33",     name: "Fuze Tea 33cl", desc: "Canette.", price: null, badge: "Soft", img: "assets/img/menu/fuze-tea.jpg" },
-        { id: "redbull-33",      name: "Red Bull 33cl", desc: "Canette.", price: null, badge: "Energy", img: "assets/img/menu/redbull.jpg" },
-        { id: "redbull-zero-33", name: "Red Bull Zero 33cl", desc: "Canette.", price: null, badge: "Energy", img: "assets/img/menu/redbull-zero.jpg" }
+        { id: "coca-33",         name: "Coca Cola 33cl",        desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca.jpg" },
+        { id: "coca-zero-33",    name: "Coca Cola Zero 33cl",   desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca-zero.jpg" },
+        { id: "sprite-33",       name: "Sprite 33cl",           desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/sprite.jpg" },
+        { id: "fanta-33",        name: "Fanta 33cl",            desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/fanta.jpg" },
+        { id: "oasis-33",        name: "Oasis 33cl",            desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/oasis.jpg" },
+        { id: "fuze-tea-33",     name: "Fuze Tea 33cl",         desc: "Canette.", price: 5.0, badge: "Soft",   img: "assets/img/menu/fuze-tea.jpg" },
+        { id: "redbull-33",      name: "Red Bull 33cl",         desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull.jpg" },
+        { id: "redbull-zero-33", name: "Red Bull Zero 33cl",    desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull-zero.jpg" }
       ]
     },
 
@@ -160,10 +162,10 @@
       title: "Eaux",
       subtitle: "Premium waters",
       items: [
-        { id: "evian-50",         name: "Evian 50cl", desc: "Eau minérale.", price: null, badge: "Eau", img: "assets/img/menu/evian.jpg" },
-        { id: "evian-1l",         name: "Evian 1L", desc: "Eau minérale.", price: null, badge: "Eau", img: "assets/img/menu/evian.jpg" },
-        { id: "sanpellegrino-50", name: "San Pellegrino 50cl", desc: "Eau pétillante.", price: null, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" },
-        { id: "sanpellegrino-1l", name: "San Pellegrino 1L", desc: "Eau pétillante.", price: null, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" }
+        { id: "evian-50",         name: "Evian 50cl",            desc: "Eau minérale.",   price: 3.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
+        { id: "evian-1l",         name: "Evian 1L",              desc: "Eau minérale.",   price: 5.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
+        { id: "sanpellegrino-50", name: "San Pellegrino 50cl",   desc: "Eau pétillante.", price: 4.0, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" },
+        { id: "sanpellegrino-1l", name: "San Pellegrino 1L",     desc: "Eau pétillante.", price: 6.5, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" }
       ]
     }
   ];
@@ -218,22 +220,19 @@
     if (!tabs.length) return;
 
     const activate = (chip) => {
-      // set active style
       tabs.forEach(b => b.classList.toggle("active", (b.dataset.chip || "all") === chip));
-      // also reflect in chips row if exists
+
       const chipsWrap = qs("#menuChips");
       if (chipsWrap){
         qsa(".chip", chipsWrap).forEach(c => c.classList.toggle("active", c.dataset.chip === chip));
       }
+
       filterAndRender({ chip, query: qs("#menuSearch")?.value || "" });
       qs("#menuRoot")?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
-    tabs.forEach(btn => {
-      btn.addEventListener("click", () => activate(btn.dataset.chip || "all"));
-    });
+    tabs.forEach(btn => btn.addEventListener("click", () => activate(btn.dataset.chip || "all")));
 
-    // default state: ensure one active
     const current = qs(".tab-btn.active")?.dataset.chip || "all";
     activate(current);
   }
@@ -248,12 +247,9 @@
     const chipBtn = (id, label) =>
       `<button class="chip" type="button" data-chip="${escapeHtml(id)}">${escapeHtml(label)}</button>`;
 
-    // only category chips (tabs handle all/food/drinks)
     const cats = MENU.map(c => chipBtn(c.id, c.title)).join("");
     chips.innerHTML = cats;
 
-    // Active by default on first category? No — let tabs control global,
-    // and category chip click will switch view to that category.
     chips.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-chip]");
       if (!btn) return;
@@ -261,7 +257,6 @@
       qsa(".chip", chips).forEach(x => x.classList.toggle("active", x === btn));
 
       const id = btn.dataset.chip;
-      // deactivate tabs (because you're in a specific category)
       qsa(".tab-btn").forEach(t => t.classList.remove("active"));
 
       filterAndRender({ chip: id, query: qs("#menuSearch")?.value || "" });
@@ -295,7 +290,6 @@
       byCat.get(it.catId).items.push(it);
     }
 
-    // keep MENU order
     const orderedCatIds = MENU.map(c => c.id).filter(id => byCat.has(id));
 
     root.innerHTML = orderedCatIds.map((catId) => {
@@ -399,7 +393,7 @@
   }
 
   // ============================================================
-  // Modal (reliable)
+  // Modal
   // ============================================================
   let lastFocus = null;
   let currentModalProductId = null;
@@ -527,11 +521,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     renderChips();
     bindModal();
-
-    // Tabs drive the main filters (all/food/drinks). If tabs don't exist, fallback to all.
     setupTabs();
 
-    // Search uses active tab if any, else active chip, else all
     qs("#menuSearch")?.addEventListener("input", (e) => {
       const active =
         qs(".tab-btn.active")?.dataset.chip ||
@@ -541,12 +532,8 @@
       filterAndRender({ chip: active, query: e.target.value || "" });
     });
 
-    // If language changes, you can rerender strings later; quantities update now.
-    window.addEventListener("me:lang", () => {
-      updateQtyBadges();
-    });
+    window.addEventListener("me:lang", () => updateQtyBadges());
 
-    // Initial render (if tabs didn't trigger)
     if (!qs(".tab-btn")){
       filterAndRender({ chip: "all", query: "" });
     }
