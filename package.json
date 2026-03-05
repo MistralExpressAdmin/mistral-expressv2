@@ -1,11 +1,14 @@
 {
   "name": "mistral-expressv2",
-  "version": "1.0.0",
   "private": true,
+  "version": "1.0.0",
   "dependencies": {
     "stripe": "^16.0.0"
   },
   "engines": {
     "node": "18.x"
+  },
+  "scripts": {
+    "build": "echo \"no build\""
   }
 }
