@@ -16,9 +16,9 @@
       title: "Produits Premium",
       subtitle: "Sélection prestige",
       items: [
-        { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre premium.", price: null, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre premium.", price: null, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre premium.", price: null, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre premium.", price: 120, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre premium.", price: 250, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre premium.", price: 500, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
 
         { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection.", price: null, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
         { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection.", price: null, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
