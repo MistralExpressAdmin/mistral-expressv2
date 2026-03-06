@@ -20,7 +20,7 @@
 <script src="assets/js/include.js" defer></script>
 
 <!-- Page menu -->
-<script src="assets/js/menu.js?v=20260305-1" defer></script>
+<script src="assets/js/menu.js?v=20260305-2" defer></script>
 <script src="assets/js/main.js" defer></script>
 </head>
 
@@ -32,215 +32,164 @@
 
 <main id="main" class="page" role="main">
 
-<!-- ================= HERO ================= -->
+  <!-- ================= HERO ================= -->
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Carte • Mistral Express</p>
 
-<header class="page-hero">
-<div class="container">
+      <h1>La carte</h1>
 
-<p class="eyebrow">
-Carte • Mistral Express
-</p>
+      <p class="lead">
+        Sélection premium prête à être livrée directement à bord.
+        Cliquez sur un produit pour voir les détails et l'ajouter au panier.
+      </p>
+    </div>
+  </header>
 
-<h1>
-La carte
-</h1>
+  <!-- ================= NAVIGATION RAPIDE ================= -->
+  <section class="menu-navigation">
+    <div class="container">
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-chip="all" type="button">Tout</button>
+        <button class="tab-btn" data-chip="food" type="button">Food</button>
+        <button class="tab-btn" data-chip="drinks" type="button">Boissons</button>
+      </div>
+    </div>
+  </section>
 
-<p class="lead">
-Sélection premium prête à être livrée directement à bord.
-Cliquez sur un produit pour voir les détails et l'ajouter au panier.
-</p>
+  <!-- ================= SEARCH + CATEGORIES ================= -->
+  <section class="section section-menu-tools">
+    <div class="container">
+      <div class="toolbar toolbar-menu">
 
-</div>
-</header>
+        <div class="menu-categories-wrap">
+          <button
+            class="btn btn-secondary menu-categories-toggle"
+            id="menuCategoriesToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menuCategoriesPanel"
+          >
+            <span id="menuCategoriesToggleLabel">Catégories</span>
+            <span aria-hidden="true">▾</span>
+          </button>
 
+          <div class="menu-categories-panel" id="menuCategoriesPanel">
+            <div class="chips" id="menuChips">
+              <!-- rempli par menu.js -->
+            </div>
+          </div>
+        </div>
 
-<!-- ================= NAVIGATION RAPIDE ================= -->
+        <div class="search">
+          <input
+            id="menuSearch"
+            type="search"
+            placeholder="Rechercher un produit…"
+            aria-label="Rechercher un produit"
+          />
+        </div>
 
-<section class="menu-navigation">
+      </div>
+    </div>
+  </section>
 
-<div class="container">
-
-<div class="menu-tabs">
-
-<button class="tab-btn active" data-chip="all">
-Tout
-</button>
-
-<button class="tab-btn" data-chip="food">
-Food
-</button>
-
-<button class="tab-btn" data-chip="drinks">
-Boissons
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= SEARCH + CATEGORIES ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="toolbar">
-
-<div class="chips" id="menuChips">
-
-<!-- rempli par menu.js -->
-
-</div>
-
-<div class="search">
-
-<input
-id="menuSearch"
-type="search"
-placeholder="Rechercher un produit…"
-aria-label="Rechercher un produit"
-/>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= MENU ================= -->
-
-<section class="section">
-
-<div class="container">
-
-<div id="menuRoot">
-
-<!-- rendu dynamique menu.js -->
-
-</div>
-
-</div>
-
-</section>
-
+  <!-- ================= MENU ================= -->
+  <section class="section">
+    <div class="container">
+      <div id="menuRoot">
+        <!-- rendu dynamique menu.js -->
+      </div>
+    </div>
+  </section>
 
 </main>
 
 <div id="site-footer"></div>
 
-
 <!-- ================= MODAL PRODUIT ================= -->
-
 <div class="me-modal" id="productModal" aria-hidden="true">
 
-<div class="me-modal__backdrop" id="productModalBackdrop"></div>
+  <div class="me-modal__backdrop" id="productModalBackdrop"></div>
 
-<div class="me-modal__panel"
-role="dialog"
-aria-modal="true"
-aria-labelledby="productModalTitle"
-tabindex="-1"
->
+  <div
+    class="me-modal__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="productModalTitle"
+    tabindex="-1"
+  >
+    <div class="me-modal__head">
+      <h3 id="productModalTitle">Produit</h3>
 
-<div class="me-modal__head">
+      <button
+        class="icon-btn"
+        id="productModalClose"
+        type="button"
+        aria-label="Fermer"
+      >
+        ✕
+      </button>
+    </div>
 
-<h3 id="productModalTitle">
-Produit
-</h3>
+    <div class="me-modal__body">
+      <div class="me-modal__media">
+        <img
+          id="productModalImg"
+          src=""
+          alt=""
+          loading="lazy"
+        />
+      </div>
 
-<button
-class="icon-btn"
-id="productModalClose"
-type="button"
-aria-label="Fermer"
->
-✕
-</button>
+      <div class="me-modal__content">
+        <p class="muted" id="productModalDesc"></p>
 
+        <div class="me-modal__meta">
+          <span
+            class="badge"
+            id="productModalBadge"
+            style="display:none;"
+          ></span>
+
+          <span
+            class="price"
+            id="productModalPrice"
+          >
+            — €
+          </span>
+        </div>
+
+        <div class="me-modal__actions">
+          <button
+            class="btn btn-primary"
+            id="productModalAdd"
+            type="button"
+          >
+            Ajouter au panier
+          </button>
+
+          <button
+            class="btn btn-ghost"
+            id="productModalGoCart"
+            type="button"
+          >
+            Voir le panier
+          </button>
+        </div>
+
+        <p class="tiny muted" id="productModalHint">
+          Si le prix n’est pas encore renseigné, l’ajout au panier est désactivé.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-<div class="me-modal__body">
-
-<div class="me-modal__media">
-
-<img
-id="productModalImg"
-src=""
-alt=""
-loading="lazy"
-/>
-
-</div>
-
-<div class="me-modal__content">
-
-<p class="muted" id="productModalDesc"></p>
-
-<div class="me-modal__meta">
-
-<span
-class="badge"
-id="productModalBadge"
-style="display:none;"
-></span>
-
-<span
-class="price"
-id="productModalPrice"
->
-— €
-</span>
-
-</div>
-
-<div class="me-modal__actions">
-
-<button
-class="btn btn-primary"
-id="productModalAdd"
-type="button"
->
-Ajouter au panier
-</button>
-
-<button
-class="btn btn-ghost"
-id="productModalGoCart"
-type="button"
->
-Voir le panier
-</button>
-
-</div>
-
-<p class="tiny muted" id="productModalHint">
-
-Si le prix n’est pas encore renseigné, l’ajout au panier est désactivé.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 
 <noscript>
-
-<div class="noscript">
-Activez JavaScript pour afficher la carte interactive.
-</div>
-
+  <div class="noscript">
+    Activez JavaScript pour afficher la carte interactive.
+  </div>
 </noscript>
 
 </body>

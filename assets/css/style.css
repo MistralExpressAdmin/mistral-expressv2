@@ -1729,3 +1729,161 @@ html.nav-open,
 html.nav-open body{
   overflow: hidden;
 }
+/* ==========================================================
+   CARTE MOBILE FIX — à coller tout en bas du style.css
+   ========================================================== */
+
+.toolbar-menu{
+  align-items: flex-start;
+}
+
+.menu-categories-wrap{
+  position: relative;
+  width: 100%;
+}
+
+.menu-categories-toggle{
+  display: none;
+}
+
+.menu-categories-panel #menuChips{
+  position: static;
+  top: auto;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 0;
+}
+
+.menu-categories-panel{
+  display: block;
+}
+
+.me-product-media.is-missing{
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.82), rgba(239,231,221,.95));
+  border: 1px dashed rgba(19,32,40,.12);
+}
+
+.me-product-media.is-missing::before{
+  content: "Image bientôt disponible";
+  font-size: 12px;
+  color: rgba(19,32,40,.50);
+  font-weight: 700;
+}
+
+@media (max-width: 820px){
+  .section-menu-tools{
+    padding-top: 12px;
+    padding-bottom: 18px;
+  }
+
+  .toolbar-menu{
+    gap: 10px;
+  }
+
+  .menu-categories-toggle{
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 46px;
+  }
+
+  .menu-categories-panel{
+    display: none;
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 16px;
+    background: rgba(255,255,255,.80);
+    border: 1px solid rgba(19,32,40,.10);
+    box-shadow: 0 10px 26px rgba(19,32,40,.08);
+  }
+
+  .menu-categories-panel.open{
+    display: block;
+  }
+
+  .menu-categories-panel #menuChips{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  .menu-categories-panel .chip{
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 14px;
+  }
+
+  .toolbar .search{
+    width: 100%;
+  }
+
+  .toolbar .search input{
+    width: 100%;
+  }
+
+  .menu-tabs{
+    padding-bottom: 4px;
+  }
+
+  .product{
+    padding: 12px;
+  }
+
+  .me-product-media img{
+    height: 170px;
+  }
+
+  .product .meta{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .product .actions{
+    gap: 8px;
+  }
+
+  .product .actions .btn{
+    min-height: 46px;
+  }
+
+  .qty{
+    min-height: 46px;
+  }
+}
+
+@media (max-width: 480px){
+  .menu-navigation{
+    padding: 8px 0;
+  }
+
+  .tab-btn{
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .me-product-media img{
+    height: 156px;
+  }
+
+  .product h3{
+    font-size: 16px;
+  }
+
+  .price{
+    font-size: 16px;
+  }
+
+  .badge{
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}

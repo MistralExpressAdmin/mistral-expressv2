@@ -3,25 +3,18 @@
 
   // ============================================================
   // MENU DATA
-  // price: null => affiche "— €" et désactive l'ajout au panier
-  // img: chemins à adapter selon tes images
   // ============================================================
   const MENU = [
-    // =======================
-    // FOOD
-    // =======================
     {
       id: "premium",
       group: "food",
       title: "Produits Premium",
       subtitle: "Sélection prestige",
       items: [
-        // Oscietre (déjà OK chez toi)
         { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre premium.", price: 120, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
         { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre premium.", price: 250, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
         { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre premium.", price: 500, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
 
-        // Baeri (test premium mais légèrement moins cher)
         { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection.", price: 85,  badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
         { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection.", price: 195, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
         { id: "caviar-baeri-250", name: "Caviar Baeri 250g", desc: "Caviar Baeri sélection.", price: 420, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
@@ -95,9 +88,6 @@
       ]
     },
 
-    // =======================
-    // DRINKS
-    // =======================
     {
       id: "champagnes",
       group: "drinks",
@@ -121,9 +111,9 @@
       title: "Vins blancs",
       subtitle: "Fraîcheur & élégance",
       items: [
-        { id: "blanc-minuty-prestige-2024", name: "Minuty Prestige 2024",        desc: "Vin blanc — sélection.", price: 26, badge: "Blanc",      img: "assets/img/menu/vin-blanc-1.jpg" },
-        { id: "blanc-minuty-blanc-or-2024", name: "Blanc et Or Minuty 2024",     desc: "Vin blanc — premium.",   price: 42, badge: "Premium",    img: "assets/img/menu/vin-blanc-2.jpg" },
-        { id: "blanc-secret-lunes-chardo",  name: "Secret de Lunès Chardonnay",  desc: "Chardonnay — élégant.",  price: 22, badge: "Chardonnay", img: "assets/img/menu/vin-blanc-3.jpg" }
+        { id: "blanc-minuty-prestige-2024", name: "Minuty Prestige 2024",       desc: "Vin blanc — sélection.", price: 26, badge: "Blanc",      img: "assets/img/menu/vin-blanc-1.jpg" },
+        { id: "blanc-minuty-blanc-or-2024", name: "Blanc et Or Minuty 2024",    desc: "Vin blanc — premium.",   price: 42, badge: "Premium",    img: "assets/img/menu/vin-blanc-2.jpg" },
+        { id: "blanc-secret-lunes-chardo",  name: "Secret de Lunès Chardonnay", desc: "Chardonnay — élégant.",  price: 22, badge: "Chardonnay", img: "assets/img/menu/vin-blanc-3.jpg" }
       ]
     },
 
@@ -133,9 +123,9 @@
       title: "Vins rosés",
       subtitle: "L’iconique Côte d’Azur",
       items: [
-        { id: "rose-minuty-prestige-2024", name: "Minuty Prestige 2024",    desc: "Vin rosé — sélection.", price: 26, badge: "Rosé",     img: "assets/img/menu/vin-rose-1.jpg" },
-        { id: "rose-minuty-rose-or-2024",  name: "Rose et Or Minuty 2024",  desc: "Vin rosé — premium.",   price: 42, badge: "Premium",  img: "assets/img/menu/vin-rose-2.jpg" },
-        { id: "rose-chateau-281",          name: "Château 281",             desc: "Vin rosé — iconique.",  price: 95, badge: "Iconique", img: "assets/img/menu/vin-rose-3.jpg" }
+        { id: "rose-minuty-prestige-2024", name: "Minuty Prestige 2024",   desc: "Vin rosé — sélection.", price: 26, badge: "Rosé",     img: "assets/img/menu/vin-rose-1.jpg" },
+        { id: "rose-minuty-rose-or-2024",  name: "Rose et Or Minuty 2024", desc: "Vin rosé — premium.",   price: 42, badge: "Premium",  img: "assets/img/menu/vin-rose-2.jpg" },
+        { id: "rose-chateau-281",          name: "Château 281",            desc: "Vin rosé — iconique.",  price: 95, badge: "Iconique", img: "assets/img/menu/vin-rose-3.jpg" }
       ]
     },
 
@@ -145,14 +135,14 @@
       title: "Softs & Energy",
       subtitle: "Canettes 33cl",
       items: [
-        { id: "coca-33",         name: "Coca Cola 33cl",        desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca.jpg" },
-        { id: "coca-zero-33",    name: "Coca Cola Zero 33cl",   desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca-zero.jpg" },
-        { id: "sprite-33",       name: "Sprite 33cl",           desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/sprite.jpg" },
-        { id: "fanta-33",        name: "Fanta 33cl",            desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/fanta.jpg" },
-        { id: "oasis-33",        name: "Oasis 33cl",            desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/oasis.jpg" },
-        { id: "fuze-tea-33",     name: "Fuze Tea 33cl",         desc: "Canette.", price: 5.0, badge: "Soft",   img: "assets/img/menu/fuze-tea.jpg" },
-        { id: "redbull-33",      name: "Red Bull 33cl",         desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull.jpg" },
-        { id: "redbull-zero-33", name: "Red Bull Zero 33cl",    desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull-zero.jpg" }
+        { id: "coca-33",         name: "Coca Cola 33cl",      desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca.jpg" },
+        { id: "coca-zero-33",    name: "Coca Cola Zero 33cl", desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/coca-zero.jpg" },
+        { id: "sprite-33",       name: "Sprite 33cl",         desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/sprite.jpg" },
+        { id: "fanta-33",        name: "Fanta 33cl",          desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/fanta.jpg" },
+        { id: "oasis-33",        name: "Oasis 33cl",          desc: "Canette.", price: 4.5, badge: "Soft",   img: "assets/img/menu/oasis.jpg" },
+        { id: "fuze-tea-33",     name: "Fuze Tea 33cl",       desc: "Canette.", price: 5.0, badge: "Soft",   img: "assets/img/menu/fuze-tea.jpg" },
+        { id: "redbull-33",      name: "Red Bull 33cl",       desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull.jpg" },
+        { id: "redbull-zero-33", name: "Red Bull Zero 33cl",  desc: "Canette.", price: 6.5, badge: "Energy", img: "assets/img/menu/redbull-zero.jpg" }
       ]
     },
 
@@ -162,19 +152,19 @@
       title: "Eaux",
       subtitle: "Premium waters",
       items: [
-        { id: "evian-50",         name: "Evian 50cl",            desc: "Eau minérale.",   price: 3.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
-        { id: "evian-1l",         name: "Evian 1L",              desc: "Eau minérale.",   price: 5.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
-        { id: "sanpellegrino-50", name: "San Pellegrino 50cl",   desc: "Eau pétillante.", price: 4.0, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" },
-        { id: "sanpellegrino-1l", name: "San Pellegrino 1L",     desc: "Eau pétillante.", price: 6.5, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" }
+        { id: "evian-50",         name: "Evian 50cl",          desc: "Eau minérale.",   price: 3.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
+        { id: "evian-1l",         name: "Evian 1L",            desc: "Eau minérale.",   price: 5.5, badge: "Eau", img: "assets/img/menu/evian.jpg" },
+        { id: "sanpellegrino-50", name: "San Pellegrino 50cl", desc: "Eau pétillante.", price: 4.0, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" },
+        { id: "sanpellegrino-1l", name: "San Pellegrino 1L",   desc: "Eau pétillante.", price: 6.5, badge: "Eau", img: "assets/img/menu/sanpellegrino.jpg" }
       ]
     }
   ];
 
-  // ============================================================
-  // Helpers
-  // ============================================================
   const qs = (s, r = document) => r.querySelector(s);
   const qsa = (s, r = document) => [...r.querySelectorAll(s)];
+
+  let currentChip = "all";
+  let currentQuery = "";
 
   const T = (key, fallback) => {
     try { return window.ME_I18N?.t?.(key) ?? fallback; }
@@ -212,67 +202,90 @@
     );
   }
 
-  // ============================================================
-  // Tabs (Tout / Food / Boissons) — reads .tab-btn in carte.html
-  // ============================================================
-  function setupTabs(){
-    const tabs = qsa(".tab-btn");
-    if (!tabs.length) return;
-
-    const activate = (chip) => {
-      tabs.forEach(b => b.classList.toggle("active", (b.dataset.chip || "all") === chip));
-
-      const chipsWrap = qs("#menuChips");
-      if (chipsWrap){
-        qsa(".chip", chipsWrap).forEach(c => c.classList.toggle("active", c.dataset.chip === chip));
-      }
-
-      filterAndRender({ chip, query: qs("#menuSearch")?.value || "" });
-      qs("#menuRoot")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
-    tabs.forEach(btn => btn.addEventListener("click", () => activate(btn.dataset.chip || "all")));
-
-    const current = qs(".tab-btn.active")?.dataset.chip || "all";
-    activate(current);
+  function setCategoriesToggleLabel(label = "Catégories"){
+    const el = qs("#menuCategoriesToggleLabel");
+    if (el) el.textContent = label;
   }
 
-  // ============================================================
-  // Render chips (categories)
-  // ============================================================
+  function openCategoriesPanel(){
+    const panel = qs("#menuCategoriesPanel");
+    const btn = qs("#menuCategoriesToggle");
+    if (!panel || !btn) return;
+    panel.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function closeCategoriesPanel(){
+    const panel = qs("#menuCategoriesPanel");
+    const btn = qs("#menuCategoriesToggle");
+    if (!panel || !btn) return;
+    panel.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function setupCategoriesPanel(){
+    const btn = qs("#menuCategoriesToggle");
+    const panel = qs("#menuCategoriesPanel");
+    if (!btn || !panel) return;
+
+    btn.addEventListener("click", () => {
+      panel.classList.contains("open") ? closeCategoriesPanel() : openCategoriesPanel();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!panel.classList.contains("open")) return;
+      const inside = panel.contains(e.target) || btn.contains(e.target);
+      if (!inside) closeCategoriesPanel();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeCategoriesPanel();
+    });
+  }
+
+  function syncActiveStates(){
+    qsa(".tab-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.chip === currentChip);
+    });
+
+    qsa("#menuChips .chip").forEach(chip => {
+      chip.classList.toggle("active", chip.dataset.chip === currentChip);
+    });
+
+    const category = MENU.find(c => c.id === currentChip);
+    setCategoriesToggleLabel(category ? category.title : "Catégories");
+  }
+
   function renderChips(){
     const chips = qs("#menuChips");
     if (!chips) return;
 
-    const chipBtn = (id, label) =>
-      `<button class="chip" type="button" data-chip="${escapeHtml(id)}">${escapeHtml(label)}</button>`;
-
-    const cats = MENU.map(c => chipBtn(c.id, c.title)).join("");
-    chips.innerHTML = cats;
+    chips.innerHTML = MENU.map(c => `
+      <button class="chip" type="button" data-chip="${escapeHtml(c.id)}">${escapeHtml(c.title)}</button>
+    `).join("");
 
     chips.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-chip]");
+      const btn = e.target.closest(".chip");
       if (!btn) return;
-
-      qsa(".chip", chips).forEach(x => x.classList.toggle("active", x === btn));
-
-      const id = btn.dataset.chip;
-      qsa(".tab-btn").forEach(t => t.classList.remove("active"));
-
-      filterAndRender({ chip: id, query: qs("#menuSearch")?.value || "" });
-      qs("#menuRoot")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      applyState({ chip: btn.dataset.chip, query: currentQuery });
+      closeCategoriesPanel();
     });
   }
 
-  // ============================================================
-  // Render menu sections
-  // ============================================================
+  function setupTabs(){
+    qsa(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyState({ chip: btn.dataset.chip || "all", query: currentQuery });
+      });
+    });
+  }
+
   function renderMenu(list){
     const root = qs("#menuRoot");
     if (!root) return;
 
     if (!list.length){
-      root.innerHTML = `<p class="muted">${escapeHtml(T("menu.ui.empty","Aucun produit ne correspond à ta recherche."))}</p>`;
+      root.innerHTML = `<p class="muted">${escapeHtml(T("menu.ui.empty", "Aucun produit ne correspond à ta recherche."))}</p>`;
       return;
     }
 
@@ -283,7 +296,6 @@
         byCat.set(it.catId, {
           title: def?.title || it.catTitle,
           subtitle: def?.subtitle || "",
-          group: def?.group || it.group,
           items: []
         });
       }
@@ -292,7 +304,7 @@
 
     const orderedCatIds = MENU.map(c => c.id).filter(id => byCat.has(id));
 
-    root.innerHTML = orderedCatIds.map((catId) => {
+    root.innerHTML = orderedCatIds.map(catId => {
       const cat = byCat.get(catId);
       return `
         <div class="menu-section" id="cat-${escapeHtml(catId)}">
@@ -328,7 +340,12 @@
         aria-label="${escapeHtml(p.name)}"
       >
         <div class="me-product-media">
-          <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.name)}" loading="lazy" />
+          <img
+            src="${escapeHtml(p.img)}"
+            alt="${escapeHtml(p.name)}"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+          />
         </div>
 
         <div class="meta">
@@ -344,7 +361,7 @@
 
         <div class="actions">
           <button class="btn btn-chip me-add" type="button" ${canAdd(p.price) ? "" : "disabled"} aria-label="Ajouter ${escapeHtml(p.name)}">
-            ${escapeHtml(T("menu.add","Ajouter"))}
+            ${escapeHtml(T("menu.add", "Ajouter"))}
           </button>
 
           <div class="qty" aria-label="Quantité">
@@ -358,25 +375,22 @@
   }
 
   function updateQtyBadges(){
-    const all = flatten();
-    for (const it of all){
+    flatten().forEach(it => {
       const q = window.ME_CART?.getQty?.(it.id) || 0;
-      qsa(`[data-qty-for="${CSS.escape(it.id)}"]`).forEach(el => el.textContent = String(q));
-    }
+      qsa(`[data-qty-for="${CSS.escape(it.id)}"]`).forEach(el => {
+        el.textContent = String(q);
+      });
+    });
   }
 
-  // ============================================================
-  // Filtering
-  // chip: all | food | drinks | categoryId
-  // ============================================================
   function filterAndRender({ chip = "all", query = "" }){
     const q = query.trim().toLowerCase();
     let list = flatten();
 
     if (chip === "food"){
-      list = list.filter(x => (x.group || "food") === "food");
+      list = list.filter(x => x.group === "food");
     } else if (chip === "drinks"){
-      list = list.filter(x => (x.group || "food") === "drinks");
+      list = list.filter(x => x.group === "drinks");
     } else if (chip !== "all"){
       list = list.filter(x => x.catId === chip);
     }
@@ -392,9 +406,17 @@
     renderMenu(list);
   }
 
-  // ============================================================
-  // Modal
-  // ============================================================
+  function applyState({ chip = currentChip, query = currentQuery } = {}){
+    currentChip = chip;
+    currentQuery = query;
+
+    const input = qs("#menuSearch");
+    if (input && input.value !== currentQuery) input.value = currentQuery;
+
+    syncActiveStates();
+    filterAndRender({ chip: currentChip, query: currentQuery });
+  }
+
   let lastFocus = null;
   let currentModalProductId = null;
 
@@ -427,7 +449,10 @@
     }
 
     const addBtn = qs("#productModalAdd");
-    if (addBtn) addBtn.disabled = !canAdd(p.price);
+    if (addBtn){
+      addBtn.disabled = !canAdd(p.price);
+      addBtn.textContent = T("menu.add", "Ajouter");
+    }
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
@@ -468,9 +493,6 @@
     });
   }
 
-  // ============================================================
-  // Click handlers
-  // ============================================================
   function readProductFromCard(card){
     const priceRaw = card.dataset.price;
     const price = priceRaw === "" ? null : Number(priceRaw);
@@ -487,7 +509,7 @@
 
   function addToCart(p, delta = 1){
     if (!canAdd(p.price)){
-      alert("Prix non renseigné pour ce produit. Ajoute ton prix dans menu.js puis recharge la page.");
+      alert("Prix non renseigné pour ce produit.");
       return;
     }
     window.ME_CART?.addItem?.({ id: p.id, name: p.name, price: p.price }, delta);
@@ -497,8 +519,7 @@
   function bindProductClicks(){
     qsa(".product.me-clickable").forEach(card => {
       card.addEventListener("click", (e) => {
-        const isBtn = e.target.closest("button, a");
-        if (isBtn) return;
+        if (e.target.closest("button, a")) return;
         openModal(readProductFromCard(card));
       });
 
@@ -515,28 +536,24 @@
     });
   }
 
-  // ============================================================
-  // Init
-  // ============================================================
   document.addEventListener("DOMContentLoaded", () => {
-    renderChips();
     bindModal();
     setupTabs();
+    setupCategoriesPanel();
+    renderChips();
+
+    currentChip = qs(".tab-btn.active")?.dataset.chip || "all";
+    applyState({ chip: currentChip, query: "" });
 
     qs("#menuSearch")?.addEventListener("input", (e) => {
-      const active =
-        qs(".tab-btn.active")?.dataset.chip ||
-        qs(".chip.active")?.dataset.chip ||
-        "all";
-
-      filterAndRender({ chip: active, query: e.target.value || "" });
+      applyState({ chip: currentChip, query: e.target.value || "" });
     });
 
-    window.addEventListener("me:lang", () => updateQtyBadges());
-
-    if (!qs(".tab-btn")){
-      filterAndRender({ chip: "all", query: "" });
-    }
+    window.addEventListener("me:lang", () => {
+      renderChips();
+      applyState({ chip: currentChip, query: currentQuery });
+      updateQtyBadges();
+    });
   });
 
 })();
