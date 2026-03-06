@@ -57,18 +57,33 @@ const ME_CART = (() => {
     return `${n}€`;
   }
 
-  function updateBadge(){
+  
     const c = cart.reduce((s,x)=>s + (Number(x.qty) || 0), 0);
     const el = document.getElementById("cartCount");
     if (el) el.textContent = String(c);
   }
 
-  function openDrawer(){
-    const d = document.getElementById("cartDrawer");
-    if (!d) return;
-    d.classList.add("open");
-    d.setAttribute("aria-hidden", "false");
+function updateBadge(){
+  const c = cart.reduce((s,x)=>s + (Number(x.qty) || 0), 0);
+
+  const el = document.getElementById("cartCount");
+  if (el) el.textContent = String(c);
+
+  const floatingCount = document.getElementById("floatingCartCount");
+  const floatingBtn = document.getElementById("floatingCartBtn");
+
+  if (floatingCount) floatingCount.textContent = String(c);
+
+  if (floatingBtn){
+    if (c > 0){
+      floatingBtn.hidden = false;
+      floatingBtn.classList.add("show");
+    } else {
+      floatingBtn.hidden = true;
+      floatingBtn.classList.remove("show");
+    }
   }
+}
 
   function closeDrawer(){
     const d = document.getElementById("cartDrawer");
@@ -208,6 +223,7 @@ const ME_CART = (() => {
 
   function bindCartUI(){
     document.getElementById("cartOpenBtn")?.addEventListener("click", openDrawer);
+    document.getElementById("floatingCartBtn")?.addEventListener("click", openDrawer);
     document.getElementById("cartCloseBtn")?.addEventListener("click", closeDrawer);
     document.getElementById("cartBackdrop")?.addEventListener("click", closeDrawer);
 

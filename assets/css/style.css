@@ -1887,3 +1887,74 @@ html.nav-open body{
     padding: 5px 8px;
   }
 }
+/* ==========================================================
+   FLOATING CART BUTTON (mobile)
+   ========================================================== */
+
+.floating-cart{
+  position: fixed;
+  right: 14px;
+  bottom: 18px;
+  z-index: 95;
+
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid rgba(19,32,40,.12);
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, var(--sea) 0%, var(--sea2) 100%);
+  color: #fff;
+  box-shadow: 0 16px 36px rgba(19,32,40,.22);
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-cart__icon{
+  font-size: 18px;
+  line-height: 1;
+}
+
+.floating-cart__label{
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.floating-cart__count{
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+@media (max-width: 820px){
+  .floating-cart.show{
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 420px){
+  .floating-cart{
+    right: 12px;
+    bottom: 14px;
+    min-height: 50px;
+    padding: 11px 13px;
+  }
+
+  .floating-cart__label{
+    font-size: 13px;
+  }
+}
