@@ -7,21 +7,21 @@
   const MENU = [
     {
       id: "premium",
-      group: "food",
-      title: "Produits Premium",
-      subtitle: "Sélection prestige",
+group: "food",
+title: "Sélection Maison",
+subtitle: "Produits d’exception",
       items: [
-        { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre premium.", price: 120, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre premium.", price: 250, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre premium.", price: 500, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre sélection ", price: 120, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre sélection ", price: 250, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
+        { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre sélection ", price: 500, badge: "Premium", img: "assets/img/menu/caviar-oscietre.jpg" },
 
-        { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection.", price: 85,  badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection.", price: 195, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-250", name: "Caviar Baeri 250g", desc: "Caviar Baeri sélection.", price: 420, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        { id: "caviar-baeri-30",  name: "Caviar Baeri 30g",  desc: "Caviar Baeri sélection", price: 85,  badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        { id: "caviar-baeri-100", name: "Caviar Baeri 100g", desc: "Caviar Baeri sélection", price: 195, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
+        { id: "caviar-baeri-250", name: "Caviar Baeri 250g", desc: "Caviar Baeri sélection", price: 420, badge: "Premium", img: "assets/img/menu/caviar-baeri.jpg" },
 
-        { id: "foie-gras-castaing",   name: "Foie Gras Castaing 2 × 40g", desc: "Foie gras Castaing.", price: 48, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
-        { id: "saumon-barthouil-100", name: "Saumon fumé Maison Barthouil 100g", desc: "Saumon fumé Barthouil.", price: 32, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" },
-        { id: "saumon-barthouil-200", name: "Saumon fumé Maison Barthouil 200g", desc: "Saumon fumé Barthouil.", price: 58, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" }
+        { id: "foie-gras-castaing",   name: "Foie Gras Castaing 2 × 40g", desc: "Foie gras Castaing", price: 48, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
+        { id: "saumon-barthouil-100", name: "Saumon fumé Maison Barthouil 100g", desc: "Saumon fumé Barthouil", price: 32, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" },
+        { id: "saumon-barthouil-200", name: "Saumon fumé Maison Barthouil 200g", desc: "Saumon fumé Barthouil", price: 58, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" }
       ]
     },
 
@@ -43,7 +43,7 @@
       title: "Salades",
       subtitle: "Fraîches & équilibrées",
       items: [
-        { id: "salade-cesar",   name: "Salade César",    desc: "Poulet, croûtons, parmesan, sauce.", price: 19, badge: "Best-seller", img: "assets/img/menu/salade-cesar.jpg" },
+        { id: "salade-cesar",   name: "Salade César",    desc: "Poulet, croûtons, parmesan, sauce caesar.", price: 19, badge: "Best-seller", img: "assets/img/menu/salade-cesar.jpg" },
         { id: "salade-nicoise", name: "Salade niçoise",  desc: "Fraîche, méditerranéenne.",          price: 18, badge: "Local",       img: "assets/img/menu/salade-nicoise.jpg" },
         { id: "salade-pates",   name: "Salade de pâtes", desc: "Généreuse, idéale à bord.",          price: 16, badge: "Pratique",    img: "assets/img/menu/salade-pates.jpg" }
       ]
@@ -159,6 +159,55 @@
       ]
     }
   ];
+    // ============================================================
+  // LUXURY WORDING NORMALIZATION
+  // ============================================================
+  const CATEGORY_TITLE_MAP = {
+    premium: "Sélection Maison",
+    planches: "Planches & Plateaux",
+    wraps: "Wraps Signature",
+    softs: "Softs & Énergie"
+  };
+
+  const CATEGORY_SUBTITLE_MAP = {
+    premium: "Produits d’exception",
+    planches: "À partager à bord",
+    wraps: "Prêts à emporter en mer",
+    softs: "Canettes & boissons fraîches"
+  };
+
+  const BADGE_MAP = {
+    "Premium": "Maison",
+    "Prestige": "Collection",
+    "Ultra": "Exception",
+    "Best-seller": "Signature",
+    "Local": "Maison",
+    "Pratique": "Sélection",
+    "On-the-go": "Signature",
+    "Iconique": "Collection",
+    "Soft": "Sélection",
+    "Energy": "Énergie",
+    "Champagne": "Collection",
+    "Blanc": "Sélection",
+    "Rosé": "Sélection"
+  };
+
+  MENU.forEach((cat) => {
+    if (CATEGORY_TITLE_MAP[cat.id]) cat.title = CATEGORY_TITLE_MAP[cat.id];
+    if (CATEGORY_SUBTITLE_MAP[cat.id]) cat.subtitle = CATEGORY_SUBTITLE_MAP[cat.id];
+
+    (cat.items || []).forEach((item) => {
+      if (BADGE_MAP[item.badge]) item.badge = BADGE_MAP[item.badge];
+
+      if (typeof item.desc === "string") {
+        item.desc = item.desc
+          .replaceAll("premium.", "de sélection.")
+          .replaceAll("premium", "de sélection")
+          .replaceAll("ultra prestige", "de collection")
+          .replaceAll("iconique", "de collection");
+      }
+    });
+  });
 
   const qs = (s, r = document) => r.querySelector(s);
   const qsa = (s, r = document) => [...r.querySelectorAll(s)];
