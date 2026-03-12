@@ -3,7 +3,7 @@ const ME_WEATHER = (() => {
     {
       id: "beaulieu",
       nameKey: "ports.beaulieu",
-      fallbackName: "Port de Beaulieu",
+      fallbackName: "Port de Beaulieu-sur-mer",
       lat: 43.70758,
       lon: 7.33289
     },
