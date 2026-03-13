@@ -2,7 +2,7 @@
   "nav": { "home": "Главная", "menu": "Меню", "zones": "Зоны", "gallery": "Галерея", "faq": "FAQ", "contact": "Контакты", "cart": "Корзина" },
 
   "footer": {
-    "tagline": "Yacht catering delivery — Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "tagline": "Yacht catering delivery — Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
     "links": "Ссылки",
     "menu": "Меню",
     "zones": "Зоны",
@@ -19,7 +19,7 @@
   "home": {
     "eyebrow": "Yacht Catering Delivery • Лазурный берег",
     "h1": "Премиальный кейтеринг с доставкой прямо на борт.",
-    "lead": "Незаметно, точно по времени и на высоком уровне — для ваших дней в море. Beaulieu, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
+    "lead": "Незаметно, точно по времени и на высоком уровне — для ваших дней в море. Beaulieu-sur-mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
     "ctaMenu": "Открыть меню",
     "ctaQuote": "Запросить расчёт",
 
@@ -80,7 +80,7 @@
   "zones": {
     "eyebrow": "Зоны",
     "h1": "Порты доставки",
-    "lead": "Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
+    "lead": "Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
 
     "b1t": "Временные слоты",
     "b1d": "Слоты по запросу. Подтверждение сообщением после оформления.",
@@ -152,7 +152,7 @@
   },
 
   "ports": {
-    "beaulieu": "Порт Beaulieu",
+    "beaulieu": "Порт Beaulieu-sur-mer",
     "sjcf": "Порт Saint-Jean-Cap-Ferrat",
     "villef": "Порт Villefranche-sur-Mer"
   },

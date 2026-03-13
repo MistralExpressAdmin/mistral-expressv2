@@ -2,7 +2,7 @@
   "nav": { "home": "Home", "menu": "Menu", "zones": "Areas", "gallery": "Gallery", "faq": "FAQ", "contact": "Contact", "cart": "Cart" },
 
   "footer": {
-    "tagline": "Yacht catering delivery — Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "tagline": "Yacht catering delivery — Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
     "links": "Links",
     "menu": "Menu",
     "zones": "Areas",
@@ -19,7 +19,7 @@
   "home": {
     "eyebrow": "Yacht Catering Delivery • French Riviera",
     "h1": "Premium catering delivered directly onboard.",
-    "lead": "Discreet, punctual and high-end service for your days at sea. Beaulieu, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
+    "lead": "Discreet, punctual and high-end service for your days at sea. Beaulieu-sur-mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
     "ctaMenu": "View the menu",
     "ctaQuote": "Request a quote",
 
@@ -80,7 +80,7 @@
   "zones": {
     "eyebrow": "Areas",
     "h1": "Served ports",
-    "lead": "Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
+    "lead": "Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
 
     "b1t": "Time slots",
     "b1d": "Time slots on request. Confirmation by message after validation.",
@@ -135,7 +135,7 @@
 
     "directTitle": "Direct contact",
     "directDesc": "For a fast order: WhatsApp recommended.",
-    "directPorts": "Ports: Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche",
+    "directPorts": "Ports: Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche",
     "deliveryIncluded": "Delivery included."
   },
 
@@ -152,7 +152,7 @@
   },
 
   "ports": {
-    "beaulieu": "Port of Beaulieu",
+    "beaulieu": "Port of Beaulieu-sur-mer",
     "sjcf": "Port of Saint-Jean-Cap-Ferrat",
     "villef": "Port of Villefranche-sur-Mer"
   },

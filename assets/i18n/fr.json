@@ -1,7 +1,7 @@
 {
   "nav": { "home":"Accueil","menu":"Carte","zones":"Zones","gallery":"Galerie","faq":"FAQ","contact":"Contact","cart":"Panier" },
   "footer": {
-    "tagline":"Yacht catering delivery — Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "tagline":"Yacht catering delivery — Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
     "links":"Liens","menu":"Carte","zones":"Zones","contact":"Contact",
     "legal":"Légal","mentions":"Mentions légales","privacy":"Confidentialité","cgv":"CGV",
     "partner":"Partenaire","partnerText":"Location de bateaux — lien externe.","partnerCta":"Accéder au site partenaire"
@@ -9,7 +9,7 @@
   "home": {
     "eyebrow":"Yacht Catering Delivery • Côte d’Azur",
     "h1":"Traiteur premium livré directement à bord.",
-    "lead":"Service discret, ponctuel et haut de gamme pour vos journées en mer. Beaulieu, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
+    "lead":"Service discret, ponctuel et haut de gamme pour vos journées en mer. Beaulieu-sur-mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
     "ctaMenu":"Voir la carte","ctaQuote":"Demander un devis",
     "pill1":"Prix livraison incluse","pill2":"Commande simple","pill3":"Packaging premium",
     "weatherTitle":"Météo en direct — Ports","weatherSub":"Actualisée automatiquement","weatherNote":"Indication confort à titre informatif.",
@@ -30,7 +30,7 @@
     "disclaimer":"Photos indicatives. Allergènes et détails disponibles sur demande."
   },
   "zones": {
-    "eyebrow":"Zones","h1":"Ports desservis","lead":"Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
+    "eyebrow":"Zones","h1":"Ports desservis","lead":"Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t":"Créneaux","b1d":"Créneaux sur demande. Confirmation par message après validation.",
     "b2t":"Point de livraison","b2d":"Ponton + nom du bateau + contact à bord pour une livraison fluide.",
     "b3t":"Prix tout compris","b3d":"Les prix incluent la livraison. Aucun supplément ajouté au checkout.",
@@ -51,7 +51,7 @@
     "privacyNote":"En envoyant ce message, vous acceptez notre politique de confidentialité.",
     "privacyLink":"Lire la politique de confidentialité →",
     "directTitle":"Contact direct","directDesc":"Pour une commande rapide : WhatsApp recommandé.",
-    "directPorts":"Ports : Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche",
+    "directPorts":"Ports : Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche",
     "deliveryIncluded":"Prix livraison incluse."
   },
   "cart": {
@@ -63,7 +63,7 @@
     "waTotal":"Total (livraison incluse)",
     "waInfos":"Port + ponton + nom du bateau + créneau souhaité :"
   },
-  "ports": { "beaulieu":"Port de Beaulieu","sjcf":"Port de Saint-Jean-Cap-Ferrat","villef":"Port de Villefranche-sur-Mer" },
+  "ports": { "beaulieu":"Port de Beaulieu-sur-mer","sjcf":"Port de Saint-Jean-Cap-Ferrat","villef":"Port de Villefranche-sur-Mer" },
 
   "p": {
     "brk1":{"n":"Petit-déjeuner Riviera","d":"Viennoiseries, fruits frais, yaourts, jus pressé. Présentation soignée."},
