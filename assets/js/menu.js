@@ -44,10 +44,7 @@
       title: "Sélection Maison",
       subtitle: "Produits d’exception",
       items: [
-        { id: "caviar-oscietre-30",  name: "Caviar Oscietre 30g",  desc: "Caviar Oscietre de sélection.", price: 120, badge: "Maison", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-100", name: "Caviar Oscietre 100g", desc: "Caviar Oscietre de sélection.", price: 250, badge: "Maison", img: "assets/img/menu/caviar-oscietre.jpg" },
-        { id: "caviar-oscietre-250", name: "Caviar Oscietre 250g", desc: "Caviar Oscietre de sélection.", price: 500, badge: "Maison", img: "assets/img/menu/caviar-oscietre.jpg" },
-
+       
         { id: "caviar-baeri-30",  name: "Caviar BAERI 30g",  desc: "Caviar BAERI de sélection.", price: 145, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
         { id: "caviar-baeri-50",  name: "Caviar BAERI 50g",  desc: "Caviar BAERI de sélection.", price: 265, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
         { id: "caviar-baeri-100", name: "Caviar BAERI 100g", desc: "Caviar BAERI de sélection.", price: 505, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
@@ -127,7 +124,7 @@
             { id: "8p", label: "8 personnes", price: 148, detail: "Plateau de fruits pour 8 personnes." }
           ]
         },
-        { id: "plateau-caviar-service", name: "Plateau Caviar Service", desc: "Service prêt à déguster, présentation élégante.", price: 95, badge: "Maison", img: "assets/img/menu/plateau-caviar.jpg" }
+
       ]
     },
 
@@ -137,9 +134,9 @@
       title: "Brochettes",
       subtitle: "Finger food élégant",
       items: [
-        { id: "brochettes-melon-jambon", name: "6 brochettes melon et jambon", desc: "Sucré-salé chic.", price: 35, badge: "Sunset", img: "assets/img/menu/brochettes-melon-jambon.jpg" },
-        { id: "brochettes-fruits", name: "6 brochettes de fruits", desc: "Frais, léger, élégant.", price: 35, badge: "Frais", img: "assets/img/menu/brochettes-fruits.jpg" },
-        { id: "brochettes-tomate-mozza", name: "6 brochettes tomates mozza", desc: "Simple, soigné, parfait à bord.", price: 35, badge: "Végé", img: "assets/img/menu/brochettes-tomate-mozza.jpg" }
+        { id: "brochettes-melon-jambon", name: "6 brochettes melon et jambon", desc: "Sucré-salé.", price: 35, badge: "Sunset", img: "assets/img/menu/brochettes-melon-jambon.jpg" },
+        { id: "brochettes-fruits", name: "6 brochettes de fruits", desc: "Frais, léger,.", price: 35, badge: "Frais", img: "assets/img/menu/brochettes-fruits.jpg" },
+        { id: "brochettes-tomate-mozza", name: "6 brochettes tomates mozza", desc: "Simple, parfait à bord.", price: 35, badge: "Végé", img: "assets/img/menu/brochettes-tomate-mozza.jpg" }
       ]
     },
 
@@ -160,9 +157,9 @@
       title: "Champagnes",
       subtitle: "Du moins cher au plus cher",
       items: [
-        { id: "champ-neuville-autolyse",  name: "Neuville B2B", desc: "Champagne — sélection.", price: 95, badge: "Collection", img: "assets/img/menu/champagne-2.jpg" },
-        { id: "champ-extra-brut-bdn",     name: "Ruinart B2B", desc: "Champagne — sélection.", price: 220, badge: "Collection", img: "assets/img/menu/champagne-1.jpg" },
-        { id: "champ-roederer-246",       name: "Louis Roederer B2B", desc: "Champagne — collection.", price: 242, badge: "Collection", img: "assets/img/menu/champagne-4.jpg" },
+        { id: "champ-neuville-autolyse",  name: "Neuville Blanc de Blancs", desc: "Champagne — sélection.", price: 95, badge: "Collection", img: "assets/img/menu/champagne-2.jpg" },
+        { id: "champ-extra-brut-bdn",     name: "Ruinart Blanc de BlancsB", desc: "Champagne — sélection.", price: 220, badge: "Collection", img: "assets/img/menu/champagne-1.jpg" },
+        { id: "champ-roederer-246",       name: "Louis Roederer Blanc de Blancs", desc: "Champagne — collection.", price: 242, badge: "Collection", img: "assets/img/menu/champagne-4.jpg" },
         { id: "champ-neuville-2012",      name: "Brut de Neuville", desc: "Champagne — millésime.", price: 114.4, badge: "Millésime", img: "assets/img/menu/champagne-3.jpg" },
         { id: "champ-ruinart-bdb",        name: "Ruinart brut", desc: "Champagne — blanc de blancs.", price: 180, badge: "Collection", img: "assets/img/menu/champagne-5.jpg" },
         { id: "champ-perrier-jouet-2016", name: "Perrier Jouet 2016", desc: "Champagne — millésime.", price: 545, badge: "Millésime", img: "assets/img/menu/champagne-7.jpg" },
