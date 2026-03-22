@@ -6,32 +6,32 @@
       id: "packages",
       group: "food",
       title: "Petit déjeuner à bord",
-      subtitle: "Sélection prête à bord",
+      subtitle: "Service du matin prêt à servir",
       items: [
         {
           id: "dejeuner-a-bord",
           name: "Petit déjeuner à bord",
-          desc: "Viennoiseries artisanales du matin, baguette tradition, beurre & confitures artisanales, jus d’orange pressé et fruits frais de saison.",
-          badge: "Signature",
+          desc: "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d’orange pressé et fruits frais de saison.",
+          badge: "À bord",
           img: "assets/img/menu/dejeuner-bord.jpg",
           options: [
             {
               id: "2p",
               label: "2 personnes",
               price: 48,
-              detail: "2 croissants, 2 pains au chocolat, 1/2 baguette, beurre & confiture, 2 jus d’orange frais, fruits frais."
+              detail: "2 croissants, 2 pains au chocolat, 1/2 baguette, beurre, confiture, 2 jus d’orange frais et fruits frais."
             },
             {
               id: "4p",
               label: "4 personnes",
               price: 88,
-              detail: "4 croissants, 4 pains au chocolat, 1 baguette, beurre & confitures, 4 jus d’orange frais, fruits frais."
+              detail: "4 croissants, 4 pains au chocolat, 1 baguette, beurre, confitures, 4 jus d’orange frais et fruits frais."
             },
             {
               id: "8p",
               label: "8 personnes",
               price: 168,
-              detail: "8 croissants, 8 pains au chocolat, 2 baguettes, beurre & confitures, 8 jus d’orange frais, fruits frais."
+              detail: "8 croissants, 8 pains au chocolat, 2 baguettes, beurre, confitures, 8 jus d’orange frais et fruits frais."
             }
           ]
         }
@@ -39,22 +39,75 @@
     },
 
     {
-      id: "premium",
+      id: "maison",
       group: "food",
-      title: "Sélection Maison",
-      subtitle: "Produits d’exception",
+      title: "Maison",
+      subtitle: "Produits sélectionnés",
       items: [
-       
-        { id: "caviar-baeri-30",  name: "Caviar BAERI 30g",  desc: "Caviar BAERI de sélection.", price: 145, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-50",  name: "Caviar BAERI 50g",  desc: "Caviar BAERI de sélection.", price: 265, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-100", name: "Caviar BAERI 100g", desc: "Caviar BAERI de sélection.", price: 505, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
-        { id: "caviar-baeri-250", name: "Caviar BAERI 250g", desc: "Caviar BAERI de sélection.", price: 1155, badge: "Maison", img: "assets/img/menu/caviar-baeri.jpg" },
-
-        { id: "foie-gras-classic", name: "Foie gras 2x40g classic", desc: "Foie gras classique.", price: 55, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
-        { id: "foie-gras-truffe",  name: "Foie gras 2x40g truffe",  desc: "Foie gras truffé.", price: 105, badge: "Maison", img: "assets/img/menu/foie-gras.jpg" },
-
-        { id: "saumon-barthouil-100", name: "Saumon 100g", desc: "Saumon fumé de sélection.", price: 45, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" },
-        { id: "saumon-barthouil-200", name: "Saumon 200g", desc: "Saumon fumé de sélection.", price: 85, badge: "Maison", img: "assets/img/menu/saumon-fume.jpg" }
+        {
+          id: "caviar-baeri-30",
+          name: "Caviar Baeri 30g",
+          desc: "Caviar Baeri.",
+          price: 145,
+          badge: "Maison",
+          img: "assets/img/menu/caviar-baeri.jpg"
+        },
+        {
+          id: "caviar-baeri-50",
+          name: "Caviar Baeri 50g",
+          desc: "Caviar Baeri.",
+          price: 265,
+          badge: "Maison",
+          img: "assets/img/menu/caviar-baeri.jpg"
+        },
+        {
+          id: "caviar-baeri-100",
+          name: "Caviar Baeri 100g",
+          desc: "Caviar Baeri.",
+          price: 505,
+          badge: "Maison",
+          img: "assets/img/menu/caviar-baeri.jpg"
+        },
+        {
+          id: "caviar-baeri-250",
+          name: "Caviar Baeri 250g",
+          desc: "Caviar Baeri.",
+          price: 1155,
+          badge: "Maison",
+          img: "assets/img/menu/caviar-baeri.jpg"
+        },
+        {
+          id: "foie-gras-classic",
+          name: "Foie gras 2x40g classic",
+          desc: "Foie gras classique.",
+          price: 55,
+          badge: "Maison",
+          img: "assets/img/menu/foie-gras.jpg"
+        },
+        {
+          id: "foie-gras-truffe",
+          name: "Foie gras 2x40g truffe",
+          desc: "Foie gras truffé.",
+          price: 105,
+          badge: "Maison",
+          img: "assets/img/menu/foie-gras.jpg"
+        },
+        {
+          id: "saumon-100",
+          name: "Saumon 100g",
+          desc: "Saumon fumé.",
+          price: 45,
+          badge: "Maison",
+          img: "assets/img/menu/saumon-fume.jpg"
+        },
+        {
+          id: "saumon-200",
+          name: "Saumon 200g",
+          desc: "Saumon fumé.",
+          price: 85,
+          badge: "Maison",
+          img: "assets/img/menu/saumon-fume.jpg"
+        }
       ]
     },
 
@@ -64,9 +117,30 @@
       title: "Tartares",
       subtitle: "Préparés minute",
       items: [
-        { id: "tartare-saumon", name: "Tartare saumon", desc: "Préparé minute, assaisonnement de sélection.", price: 38, badge: "Frais", img: "assets/img/menu/tartare-saumon.jpg" },
-        { id: "tartare-boeuf",  name: "Tartare de boeuf", desc: "Classique, goût net.", price: 32, badge: "Classique", img: "assets/img/menu/tartare-boeuf.jpg" },
-        { id: "tartare-thon",   name: "Tartare thon", desc: "Découpe fine, texture parfaite.", price: 42, badge: "Signature", img: "assets/img/menu/tartare-thon.jpg" }
+        {
+          id: "tartare-saumon",
+          name: "Tartare saumon",
+          desc: "Préparé minute.",
+          price: 38,
+          badge: "Frais",
+          img: "assets/img/menu/tartare-saumon.jpg"
+        },
+        {
+          id: "tartare-boeuf",
+          name: "Tartare de bœuf",
+          desc: "Goût net et assaisonnement juste.",
+          price: 32,
+          badge: "Classique",
+          img: "assets/img/menu/tartare-boeuf.jpg"
+        },
+        {
+          id: "tartare-thon",
+          name: "Tartare thon",
+          desc: "Découpe fine et texture délicate.",
+          price: 42,
+          badge: "Maison",
+          img: "assets/img/menu/tartare-thon.jpg"
+        }
       ]
     },
 
@@ -74,25 +148,46 @@
       id: "salades",
       group: "food",
       title: "Salades",
-      subtitle: "Fraîches & équilibrées",
+      subtitle: "Fraîches et équilibrées",
       items: [
-        { id: "salade-cesar",   name: "Salade César", desc: "Poulet, croûtons, parmesan, sauce.", price: 36, badge: "Signature", img: "assets/img/menu/salade-cesar.jpg" },
-        { id: "salade-nicoise", name: "Salade niçoise", desc: "Fraîche, méditerranéenne.", price: 36, badge: "Maison", img: "assets/img/menu/salade-nicoise.jpg" },
-        { id: "salade-pates",   name: "Salade de pâtes", desc: "Généreuse, idéale à bord.", price: 30, badge: "Sélection", img: "assets/img/menu/salade-pates.jpg" }
+        {
+          id: "salade-cesar",
+          name: "Salade César",
+          desc: "Poulet, croûtons, parmesan, sauce.",
+          price: 36,
+          badge: "Maison",
+          img: "assets/img/menu/salade-cesar.jpg"
+        },
+        {
+          id: "salade-nicoise",
+          name: "Salade niçoise",
+          desc: "Fraîche et méditerranéenne.",
+          price: 36,
+          badge: "Maison",
+          img: "assets/img/menu/salade-nicoise.jpg"
+        },
+        {
+          id: "salade-pates",
+          name: "Salade de pâtes",
+          desc: "Généreuse, idéale à bord.",
+          price: 30,
+          badge: "À bord",
+          img: "assets/img/menu/salade-pates.jpg"
+        }
       ]
     },
 
     {
       id: "planches",
       group: "food",
-      title: "Planches & Plateaux",
+      title: "Planches & plateaux",
       subtitle: "À partager à bord",
       items: [
         {
           id: "planche-charcuterie",
           name: "Planche de charcuterie",
-          desc: "Sélection fine, tranchée et prête à servir à bord.",
-          badge: "Apéro",
+          desc: "Sélection fine, tranchée et prête à servir.",
+          badge: "À partager",
           img: "assets/img/menu/mix-charcuterie.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 55, detail: "Planche de charcuterie pour 2 personnes." },
@@ -104,7 +199,7 @@
           id: "planche-fromages",
           name: "Planche de fromages",
           desc: "Sélection de fromages français prête à servir.",
-          badge: "Fromages",
+          badge: "À partager",
           img: "assets/img/menu/mix-fromages.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 55, detail: "Planche de fromages pour 2 personnes." },
@@ -115,7 +210,7 @@
         {
           id: "plateau-fruits",
           name: "Plateau de fruits",
-          desc: "Fruits de saison, parfait au mouillage.",
+          desc: "Fruits de saison, prêt à servir.",
           badge: "Frais",
           img: "assets/img/menu/plateau-fruits.jpg",
           options: [
@@ -123,8 +218,7 @@
             { id: "4p", label: "4 personnes", price: 79, detail: "Plateau de fruits pour 4 personnes." },
             { id: "8p", label: "8 personnes", price: 148, detail: "Plateau de fruits pour 8 personnes." }
           ]
-        },
-
+        }
       ]
     },
 
@@ -132,22 +226,57 @@
       id: "brochettes",
       group: "food",
       title: "Brochettes",
-      subtitle: "Finger food élégant",
+      subtitle: "Service à partager",
       items: [
-        { id: "brochettes-melon-jambon", name: "6 brochettes melon et jambon", desc: "Sucré-salé.", price: 35, badge: "Sunset", img: "assets/img/menu/brochettes-melon-jambon.jpg" },
-        { id: "brochettes-fruits", name: "6 brochettes de fruits", desc: "Frais, léger,.", price: 35, badge: "Frais", img: "assets/img/menu/brochettes-fruits.jpg" },
-        { id: "brochettes-tomate-mozza", name: "6 brochettes tomates mozza", desc: "Simple, parfait à bord.", price: 35, badge: "Végé", img: "assets/img/menu/brochettes-tomate-mozza.jpg" }
+        {
+          id: "brochettes-melon-jambon",
+          name: "6 brochettes melon et jambon",
+          desc: "Accord sucré-salé.",
+          price: 35,
+          badge: "À partager",
+          img: "assets/img/menu/brochettes-melon-jambon.jpg"
+        },
+        {
+          id: "brochettes-fruits",
+          name: "6 brochettes de fruits",
+          desc: "Fraîches et légères.",
+          price: 35,
+          badge: "Frais",
+          img: "assets/img/menu/brochettes-fruits.jpg"
+        },
+        {
+          id: "brochettes-tomate-mozza",
+          name: "6 brochettes tomates mozza",
+          desc: "Simple et prêt à servir.",
+          price: 35,
+          badge: "Végé",
+          img: "assets/img/menu/brochettes-tomate-mozza.jpg"
+        }
       ]
     },
 
     {
       id: "wraps",
       group: "food",
-      title: "Wraps Signature",
+      title: "Wraps",
       subtitle: "Prêts à emporter en mer",
       items: [
-        { id: "wrap-poulet", name: "4 petits wrap poulet", desc: "Pratique, gourmand, service rapide.", price: 40, badge: "Signature", img: "assets/img/menu/wrap-poulet.jpg" },
-        { id: "wrap-saumon", name: "4 petits wrap saumon", desc: "Saumon de sélection, texture délicate.", price: 42, badge: "Maison", img: "assets/img/menu/wrap-saumon.jpg" }
+        {
+          id: "wrap-poulet",
+          name: "4 petits wrap poulet",
+          desc: "Pratique et gourmand.",
+          price: 40,
+          badge: "À bord",
+          img: "assets/img/menu/wrap-poulet.jpg"
+        },
+        {
+          id: "wrap-saumon",
+          name: "4 petits wrap saumon",
+          desc: "Saumon et texture délicate.",
+          price: 42,
+          badge: "Maison",
+          img: "assets/img/menu/wrap-saumon.jpg"
+        }
       ]
     },
 
@@ -155,15 +284,64 @@
       id: "champagnes",
       group: "drinks",
       title: "Champagnes",
-      subtitle: "Du moins cher au plus cher",
+      subtitle: "Sélection de cave",
       items: [
-        { id: "champ-neuville-autolyse",  name: "Neuville Blanc de Blancs", desc: "Champagne — sélection.", price: 95, badge: "Collection", img: "assets/img/menu/champagne-2.jpg" },
-        { id: "champ-extra-brut-bdn",     name: "Ruinart Blanc de BlancsB", desc: "Champagne — sélection.", price: 220, badge: "Collection", img: "assets/img/menu/champagne-1.jpg" },
-        { id: "champ-roederer-246",       name: "Louis Roederer Blanc de Blancs", desc: "Champagne — collection.", price: 242, badge: "Collection", img: "assets/img/menu/champagne-4.jpg" },
-        { id: "champ-neuville-2012",      name: "Brut de Neuville", desc: "Champagne — millésime.", price: 114.4, badge: "Millésime", img: "assets/img/menu/champagne-3.jpg" },
-        { id: "champ-ruinart-bdb",        name: "Ruinart brut", desc: "Champagne — blanc de blancs.", price: 180, badge: "Collection", img: "assets/img/menu/champagne-5.jpg" },
-        { id: "champ-perrier-jouet-2016", name: "Perrier Jouet 2016", desc: "Champagne — millésime.", price: 545, badge: "Millésime", img: "assets/img/menu/champagne-7.jpg" },
-        { id: "champ-cristal",            name: "Cristal roederer", desc: "Champagne — de collection.", price: 595, badge: "Exception", img: "assets/img/menu/champagne-8.jpg" }
+        {
+          id: "champ-neuville-autolyse",
+          name: "Neuville Blanc de Blancs",
+          desc: "Champagne.",
+          price: 95,
+          badge: "Cave",
+          img: "assets/img/menu/champagne-2.jpg"
+        },
+        {
+          id: "champ-extra-brut-bdn",
+          name: "Ruinart Blanc de Blancs",
+          desc: "Champagne.",
+          price: 220,
+          badge: "Cave",
+          img: "assets/img/menu/champagne-1.jpg"
+        },
+        {
+          id: "champ-roederer-246",
+          name: "Louis Roederer Blanc de Blancs",
+          desc: "Champagne.",
+          price: 242,
+          badge: "Cave",
+          img: "assets/img/menu/champagne-4.jpg"
+        },
+        {
+          id: "champ-neuville-2012",
+          name: "Brut de Neuville",
+          desc: "Champagne.",
+          price: 114.4,
+          badge: "Cave",
+          img: "assets/img/menu/champagne-3.jpg"
+        },
+        {
+          id: "champ-ruinart-bdb",
+          name: "Ruinart brut",
+          desc: "Champagne.",
+          price: 180,
+          badge: "Cave",
+          img: "assets/img/menu/champagne-5.jpg"
+        },
+        {
+          id: "champ-perrier-jouet-2016",
+          name: "Perrier Jouet 2016",
+          desc: "Champagne.",
+          price: 545,
+          badge: "Millésime",
+          img: "assets/img/menu/champagne-7.jpg"
+        },
+        {
+          id: "champ-cristal",
+          name: "Cristal Roederer",
+          desc: "Champagne.",
+          price: 595,
+          badge: "Cuvée",
+          img: "assets/img/menu/champagne-8.jpg"
+        }
       ]
     },
 
@@ -171,11 +349,32 @@
       id: "vins-blancs",
       group: "drinks",
       title: "Vins blancs",
-      subtitle: "Fraîcheur & élégance",
+      subtitle: "Fraîcheur et élégance",
       items: [
-        { id: "blanc-minuty-prestige-2024", name: "Minuty Prestige 2024", desc: "Vin blanc — sélection.", price: 49, badge: "Sélection", img: "assets/img/menu/vin-blanc-1.jpg" },
-        { id: "blanc-minuty-blanc-or-2024", name: "Minuty blanc et or 2024", desc: "Vin blanc de sélection.", price: 82, badge: "Maison", img: "assets/img/menu/vin-blanc-2.jpg" },
-        { id: "blanc-secret-lunes-chardo",  name: "Chardonnay de Lunès", desc: "Chardonnay — élégant.", price: 32, badge: "Chardonnay", img: "assets/img/menu/vin-blanc-3.jpg" }
+        {
+          id: "blanc-minuty-prestige-2024",
+          name: "Minuty Prestige 2024",
+          desc: "Vin blanc.",
+          price: 49,
+          badge: "Cave",
+          img: "assets/img/menu/vin-blanc-1.jpg"
+        },
+        {
+          id: "blanc-minuty-blanc-or-2024",
+          name: "Minuty blanc et or 2024",
+          desc: "Vin blanc.",
+          price: 82,
+          badge: "Cave",
+          img: "assets/img/menu/vin-blanc-2.jpg"
+        },
+        {
+          id: "blanc-secret-lunes-chardo",
+          name: "Chardonnay de Lunès",
+          desc: "Chardonnay.",
+          price: 32,
+          badge: "Cave",
+          img: "assets/img/menu/vin-blanc-3.jpg"
+        }
       ]
     },
 
@@ -183,28 +382,105 @@
       id: "vins-roses",
       group: "drinks",
       title: "Vins rosés",
-      subtitle: "L’iconique Côte d’Azur",
+      subtitle: "Sélection Riviera",
       items: [
-        { id: "rose-minuty-prestige-2024", name: "Minuty Prestige 2024", desc: "Vin rosé — sélection.", price: 49, badge: "Sélection", img: "assets/img/menu/vin-rose-1.jpg" },
-        { id: "rose-minuty-rose-or-2024",  name: "Minuty Rose et or 2024", desc: "Vin rosé de sélection.", price: 82, badge: "Maison", img: "assets/img/menu/vin-rose-2.jpg" },
-        { id: "rose-chateau-281",          name: "Château 281 69", desc: "Vin rosé — de collection.", price: 162, badge: "Collection", img: "assets/img/menu/vin-rose-3.jpg" }
+        {
+          id: "rose-minuty-prestige-2024",
+          name: "Minuty Prestige 2024",
+          desc: "Vin rosé.",
+          price: 49,
+          badge: "Cave",
+          img: "assets/img/menu/vin-rose-1.jpg"
+        },
+        {
+          id: "rose-minuty-rose-or-2024",
+          name: "Minuty Rose et or 2024",
+          desc: "Vin rosé.",
+          price: 82,
+          badge: "Cave",
+          img: "assets/img/menu/vin-rose-2.jpg"
+        },
+        {
+          id: "rose-chateau-281",
+          name: "Château 281",
+          desc: "Vin rosé.",
+          price: 162,
+          badge: "Cave",
+          img: "assets/img/menu/vin-rose-3.jpg"
+        }
       ]
     },
 
     {
       id: "softs",
       group: "drinks",
-      title: "Softs & Énergie",
+      title: "Softs & énergie",
       subtitle: "Canettes & boissons fraîches",
       items: [
-        { id: "coca-33",         name: "Coca Cola 33cl", desc: "Canette.", price: 4.5, badge: "Sélection", img: "assets/img/menu/coca.jpg" },
-        { id: "coca-zero-33",    name: "Coca Cola Zero 33cl", desc: "Canette.", price: 4.5, badge: "Sélection", img: "assets/img/menu/coca-zero.jpg" },
-        { id: "sprite-33",       name: "Sprite 33cl", desc: "Canette.", price: 4.5, badge: "Sélection", img: "assets/img/menu/sprite.jpg" },
-        { id: "fanta-33",        name: "Fanta 33cl", desc: "Canette.", price: 4.5, badge: "Sélection", img: "assets/img/menu/fanta.jpg" },
-        { id: "oasis-33",        name: "Oasis 33cl", desc: "Canette.", price: 4.5, badge: "Sélection", img: "assets/img/menu/oasis.jpg" },
-        { id: "fuze-tea-33",     name: "Fuze Tea 33cl", desc: "Canette.", price: 5.0, badge: "Sélection", img: "assets/img/menu/fuze-tea.jpg" },
-        { id: "redbull-33",      name: "Red Bull 33cl", desc: "Canette.", price: 6.5, badge: "Énergie", img: "assets/img/menu/redbull.jpg" },
-        { id: "redbull-zero-33", name: "Red Bull Zero 33cl", desc: "Canette.", price: 6.5, badge: "Énergie", img: "assets/img/menu/redbull-zero.jpg" }
+        {
+          id: "coca-33",
+          name: "Coca Cola 33cl",
+          desc: "Canette.",
+          price: 4.5,
+          badge: "Soft",
+          img: "assets/img/menu/coca.jpg"
+        },
+        {
+          id: "coca-zero-33",
+          name: "Coca Cola Zero 33cl",
+          desc: "Canette.",
+          price: 4.5,
+          badge: "Soft",
+          img: "assets/img/menu/coca-zero.jpg"
+        },
+        {
+          id: "sprite-33",
+          name: "Sprite 33cl",
+          desc: "Canette.",
+          price: 4.5,
+          badge: "Soft",
+          img: "assets/img/menu/sprite.jpg"
+        },
+        {
+          id: "fanta-33",
+          name: "Fanta 33cl",
+          desc: "Canette.",
+          price: 4.5,
+          badge: "Soft",
+          img: "assets/img/menu/fanta.jpg"
+        },
+        {
+          id: "oasis-33",
+          name: "Oasis 33cl",
+          desc: "Canette.",
+          price: 4.5,
+          badge: "Soft",
+          img: "assets/img/menu/oasis.jpg"
+        },
+        {
+          id: "fuze-tea-33",
+          name: "Fuze Tea 33cl",
+          desc: "Canette.",
+          price: 5.0,
+          badge: "Soft",
+          img: "assets/img/menu/fuze-tea.jpg"
+        },
+        {
+          id: "redbull-33",
+          name: "Red Bull 33cl",
+          desc: "Canette.",
+          price: 6.5,
+          badge: "Énergie",
+          img: "assets/img/menu/redbull.jpg"
+        },
+        {
+          id: "redbull-zero-33",
+          name: "Red Bull Zero 33cl",
+          desc: "Canette.",
+          price: 6.5,
+          badge: "Énergie",
+          img: "assets/img/menu/redbull-zero.jpg"
+        }
       ]
     }
   ];

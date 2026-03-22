@@ -1,76 +1,171 @@
 {
-  "nav": { "home":"Accueil","menu":"Carte","zones":"Zones","gallery":"Galerie","faq":"FAQ","contact":"Contact","cart":"Panier" },
+  "nav": {
+    "home": "Accueil",
+    "menu": "Carte",
+    "zones": "Zones",
+    "gallery": "Galerie",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cart": "Panier"
+  },
   "footer": {
-    "tagline":"Yacht catering delivery — Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
-    "links":"Liens","menu":"Carte","zones":"Zones","contact":"Contact",
-    "legal":"Légal","mentions":"Mentions légales","privacy":"Confidentialité","cgv":"CGV",
-    "partner":"Partenaire","partnerText":"Location de bateaux — lien externe.","partnerCta":"Accéder au site partenaire"
+    "tagline": "Yacht catering delivery — Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "links": "Liens",
+    "menu": "Carte",
+    "zones": "Zones",
+    "contact": "Contact",
+    "legal": "Légal",
+    "mentions": "Mentions légales",
+    "privacy": "Confidentialité",
+    "cgv": "CGV",
+    "partner": "Partenaire",
+    "partnerText": "Location de bateaux — lien externe.",
+    "partnerCta": "Accéder au site partenaire"
   },
   "home": {
-    "eyebrow":"Yacht Catering Delivery • Côte d’Azur",
-    "h1":"Traiteur premium livré directement à bord.",
-    "lead":"Service discret, ponctuel et haut de gamme pour vos journées en mer. Beaulieu-sur-mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
-    "ctaMenu":"Voir la carte","ctaQuote":"Demander un devis",
-    "pill1":"Prix livraison incluse","pill2":"Commande simple","pill3":"Packaging premium",
-    "weatherTitle":"Météo en direct — Ports","weatherSub":"Actualisée automatiquement","weatherNote":"Indication confort à titre informatif.",
-    "h2":"Un service pensé pour les clients exigeants.","h2sub":"Du petit-déjeuner au sunset apéritif : qualité, simplicité, zéro surprise.",
-    "b1t":"Livraison à bord","b1d":"Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.",
-    "b2t":"Sélection traiteur","b2d":"Produits frais, options végétariennes et sans alcool. Présentation soignée.",
-    "b3t":"Prix tout compris","b3d":"Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.",
-    "partnerTitle":"Partenaire","partnerDesc":"En collaboration avec un loueur de bateaux sélectionné.","partnerCta":"Découvrir le partenaire","partnerNote":"Lien externe — ouverture dans un nouvel onglet.",
-    "processTitle":"Comment ça marche","step1":"Choisissez vos produits sur la carte.","step2":"Indiquez le port + nom du bateau + créneau.","step3":"Nous confirmons et livrons à bord.","processLink":"Voir les zones & délais →",
-    "cta2Title":"Besoin d’une livraison aujourd’hui ?","cta2Desc":"Contact express : réponse rapide, service clair.","cta2Btn":"Contacter Mistral Express"
+    "eyebrow": "Yacht Catering Delivery • Côte d’Azur",
+    "h1": "Traiteur livré directement à bord.",
+    "lead": "Service discret, ponctuel et soigné pour vos journées en mer. Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
+    "ctaMenu": "Voir la carte",
+    "ctaQuote": "Demander un devis",
+    "pill1": "Prix livraison incluse",
+    "pill2": "Commande simple",
+    "pill3": "Présentation soignée",
+    "weatherTitle": "Météo en direct — Ports",
+    "weatherSub": "Actualisée automatiquement",
+    "weatherNote": "Indication confort à titre informatif.",
+    "h2": "Un service pensé pour les amoureux du goût.",
+    "h2sub": "Du petit-déjeuner au coucher du soleil : une offre claire, soignée et prête à servir.",
+    "b1t": "Livraison à bord",
+    "b1d": "Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.",
+    "b2t": "Sélection maison",
+    "b2d": "Produits frais, options végétariennes et sans alcool. Présentation nette et service fluide.",
+    "b3t": "Prix tout compris",
+    "b3d": "Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.",
+    "partnerTitle": "Partenaire",
+    "partnerDesc": "En collaboration avec un loueur de bateaux sélectionné.",
+    "partnerCta": "Découvrir le partenaire",
+    "partnerNote": "Lien externe — ouverture dans un nouvel onglet.",
+    "processTitle": "Comment ça marche",
+    "step1": "Choisissez vos produits sur la carte.",
+    "step2": "Indiquez le port, le nom du bateau et le créneau souhaité.",
+    "step3": "Nous confirmons et livrons à bord.",
+    "processLink": "Voir les zones & délais →",
+    "cta2Title": "Besoin d’une livraison aujourd’hui ?",
+    "cta2Desc": "Contact express : réponse rapide, service clair.",
+    "cta2Btn": "Contacter Mistral Express"
   },
   "menu": {
-    "eyebrow":"Carte","h1":"Sélection — livraison incluse","lead":"Les prix affichés sont tout compris. Aucun frais additionnel.",
-    "search":"Rechercher…",
-    "cat":{"all":"Tout","breakfast":"Petit-déjeuner","aperitif":"Apéritif","lunch":"Déjeuner","dinner":"Dîner","beverages":"Boissons"},
-    "add":"Ajouter",
-    "badge":{"delivery":"Livraison incluse"},
-    "disclaimer":"Photos indicatives. Allergènes et détails disponibles sur demande."
+    "eyebrow": "Carte",
+    "h1": "Sélection — livraison incluse",
+    "lead": "Les prix affichés sont tout compris. Aucun frais additionnel.",
+    "search": "Rechercher…",
+    "cat": {
+      "all": "Tout",
+      "breakfast": "Petit-déjeuner",
+      "aperitif": "Apéritif",
+      "lunch": "Déjeuner",
+      "dinner": "Dîner",
+      "beverages": "Boissons"
+    },
+    "add": "Ajouter",
+    "badge": {
+      "delivery": "Livraison incluse"
+    },
+    "disclaimer": "Photos indicatives. Allergènes et détails disponibles sur demande."
   },
   "zones": {
-    "eyebrow":"Zones","h1":"Ports desservis","lead":"Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
-    "b1t":"Créneaux","b1d":"Créneaux sur demande. Confirmation par message après validation.",
-    "b2t":"Point de livraison","b2d":"Ponton + nom du bateau + contact à bord pour une livraison fluide.",
-    "b3t":"Prix tout compris","b3d":"Les prix incluent la livraison. Aucun supplément ajouté au checkout.",
-    "weatherTitle":"Météo en direct — les 3 ports","weatherSub":"Vent / température / état du ciel","weatherLegal":"Données météo fournies à titre informatif."
+    "eyebrow": "Zones",
+    "h1": "Ports desservis",
+    "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
+    "b1t": "Créneaux",
+    "b1d": "Créneaux sur demande. Confirmation par message après validation.",
+    "b2t": "Point de livraison",
+    "b2d": "Ponton, nom du bateau et contact à bord pour une livraison fluide.",
+    "b3t": "Prix tout compris",
+    "b3d": "Les prix incluent la livraison. Aucun supplément ajouté au moment de la commande.",
+    "weatherTitle": "Météo en direct — les 3 ports",
+    "weatherSub": "Vent / température / état du ciel",
+    "weatherLegal": "Données météo fournies à titre informatif."
   },
-  "gallery": { "eyebrow":"Galerie","h1":"Ambiance & présentations","lead":"Ajoute ici tes photos (plateaux, packaging, vues mer).",
-    "ph1":"Emplacement photo 1","ph2":"Emplacement photo 2","ph3":"Emplacement photo 3","ph4":"Emplacement photo 4","ph5":"Emplacement photo 5","ph6":"Emplacement photo 6"
+  "gallery": {
+    "eyebrow": "Galerie",
+    "h1": "Ambiance & présentations",
+    "lead": "Ajoute ici tes photos : plateaux, dressages, vues mer et instants à bord.",
+    "ph1": "Emplacement photo 1",
+    "ph2": "Emplacement photo 2",
+    "ph3": "Emplacement photo 3",
+    "ph4": "Emplacement photo 4",
+    "ph5": "Emplacement photo 5",
+    "ph6": "Emplacement photo 6"
   },
   "faq": {
-    "eyebrow":"FAQ","h1":"Questions fréquentes","lead":"Réponses simples. Service clair.",
-    "q1":"Les prix incluent-ils la livraison ?","a1":"Oui. Les prix affichés sont tout compris. Aucun frais supplémentaire n’est ajouté à la commande.",
-    "q2":"Comment se passe la livraison à bord ?","a2":"Après commande, nous confirmons un créneau. Nous livrons au ponton avec le nom du bateau et un contact à bord.",
-    "q3":"Allergènes et demandes spécifiques ?","a3":"Écris-nous via la page Contact : nous adaptons selon les contraintes (dans la limite du possible)."
+    "eyebrow": "FAQ",
+    "h1": "Questions fréquentes",
+    "lead": "Réponses simples. Service clair.",
+    "q1": "Les prix incluent-ils la livraison ?",
+    "a1": "Oui. Les prix affichés sont tout compris. Aucun frais supplémentaire n’est ajouté à la commande.",
+    "q2": "Comment se passe la livraison à bord ?",
+    "a2": "Après commande, nous confirmons un créneau. Nous livrons au ponton avec le nom du bateau et un contact à bord.",
+    "q3": "Allergènes et demandes spécifiques ?",
+    "a3": "Écris-nous via la page Contact : nous adaptons selon les contraintes, dans la limite du possible."
   },
   "contact": {
-    "eyebrow":"Contact","h1":"Demande express","lead":"Nous répondons rapidement. Communication concise et efficace.",
-    "formTitle":"Formulaire","name":"Nom","email":"Email","message":"Message","send":"Envoyer",
-    "privacyNote":"En envoyant ce message, vous acceptez notre politique de confidentialité.",
-    "privacyLink":"Lire la politique de confidentialité →",
-    "directTitle":"Contact direct","directDesc":"Pour une commande rapide : WhatsApp recommandé.",
-    "directPorts":"Ports : Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche",
-    "deliveryIncluded":"Prix livraison incluse."
+    "eyebrow": "Contact",
+    "h1": "Demande express",
+    "lead": "Nous répondons rapidement. Communication concise et efficace.",
+    "formTitle": "Formulaire",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "privacyNote": "En envoyant ce message, vous acceptez notre politique de confidentialité.",
+    "privacyLink": "Lire la politique de confidentialité →",
+    "directTitle": "Contact direct",
+    "directDesc": "Pour une commande rapide : WhatsApp recommandé.",
+    "directPorts": "Ports : Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche",
+    "deliveryIncluded": "Prix livraison incluse."
   },
   "cart": {
-    "title":"Votre panier","empty":"Votre panier est vide.","total":"Total",
-    "included":"Prix livraison incluse — aucun frais supplémentaire.",
-    "deliveryIncluded":"Livraison incluse",
-    "checkout":"Valider sur WhatsApp",
-    "waIntro":"Bonjour Mistral Express, voici ma commande :",
-    "waTotal":"Total (livraison incluse)",
-    "waInfos":"Port + ponton + nom du bateau + créneau souhaité :"
+    "title": "Votre panier",
+    "empty": "Votre panier est vide.",
+    "total": "Total",
+    "included": "Prix livraison incluse — aucun frais supplémentaire.",
+    "deliveryIncluded": "Livraison incluse",
+    "checkout": "Valider sur WhatsApp",
+    "waIntro": "Bonjour Mistral Express, voici ma commande :",
+    "waTotal": "Total (livraison incluse)",
+    "waInfos": "Port + ponton + nom du bateau + créneau souhaité :"
   },
-  "ports": { "beaulieu":"Port de Beaulieu-sur-mer","sjcf":"Port de Saint-Jean-Cap-Ferrat","villef":"Port de Villefranche-sur-Mer" },
-
+  "ports": {
+    "beaulieu": "Port de Beaulieu-sur-Mer",
+    "sjcf": "Port de Saint-Jean-Cap-Ferrat",
+    "villef": "Port de Villefranche-sur-Mer"
+  },
   "p": {
-    "brk1":{"n":"Petit-déjeuner Riviera","d":"Viennoiseries, fruits frais, yaourts, jus pressé. Présentation soignée."},
-    "apt1":{"n":"Sunset Apéritif Premium","d":"Sélection salée raffinée, dips, crackers, fruits. Idéal au mouillage."},
-    "lch1":{"n":"Déjeuner Méditerranéen","d":"Assortiment frais, option veggie, dessert léger. Parfait en mer."},
-    "din1":{"n":"Dîner à bord — Sélection Chef","d":"Plateau élégant, saveurs méditerranéennes, finition premium."},
-    "bev1":{"n":"Eaux & softs premium","d":"Sélection rafraîchissante. Format bateau-friendly."},
-    "bev2":{"n":"Jus pressés & detox","d":"Fruits frais pressés. Option gingembre/citron."}
+    "brk1": {
+      "n": "Petit-déjeuner Riviera",
+      "d": "Viennoiseries, fruits frais, yaourts et jus pressé. Présentation soignée."
+    },
+    "apt1": {
+      "n": "Apéritif au coucher du soleil",
+      "d": "Sélection salée, dips, crackers et fruits. Idéal au mouillage."
+    },
+    "lch1": {
+      "n": "Déjeuner Méditerranée",
+      "d": "Assortiment frais, option végétale et dessert léger. Parfait en mer."
+    },
+    "din1": {
+      "n": "Dîner à bord — sélection du chef",
+      "d": "Plateau élégant, saveurs méditerranéennes et finitions soignées."
+    },
+    "bev1": {
+      "n": "Softs & boissons fraîches",
+      "d": "Sélection rafraîchissante au format adapté au bord."
+    },
+    "bev2": {
+      "n": "Jus pressés & détox",
+      "d": "Fruits frais pressés. Option gingembre / citron."
+    }
   }
 }

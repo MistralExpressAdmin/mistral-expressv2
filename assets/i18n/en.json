@@ -1,8 +1,15 @@
 {
-  "nav": { "home": "Home", "menu": "Menu", "zones": "Areas", "gallery": "Gallery", "faq": "FAQ", "contact": "Contact", "cart": "Cart" },
-
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "zones": "Areas",
+    "gallery": "Gallery",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
   "footer": {
-    "tagline": "Yacht catering delivery — Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "tagline": "Yacht catering delivery — Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
     "links": "Links",
     "menu": "Menu",
     "zones": "Areas",
@@ -15,54 +22,44 @@
     "partnerText": "Boat rental — external link.",
     "partnerCta": "Open partner website"
   },
-
   "home": {
     "eyebrow": "Yacht Catering Delivery • French Riviera",
-    "h1": "Premium catering delivered directly onboard.",
-    "lead": "Discreet, punctual and high-end service for your days at sea. Beaulieu-sur-mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
+    "h1": "Catering delivered directly onboard.",
+    "lead": "Discreet, punctual and refined service for your days at sea. Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
     "ctaMenu": "View the menu",
     "ctaQuote": "Request a quote",
-
     "pill1": "Delivery included",
     "pill2": "Easy ordering",
-    "pill3": "Premium packaging",
-
+    "pill3": "Refined presentation",
     "weatherTitle": "Live weather — Ports",
     "weatherSub": "Auto-updated",
     "weatherNote": "Comfort indication for information only.",
-
-    "h2": "A service designed for demanding clients.",
-    "h2sub": "From breakfast to sunset aperitif: quality, simplicity, zero surprises.",
-
+    "h2": "A service designed for those who appreciate taste.",
+    "h2sub": "From breakfast to sunset service: a clear, refined and ready-to-serve selection.",
     "b1t": "Onboard delivery",
     "b1d": "We deliver to the dock at the agreed time. Clear communication, discreet execution.",
-    "b2t": "Catering selection",
-    "b2d": "Fresh products, vegetarian and alcohol-free options. Refined presentation.",
+    "b2t": "House selection",
+    "b2d": "Fresh products, vegetarian and alcohol-free options. Neat presentation and smooth service.",
     "b3t": "All-inclusive pricing",
-    "b3d": "Displayed prices include delivery — no extra fees.",
-
+    "b3d": "Displayed prices include delivery — no additional fees.",
     "partnerTitle": "Partner",
     "partnerDesc": "In collaboration with a selected boat rental partner.",
     "partnerCta": "Discover the partner",
     "partnerNote": "External link — opens in a new tab.",
-
     "processTitle": "How it works",
     "step1": "Choose your items from the menu.",
-    "step2": "Enter the port + boat name + time slot.",
+    "step2": "Enter the port, boat name and requested time slot.",
     "step3": "We confirm and deliver onboard.",
     "processLink": "See areas & lead times →",
-
     "cta2Title": "Need delivery today?",
-    "cta2Desc": "Express contact: fast reply, clear service.",
+    "cta2Desc": "Express contact: quick reply, clear service.",
     "cta2Btn": "Contact Mistral Express"
   },
-
   "menu": {
     "eyebrow": "Menu",
     "h1": "Selection — delivery included",
     "lead": "Displayed prices are all-inclusive. No additional fees.",
     "search": "Search…",
-
     "cat": {
       "all": "All",
       "breakfast": "Breakfast",
@@ -71,33 +68,30 @@
       "dinner": "Dinner",
       "beverages": "Beverages"
     },
-
     "add": "Add",
-    "badge": { "delivery": "Delivery included" },
+    "badge": {
+      "delivery": "Delivery included"
+    },
     "disclaimer": "Photos for illustration only. Allergens and details available on request."
   },
-
   "zones": {
     "eyebrow": "Areas",
     "h1": "Served ports",
-    "lead": "Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
-
+    "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t": "Time slots",
     "b1d": "Time slots on request. Confirmation by message after validation.",
     "b2t": "Delivery point",
-    "b2d": "Dock + boat name + onboard contact for a smooth delivery.",
+    "b2d": "Dock, boat name and onboard contact for a smooth handover.",
     "b3t": "All-inclusive pricing",
-    "b3d": "Prices include delivery. No surcharge added at checkout.",
-
+    "b3d": "Prices include delivery. No surcharge is added at checkout.",
     "weatherTitle": "Live weather — the 3 ports",
     "weatherSub": "Wind / temperature / sky condition",
     "weatherLegal": "Weather data provided for information only."
   },
-
   "gallery": {
     "eyebrow": "Gallery",
     "h1": "Atmosphere & presentation",
-    "lead": "Add your photos here (platters, packaging, sea views).",
+    "lead": "Add your photos here: platters, presentation, sea views and onboard moments.",
     "ph1": "Photo slot 1",
     "ph2": "Photo slot 2",
     "ph3": "Photo slot 3",
@@ -105,40 +99,33 @@
     "ph5": "Photo slot 5",
     "ph6": "Photo slot 6"
   },
-
   "faq": {
     "eyebrow": "FAQ",
     "h1": "Frequently asked questions",
     "lead": "Simple answers. Clear service.",
-
     "q1": "Do prices include delivery?",
     "a1": "Yes. Displayed prices are all-inclusive. No extra fees are added to the order.",
     "q2": "How does onboard delivery work?",
     "a2": "After ordering, we confirm a time slot. We deliver to the dock with the boat name and an onboard contact.",
     "q3": "Allergens and specific requests?",
-    "a3": "Message us via the Contact page: we adapt within what is possible."
+    "a3": "Message us via the Contact page: we adapt whenever possible."
   },
-
   "contact": {
     "eyebrow": "Contact",
     "h1": "Express request",
     "lead": "We reply quickly. Concise and efficient communication.",
-
     "formTitle": "Form",
     "name": "Name",
     "email": "Email",
     "message": "Message",
     "send": "Send",
-
     "privacyNote": "By sending this message, you agree to our privacy policy.",
     "privacyLink": "Read the privacy policy →",
-
     "directTitle": "Direct contact",
     "directDesc": "For a fast order: WhatsApp recommended.",
-    "directPorts": "Ports: Beaulieu-sur-mer • Saint-Jean-Cap-Ferrat • Villefranche",
+    "directPorts": "Ports: Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche",
     "deliveryIncluded": "Delivery included."
   },
-
   "cart": {
     "title": "Your cart",
     "empty": "Your cart is empty.",
@@ -150,19 +137,35 @@
     "waTotal": "Total (delivery included)",
     "waInfos": "Port + dock + boat name + requested time slot:"
   },
-
   "ports": {
-    "beaulieu": "Port of Beaulieu-sur-mer",
+    "beaulieu": "Port of Beaulieu-sur-Mer",
     "sjcf": "Port of Saint-Jean-Cap-Ferrat",
     "villef": "Port of Villefranche-sur-Mer"
   },
-
   "p": {
-    "brk1": { "n": "Riviera Breakfast", "d": "Pastries, fresh fruit, yogurts, pressed juices. Refined presentation." },
-    "apt1": { "n": "Premium Sunset Aperitif", "d": "Elegant savory selection, dips, crackers, fruit. Ideal at anchor." },
-    "lch1": { "n": "Mediterranean Lunch", "d": "Fresh assortment, veggie option, light dessert. Perfect at sea." },
-    "din1": { "n": "Onboard Dinner — Chef Selection", "d": "Elegant platter, Mediterranean flavors, premium finishing." },
-    "bev1": { "n": "Premium waters & soft drinks", "d": "Refreshing selection. Boat-friendly formats." },
-    "bev2": { "n": "Pressed & detox juices", "d": "Fresh pressed fruits. Optional ginger/lemon." }
+    "brk1": {
+      "n": "Riviera Breakfast",
+      "d": "Pastries, fresh fruit, yogurts and pressed juice. Refined presentation."
+    },
+    "apt1": {
+      "n": "Sunset Aperitif",
+      "d": "Savory selection, dips, crackers and fruit. Ideal at anchor."
+    },
+    "lch1": {
+      "n": "Mediterranean Lunch",
+      "d": "Fresh assortment, vegetarian option and a light dessert. Perfect at sea."
+    },
+    "din1": {
+      "n": "Onboard Dinner — Chef’s Selection",
+      "d": "Elegant platter, Mediterranean flavors and refined finishing touches."
+    },
+    "bev1": {
+      "n": "Soft drinks & fresh beverages",
+      "d": "Refreshing selection in formats suited to onboard service."
+    },
+    "bev2": {
+      "n": "Pressed & detox juices",
+      "d": "Fresh pressed fruit juices. Optional ginger / lemon."
+    }
   }
 }
