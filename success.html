@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#fcfbf8" />
+
+  <title>Commande confirmée — Mistral Express</title>
+  <meta
+    name="description"
+    content="Votre commande Mistral Express a bien été confirmée."
+  />
+
+  <link rel="canonical" href="./success.html" />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/include.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <div id="site-header" role="banner"></div>
+
+  <main id="main" class="page" role="main">
+    <section class="success-hero">
+      <div class="container">
+        <div class="success-shell">
+          <p class="eyebrow">Mistral Express • Confirmation</p>
+
+          <div class="success-mark" aria-hidden="true">✓</div>
+
+          <h1 class="success-title">Commande confirmée</h1>
+
+          <p class="lead success-lead">
+            Merci. Votre paiement a bien été validé et votre demande a été transmise.
+          </p>
+
+          <div class="success-card">
+            <h2 class="success-card__title">Prochaine étape</h2>
+
+            <p class="muted">
+              Envoyez-nous maintenant les informations de livraison pour finaliser le service à bord :
+            </p>
+
+            <ul class="success-list">
+              <li>Port</li>
+              <li>Ponton</li>
+              <li>Nom du bateau</li>
+              <li>Créneau souhaité</li>
+            </ul>
+
+            <div class="success-actions">
+              <a
+                class="btn btn-primary"
+                id="successWhatsApp"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Envoyer les détails sur WhatsApp
+              </a>
+
+              <a class="btn btn-ghost" href="carte.html">
+                Revenir à la carte
+              </a>
+            </div>
+
+            <p class="tiny muted success-note">
+              Si besoin, nous vous recontactons rapidement pour confirmer les derniers détails.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer" role="contentinfo"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        localStorage.removeItem("me_cart_v2");
+      } catch (e) {
+        console.error(e);
+      }
+
+      const phone = "33668443067";
+      const msg =
+        "Bonjour Mistral Express, mon paiement a bien été effectué.%0A%0A" +
+        "Voici mes informations de livraison :%0A" +
+        "• Port :%0A" +
+        "• Ponton :%0A" +
+        "• Nom du bateau :%0A" +
+        "• Créneau souhaité :";
+
+      const wa = document.getElementById("successWhatsApp");
+      if (wa) {
+        wa.href = `https://wa.me/${phone}?text=${msg}`;
+      }
+    });
+  </script>
+</body>
+</html>
