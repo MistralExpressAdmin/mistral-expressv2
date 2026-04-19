@@ -1,104 +1,142 @@
 <header class="site-header">
   <div class="container nav">
+
     <a class="brand" href="index.html" aria-label="Mistral Express — Accueil">
       <span class="brand-mark" aria-hidden="true">ME</span>
       <span class="brand-name">Mistral Express</span>
     </a>
 
-    <!-- ✅ Burger (mobile) -->
-    <button class="nav-toggle" id="navToggle"
+    <div class="mobile-lang-quick" id="mobileLangQuick">
+      <button
+        class="mobile-lang-quick__toggle"
+        id="mobileLangQuickToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobileLangQuickMenu"
+      >
+        <span id="mobileLangQuickCurrent">FR</span>
+        <span aria-hidden="true">▾</span>
+      </button>
+
+      <div
+        class="mobile-lang-quick__menu"
+        id="mobileLangQuickMenu"
+        hidden
+      >
+        <button class="mobile-lang-quick__item active" type="button" data-lang="fr">FR</button>
+        <button class="mobile-lang-quick__item" type="button" data-lang="en">EN</button>
+        <button class="mobile-lang-quick__item" type="button" data-lang="ru">RU</button>
+      </div>
+    </div>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
       type="button"
-      aria-label="Ouvrir le menu"
+      aria-expanded="false"
       aria-controls="primaryNav"
-      aria-expanded="false">
+      aria-label="Ouvrir le menu"
+    >
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
       <span class="nav-toggle__bar"></span>
     </button>
 
-    <!-- ✅ Nav wrapper (desktop = inline, mobile = drawer) -->
     <div class="nav-panel" id="primaryNav" data-open="false">
       <nav class="menu" aria-label="Navigation principale">
         <a href="index.html" data-i18n="nav.home">Accueil</a>
         <a href="carte.html" data-i18n="nav.menu">Carte</a>
         <a href="zones.html" data-i18n="nav.zones">Zones</a>
-        <a href="galerie.html" data-i18n="nav.gallery">Galerie</a>
+        <a href="gallery.html" data-i18n="nav.gallery">Galerie</a>
         <a href="faq.html" data-i18n="nav.faq">FAQ</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <!-- Language -->
         <div class="lang">
           <button
-            class="btn btn-chip"
+            class="btn btn-ghost"
             id="langBtn"
             type="button"
-            aria-haspopup="menu"
-            aria-controls="langMenu"
             aria-expanded="false"
+            aria-controls="langMenu"
           >
-            <span id="langLabel">FR</span> <span aria-hidden="true">▾</span>
+            <span id="langCurrent">FR</span>
+            <span aria-hidden="true">▾</span>
           </button>
 
-          <div class="lang-menu" id="langMenu" role="menu" aria-label="Choisir une langue">
-            <button type="button" class="lang-item" data-lang="fr" role="menuitemradio" aria-checked="true">Français</button>
-            <button type="button" class="lang-item" data-lang="en" role="menuitemradio" aria-checked="false">English</button>
-            <button type="button" class="lang-item" data-lang="ru" role="menuitemradio" aria-checked="false">Русский</button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-item active" type="button" data-lang="fr">Français</button>
+            <button class="lang-item" type="button" data-lang="en">English</button>
+            <button class="lang-item" type="button" data-lang="ru">Русский</button>
           </div>
         </div>
 
-        <!-- Cart -->
-        <button class="cart-btn" id="cartOpenBtn" type="button" aria-label="Panier" aria-controls="cartDrawer">
-          <span class="cart-ic" aria-hidden="true">🧺</span>
+        <button class="cart-btn" id="cartOpenBtn" type="button" aria-label="Ouvrir le panier">
+          <span class="cart-ic" aria-hidden="true">🛒</span>
           <span data-i18n="nav.cart">Panier</span>
-          <span class="cart-badge" id="cartCount" aria-label="Nombre d’articles">0</span>
+          <span class="cart-badge" id="cartCount">0</span>
         </button>
       </div>
     </div>
   </div>
+
+  <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
 
-<!-- ✅ Backdrop mobile menu -->
-<div class="nav-backdrop" id="navBackdrop" hidden></div>
+<button
+  class="floating-cart"
+  id="floatingCartBtn"
+  type="button"
+  hidden
+  aria-label="Ouvrir le panier"
+>
+  <span class="floating-cart__icon" aria-hidden="true">🛒</span>
+  <span class="floating-cart__label" data-i18n="nav.cart">Panier</span>
+  <span class="floating-cart__count" id="floatingCartCount">0</span>
+</button>
 
-<!-- Drawer panier (inchangé) -->
 <div class="drawer" id="cartDrawer" aria-hidden="true">
-  <div class="drawer-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+  <div class="drawer-backdrop" id="cartBackdrop"></div>
 
-  <aside
-    class="drawer-panel"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="cartTitle"
-    tabindex="-1"
-  >
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
     <div class="drawer-head">
-      <h3 id="cartTitle" data-i18n="cart.title">Votre panier</h3>
-      <button class="icon-btn" id="cartCloseBtn" type="button" aria-label="Fermer">✕</button>
+      <h3 id="cartDrawerTitle" class="h3" data-i18n="cart.title">Votre panier</h3>
+
+      <button
+        class="icon-btn"
+        id="cartCloseBtn"
+        type="button"
+        aria-label="Fermer le panier"
+      >
+        ✕
+      </button>
     </div>
 
     <div class="drawer-body">
-      <div class="cart-items" id="cartItems"></div>
-      <div class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Votre panier est vide.</div>
+      <div id="cartItems"></div>
+
+      <div class="cart-empty" id="cartEmpty">
+        <p data-i18n="cart.empty">Votre panier est vide.</p>
+      </div>
     </div>
 
     <div class="drawer-foot">
       <div class="total">
         <span data-i18n="cart.total">Total</span>
-        <strong id="cartTotal">0€</strong>
+        <span id="cartTotal">0€</span>
       </div>
+
+      <div class="spacer-sm"></div>
 
       <p class="tiny muted" data-i18n="cart.included">
         Prix livraison incluse — aucun frais supplémentaire.
       </p>
 
-      <button class="btn btn-primary" id="checkoutStripe" type="button">
-        Payer par carte (Stripe)
-      </button>
+      <div class="spacer-sm"></div>
 
       <a
-        class="btn btn-ghost"
+        class="btn btn-primary"
         id="checkoutWhatsApp"
         href="#"
         target="_blank"
@@ -108,21 +146,15 @@
         Valider sur WhatsApp
       </a>
 
-      <p class="tiny muted" data-i18n="cart.note">
-        Après validation, indiquez : port, ponton, nom du bateau et créneau.
-      </p>
+      <div class="spacer-sm"></div>
+
+      <button
+        class="btn btn-secondary"
+        id="checkoutStripe"
+        type="button"
+      >
+        Payer par carte
+      </button>
     </div>
   </aside>
 </div>
-<!-- Floating cart button (mobile only) -->
-<button
-  class="floating-cart"
-  id="floatingCartBtn"
-  type="button"
-  aria-label="Ouvrir le panier"
-  hidden
->
-  <span class="floating-cart__icon" aria-hidden="true">🧺</span>
-  <span class="floating-cart__label">Panier</span>
-  <span class="floating-cart__count" id="floatingCartCount">0</span>
-</button>

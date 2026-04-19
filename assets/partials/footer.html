@@ -1,26 +1,38 @@
 <footer class="site-footer">
   <div class="container footer-grid">
-    <div>
+
+    <!-- ================= BRAND ================= -->
+    <div class="footer-col footer-col-brand">
       <div class="brand footer-brand" aria-label="Mistral Express">
         <span class="brand-mark" aria-hidden="true">ME</span>
         <span class="brand-name">Mistral Express</span>
       </div>
-      <p class="muted" data-i18n="footer.tagline">
+
+      <p class="footer-tagline" data-i18n="footer.tagline">
         Yacht catering delivery — Beaulieu • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.
+      </p>
+
+      <p class="footer-signature">
+        Riviera Private Catering
       </p>
     </div>
 
-    <div>
-      <h4 data-i18n="footer.links">Liens</h4>
+    <!-- ================= NAV ================= -->
+    <div class="footer-col">
+      <h4 class="footer-title" data-i18n="footer.links">Navigation</h4>
+
       <ul class="footer-links" aria-label="Liens rapides">
         <li><a href="carte.html" data-i18n="footer.menu">Carte</a></li>
         <li><a href="zones.html" data-i18n="footer.zones">Zones</a></li>
+        <li><a href="gallery.html" data-i18n="footer.gallery">Galerie</a></li>
         <li><a href="contact.html" data-i18n="footer.contact">Contact</a></li>
       </ul>
     </div>
 
-    <div>
-      <h4 data-i18n="footer.legal">Légal</h4>
+    <!-- ================= LEGAL ================= -->
+    <div class="footer-col">
+      <h4 class="footer-title" data-i18n="footer.legal">Informations</h4>
+
       <ul class="footer-links" aria-label="Liens légaux">
         <li><a href="mentions-legales.html" data-i18n="footer.mentions">Mentions légales</a></li>
         <li><a href="confidentialite.html" data-i18n="footer.privacy">Confidentialité</a></li>
@@ -28,24 +40,44 @@
       </ul>
     </div>
 
-    <div>
-      <h4 data-i18n="footer.partner">Partenaire</h4>
-      <p class="muted" data-i18n="footer.partnerText">Location de bateaux — lien externe.</p>
+    <!-- ================= PARTNER ================= -->
+    <div class="footer-col footer-col-partner">
+      <h4 class="footer-title" data-i18n="footer.partner">Partenaire</h4>
+
+      <p class="footer-partner-text" data-i18n="footer.partnerText">
+        Location de bateaux sur la Côte d’Azur.
+      </p>
+
       <a
-        class="btn btn-secondary"
+        class="footer-partner-link"
         id="partnerLinkFooter"
         href="#"
         target="_blank"
         rel="noopener noreferrer"
-        data-i18n="footer.partnerCta"
       >
-        Accéder au site partenaire
+        <span data-i18n="footer.partnerCta">Découvrir</span>
+        <span aria-hidden="true">→</span>
       </a>
-      <p class="tiny muted" data-i18n="footer.partnerNote">Ouverture dans un nouvel onglet.</p>
+
+      <p class="footer-partner-note tiny muted" data-i18n="footer.partnerNote">
+        Ouverture dans un nouvel onglet.
+      </p>
     </div>
+
   </div>
 
+  <!-- ================= BOTTOM ================= -->
   <div class="container footer-bottom">
-    <p class="tiny muted">© <span id="year"></span> Mistral Express</p>
+    <div class="footer-bottom-inner">
+
+      <p class="footer-copy tiny muted">
+        © <span id="year"></span> Mistral Express
+      </p>
+
+      <p class="footer-credit tiny muted">
+        French Riviera • Private Yacht Catering
+      </p>
+
+    </div>
   </div>
 </footer>
