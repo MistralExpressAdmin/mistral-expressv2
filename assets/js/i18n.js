@@ -54,10 +54,84 @@ const ME_I18N = (() => {
     const label = document.getElementById("langLabel");
     if (label) label.textContent = lang.toUpperCase();
 
+    const mobileLabel = document.getElementById("mobileLangQuickLabel");
+    if (mobileLabel) mobileLabel.textContent = lang.toUpperCase();
+
     document.querySelectorAll(".lang-item[data-lang]").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
       btn.setAttribute("aria-checked", btn.dataset.lang === lang ? "true" : "false");
       btn.setAttribute("role", "menuitemradio");
+    });
+
+    document.querySelectorAll(".mobile-lang-quick__item[data-lang]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+      btn.setAttribute("aria-checked", btn.dataset.lang === lang ? "true" : "false");
+      btn.setAttribute("role", "menuitemradio");
+    });
+  }
+
+  function closeMobileLangMenu() {
+    const toggle = document.getElementById("mobileLangQuickToggle");
+    const menu = document.getElementById("mobileLangQuickMenu");
+    if (!toggle || !menu) return;
+
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function bindLanguageButtons() {
+    document.querySelectorAll(".lang-item[data-lang], .mobile-lang-quick__item[data-lang]").forEach((btn) => {
+      if (btn.dataset.langBound === "1") return;
+      btn.dataset.langBound = "1";
+
+      btn.addEventListener("click", async () => {
+        const selectedLang = btn.dataset.lang;
+        if (!selectedLang || selectedLang === lang) return;
+
+        try {
+          await load(selectedLang);
+          closeMobileLangMenu();
+        } catch (err) {
+          console.error(err);
+        }
+      });
+    });
+  }
+
+  function bindMobileLangMenu() {
+    const wrap = document.getElementById("mobileLangQuick");
+    const toggle = document.getElementById("mobileLangQuickToggle");
+    const menu = document.getElementById("mobileLangQuickMenu");
+
+    if (!wrap || !toggle || !menu || toggle.dataset.bound === "1") return;
+    toggle.dataset.bound = "1";
+
+    function openMenu() {
+      menu.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+      menu.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (menu.hidden) openMenu();
+      else closeMenu();
+    });
+
+    menu.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!wrap.contains(e.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
     });
   }
 
@@ -66,7 +140,6 @@ const ME_I18N = (() => {
 
     localStorage.setItem(STORAGE_KEY, lang);
 
-    // keep ?lang=
     const url = new URL(window.location.href);
     url.searchParams.set("lang", lang);
     window.history.replaceState({}, "", url.toString());
@@ -74,9 +147,19 @@ const ME_I18N = (() => {
     dict = await loadTranslations(lang);
     apply();
     updateLangUI();
+    bindLanguageButtons();
+    bindMobileLangMenu();
 
     window.dispatchEvent(new CustomEvent("me:lang", { detail: { lang } }));
   }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      await load(getInitialLang());
+    } catch (err) {
+      console.error(err);
+    }
+  });
 
   return { load, t, getInitialLang };
 })();
