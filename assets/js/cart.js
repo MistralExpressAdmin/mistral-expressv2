@@ -1,6 +1,5 @@
 const ME_CART = (() => {
   const KEY = "me_cart_v2";
-  let cart = safeParse(localStorage.getItem(KEY)) || []; // {id,name,price,qty}
 
   function safeParse(s) {
     try {
@@ -10,6 +9,8 @@ const ME_CART = (() => {
     }
   }
 
+  let cart = safeParse(localStorage.getItem(KEY)) || []; // {id,name,price,qty}
+
   function escapeHtml(str) {
     return String(str ?? "")
       .replaceAll("&", "&amp;")
@@ -17,6 +18,13 @@ const ME_CART = (() => {
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function clear() {
+    cart = [];
+    localStorage.removeItem(KEY);
+    updateBadge();
+    renderDrawer();
   }
 
   function save() {
@@ -266,20 +274,31 @@ const ME_CART = (() => {
     }
   }
 
-  function bindCartUI() {
-    document.getElementById("cartOpenBtn")?.addEventListener("click", openDrawer);
-    document.getElementById("floatingCartBtn")?.addEventListener("click", openDrawer);
-    document.getElementById("cartCloseBtn")?.addEventListener("click", closeDrawer);
-    document.getElementById("cartBackdrop")?.addEventListener("click", closeDrawer);
+  function bindOnce(el, eventName, handler) {
+    if (!el) return;
+    const key = `meBound${eventName}`;
+    if (el.dataset[key] === "1") return;
+    el.addEventListener(eventName, handler);
+    el.dataset[key] = "1";
+  }
 
-    document.getElementById("checkoutStripe")?.addEventListener("click", (e) => {
+  function bindCartUI() {
+    bindOnce(document.getElementById("cartOpenBtn"), "click", openDrawer);
+    bindOnce(document.getElementById("floatingCartBtn"), "click", openDrawer);
+    bindOnce(document.getElementById("cartCloseBtn"), "click", closeDrawer);
+    bindOnce(document.getElementById("cartBackdrop"), "click", closeDrawer);
+
+    bindOnce(document.getElementById("checkoutStripe"), "click", (e) => {
       e.preventDefault();
       startStripeCheckout();
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeDrawer();
-    });
+    if (!document.body.dataset.meCartEscBound) {
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeDrawer();
+      });
+      document.body.dataset.meCartEscBound = "1";
+    }
 
     updateBadge();
     renderDrawer();
@@ -287,7 +306,7 @@ const ME_CART = (() => {
 
   document.addEventListener("DOMContentLoaded", updateBadge);
 
-  return { addItem, getQty, bindCartUI };
+  return { addItem, getQty, bindCartUI, clear };
 })();
 
 window.ME_CART = ME_CART;
