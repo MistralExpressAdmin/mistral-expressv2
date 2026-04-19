@@ -104,10 +104,24 @@
 
         <div class="hero-card">
           <section class="card glass" aria-labelledby="weather-title">
-            <header class="card-head">
-              <h2 id="weather-title" class="h3" data-i18n="home.weatherTitle">Météo en direct — Ports</h2>
-              <p class="muted" data-i18n="home.weatherSub">Actualisée automatiquement</p>
-            </header>
+  <header class="card-head">
+    <h2 id="weather-title" class="h3" data-i18n="home.weatherTitle">Météo en direct — Ports</h2>
+    <p class="muted" data-i18n="home.weatherSub">Actualisée automatiquement</p>
+  </header>
+
+  <div
+    class="weather-grid"
+    id="weatherGrid"
+    aria-live="polite"
+    aria-busy="true"
+  >
+    <p class="muted">Chargement de la météo…</p>
+  </div>
+
+  <p class="card-note" data-i18n="home.weatherNote">
+    Indication confort à titre informatif.
+  </p>
+</section>
 
             <div
               class="weather-grid"

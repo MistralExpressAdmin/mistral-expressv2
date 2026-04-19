@@ -1,5 +1,3 @@
-Main 
-
 (() => {
   "use strict";
 
@@ -35,6 +33,26 @@ Main
   }
 
   /* ==========================================================
+     CLEAR CART IN PUBLIC MODE
+     - vide le panier automatiquement si l’URL n’a pas cart=keep
+     - utile pour éviter d’envoyer un site avec un panier rempli
+     ========================================================== */
+  function clearCartForPublicVisitors() {
+    const url = new URL(window.location.href);
+    const keepCart = url.searchParams.get("cart") === "keep";
+
+    if (keepCart) return;
+
+    try {
+      localStorage.removeItem("me_cart");
+      localStorage.removeItem("cart");
+      localStorage.removeItem("mistral_cart");
+    } catch (err) {
+      console.warn("Impossible de vider le panier local.", err);
+    }
+  }
+
+  /* ==========================================================
      FOOTER YEAR
      ========================================================== */
   function initFooterYear() {
@@ -53,6 +71,14 @@ Main
     if (!toggle || !panel || !backdrop) return;
 
     function openNav() {
+      const mobileLangMenu = document.getElementById("mobileLangQuickMenu");
+      const mobileLangToggle = document.getElementById("mobileLangQuickToggle");
+
+      if (mobileLangMenu && mobileLangToggle) {
+        mobileLangMenu.hidden = true;
+        mobileLangToggle.setAttribute("aria-expanded", "false");
+      }
+
       panel.dataset.open = "true";
       toggle.setAttribute("aria-expanded", "true");
       backdrop.hidden = false;
@@ -77,7 +103,6 @@ Main
       if (e.key === "Escape") closeNav();
     });
 
-    // Ferme quand on clique un lien
     panel.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", closeNav);
     });
@@ -134,9 +159,10 @@ Main
   }
 
   /* ==========================================================
-     LOAD (avec retry header injecté)
+     LOAD
      ========================================================== */
   document.addEventListener("DOMContentLoaded", () => {
+    clearCartForPublicVisitors();
     initAll();
 
     let tries = 0;
@@ -154,5 +180,4 @@ Main
       if (tries >= 20) clearInterval(t);
     }, 100);
   });
-
 })();
