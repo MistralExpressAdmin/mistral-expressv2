@@ -3895,3 +3895,606 @@ html.nav-open body{
     max-width: 100%;
   }
 }
+/* ===== FIX NAV MENU (supprime sticky cassé) ===== */
+.menu-navigation{
+  position: relative !important;
+  top: auto !important;
+}
+
+#menuChips{
+  position: static !important;
+}
+/* ===== FIX PACKAGE OPTIONS (version premium) ===== */
+
+.package-picker{
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.package-picker__label{
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(21,21,21,.42);
+  margin-bottom: 2px;
+}
+
+.package-picker__buttons{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.package-option{
+  appearance: none;
+  min-width: 0;
+  min-height: 40px;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(17,17,17,.10);
+  background: rgba(255,255,255,.88);
+  color: rgba(21,21,21,.74);
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .01em;
+  line-height: 1;
+
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.package-option:hover{
+  border-color: rgba(17,17,17,.18);
+  color: #151515;
+  background: rgba(255,255,255,.98);
+}
+
+.package-option.active{
+  background: #151515;
+  color: #ffffff;
+  border-color: #151515;
+  box-shadow: none;
+}
+
+.package-option:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(31,58,52,.14);
+}
+
+/* intégration plus propre dans les cartes */
+.product .package-picker{
+  margin-top: 12px;
+}
+
+.product .package-picker__buttons{
+  align-items: stretch;
+}
+
+/* mobile */
+@media (max-width: 820px){
+  .package-picker__buttons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .package-option{
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 6px;
+    font-size: 11px;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px){
+  .package-option{
+    min-height: 40px;
+    font-size: 10px;
+  }
+}
+/* ==========================================================
+   LUXURY REFINEMENT — réduire l'effet tech / trop arrondi
+   À COLLER TOUT EN BAS DU CSS
+   ========================================================== */
+
+:root{
+  --r: 2px;
+  --r2: 2px;
+  --shadow: 0 8px 24px rgba(0,0,0,.04);
+}
+
+/* Fond global plus éditorial */
+body{
+  background:
+    linear-gradient(180deg, #fcfbf8 0%, #f6f2eb 100%);
+  color: #151515;
+  letter-spacing: 0.01em;
+}
+
+/* Typo plus luxe */
+h1, h2, h3, .brand-name{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #151515;
+}
+
+h1{
+  font-size: 54px;
+  line-height: .98;
+}
+
+h2{
+  font-size: 34px;
+  line-height: 1.04;
+}
+
+h3{
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.lead,
+.muted,
+.tiny,
+.menu a,
+.btn,
+.chip,
+.tab-btn,
+.badge,
+.price,
+.footer-links a,
+.lang-item,
+.package-option{
+  font-family: "Inter", sans-serif;
+}
+
+/* Réduction massive des arrondis */
+.card,
+.card.glass,
+.product,
+.weather,
+.cart-item,
+.faq-item,
+.me-modal__panel,
+.drawer-panel,
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-ghost,
+.btn-chip,
+.icon-btn,
+.cart-btn,
+.tab-btn,
+.chip,
+.package-option,
+.search input,
+.form input,
+.form textarea,
+.qty,
+.lang-menu,
+.lang-item,
+.nav-toggle,
+.nav-panel,
+.menu-categories-panel,
+.floating-cart,
+.brand-mark,
+.pill,
+.me-product-media,
+.me-modal__media img,
+.contact-form-premium input,
+.contact-form-premium textarea,
+.success-mark,
+.success-card{
+  border-radius: 2px !important;
+}
+
+/* Enlever les ombres trop "UI" */
+.card,
+.product,
+.weather,
+.cart-item,
+.faq-item,
+.me-modal__panel,
+.drawer-panel,
+.cart-btn,
+.floating-cart,
+.nav-panel{
+  box-shadow: none !important;
+}
+
+/* Cartes plus sobres */
+.card,
+.product,
+.weather,
+.cart-item,
+.faq-item,
+.success-card{
+  background: #ffffff;
+  border: 1px solid rgba(17,17,17,.08);
+}
+
+/* Glass inutile = trop tech */
+.card.glass{
+  background: #ffffff;
+  backdrop-filter: none;
+}
+
+/* Header plus maison de luxe */
+.site-header{
+  background: rgba(252,251,248,.96);
+  border-bottom: 1px solid rgba(17,17,17,.08);
+  backdrop-filter: blur(10px);
+}
+
+.nav{
+  padding: 16px 0;
+}
+
+.brand-mark{
+  background: #f3ede4;
+  border: 1px solid rgba(17,17,17,.12);
+  color: #151515;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.brand-name{
+  font-size: 28px;
+}
+
+/* Menu header moins "application" */
+.menu a{
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(21,21,21,.82);
+  background: transparent !important;
+  padding: 6px 0;
+}
+
+.menu a:hover,
+.menu a.active{
+  color: #151515;
+}
+
+/* Boutons beaucoup plus luxe */
+.btn{
+  min-height: 46px;
+  padding: 12px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: none !important;
+}
+
+.btn:hover{
+  transform: none;
+}
+
+.btn-primary{
+  background: #1f3a34;
+  border: 1px solid #1f3a34;
+  color: #fff;
+}
+
+.btn-secondary,
+.btn-ghost,
+.btn-chip{
+  background: #ffffff;
+  border: 1px solid rgba(17,17,17,.12);
+  color: #151515;
+}
+
+.icon-btn{
+  background: #ffffff;
+  border: 1px solid rgba(17,17,17,.12);
+  color: #151515;
+}
+
+/* Tabs / chips moins gadget */
+.tab-btn,
+.chip{
+  background: transparent;
+  border: 1px solid rgba(17,17,17,.10);
+  color: rgba(21,21,21,.74);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.tab-btn.active,
+.chip.active{
+  background: #ffffff;
+  border-color: rgba(17,17,17,.18);
+  color: #151515;
+}
+
+/* Barre menu plus discrète */
+.menu-navigation{
+  background: rgba(252,251,248,.96);
+  border-bottom: 1px solid rgba(17,17,17,.08);
+}
+
+/* Produits */
+.product{
+  padding: 18px;
+  border: 1px solid rgba(17,17,17,.08);
+}
+
+.product:hover{
+  transform: none;
+  border-color: rgba(17,17,17,.14);
+  box-shadow: none;
+}
+
+.product .desc{
+  color: rgba(21,21,21,.60);
+}
+
+.price{
+  font-size: 20px;
+  font-weight: 500;
+  color: #1f3a34;
+}
+
+.badge{
+  background: transparent;
+  border: 1px solid rgba(184,154,95,.42);
+  color: #7a6230;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 8px;
+}
+
+/* Options format plus élégantes */
+.package-picker__label{
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(21,21,21,.40);
+}
+
+.package-option{
+  background: #fff;
+  border: 1px solid rgba(17,17,17,.10);
+  color: rgba(21,21,21,.72);
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 40px;
+}
+
+.package-option:hover{
+  border-color: rgba(17,17,17,.18);
+  color: #151515;
+  background: #fff;
+  transform: none;
+}
+
+.package-option.active{
+  background: #151515;
+  border-color: #151515;
+  color: #fff;
+}
+
+/* Météo plus éditoriale */
+.weather{
+  background: #ffffff;
+  border: 1px solid rgba(17,17,17,.08);
+}
+
+.weather:hover{
+  transform: none;
+  box-shadow: none;
+}
+
+.weather .w-title,
+.total,
+.cart-item .ci-name{
+  font-weight: 500;
+}
+
+/* Inputs */
+.search input,
+.form input,
+.form textarea,
+.contact-form-premium input,
+.contact-form-premium textarea{
+  background: #ffffff;
+  border: 1px solid rgba(17,17,17,.12);
+  color: #151515;
+}
+
+.search input::placeholder,
+.form input::placeholder,
+.form textarea::placeholder,
+.contact-form-premium input::placeholder,
+.contact-form-premium textarea::placeholder{
+  color: rgba(21,21,21,.40);
+}
+
+/* Drawer / modal */
+.drawer-backdrop,
+.me-modal__backdrop{
+  background: rgba(0,0,0,.18);
+}
+
+.drawer-head,
+.drawer-foot,
+.me-modal__head{
+  background: rgba(252,251,248,.98);
+}
+
+/* Footer plus maison premium */
+.site-footer{
+  background: rgba(252,251,248,.92);
+  border-top: 1px solid rgba(17,17,17,.08);
+}
+
+.footer-links a{
+  color: rgba(21,21,21,.66);
+}
+
+.footer-links a:hover{
+  color: #151515;
+}
+
+/* Mobile */
+@media (max-width: 820px){
+  .site-header{
+    background: rgba(252,251,248,.97);
+  }
+
+  .nav{
+    padding: 10px 0;
+  }
+
+  .brand-name{
+    font-size: 20px;
+  }
+
+  .menu a{
+    background: #ffffff !important;
+    border: 1px solid rgba(17,17,17,.08);
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .product{
+    padding: 14px;
+  }
+
+  .me-product-media img{
+    height: 180px;
+  }
+
+  .floating-cart{
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 480px){
+  .brand-name{
+    font-size: 18px;
+    max-width: 120px;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+
+  .price{
+    font-size: 16px;
+  }
+
+  .me-product-media img{
+    height: 156px;
+  }
+}
+/* ==========================================================
+   FIX LANGUE — une seule langue sur desktop
+   ========================================================== */
+
+.mobile-lang-quick{
+  display: none !important;
+}
+
+@media (max-width: 820px){
+  .mobile-lang-quick{
+    display: block !important;
+    position: relative;
+    z-index: 120;
+  }
+
+  .nav-actions .lang{
+    display: none !important;
+  }
+}
+/* ==========================================================
+   FINAL MOBILE FIX — la barre Tout / Food / Boissons ne doit
+   PAS rester sticky sur téléphone
+   ========================================================== */
+
+@media (max-width: 820px){
+
+  .menu-navigation{
+    position: static !important;
+    top: auto !important;
+    z-index: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    padding: 0 0 12px !important;
+  }
+
+  .menu-navigation .container{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .menu-tabs{
+    position: static !important;
+    top: auto !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .menu-tabs::-webkit-scrollbar{
+    display: none;
+  }
+}
+/* ==========================================================
+   KILL STICKY DEFINITIF — barre Tout / Food / Boissons
+   ========================================================== */
+
+.menu-navigation{
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  padding: 0 0 12px !important;
+}
+
+.menu-navigation .container{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.menu-tabs{
+  position: static !important;
+  top: auto !important;
+}
+
+#menuChips{
+  position: static !important;
+  top: auto !important;
+  z-index: auto !important;
+}

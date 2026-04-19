@@ -524,6 +524,19 @@
     return `${v}€`;
   }
 
+  function getPackageLabel() {
+    return "Format";
+  }
+
+  function getOptionDisplayLabel(label) {
+    const raw = String(label || "").trim();
+    if (!raw) return "";
+
+    return raw
+      .replace(/^(\d+)\s*personnes?$/i, "$1 pers.")
+      .replace(/^(\d+)\s*pax$/i, "$1 pers.");
+  }
+
   function canAdd(price) {
     return typeof price === "number" && Number.isFinite(price) && price > 0;
   }
@@ -653,15 +666,16 @@
 
     return `
       <div class="package-picker" data-options-for="${escapeHtml(product.id)}">
-        <div class="package-picker__label">Choisir le nombre de personnes</div>
+        <div class="package-picker__label">${escapeHtml(getPackageLabel())}</div>
         <div class="package-picker__buttons">
           ${product.options.map(opt => `
             <button
               type="button"
               class="package-option ${opt.id === first.id ? "active" : ""}"
               data-option-id="${escapeHtml(opt.id)}"
+              aria-label="${escapeHtml(opt.label)}"
             >
-              ${escapeHtml(opt.label)}
+              ${escapeHtml(getOptionDisplayLabel(opt.label))}
             </button>
           `).join("")}
         </div>
@@ -851,15 +865,16 @@
         <p class="muted">${escapeHtml(product.desc || "")}</p>
 
         <div class="package-picker package-picker--modal">
-          <div class="package-picker__label">Choisir le nombre de personnes</div>
+          <div class="package-picker__label">${escapeHtml(getPackageLabel())}</div>
           <div class="package-picker__buttons">
             ${product.options.map(opt => `
               <button
                 type="button"
                 class="package-option package-option--modal ${opt.id === selected.id ? "active" : ""}"
                 data-modal-option-id="${escapeHtml(opt.id)}"
+                aria-label="${escapeHtml(opt.label)}"
               >
-                ${escapeHtml(opt.label)}
+                ${escapeHtml(getOptionDisplayLabel(opt.label))}
               </button>
             `).join("")}
           </div>
