@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skip": "Aller au contenu"
+  },
   "nav": {
     "home": "Accueil",
     "menu": "Carte",
@@ -33,6 +36,7 @@
     "pill3": "Présentation soignée",
     "weatherTitle": "Météo en direct — Ports",
     "weatherSub": "Actualisée automatiquement",
+    "weatherLoading": "Chargement de la météo…",
     "weatherNote": "Indication confort à titre informatif.",
     "h2": "Un service pensé pour les amoureux du goût.",
     "h2sub": "Du petit-déjeuner au coucher du soleil : une offre claire, soignée et prête à servir.",
