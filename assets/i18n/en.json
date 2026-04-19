@@ -1,7 +1,4 @@
 {
-  "a11y": {
-    "skip": "Skip to content"
-  },
   "nav": {
     "home": "Home",
     "menu": "Menu",
@@ -36,7 +33,6 @@
     "pill3": "Refined presentation",
     "weatherTitle": "Live weather — Ports",
     "weatherSub": "Auto-updated",
-    "weatherLoading": "Loading weather…",
     "weatherNote": "Comfort indication for information only.",
     "h2": "A service designed for those who appreciate taste.",
     "h2sub": "From breakfast to sunset service: a clear, refined and ready-to-serve selection.",
