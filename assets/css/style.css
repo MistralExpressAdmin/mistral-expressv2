@@ -5040,3 +5040,19 @@ h3{
 .lang-menu{
   z-index: 200;
 }
+.lang{
+  position: relative;
+  z-index: 200;
+}
+
+.lang-menu{
+  z-index: 9999;
+}
+
+.nav-panel{
+  overflow: visible !important;
+}
+
+.site-header{
+  overflow: visible !important;
+}

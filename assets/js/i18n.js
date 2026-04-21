@@ -64,7 +64,6 @@ const ME_I18N = (() => {
       const active = btn.dataset.lang === lang;
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-checked", active ? "true" : "false");
-      btn.setAttribute("role", "menuitemradio");
     });
 
     document.querySelectorAll(".mobile-lang-quick__item[data-lang]").forEach((btn) => {
@@ -72,6 +71,25 @@ const ME_I18N = (() => {
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
+
+    const langBtn = document.getElementById("langBtn");
+    if (langBtn) {
+      langBtn.setAttribute("aria-expanded", "false");
+    }
+
+    const mobileBtn = document.getElementById("mobileLangQuickToggle");
+    if (mobileBtn) {
+      mobileBtn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function openDesktopMenu() {
+    const btn = document.getElementById("langBtn");
+    const menu = document.getElementById("langMenu");
+    if (!btn || !menu) return;
+
+    btn.setAttribute("aria-expanded", "true");
+    menu.classList.add("open");
   }
 
   function closeDesktopMenu() {
@@ -84,13 +102,23 @@ const ME_I18N = (() => {
   }
 
   function toggleDesktopMenu() {
-    const btn = document.getElementById("langBtn");
     const menu = document.getElementById("langMenu");
+    if (!menu) return;
+
+    if (menu.classList.contains("open")) {
+      closeDesktopMenu();
+    } else {
+      openDesktopMenu();
+    }
+  }
+
+  function openMobileMenu() {
+    const btn = document.getElementById("mobileLangQuickToggle");
+    const menu = document.getElementById("mobileLangQuickMenu");
     if (!btn || !menu) return;
 
-    const willOpen = !menu.classList.contains("open");
-    btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
-    menu.classList.toggle("open", willOpen);
+    btn.setAttribute("aria-expanded", "true");
+    menu.hidden = false;
   }
 
   function closeMobileMenu() {
@@ -103,18 +131,18 @@ const ME_I18N = (() => {
   }
 
   function toggleMobileMenu() {
-    const btn = document.getElementById("mobileLangQuickToggle");
     const menu = document.getElementById("mobileLangQuickMenu");
-    if (!btn || !menu) return;
+    if (!menu) return;
 
-    const willOpen = menu.hidden;
-    btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
-    menu.hidden = !willOpen;
+    if (menu.hidden) {
+      openMobileMenu();
+    } else {
+      closeMobileMenu();
+    }
   }
 
   async function load(l) {
     lang = isSupported(l) ? l : defaultLang;
-
     localStorage.setItem(STORAGE_KEY, lang);
 
     const url = new URL(window.location.href);
@@ -128,73 +156,75 @@ const ME_I18N = (() => {
     window.dispatchEvent(new CustomEvent("me:lang", { detail: { lang } }));
   }
 
-  function bindUI() {
-    const langBtn = document.getElementById("langBtn");
-    const langMenu = document.getElementById("langMenu");
-    const mobileBtn = document.getElementById("mobileLangQuickToggle");
-    const mobileMenu = document.getElementById("mobileLangQuickMenu");
+  function bindDelegatedUI() {
+    if (document.body.dataset.meI18nDelegatedBound === "1") return;
 
-    if (langBtn && !langBtn.dataset.bound) {
-      langBtn.addEventListener("click", (e) => {
+    document.addEventListener("click", async (e) => {
+      const desktopToggle = e.target.closest("#langBtn");
+      if (desktopToggle) {
+        e.preventDefault();
         e.stopPropagation();
         toggleDesktopMenu();
-      });
-      langBtn.dataset.bound = "1";
-    }
+        return;
+      }
 
-    if (mobileBtn && !mobileBtn.dataset.bound) {
-      mobileBtn.addEventListener("click", (e) => {
+      const mobileToggle = e.target.closest("#mobileLangQuickToggle");
+      if (mobileToggle) {
+        e.preventDefault();
         e.stopPropagation();
         toggleMobileMenu();
-      });
-      mobileBtn.dataset.bound = "1";
-    }
+        return;
+      }
 
-    document.querySelectorAll(".lang-item[data-lang]").forEach((btn) => {
-      if (btn.dataset.bound) return;
-      btn.addEventListener("click", async () => {
-        await load(btn.dataset.lang);
+      const desktopItem = e.target.closest(".lang-item[data-lang]");
+      if (desktopItem) {
+        e.preventDefault();
+        e.stopPropagation();
+        await load(desktopItem.dataset.lang);
         closeDesktopMenu();
-      });
-      btn.dataset.bound = "1";
-    });
+        return;
+      }
 
-    document.querySelectorAll(".mobile-lang-quick__item[data-lang]").forEach((btn) => {
-      if (btn.dataset.bound) return;
-      btn.addEventListener("click", async () => {
-        await load(btn.dataset.lang);
+      const mobileItem = e.target.closest(".mobile-lang-quick__item[data-lang]");
+      if (mobileItem) {
+        e.preventDefault();
+        e.stopPropagation();
+        await load(mobileItem.dataset.lang);
         closeMobileMenu();
-      });
-      btn.dataset.bound = "1";
+        return;
+      }
+
+      const insideDesktop =
+        e.target.closest("#langBtn") || e.target.closest("#langMenu");
+      if (!insideDesktop) {
+        closeDesktopMenu();
+      }
+
+      const insideMobile =
+        e.target.closest("#mobileLangQuickToggle") ||
+        e.target.closest("#mobileLangQuickMenu");
+      if (!insideMobile) {
+        closeMobileMenu();
+      }
     });
 
-    if (!document.body.dataset.i18nGlobalBound) {
-      document.addEventListener("click", (e) => {
-        if (langBtn && langMenu) {
-          const insideDesktop = langBtn.contains(e.target) || langMenu.contains(e.target);
-          if (!insideDesktop) closeDesktopMenu();
-        }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeDesktopMenu();
+        closeMobileMenu();
+      }
+    });
 
-        if (mobileBtn && mobileMenu) {
-          const insideMobile = mobileBtn.contains(e.target) || mobileMenu.contains(e.target);
-          if (!insideMobile) closeMobileMenu();
-        }
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          closeDesktopMenu();
-          closeMobileMenu();
-        }
-      });
-
-      document.body.dataset.i18nGlobalBound = "1";
-    }
-
-    updateLangUI();
+    document.body.dataset.meI18nDelegatedBound = "1";
   }
 
-  return { load, t, getInitialLang, bindUI };
+  return {
+    load,
+    t,
+    getInitialLang,
+    bindDelegatedUI,
+    updateLangUI,
+  };
 })();
 
 window.ME_I18N = ME_I18N;
@@ -206,18 +236,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(err);
   }
 
-  window.ME_I18N.bindUI();
-
-  let tries = 0;
-  const t = setInterval(() => {
-    tries += 1;
-    window.ME_I18N.bindUI();
-    if (document.getElementById("langBtn") || tries >= 20) {
-      clearInterval(t);
-    }
-  }, 150);
+  window.ME_I18N.bindDelegatedUI();
+  window.ME_I18N.updateLangUI();
 });
 
-window.addEventListener("me:includes-ready", () => {
-  window.ME_I18N.bindUI();
+window.addEventListener("me:lang", () => {
+  window.ME_I18N.updateLangUI();
 });
