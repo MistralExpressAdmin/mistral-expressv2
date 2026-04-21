@@ -110,6 +110,7 @@ function setupMobileNav() {
   const panel = document.getElementById("primaryNav");
   const backdrop = document.getElementById("navBackdrop");
   if (!toggle || !panel || !backdrop) return;
+  if (toggle.dataset.meNavBound === "1") return;
 
   const html = document.documentElement;
 
@@ -131,38 +132,35 @@ function setupMobileNav() {
     html.classList.remove("nav-open");
   };
 
-  // Init safe state
-  panel.setAttribute("data-open", panel.getAttribute("data-open") || "false");
+  panel.setAttribute("data-open", "false");
   toggle.setAttribute("aria-controls", "primaryNav");
-  toggle.setAttribute("aria-expanded", isOpen() ? "true" : "false");
-  backdrop.hidden = !isOpen();
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-label", "Ouvrir le menu");
+  backdrop.hidden = true;
 
   toggle.addEventListener("click", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     isOpen() ? close() : open();
   });
 
-  backdrop.addEventListener("click", () => close());
+  backdrop.addEventListener("click", close);
 
-  // Close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && isOpen()) close();
   });
 
-  // Close when clicking a link in the menu (mobile UX)
   panel.querySelectorAll("a[href]").forEach((a) => {
     a.addEventListener("click", () => {
       if (isOpen()) close();
     });
   });
 
-  // Close if resizing back to desktop
   window.addEventListener("resize", () => {
-    // On desktop widths, ensure closed
     if (window.innerWidth > 980 && isOpen()) close();
   });
 
-  // Expose for debugging if needed
+  toggle.dataset.meNavBound = "1";
   window.ME_NAV = { open, close };
 }
 

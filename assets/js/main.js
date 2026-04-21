@@ -69,66 +69,11 @@
     }
   }
 
-  function initMobileNav() {
-    const html = document.documentElement;
-    const toggle = document.getElementById("navToggle");
-    const panel = document.getElementById("primaryNav");
-    const backdrop = document.getElementById("navBackdrop");
-
-    if (!toggle || !panel || !backdrop) return;
-    if (toggle.dataset.meNavBound === "1") return;
-
-    function isOpen() {
-      return panel.getAttribute("data-open") === "true";
-    }
-
-    function openNav() {
-      panel.setAttribute("data-open", "true");
-      toggle.setAttribute("aria-expanded", "true");
-      backdrop.hidden = false;
-      html.classList.add("nav-open");
-    }
-
-    function closeNav() {
-      panel.setAttribute("data-open", "false");
-      toggle.setAttribute("aria-expanded", "false");
-      backdrop.hidden = true;
-      html.classList.remove("nav-open");
-    }
-
-    function toggleNav() {
-      if (isOpen()) closeNav();
-      else openNav();
-    }
-
-    toggle.addEventListener("click", toggleNav);
-    backdrop.addEventListener("click", closeNav);
-
-    panel.querySelectorAll("a[href]").forEach((link) => {
-      link.addEventListener("click", closeNav);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && isOpen()) {
-        closeNav();
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 820) {
-        closeNav();
-      }
-    });
-
-    closeNav();
-    toggle.dataset.meNavBound = "1";
-  }
 
   function initAll() {
     initFooterYear();
     initCartEverywhere();
     setActiveNavLink();
-    initMobileNav();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
