@@ -5689,3 +5689,224 @@ button,
     padding: 14px !important;
   }
 }
+/* ==========================================================
+   WEATHER MOBILE POLISH — plus premium / plus éditorial
+   À COLLER TOUT EN BAS
+   ========================================================== */
+
+@media (max-width: 820px){
+
+  /* bloc global météo dans le hero */
+  .hero-card{
+    margin-top: 4px !important;
+  }
+
+  .hero-card .card{
+    padding: 20px !important;
+    background: rgba(255,255,255,.86) !important;
+    border: 1px solid rgba(22,22,22,.08) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 14px 30px rgba(0,0,0,.05) !important;
+  }
+
+  .hero-card .card-head{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    align-items: start !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 12px !important;
+    border-bottom: 1px solid rgba(22,22,22,.08);
+  }
+
+  .hero-card .card-head .h3,
+  .hero-card .card-head h3{
+    margin: 0 !important;
+    font-size: 22px !important;
+    line-height: 1.06 !important;
+  }
+
+  .hero-card .card-head .muted{
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: rgba(22,22,22,.46) !important;
+  }
+
+  /* liste météo */
+  .weather-grid{
+    display: grid !important;
+    gap: 10px !important;
+  }
+
+  .weather{
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) auto !important;
+    gap: 10px !important;
+    align-items: center !important;
+
+    padding: 16px !important;
+    background: rgba(255,255,255,.92) !important;
+    border: 1px solid rgba(22,22,22,.08) !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+
+  .weather:hover{
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: rgba(184,154,95,.22) !important;
+  }
+
+  .weather .w-title{
+    margin: 0 0 2px !important;
+    font-size: 15px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    color: #151515 !important;
+  }
+
+  .weather .w-sub{
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: rgba(22,22,22,.50) !important;
+  }
+
+  .weather .w-right{
+    text-align: right !important;
+    display: grid !important;
+    gap: 2px !important;
+    justify-items: end !important;
+  }
+
+  .weather .w-temp{
+    font-size: 22px !important;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    letter-spacing: -.03em !important;
+    color: #18342e !important;
+  }
+
+  .weather .w-wind{
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    color: rgba(22,22,22,.44) !important;
+  }
+
+  .card-note{
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(22,22,22,.06);
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: rgba(22,22,22,.42) !important;
+  }
+}
+
+@media (max-width: 480px){
+
+  .hero-card .card{
+    padding: 18px !important;
+  }
+
+  .hero-card .card-head{
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .hero-card .card-head .h3,
+  .hero-card .card-head h3{
+    font-size: 20px !important;
+  }
+
+  .hero-card .card-head .muted{
+    font-size: 13px !important;
+  }
+
+  .weather{
+    padding: 14px !important;
+    gap: 8px !important;
+  }
+
+  .weather .w-title{
+    font-size: 14px !important;
+  }
+
+  .weather .w-temp{
+    font-size: 20px !important;
+  }
+
+  .weather .w-sub,
+  .weather .w-wind{
+    font-size: 11px !important;
+  }
+}
+/* ==========================================================
+   HEADER MOBILE POLISH — plus palace / plus équilibré
+   À COLLER TOUT EN BAS
+   ========================================================== */
+
+@media (max-width: 820px){
+
+  .site-header{
+    background: rgba(251,248,242,.94) !important;
+    border-bottom: 1px solid rgba(22,22,22,.08) !important;
+    backdrop-filter: blur(14px) !important;
+  }
+
+  .site-header .nav{
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) auto auto !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 0 !important;
+  }
+
+  /* bloc logo */
+  .brand{
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    min-width: 0 !important;
+  }
+
+  .brand-mark{
+    width: 44px !important;
+    height: 44px !important;
+    flex: 0 0 44px !important;
+    display: grid !important;
+    place-items: center !important;
+
+    background: #f3ede4 !important;
+    border: 1px solid rgba(22,22,22,.10) !important;
+    border-radius: 6px !important;
+
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: .06em !important;
+    color: #151515 !important;
+  }
+
+  .brand-name{
+    max-width: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+
+    font-size: 20px !important;
+    line-height: 1 !important;
+    color: #151515 !important;
+  }
+
+  /* sélecteur langue mobile */
+  .mobile-lang-quick{
+    position: relative !important;
+    display: block !important;
+  }
+
+  .mobile-lang-quick__toggle{
+    min-width: 92px !important;
+    height: 46px !important;
+    padding: 0 16
+  }
+}
