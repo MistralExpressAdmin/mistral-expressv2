@@ -5032,3 +5032,11 @@ h3{
     justify-content: flex-start !important;
   }
 }
+.lang{
+  position: relative;
+  z-index: 50;
+}
+
+.lang-menu{
+  z-index: 200;
+}
