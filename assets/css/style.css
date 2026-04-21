@@ -5032,3 +5032,33 @@ h3{
     justify-content: flex-start !important;
   }
 }
+/* =========================================
+   FIX LANG MENU DESKTOP
+   ========================================= */
+
+.lang{
+  position: relative;
+  z-index: 20;
+}
+
+.lang-menu{
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.lang-menu.open{
+  display: block;
+}
+
+/* évite qu’un overlay mobile bloque les clics */
+.nav-panel{
+  position: relative;
+  z-index: 15;
+}
+
+.menu-categories-wrap{
+  z-index: 5;
+}
