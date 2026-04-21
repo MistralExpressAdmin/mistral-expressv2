@@ -68,11 +68,57 @@
       console.warn("Impossible d'initialiser la session panier.", err);
     }
   }
+  function initMobileNav() {
+  const toggle = document.getElementById("navToggle");
+  const panel = document.getElementById("primaryNav");
+  const backdrop = document.getElementById("navBackdrop");
+
+  if (!toggle || !panel || !backdrop) return;
+  if (toggle.dataset.meNavBound === "1") return;
+
+  const openNav = () => {
+    panel.setAttribute("data-open", "true");
+    toggle.setAttribute("aria-expanded", "true");
+    backdrop.hidden = false;
+    document.documentElement.classList.add("nav-open");
+  };
+
+  const closeNav = () => {
+    panel.setAttribute("data-open", "false");
+    toggle.setAttribute("aria-expanded", "false");
+    backdrop.hidden = true;
+    document.documentElement.classList.remove("nav-open");
+  };
+
+  const isOpen = () => panel.getAttribute("data-open") === "true";
+
+  toggle.addEventListener("click", () => {
+    if (isOpen()) closeNav();
+    else openNav();
+  });
+
+  backdrop.addEventListener("click", closeNav);
+
+  panel.querySelectorAll("a[href]").forEach((link) => {
+    link.addEventListener("click", closeNav);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && isOpen()) closeNav();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 820) closeNav();
+  });
+
+  toggle.dataset.meNavBound = "1";
+}
 
   function initAll() {
     initFooterYear();
     initCartEverywhere();
     setActiveNavLink();
+    initMobileNav();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
