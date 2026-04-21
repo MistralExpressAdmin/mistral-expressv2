@@ -5061,3 +5061,259 @@ h3{
 .mobile-lang-quick__menu{
   pointer-events: auto;
 }
+/* ==========================================================
+   MICRO UX PREMIUM — interactions sobres et haut de gamme
+   À COLLER TOUT EN BAS
+   ========================================================== */
+
+/* Base transitions plus propres */
+a,
+button,
+.btn,
+.icon-btn,
+.cart-btn,
+.tab-btn,
+.chip,
+.package-option,
+.lang-item,
+.mobile-lang-quick__item,
+.menu a,
+.product,
+.me-product-media img,
+.search input,
+.qty{
+  transition:
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease),
+    color 180ms var(--ease),
+    box-shadow 180ms var(--ease),
+    opacity 180ms var(--ease),
+    transform 180ms var(--ease);
+}
+
+/* Liens du header */
+.menu a{
+  position: relative;
+  color: rgba(22,22,22,.74);
+}
+
+.menu a:hover{
+  color: #151515;
+}
+
+.menu a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: rgba(22,22,22,.22);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms var(--ease), background-color 180ms var(--ease);
+}
+
+.menu a:hover::after,
+.menu a.active::after{
+  transform: scaleX(1);
+}
+
+.menu a.active{
+  color: #151515;
+}
+
+/* Boutons généraux */
+.btn:hover,
+.cart-btn:hover,
+.icon-btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn:active,
+.cart-btn:active,
+.icon-btn:active{
+  transform: translateY(0);
+}
+
+.btn-secondary:hover,
+.btn-ghost:hover,
+.btn-chip:hover,
+.cart-btn:hover{
+  background: #ffffff;
+  border-color: rgba(22,22,22,.18);
+  color: #151515;
+}
+
+.btn-primary:hover{
+  background: linear-gradient(135deg, #1d3b34 0%, #122b25 100%);
+  border-color: #1d3b34;
+  box-shadow: 0 14px 28px rgba(24,52,46,.10);
+}
+
+/* Boutons tabs top menu */
+.tab-btn{
+  position: relative;
+}
+
+.tab-btn:hover{
+  background: #fbf8f2;
+  border-color: rgba(22,22,22,.22);
+  color: #151515;
+}
+
+.tab-btn.active{
+  background: #151515;
+  border-color: #151515;
+  color: #fff;
+}
+
+/* Chips catégories */
+.chip:hover{
+  background: #fbf8f2;
+  border-color: rgba(22,22,22,.18);
+  color: #151515;
+}
+
+.chip.active{
+  background: #ffffff;
+  border-color: rgba(22,22,22,.22);
+  color: #151515;
+}
+
+/* Options 2p / 4p / 8p */
+.package-option{
+  position: relative;
+}
+
+.package-option:hover{
+  background: #fcfaf6;
+  border-color: rgba(184,154,95,.44);
+  color: #151515;
+}
+
+.package-option.active{
+  background: #151515;
+  border-color: #151515;
+  color: #fff;
+}
+
+/* Inputs */
+.search input:hover,
+.search input:focus-visible,
+.form input:hover,
+.form textarea:hover,
+.form input:focus-visible,
+.form textarea:focus-visible,
+.contact-form-premium input:hover,
+.contact-form-premium textarea:hover,
+.contact-form-premium input:focus-visible,
+.contact-form-premium textarea:focus-visible{
+  background: #ffffff;
+  border-color: rgba(22,22,22,.18) !important;
+  box-shadow: 0 0 0 2px rgba(184,154,95,.08);
+}
+
+/* Cartes produit */
+.product{
+  transition:
+    border-color 180ms var(--ease),
+    background-color 180ms var(--ease),
+    transform 180ms var(--ease),
+    box-shadow 180ms var(--ease);
+}
+
+.product:hover{
+  border-color: rgba(184,154,95,.34);
+  background: rgba(255,255,255,.96);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.04);
+}
+
+.product:hover .me-product-media img{
+  transform: scale(1.012);
+}
+
+/* Media card */
+.me-product-media{
+  overflow: hidden;
+}
+
+/* Quantité */
+.qty:hover{
+  border-color: rgba(22,22,22,.18);
+  background: #fff;
+}
+
+.qty button:hover{
+  background: rgba(22,22,22,.04);
+}
+
+.qty button:active{
+  background: rgba(22,22,22,.07);
+}
+
+/* Dropdown langue */
+.lang-item:hover,
+.mobile-lang-quick__item:hover{
+  background: rgba(255,255,255,.78);
+  color: #151515;
+}
+
+/* Liens footer */
+.footer-links a,
+.footer-partner-link{
+  transition:
+    color 180ms var(--ease),
+    border-color 180ms var(--ease),
+    opacity 180ms var(--ease),
+    transform 180ms var(--ease);
+}
+
+.footer-links a:hover{
+  color: #151515;
+}
+
+.footer-partner-link:hover{
+  color: #18342e;
+  border-color: rgba(24,52,46,.40);
+  transform: translateX(2px);
+}
+
+/* Focus plus chic */
+.btn:focus-visible,
+.icon-btn:focus-visible,
+.cart-btn:focus-visible,
+.tab-btn:focus-visible,
+.chip:focus-visible,
+.package-option:focus-visible,
+.menu a:focus-visible,
+.lang-item:focus-visible,
+.mobile-lang-quick__item:focus-visible,
+.search input:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(184,154,95,.14);
+  border-color: rgba(184,154,95,.42) !important;
+}
+
+/* Mobile : pas d’effets trop “desktop” */
+@media (max-width: 820px){
+  .product:hover,
+  .btn:hover,
+  .cart-btn:hover,
+  .icon-btn:hover{
+    transform: none;
+  }
+
+  .product:hover{
+    box-shadow: none;
+  }
+
+  .product:hover .me-product-media img{
+    transform: none;
+  }
+
+  .footer-partner-link:hover{
+    transform: none;
+  }
+}
