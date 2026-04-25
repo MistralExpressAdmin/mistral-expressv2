@@ -753,6 +753,18 @@ function renderProductMedia(product) {
   }
 
   return `
+    <div class="me-product-media">
+      <img
+        src="${escapeHtml(product.img)}"
+        alt="${escapeHtml(product.name)}"
+        loading="lazy"
+        onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+      />
+    </div>
+  `;
+}
+
+  return `
     ${renderProductMedia(product)}
   `;
 }
@@ -774,14 +786,7 @@ function renderProductMedia(product) {
         ${disabled}
         aria-label="${escapeHtml(product.name)}"
       >
-        <div class="me-product-media">
-          <img
-            src="${escapeHtml(product.img)}"
-            alt="${escapeHtml(product.name)}"
-            loading="lazy"
-            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
-          />
-        </div>
+        ${renderProductMedia(product)}
 
         <div class="meta">
           <div class="meta-copy">
@@ -1052,20 +1057,24 @@ if (media && img) {
   }
 
   function closeModal() {
-    const modal = qs("#productModal");
-    if (!modal) return;
+  const modal = qs("#productModal");
+  if (!modal) return;
 
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
 
-    const descEl = qs("#productModalDesc");
-    if (descEl) descEl.textContent = "";
+  const descEl = qs("#productModalDesc");
+  if (descEl) descEl.textContent = "";
 
-    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-    lastFocus = null;
-    currentModalProductId = null;
-    currentModalOptionId = null;
-  }
+  const media = qs(".me-modal__media");
+  if (media) media.style.display = "";
+
+  if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+
+  lastFocus = null;
+  currentModalProductId = null;
+  currentModalOptionId = null;
+}
 
   function bindModal() {
     qs("#productModalClose")?.addEventListener("click", closeModal);
@@ -1192,6 +1201,4 @@ if (media && img) {
 
     syncCategoriesPanelMode();
   });
-  const media = qs(".me-modal__media");
-if (media) media.style.display = "";
-})();
+  
