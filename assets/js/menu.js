@@ -740,7 +740,22 @@
       </div>
     `;
   }
+function renderProductMedia(product) {
+  if (product.group === "drinks") {
+    return `
+      <div class="me-product-media me-product-media--drink">
+        <div class="drink-card-visual">
+          <span class="drink-card-visual__eyebrow">${escapeHtml(product.catTitle || "Cave")}</span>
+          <span class="drink-card-visual__name">${escapeHtml(product.name)}</span>
+        </div>
+      </div>
+    `;
+  }
 
+  return `
+    ${renderProductMedia(product)}
+  `;
+}
   function renderProductCard(product) {
     const effective = getEffectiveProduct(product, getDefaultOption(product)?.id || null);
     const badge = product.badge ? `<span class="badge">${escapeHtml(product.badge)}</span>` : "";
@@ -1008,11 +1023,20 @@
       }
     }
 
-    const img = qs("#productModalImg");
-    if (img) {
-      img.src = product.img || "";
-      img.alt = product.name || "Produit";
-    }
+   const media = qs(".me-modal__media");
+const img = qs("#productModalImg");
+
+if (media && img) {
+  if (product.group === "drinks") {
+    media.style.display = "none";
+    img.removeAttribute("src");
+    img.alt = "";
+  } else {
+    media.style.display = "";
+    img.src = product.img || "";
+    img.alt = product.name || "Produit";
+  }
+}
 
     const addBtn = qs("#productModalAdd");
     if (addBtn) {
@@ -1168,4 +1192,6 @@
 
     syncCategoriesPanelMode();
   });
+  const media = qs(".me-modal__media");
+if (media) media.style.display = "";
 })();
