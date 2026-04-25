@@ -13,7 +13,7 @@
           name: "Petit déjeuner à bord",
           desc: "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d’orange pressé et fruits frais de saison.",
           badge: "À bord",
-          img: "assets/img/menu/dejeuner-bord.jpg",
+          img: "assets/images/menu/dejeuner-bord.jpg",
           options: [
             {
               id: "2p",
@@ -50,7 +50,7 @@
           desc: "Caviar Baeri.",
           price: 145,
           badge: "Maison",
-          img: "assets/img/menu/caviar-baeri.jpg"
+          img: "assets/images/menu/caviar-baeri.jpg"
         },
         {
           id: "caviar-baeri-50",
@@ -58,7 +58,7 @@
           desc: "Caviar Baeri.",
           price: 265,
           badge: "Maison",
-          img: "assets/img/menu/caviar-baeri.jpg"
+          img: "assets/images/menu/caviar-baeri.jpg"
         },
         {
           id: "caviar-baeri-100",
@@ -66,7 +66,7 @@
           desc: "Caviar Baeri.",
           price: 505,
           badge: "Maison",
-          img: "assets/img/menu/caviar-baeri.jpg"
+          img: "assets/images/menu/caviar-baeri.jpg"
         },
         {
           id: "caviar-baeri-250",
@@ -74,7 +74,7 @@
           desc: "Caviar Baeri.",
           price: 1155,
           badge: "Maison",
-          img: "assets/img/menu/caviar-baeri.jpg"
+          img: "assets/images/menu/caviar-baeri.jpg"
         },
         {
           id: "foie-gras-classic",
@@ -82,7 +82,7 @@
           desc: "Foie gras classique.",
           price: 55,
           badge: "Maison",
-          img: "assets/img/menu/foie-gras.jpg"
+          img: "assets/images/menu/foie-gras.jpg"
         },
         {
           id: "foie-gras-truffe",
@@ -90,7 +90,7 @@
           desc: "Foie gras truffé.",
           price: 105,
           badge: "Maison",
-          img: "assets/img/menu/foie-gras.jpg"
+          img: "assets/images/menu/foie-gras.jpg"
         },
         {
           id: "saumon-100",
@@ -98,7 +98,7 @@
           desc: "Saumon fumé.",
           price: 45,
           badge: "Maison",
-          img: "assets/img/menu/saumon-fume.jpg"
+          img: "assets/images/menu/saumon-fume.jpg"
         },
         {
           id: "saumon-200",
@@ -106,7 +106,7 @@
           desc: "Saumon fumé.",
           price: 85,
           badge: "Maison",
-          img: "assets/img/menu/saumon-fume.jpg"
+          img: "assets/images/menu/saumon-fume.jpg"
         }
       ]
     },
@@ -123,7 +123,7 @@
           desc: "Préparé minute.",
           price: 38,
           badge: "Frais",
-          img: "assets/img/menu/tartare-saumon.jpg"
+          img: "assets/images/menu/tartare-saumon.jpg"
         },
         {
           id: "tartare-boeuf",
@@ -131,7 +131,7 @@
           desc: "Goût net et assaisonnement juste.",
           price: 32,
           badge: "Classique",
-          img: "assets/img/menu/tartare-boeuf.jpg"
+          img: "assets/images/menu/tartare-boeuf.jpg"
         },
         {
           id: "tartare-thon",
@@ -139,7 +139,7 @@
           desc: "Découpe fine et texture délicate.",
           price: 42,
           badge: "Maison",
-          img: "assets/img/menu/tartare-thon.jpg"
+          img: "assets/images/menu/tartare-thon.jpg"
         }
       ]
     },
@@ -156,7 +156,7 @@
           desc: "Poulet, croûtons, parmesan, sauce.",
           price: 36,
           badge: "Maison",
-          img: "assets/img/menu/salade-cesar.jpg"
+          img: "assets/images/menu/salade-cesar.jpg"
         },
         {
           id: "salade-nicoise",
@@ -164,7 +164,7 @@
           desc: "Fraîche et méditerranéenne.",
           price: 36,
           badge: "Maison",
-          img: "assets/img/menu/salade-nicoise.jpg"
+          img: "assets/images/menu/salade-nicoise.jpg"
         },
         {
           id: "salade-pates",
@@ -172,7 +172,7 @@
           desc: "Généreuse, idéale à bord.",
           price: 30,
           badge: "À bord",
-          img: "assets/img/menu/salade-pates.jpg"
+          img: "assets/images/menu/salade-pates.jpg"
         }
       ]
     },
@@ -188,7 +188,7 @@
           name: "Planche de charcuterie",
           desc: "Sélection fine, tranchée et prête à servir.",
           badge: "À partager",
-          img: "assets/img/menu/mix-charcuterie.jpg",
+          img: "assets/images/menu/mix-charcuterie.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 55, detail: "Planche de charcuterie pour 2 personnes." },
             { id: "4p", label: "4 personnes", price: 85, detail: "Planche de charcuterie pour 4 personnes." },
@@ -200,7 +200,7 @@
           name: "Planche de fromages",
           desc: "Sélection de fromages français prête à servir.",
           badge: "À partager",
-          img: "assets/img/menu/mix-fromages.jpg",
+          img: "assets/images/menu/mix-fromages.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 55, detail: "Planche de fromages pour 2 personnes." },
             { id: "4p", label: "4 personnes", price: 85, detail: "Planche de fromages pour 4 personnes." },
@@ -212,7 +212,7 @@
           name: "Plateau de fruits",
           desc: "Fruits de saison, prêt à servir.",
           badge: "Frais",
-          img: "assets/img/menu/plateau-fruits.jpg",
+          img: "assets/images/menu/plateau-fruits.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 39, detail: "Plateau de fruits pour 2 personnes." },
             { id: "4p", label: "4 personnes", price: 79, detail: "Plateau de fruits pour 4 personnes." },
@@ -234,7 +234,7 @@
           desc: "Accord sucré-salé.",
           price: 35,
           badge: "À partager",
-          img: "assets/img/menu/brochettes-melon-jambon.jpg"
+          img: "assets/images/menu/brochettes-melon-jambon.jpg"
         },
         {
           id: "brochettes-fruits",
@@ -242,7 +242,7 @@
           desc: "Fraîches et légères.",
           price: 35,
           badge: "Frais",
-          img: "assets/img/menu/brochettes-fruits.jpg"
+          img: "assets/images/menu/brochettes-fruits.jpg"
         },
         {
           id: "brochettes-tomate-mozza",
@@ -250,7 +250,7 @@
           desc: "Simple et prêt à servir.",
           price: 35,
           badge: "Végé",
-          img: "assets/img/menu/brochettes-tomate-mozza.jpg"
+          img: "assets/images/menu/brochettes-tomate-mozza.jpg"
         }
       ]
     },
@@ -267,7 +267,7 @@
           desc: "Pratique et gourmand.",
           price: 40,
           badge: "À bord",
-          img: "assets/img/menu/wrap-poulet.jpg"
+          img: "assets/images/menu/wrap-poulet.jpg"
         },
         {
           id: "wrap-saumon",
@@ -275,7 +275,7 @@
           desc: "Saumon et texture délicate.",
           price: 42,
           badge: "Maison",
-          img: "assets/img/menu/wrap-saumon.jpg"
+          img: "assets/images/menu/wrap-saumon.jpg"
         }
       ]
     },
@@ -292,7 +292,7 @@
           desc: "Champagne.",
           price: 95,
           badge: "Cave",
-          img: "assets/img/menu/champagne-2.jpg"
+          img: "assets/images/menu/champagne-2.jpg"
         },
         {
           id: "champ-extra-brut-bdn",
@@ -300,7 +300,7 @@
           desc: "Champagne.",
           price: 220,
           badge: "Cave",
-          img: "assets/img/menu/champagne-1.jpg"
+          img: "assets/images/menu/champagne-1.jpg"
         },
         {
           id: "champ-roederer-246",
@@ -308,7 +308,7 @@
           desc: "Champagne.",
           price: 242,
           badge: "Cave",
-          img: "assets/img/menu/champagne-4.jpg"
+          img: "assets/images/menu/champagne-4.jpg"
         },
         {
           id: "champ-neuville-2012",
@@ -316,7 +316,7 @@
           desc: "Champagne.",
           price: 114.4,
           badge: "Cave",
-          img: "assets/img/menu/champagne-3.jpg"
+          img: "assets/images/menu/champagne-3.jpg"
         },
         {
           id: "champ-ruinart-bdb",
@@ -324,7 +324,7 @@
           desc: "Champagne.",
           price: 180,
           badge: "Cave",
-          img: "assets/img/menu/champagne-5.jpg"
+          img: "assets/images/menu/champagne-5.jpg"
         },
         {
           id: "champ-perrier-jouet-2016",
@@ -332,7 +332,7 @@
           desc: "Champagne.",
           price: 545,
           badge: "Millésime",
-          img: "assets/img/menu/champagne-7.jpg"
+          img: "assets/images/menu/champagne-7.jpg"
         },
         {
           id: "champ-cristal",
@@ -340,7 +340,7 @@
           desc: "Champagne.",
           price: 595,
           badge: "Cuvée",
-          img: "assets/img/menu/champagne-8.jpg"
+          img: "assets/images/menu/champagne-8.jpg"
         }
       ]
     },
@@ -357,7 +357,7 @@
           desc: "Vin blanc.",
           price: 49,
           badge: "Cave",
-          img: "assets/img/menu/vin-blanc-1.jpg"
+          img: "assets/images/menu/vin-blanc-1.jpg"
         },
         {
           id: "blanc-minuty-blanc-or-2024",
@@ -365,7 +365,7 @@
           desc: "Vin blanc.",
           price: 82,
           badge: "Cave",
-          img: "assets/img/menu/vin-blanc-2.jpg"
+          img: "assets/images/menu/vin-blanc-2.jpg"
         },
         {
           id: "blanc-secret-lunes-chardo",
@@ -373,7 +373,7 @@
           desc: "Chardonnay.",
           price: 32,
           badge: "Cave",
-          img: "assets/img/menu/vin-blanc-3.jpg"
+          img: "assets/images/menu/vin-blanc-3.jpg"
         }
       ]
     },
@@ -390,7 +390,7 @@
           desc: "Vin rosé.",
           price: 49,
           badge: "Cave",
-          img: "assets/img/menu/vin-rose-1.jpg"
+          img: "assets/images/menu/vin-rose-1.jpg"
         },
         {
           id: "rose-minuty-rose-or-2024",
@@ -398,7 +398,7 @@
           desc: "Vin rosé.",
           price: 82,
           badge: "Cave",
-          img: "assets/img/menu/vin-rose-2.jpg"
+          img: "assets/images/menu/vin-rose-2.jpg"
         },
         {
           id: "rose-chateau-281",
@@ -406,7 +406,7 @@
           desc: "Vin rosé.",
           price: 162,
           badge: "Cave",
-          img: "assets/img/menu/vin-rose-3.jpg"
+          img: "assets/images/menu/vin-rose-3.jpg"
         }
       ]
     },
@@ -423,7 +423,7 @@
           desc: "Canette.",
           price: 4.5,
           badge: "Soft",
-          img: "assets/img/menu/coca.jpg"
+          img: "assets/images/menu/coca.jpg"
         },
         {
           id: "coca-zero-33",
@@ -431,7 +431,7 @@
           desc: "Canette.",
           price: 4.5,
           badge: "Soft",
-          img: "assets/img/menu/coca-zero.jpg"
+          img: "assets/images/menu/coca-zero.jpg"
         },
         {
           id: "sprite-33",
@@ -439,7 +439,7 @@
           desc: "Canette.",
           price: 4.5,
           badge: "Soft",
-          img: "assets/img/menu/sprite.jpg"
+          img: "assets/images/menu/sprite.jpg"
         },
         {
           id: "fanta-33",
@@ -447,7 +447,7 @@
           desc: "Canette.",
           price: 4.5,
           badge: "Soft",
-          img: "assets/img/menu/fanta.jpg"
+          img: "assets/images/menu/fanta.jpg"
         },
         {
           id: "oasis-33",
@@ -455,7 +455,7 @@
           desc: "Canette.",
           price: 4.5,
           badge: "Soft",
-          img: "assets/img/menu/oasis.jpg"
+          img: "assets/images/menu/oasis.jpg"
         },
         {
           id: "fuze-tea-33",
@@ -463,7 +463,7 @@
           desc: "Canette.",
           price: 5.0,
           badge: "Soft",
-          img: "assets/img/menu/fuze-tea.jpg"
+          img: "assets/images/menu/fuze-tea.jpg"
         },
         {
           id: "redbull-33",
@@ -471,7 +471,7 @@
           desc: "Canette.",
           price: 6.5,
           badge: "Énergie",
-          img: "assets/img/menu/redbull.jpg"
+          img: "assets/images/menu/redbull.jpg"
         },
         {
           id: "redbull-zero-33",
@@ -479,7 +479,7 @@
           desc: "Canette.",
           price: 6.5,
           badge: "Énergie",
-          img: "assets/img/menu/redbull-zero.jpg"
+          img: "assets/images/menu/redbull-zero.jpg"
         }
       ]
     }
