@@ -48,7 +48,7 @@
         <a href="index.html" data-i18n="nav.home">Accueil</a>
         <a href="carte.html" data-i18n="nav.menu">Carte</a>
         <a href="zones.html" data-i18n="nav.zones">Zones</a>
-        <a href="gallery.html" data-i18n="nav.gallery">Galerie</a>
+        <a href="galerie.html" data-i18n="nav.gallery">Galerie</a> <!-- ✅ corrigé ici -->
         <a href="faq.html" data-i18n="nav.faq">FAQ</a>
         <a href="contact.html" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -85,78 +85,3 @@
 
   <div class="nav-backdrop" id="navBackdrop" hidden></div>
 </header>
-
-<button
-  class="floating-cart"
-  id="floatingCartBtn"
-  type="button"
-  hidden
-  aria-label="Ouvrir le panier"
->
-  <span class="floating-cart__icon" aria-hidden="true">🛒</span>
-  <span class="floating-cart__label" data-i18n="nav.cart">Panier</span>
-  <span class="floating-cart__count" id="floatingCartCount">0</span>
-</button>
-
-<div class="drawer" id="cartDrawer" aria-hidden="true">
-  <div class="drawer-backdrop" id="cartBackdrop"></div>
-
-  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
-    <div class="drawer-head">
-      <h3 id="cartDrawerTitle" class="h3" data-i18n="cart.title">Votre panier</h3>
-
-      <button
-        class="icon-btn"
-        id="cartCloseBtn"
-        type="button"
-        aria-label="Fermer le panier"
-      >
-        ✕
-      </button>
-    </div>
-
-    <div class="drawer-body">
-      <div id="cartItems"></div>
-
-      <div class="cart-empty" id="cartEmpty">
-        <p data-i18n="cart.empty">Votre panier est vide.</p>
-      </div>
-    </div>
-
-    <div class="drawer-foot">
-      <div class="total">
-        <span data-i18n="cart.total">Total</span>
-        <span id="cartTotal">0€</span>
-      </div>
-
-      <div class="spacer-sm"></div>
-
-      <p class="tiny muted" data-i18n="cart.included">
-        Prix livraison incluse — aucun frais supplémentaire.
-      </p>
-
-      <div class="spacer-sm"></div>
-
-      <a
-        class="btn btn-primary"
-        id="checkoutWhatsApp"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-i18n="cart.checkout"
-      >
-        Valider sur WhatsApp
-      </a>
-
-      <div class="spacer-sm"></div>
-
-      <button
-        class="btn btn-secondary"
-        id="checkoutStripe"
-        type="button"
-      >
-        Payer par carte
-      </button>
-    </div>
-  </aside>
-</div>
