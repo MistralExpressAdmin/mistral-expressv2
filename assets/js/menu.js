@@ -740,34 +740,7 @@
       </div>
     `;
   }
-function renderProductMedia(product) {
-  if (product.group === "drinks") {
-    return `
-      <div class="me-product-media me-product-media--drink">
-        <div class="drink-card-visual">
-          <span class="drink-card-visual__eyebrow">${escapeHtml(product.catTitle || "Cave")}</span>
-          <span class="drink-card-visual__name">${escapeHtml(product.name)}</span>
-        </div>
-      </div>
-    `;
-  }
 
-  return `
-    <div class="me-product-media">
-      <img
-        src="${escapeHtml(product.img)}"
-        alt="${escapeHtml(product.name)}"
-        loading="lazy"
-        onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
-      />
-    </div>
-  `;
-}
-
-  return `
-    ${renderProductMedia(product)}
-  `;
-}
   function renderProductCard(product) {
     const effective = getEffectiveProduct(product, getDefaultOption(product)?.id || null);
     const badge = product.badge ? `<span class="badge">${escapeHtml(product.badge)}</span>` : "";
@@ -786,7 +759,14 @@ function renderProductMedia(product) {
         ${disabled}
         aria-label="${escapeHtml(product.name)}"
       >
-        ${renderProductMedia(product)}
+        <div class="me-product-media">
+          <img
+            src="${escapeHtml(product.img)}"
+            alt="${escapeHtml(product.name)}"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+          />
+        </div>
 
         <div class="meta">
           <div class="meta-copy">
@@ -1028,20 +1008,11 @@ function renderProductMedia(product) {
       }
     }
 
-   const media = qs(".me-modal__media");
-const img = qs("#productModalImg");
-
-if (media && img) {
-  if (product.group === "drinks") {
-    media.style.display = "none";
-    img.removeAttribute("src");
-    img.alt = "";
-  } else {
-    media.style.display = "";
-    img.src = product.img || "";
-    img.alt = product.name || "Produit";
-  }
-}
+    const img = qs("#productModalImg");
+    if (img) {
+      img.src = product.img || "";
+      img.alt = product.name || "Produit";
+    }
 
     const addBtn = qs("#productModalAdd");
     if (addBtn) {
@@ -1057,24 +1028,20 @@ if (media && img) {
   }
 
   function closeModal() {
-  const modal = qs("#productModal");
-  if (!modal) return;
+    const modal = qs("#productModal");
+    if (!modal) return;
 
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
 
-  const descEl = qs("#productModalDesc");
-  if (descEl) descEl.textContent = "";
+    const descEl = qs("#productModalDesc");
+    if (descEl) descEl.textContent = "";
 
-  const media = qs(".me-modal__media");
-  if (media) media.style.display = "";
-
-  if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
-
-  lastFocus = null;
-  currentModalProductId = null;
-  currentModalOptionId = null;
-}
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    lastFocus = null;
+    currentModalProductId = null;
+    currentModalOptionId = null;
+  }
 
   function bindModal() {
     qs("#productModalClose")?.addEventListener("click", closeModal);
@@ -1201,4 +1168,4 @@ if (media && img) {
 
     syncCategoriesPanelMode();
   });
-  
+})();
