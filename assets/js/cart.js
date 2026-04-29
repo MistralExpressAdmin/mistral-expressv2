@@ -23,8 +23,7 @@ const ME_CART = (() => {
   function clear() {
     cart = [];
     localStorage.removeItem(KEY);
-    updateBadge();
-    renderDrawer();
+    save();
   }
 
   function save() {
@@ -52,13 +51,17 @@ const ME_CART = (() => {
         price: item.price,
         qty: delta,
       });
+
       save();
+      pulseCart();
       return;
     }
 
     cart[idx].qty += delta;
     if (cart[idx].qty <= 0) cart.splice(idx, 1);
+
     save();
+    if (delta > 0) pulseCart();
   }
 
   function total() {
@@ -73,42 +76,54 @@ const ME_CART = (() => {
     return `${n}€`;
   }
 
+  function pulseCart() {
+    const btn =
+      document.getElementById("floatingCartBtn") ||
+      document.getElementById("cartOpenBtn");
+
+    if (!btn) return;
+
+    btn.classList.remove("pulse");
+    void btn.offsetWidth;
+    btn.classList.add("pulse");
+
+    setTimeout(() => btn.classList.remove("pulse"), 500);
+  }
+
   function updateBadge() {
     const c = cart.reduce((s, x) => s + (Number(x.qty) || 0), 0);
 
-    const el = document.getElementById("cartCount");
-    if (el) el.textContent = String(c);
+    const cartCount = document.getElementById("cartCount");
+    if (cartCount) cartCount.textContent = String(c);
 
     const floatingCount = document.getElementById("floatingCartCount");
     if (floatingCount) floatingCount.textContent = String(c);
 
     const floatingBtn = document.getElementById("floatingCartBtn");
     if (floatingBtn) {
-      if (c > 0) {
-        floatingBtn.hidden = false;
-        floatingBtn.classList.add("show");
-      } else {
-        floatingBtn.hidden = true;
-        floatingBtn.classList.remove("show");
-      }
+      floatingBtn.hidden = c <= 0;
+      floatingBtn.classList.toggle("show", c > 0);
     }
   }
 
   function openDrawer() {
-    const d = document.getElementById("cartDrawer");
-    if (!d) return;
+    const drawer = document.getElementById("cartDrawer");
+    if (!drawer) return;
 
-    d.classList.add("open");
-    d.setAttribute("aria-hidden", "false");
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    document.body.classList.add("cart-open");
+
     renderDrawer();
   }
 
   function closeDrawer() {
-    const d = document.getElementById("cartDrawer");
-    if (!d) return;
+    const drawer = document.getElementById("cartDrawer");
+    if (!drawer) return;
 
-    d.classList.remove("open");
-    d.setAttribute("aria-hidden", "true");
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("cart-open");
   }
 
   function hasInvalidPrice() {
@@ -203,21 +218,12 @@ const ME_CART = (() => {
         `
         )
         .join("");
-
-      itemsEl.querySelectorAll("[data-inc]").forEach((b) =>
-        b.addEventListener("click", () => addItem({ id: b.dataset.inc }, 1))
-      );
-
-      itemsEl.querySelectorAll("[data-dec]").forEach((b) =>
-        b.addEventListener("click", () => addItem({ id: b.dataset.dec }, -1))
-      );
     }
 
     totalEl.textContent = euro(total());
 
     const phone = "33668443067";
     const base = `https://wa.me/${phone}`;
-
     const lines = cart
       .map(
         (x) => `• ${x.qty} × ${x.name} — ${euro((x.price || 0) * (x.qty || 0))}`
@@ -230,8 +236,10 @@ const ME_CART = (() => {
       `Total (livraison incluse) : ${euro(total())}\n\n` +
       `Port + ponton + nom du bateau + créneau souhaité : `;
 
-    const chk = document.getElementById("checkoutWhatsApp");
-    if (chk) chk.setAttribute("href", `${base}?text=${encodeURIComponent(msg)}`);
+    const whatsapp = document.getElementById("checkoutWhatsApp");
+    if (whatsapp) {
+      whatsapp.setAttribute("href", `${base}?text=${encodeURIComponent(msg)}`);
+    }
 
     const stripeBtn = document.getElementById("checkoutStripe");
     if (stripeBtn) {
@@ -246,27 +254,46 @@ const ME_CART = (() => {
     }
   }
 
-  function bindOnce(el, eventName, handler) {
-    if (!el) return;
-
-    const key = `meBound${eventName}`;
-
-    if (el.dataset[key] === "1") return;
-
-    el.addEventListener(eventName, handler);
-    el.dataset[key] = "1";
-  }
-
   function bindCartUI() {
-    bindOnce(document.getElementById("cartOpenBtn"), "click", openDrawer);
-    bindOnce(document.getElementById("floatingCartBtn"), "click", openDrawer);
-    bindOnce(document.getElementById("cartCloseBtn"), "click", closeDrawer);
-    bindOnce(document.getElementById("cartBackdrop"), "click", closeDrawer);
+    if (!document.body.dataset.meCartDelegationBound) {
+      document.addEventListener("click", (e) => {
+        const openBtn = e.target.closest("#cartOpenBtn, #floatingCartBtn");
+        if (openBtn) {
+          e.preventDefault();
+          openDrawer();
+          return;
+        }
 
-    bindOnce(document.getElementById("checkoutStripe"), "click", (e) => {
-      e.preventDefault();
-      startStripeCheckout();
-    });
+        const closeBtn = e.target.closest("#cartCloseBtn, #cartBackdrop");
+        if (closeBtn) {
+          e.preventDefault();
+          closeDrawer();
+          return;
+        }
+
+        const incBtn = e.target.closest("[data-inc]");
+        if (incBtn) {
+          e.preventDefault();
+          addItem({ id: incBtn.dataset.inc }, 1);
+          return;
+        }
+
+        const decBtn = e.target.closest("[data-dec]");
+        if (decBtn) {
+          e.preventDefault();
+          addItem({ id: decBtn.dataset.dec }, -1);
+          return;
+        }
+
+        const stripeBtn = e.target.closest("#checkoutStripe");
+        if (stripeBtn) {
+          e.preventDefault();
+          startStripeCheckout();
+        }
+      });
+
+      document.body.dataset.meCartDelegationBound = "1";
+    }
 
     if (!document.body.dataset.meCartEscBound) {
       document.addEventListener("keydown", (e) => {
@@ -286,6 +313,7 @@ const ME_CART = (() => {
     setTimeout(bindCartUI, 100);
     setTimeout(bindCartUI, 500);
     setTimeout(bindCartUI, 1000);
+    setTimeout(bindCartUI, 2000);
   }
 
   document.addEventListener("DOMContentLoaded", bootCartUI);
