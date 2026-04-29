@@ -9,7 +9,7 @@ const ME_CART = (() => {
     }
   }
 
-  let cart = safeParse(localStorage.getItem(KEY)) || []; // {id,name,price,qty}
+  let cart = safeParse(localStorage.getItem(KEY)) || [];
 
   function escapeHtml(str) {
     return String(str ?? "")
@@ -97,13 +97,16 @@ const ME_CART = (() => {
   function openDrawer() {
     const d = document.getElementById("cartDrawer");
     if (!d) return;
+
     d.classList.add("open");
     d.setAttribute("aria-hidden", "false");
+    renderDrawer();
   }
 
   function closeDrawer() {
     const d = document.getElementById("cartDrawer");
     if (!d) return;
+
     d.classList.remove("open");
     d.setAttribute("aria-hidden", "true");
   }
@@ -126,9 +129,7 @@ const ME_CART = (() => {
     }
 
     if (hasInvalidPrice()) {
-      alert(
-        "Certains produits n'ont pas de prix. Renseigne les prix avant de payer par carte."
-      );
+      alert("Certains produits n'ont pas de prix.");
       return;
     }
 
@@ -145,30 +146,13 @@ const ME_CART = (() => {
       const res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: cart.map((x) => ({
-            id: x.id,
-            name: x.name,
-            price: Number(x.price),
-            qty: Number(x.qty),
-          })),
-        }),
+        body: JSON.stringify({ items: cart }),
       });
 
-      let data = null;
-      try {
-        data = await res.json();
-      } catch {
-        data = null;
-      }
+      const data = await res.json();
 
-      if (!res.ok) {
-        const msg = data?.error || `Erreur Stripe (${res.status}).`;
-        throw new Error(msg);
-      }
-
-      if (!data?.url) {
-        throw new Error("Réponse Stripe invalide (URL manquante).");
+      if (!res.ok || !data?.url) {
+        throw new Error(data?.error || "Erreur Stripe.");
       }
 
       window.location.href = data.url;
@@ -200,27 +184,23 @@ const ME_CART = (() => {
       itemsEl.innerHTML = cart
         .map(
           (x) => `
-        <div class="cart-item">
-          <div>
-            <div class="ci-name">${escapeHtml(x.name ?? "")}</div>
-            <div class="ci-sub">${escapeHtml(
-              window.ME_I18N?.t?.("cart.deliveryIncluded") || "Livraison incluse"
-            )}</div>
-          </div>
-          <div class="ci-right">
-            <div><strong>${euro((x.price || 0) * (x.qty || 0))}</strong></div>
-            <div class="ci-sub">${euro(x.price || 0)} × ${x.qty || 0}</div>
-            <div class="ci-actions">
-              <button class="icon-btn" data-dec="${escapeHtml(
-                x.id
-              )}" aria-label="retirer">−</button>
-              <button class="icon-btn" data-inc="${escapeHtml(
-                x.id
-              )}" aria-label="ajouter">+</button>
+          <div class="cart-item">
+            <div>
+              <div class="ci-name">${escapeHtml(x.name ?? "")}</div>
+              <div class="ci-sub">Livraison incluse</div>
+            </div>
+
+            <div class="ci-right">
+              <div><strong>${euro((x.price || 0) * (x.qty || 0))}</strong></div>
+              <div class="ci-sub">${euro(x.price || 0)} × ${x.qty || 0}</div>
+
+              <div class="ci-actions">
+                <button class="icon-btn" data-dec="${escapeHtml(x.id)}" aria-label="retirer">−</button>
+                <button class="icon-btn" data-inc="${escapeHtml(x.id)}" aria-label="ajouter">+</button>
+              </div>
             </div>
           </div>
-        </div>
-      `
+        `
         )
         .join("");
 
@@ -237,6 +217,7 @@ const ME_CART = (() => {
 
     const phone = "33668443067";
     const base = `https://wa.me/${phone}`;
+
     const lines = cart
       .map(
         (x) => `• ${x.qty} × ${x.name} — ${euro((x.price || 0) * (x.qty || 0))}`
@@ -244,19 +225,10 @@ const ME_CART = (() => {
       .join("\n");
 
     const msg =
-      `${
-        window.ME_I18N?.t?.("cart.waIntro") ||
-        "Bonjour Mistral Express, voici ma commande :"
-      }\n\n` +
+      `Bonjour Mistral Express, voici ma commande :\n\n` +
       `${lines}\n\n` +
-      `${
-        window.ME_I18N?.t?.("cart.waTotal") ||
-        "Total (livraison incluse)"
-      }: ${euro(total())}\n\n` +
-      `${
-        window.ME_I18N?.t?.("cart.waInfos") ||
-        "Port + ponton + nom du bateau + créneau souhaité :"
-      } `;
+      `Total (livraison incluse) : ${euro(total())}\n\n` +
+      `Port + ponton + nom du bateau + créneau souhaité : `;
 
     const chk = document.getElementById("checkoutWhatsApp");
     if (chk) chk.setAttribute("href", `${base}?text=${encodeURIComponent(msg)}`);
@@ -276,8 +248,11 @@ const ME_CART = (() => {
 
   function bindOnce(el, eventName, handler) {
     if (!el) return;
+
     const key = `meBound${eventName}`;
+
     if (el.dataset[key] === "1") return;
+
     el.addEventListener(eventName, handler);
     el.dataset[key] = "1";
   }
@@ -297,6 +272,7 @@ const ME_CART = (() => {
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeDrawer();
       });
+
       document.body.dataset.meCartEscBound = "1";
     }
 
@@ -304,9 +280,25 @@ const ME_CART = (() => {
     renderDrawer();
   }
 
-  document.addEventListener("DOMContentLoaded", updateBadge);
+  function bootCartUI() {
+    bindCartUI();
 
-  return { addItem, getQty, bindCartUI, clear };
+    setTimeout(bindCartUI, 100);
+    setTimeout(bindCartUI, 500);
+    setTimeout(bindCartUI, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", bootCartUI);
+  window.addEventListener("load", bootCartUI);
+
+  return {
+    addItem,
+    getQty,
+    bindCartUI,
+    clear,
+    openDrawer,
+    closeDrawer,
+  };
 })();
 
 window.ME_CART = ME_CART;

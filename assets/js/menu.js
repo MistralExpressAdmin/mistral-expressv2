@@ -106,7 +106,7 @@
           desc: "Saumon fumé.",
           price: 85,
           badge: "Maison",
-          img: "assets/images/menu/saumon-fume.jpg"
+          img: "assets/images/menu/saumon-fume1.jpg"
         }
       ]
     },
@@ -292,7 +292,7 @@
           desc: "Champagne.",
           price: 95,
           badge: "Cave",
-          img: "assets/images/menu/champagne-2.jpg"
+          img: "assets/images/menu/neuville-blanc-de-blancs.jpg"
         },
         {
           id: "champ-extra-brut-bdn",
@@ -300,7 +300,7 @@
           desc: "Champagne.",
           price: 220,
           badge: "Cave",
-          img: "assets/images/menu/champagne-1.jpg"
+          img: "assets/images/menu/ruinart-blanc-de-blancs.jpg"
         },
         {
           id: "champ-roederer-246",
@@ -308,7 +308,7 @@
           desc: "Champagne.",
           price: 242,
           badge: "Cave",
-          img: "assets/images/menu/champagne-4.jpg"
+          img: "assets/images/menu/louis-roederer-blanc-de-blancs.jpg"
         },
         {
           id: "champ-neuville-2012",
@@ -316,7 +316,7 @@
           desc: "Champagne.",
           price: 114.4,
           badge: "Cave",
-          img: "assets/images/menu/champagne-3.jpg"
+          img: "assets/images/menu/brut-de-neuville.jpg"
         },
         {
           id: "champ-ruinart-bdb",
@@ -324,7 +324,7 @@
           desc: "Champagne.",
           price: 180,
           badge: "Cave",
-          img: "assets/images/menu/champagne-5.jpg"
+          img: "assets/images/menu/ruinart-brut.jpg"
         },
         {
           id: "champ-perrier-jouet-2016",
@@ -332,7 +332,7 @@
           desc: "Champagne.",
           price: 545,
           badge: "Millésime",
-          img: "assets/images/menu/champagne-7.jpg"
+          img: "assets/images/menu/perrier-jouet-2016.jpg"
         },
         {
           id: "champ-cristal",
@@ -340,7 +340,7 @@
           desc: "Champagne.",
           price: 595,
           badge: "Cuvée",
-          img: "assets/images/menu/champagne-8.jpg"
+          img: "assets/images/menu/crystal-roederer.jpg"
         }
       ]
     },
