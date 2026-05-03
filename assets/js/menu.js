@@ -39,77 +39,78 @@
     },
 
     {
-      id: "maison",
-      group: "food",
-      title: "Maison",
-      subtitle: "Produits sélectionnés",
-      items: [
+  id: "maison",
+  group: "food",
+  title: "Maison",
+  subtitle: "Produits sélectionnés",
+  items: [
+    {
+      id: "caviar-baeri",
+      name: "Caviar Baeri",
+      desc: "Caviar Baeri, sélection premium.",
+      badge: "Maison",
+      img: "assets/images/menu/caviar-baeri.jpg",
+      options: [
         {
-          id: "caviar-baeri-30",
-          name: "Caviar Baeri 30g",
-          desc: "Caviar Baeri.",
+          id: "30g",
+          label: "30g",
           price: 145,
-          badge: "Maison",
-          img: "assets/images/menu/caviar-baeri.jpg"
+          detail: "Caviar Baeri 30g."
         },
         {
-          id: "caviar-baeri-50",
-          name: "Caviar Baeri 50g",
-          desc: "Caviar Baeri.",
+          id: "50g",
+          label: "50g",
           price: 265,
-          badge: "Maison",
-          img: "assets/images/menu/caviar-baeri.jpg"
+          detail: "Caviar Baeri 50g."
         },
         {
-          id: "caviar-baeri-100",
-          name: "Caviar Baeri 100g",
-          desc: "Caviar Baeri.",
+          id: "100g",
+          label: "100g",
           price: 505,
-          badge: "Maison",
-          img: "assets/images/menu/caviar-baeri.jpg"
+          detail: "Caviar Baeri 100g."
         },
         {
-          id: "caviar-baeri-250",
-          name: "Caviar Baeri 250g",
-          desc: "Caviar Baeri.",
+          id: "250g",
+          label: "250g",
           price: 1155,
-          badge: "Maison",
-          img: "assets/images/menu/caviar-baeri.jpg"
-        },
-        {
-          id: "foie-gras-classic",
-          name: "Foie gras 2x40g classic",
-          desc: "Foie gras classique.",
-          price: 55,
-          badge: "Maison",
-          img: "assets/images/menu/foie-gras.jpg"
-        },
-        {
-          id: "foie-gras-truffe",
-          name: "Foie gras 2x40g truffe",
-          desc: "Foie gras truffé.",
-          price: 105,
-          badge: "Maison",
-          img: "assets/images/menu/foie-gras.jpg"
-        },
-        {
-          id: "saumon-100",
-          name: "Saumon 100g",
-          desc: "Saumon fumé.",
-          price: 45,
-          badge: "Maison",
-          img: "assets/images/menu/saumon-fume.jpg"
-        },
-        {
-          id: "saumon-200",
-          name: "Saumon 200g",
-          desc: "Saumon fumé.",
-          price: 85,
-          badge: "Maison",
-          img: "assets/images/menu/saumon-fume1.jpg"
+          detail: "Caviar Baeri 250g."
         }
       ]
     },
+    {
+      id: "foie-gras-classic",
+      name: "Foie gras 2x40g classic",
+      desc: "Foie gras classique.",
+      price: 55,
+      badge: "Maison",
+      img: "assets/images/menu/foie-gras.jpg"
+    },
+    {
+      id: "foie-gras-truffe",
+      name: "Foie gras 2x40g truffe",
+      desc: "Foie gras truffé.",
+      price: 105,
+      badge: "Maison",
+      img: "assets/images/menu/foie-gras.jpg"
+    },
+    {
+      id: "saumon-100",
+      name: "Saumon 100g",
+      desc: "Saumon fumé.",
+      price: 45,
+      badge: "Maison",
+      img: "assets/images/menu/saumon-fume.jpg"
+    },
+    {
+      id: "saumon-200",
+      name: "Saumon 200g",
+      desc: "Saumon fumé.",
+      price: 85,
+      badge: "Maison",
+      img: "assets/images/menu/saumon-fume1.jpg"
+    }
+  ]
+},
 
     {
       id: "tartares",
