@@ -203,6 +203,9 @@
     "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t": "Time slots",
     "b1d": "Delivery from 7:30 am to 9:30 pm, 7 days a week.",
+    "li1": "Confirmation within 1–2 hours after validation.",
+    "li2": "Order ideally the day before or before 10 am the same day.",
+    "li3": "Urgent? Contact us directly on WhatsApp.",
     "b2t": "Delivery point",
     "b2d": "Dock, boat name and onboard contact for a smooth handover.",
     "b3t": "All-inclusive pricing",
@@ -300,5 +303,21 @@
       "n": "Pressed & detox juices",
       "d": "Fresh pressed fruit juices. Optional ginger / lemon."
     }
+  },
+  "success": {
+    "eyebrow": "Mistral Express • Confirmation",
+    "title": "Order confirmed",
+    "lead": "Thank you. Your payment has been validated and your request has been submitted.",
+    "cardTitle": "Next step",
+    "cardDesc": "Please send us your delivery details to finalise the onboard service:",
+    "li1": "Port",
+    "li2": "Berth",
+    "li3": "Boat name",
+    "li4": "Requested time slot",
+    "whatsapp": "Send details on WhatsApp",
+    "back": "Back to menu",
+    "note": "If needed, we will contact you promptly to confirm the final details.",
+    "waIntro": "Hello Mistral Express, my payment has been completed.",
+    "waHeader": "Here are my delivery details:"
   }
 }

@@ -96,7 +96,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 .page    { min-height: calc(100vh - 220px); }
-.section { padding: 40px 0; }
+.section { padding: 72px 0; }
 .section.alt {
   background: var(--bg-warm);
   border-top:    1px solid var(--line);
@@ -499,7 +499,6 @@ html.nav-open body { overflow: hidden; }
 .mobile-lang-quick__toggle:hover { border-color: var(--line-strong); }
 
 .mobile-lang-quick__menu {
-  display: none;
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
@@ -511,7 +510,7 @@ html.nav-open body { overflow: hidden; }
   backdrop-filter: blur(12px);
   z-index: 9999;
 }
-.mobile-lang-quick__menu.open { display: block; }
+.mobile-lang-quick__menu[hidden] { display: none; }
 
 .mobile-lang-quick__item {
   display: block;
@@ -538,7 +537,6 @@ html.nav-open body { overflow: hidden; }
   padding: 60px 0 48px;
   position: relative;
   overflow: hidden;
-  background: url('../images/hero/home-hero.jpg') center 38% / cover no-repeat;
 }
 .hero::before {
   content: '';
@@ -716,7 +714,7 @@ html.nav-open body { overflow: hidden; }
 /* ----------------------------------------------------------
    15. Sections & layouts
    ---------------------------------------------------------- */
-.section-head  { margin-bottom: 14px; }
+.section-head  { margin-bottom: 36px; }
 .page-hero {
   padding: 42px 0 26px;
   border-bottom: 1px solid var(--line);
@@ -1318,7 +1316,8 @@ html.nav-open body { overflow: hidden; }
 .floating-cart:hover  { transform: translateY(-2px); }
 .floating-cart.show   { display: inline-flex; }
 
-.floating-cart__icon  { font-size: 18px; line-height: 1; }
+.floating-cart__icon  { display: flex; flex-shrink: 0; }
+.cart-ic              { display: flex; flex-shrink: 0; }
 .floating-cart__label { font-family: var(--font-ui); font-size: 14px; font-weight: 600; line-height: 1; }
 .floating-cart__count {
   min-width: 24px; height: 24px;
@@ -1566,7 +1565,7 @@ html.nav-open body { overflow: hidden; }
    ========================================================== */
 @media (max-width: 980px) {
   .container { width: min(var(--container), calc(100% - 24px)); }
-  .section   { padding: 36px 0; }
+  .section   { padding: 52px 0; }
 
   h1 { font-size: 40px; line-height: 1.02; }
   h2 { font-size: 28px; }
@@ -1607,7 +1606,7 @@ html.nav-open body { overflow: hidden; }
 @media (max-width: 820px) {
   .btn { min-height: 48px; }
   .qty button { min-width: 44px; min-height: 44px; }
-  .section { padding: 32px 0; }
+  .section { padding: 44px 0; }
   .page-hero { padding: 24px 0 10px; }
 
   /* header */

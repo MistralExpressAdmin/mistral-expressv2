@@ -12,7 +12,7 @@
     "cart": "Panier"
   },
   "footer": {
-    "tagline": "Yacht catering delivery — Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
+    "tagline": "Traiteur livré à bord — Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer.",
     "links": "Liens",
     "menu": "Carte",
     "zones": "Zones",
@@ -30,7 +30,7 @@
     "partnerNote": "Ouverture dans un nouvel onglet."
   },
   "home": {
-    "eyebrow": "Yacht Catering Delivery • Côte d’Azur",
+    "eyebrow": "Traiteur à bord • Côte d’Azur",
     "h1": "Traiteur livré directement à bord.",
     "lead": "Service discret, ponctuel et soigné pour vos journées en mer. Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat & Villefranche-sur-Mer.",
     "ctaMenu": "Voir la carte",
@@ -203,6 +203,9 @@
     "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t": "Créneaux",
     "b1d": "Livraison de 7h30 à 21h30, 7j/7.",
+    "li1": "Confirmation sous 1 à 2 h après validation.",
+    "li2": "Commandez idéalement la veille ou le matin avant 10h.",
+    "li3": "Urgence ? Contactez-nous directement sur WhatsApp.",
     "b2t": "Point de livraison",
     "b2d": "Ponton, nom du bateau et contact à bord pour une livraison fluide.",
     "b3t": "Prix tout compris",
@@ -300,5 +303,21 @@
       "n": "Jus pressés & détox",
       "d": "Fruits frais pressés. Option gingembre / citron."
     }
+  },
+  "success": {
+    "eyebrow": "Mistral Express • Confirmation",
+    "title": "Commande confirmée",
+    "lead": "Merci. Votre paiement a bien été validé et votre demande a été transmise.",
+    "cardTitle": "Prochaine étape",
+    "cardDesc": "Envoyez-nous maintenant les informations de livraison pour finaliser le service à bord :",
+    "li1": "Port",
+    "li2": "Ponton",
+    "li3": "Nom du bateau",
+    "li4": "Créneau souhaité",
+    "whatsapp": "Envoyer les détails sur WhatsApp",
+    "back": "Revenir à la carte",
+    "note": "Si besoin, nous vous recontactons rapidement pour confirmer les derniers détails.",
+    "waIntro": "Bonjour Mistral Express, mon paiement a bien été effectué.",
+    "waHeader": "Voici mes informations de livraison :"
   }
 }

@@ -25,7 +25,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260508" />
 
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/cart.js" defer></script>
@@ -34,7 +34,7 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
 
   <div id="site-header" role="banner"></div>
 
@@ -42,28 +42,28 @@
     <section class="success-hero">
       <div class="container">
         <div class="success-shell">
-          <p class="eyebrow">Mistral Express • Confirmation</p>
+          <p class="eyebrow" data-i18n="success.eyebrow">Mistral Express • Confirmation</p>
 
           <div class="success-mark" aria-hidden="true">✓</div>
 
-          <h1 class="success-title">Commande confirmée</h1>
+          <h1 class="success-title" data-i18n="success.title">Commande confirmée</h1>
 
-          <p class="lead success-lead">
+          <p class="lead success-lead" data-i18n="success.lead">
             Merci. Votre paiement a bien été validé et votre demande a été transmise.
           </p>
 
           <div class="success-card">
-            <h2 class="success-card__title">Prochaine étape</h2>
+            <h2 class="success-card__title" data-i18n="success.cardTitle">Prochaine étape</h2>
 
-            <p class="muted">
+            <p class="muted" data-i18n="success.cardDesc">
               Envoyez-nous maintenant les informations de livraison pour finaliser le service à bord :
             </p>
 
             <ul class="success-list">
-              <li>Port</li>
-              <li>Ponton</li>
-              <li>Nom du bateau</li>
-              <li>Créneau souhaité</li>
+              <li data-i18n="success.li1">Port</li>
+              <li data-i18n="success.li2">Ponton</li>
+              <li data-i18n="success.li3">Nom du bateau</li>
+              <li data-i18n="success.li4">Créneau souhaité</li>
             </ul>
 
             <div class="success-actions">
@@ -73,16 +73,17 @@
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-i18n="success.whatsapp"
               >
                 Envoyer les détails sur WhatsApp
               </a>
 
-              <a class="btn btn-ghost" href="carte.html">
+              <a class="btn btn-ghost" href="carte.html" data-i18n="success.back">
                 Revenir à la carte
               </a>
             </div>
 
-            <p class="tiny muted success-note">
+            <p class="tiny muted success-note" data-i18n="success.note">
               Si besoin, nous vous recontactons rapidement pour confirmer les derniers détails.
             </p>
           </div>
@@ -101,19 +102,31 @@
         console.error(e);
       }
 
+      function t(key, fallback) {
+        try {
+          const v = window.ME_I18N?.t?.(key);
+          return (v && v !== key) ? v : fallback;
+        } catch { return fallback; }
+      }
+
       const phone = "33668443067";
-      const msg =
-        "Bonjour Mistral Express, mon paiement a bien été effectué.%0A%0A" +
-        "Voici mes informations de livraison :%0A" +
-        "• Port :%0A" +
-        "• Ponton :%0A" +
-        "• Nom du bateau :%0A" +
-        "• Créneau souhaité :";
+      const intro   = t("success.waIntro",  "Bonjour Mistral Express, mon paiement a bien été effectué.");
+      const header  = t("success.waHeader", "Voici mes informations de livraison :");
+      const li1     = t("success.li1",  "Port");
+      const li2     = t("success.li2",  "Ponton");
+      const li3     = t("success.li3",  "Nom du bateau");
+      const li4     = t("success.li4",  "Créneau souhaité");
+
+      const msg = encodeURIComponent(
+        intro + "\n\n" + header + "\n" +
+        "• " + li1 + " :\n" +
+        "• " + li2 + " :\n" +
+        "• " + li3 + " :\n" +
+        "• " + li4 + " :"
+      );
 
       const wa = document.getElementById("successWhatsApp");
-      if (wa) {
-        wa.href = `https://wa.me/${phone}?text=${msg}`;
-      }
+      if (wa) wa.href = `https://wa.me/${phone}?text=${msg}`;
     });
   </script>
 </body>

@@ -14,7 +14,6 @@
           id: "formule-petit-dejeuner",
           name: "Petit déjeuner à bord",
           desc: "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d’orange pressé et fruits frais de saison.",
-          badge: "Matin",
           img: "assets/images/menu/dejeuner-bord.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 48, detail: "2 croissants, 2 pains au chocolat, ½ baguette, beurre, confiture, 2 jus d’orange pressés, fruits frais." },
@@ -26,7 +25,6 @@
           id: "formule-cocktail-dinatoire",
           name: "Cocktail Dînatoire",
           desc: "Charcuterie sélectionnée, plateau de fromages français, brochettes melon & jambon et plateau de fruits frais. Prêt à servir à bord.",
-          badge: "Soir",
           img: "assets/images/menu/mix-charcuterie.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 165, detail: "Planche charcuterie, planche fromages, 6 brochettes melon-jambon, plateau fruits — 2 pers." },
@@ -38,7 +36,6 @@
           id: "formule-dejeuner-complet",
           name: "Déjeuner Complet",
           desc: "Salade fraîche, tartare du jour et plateau de fruits de saison. Un déjeuner complet, prêt à servir en mer.",
-          badge: "Midi",
           img: "assets/images/menu/salade-cesar.jpg",
           options: [
             { id: "2p", label: "2 personnes", price: 125, detail: "Salade au choix × 1, tartare du jour × 1, plateau fruits 2 pers." },
@@ -781,7 +778,7 @@
         <div class="formule-card__photo">
           <img
             src="${escapeHtml(product.img)}"
-            alt="${escapeHtml(product.name)}"
+            alt="${escapeHtml(tName(product))}"
             loading="lazy"
             onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
           />
@@ -861,7 +858,7 @@
         <div class="me-product-media">
           <img
             src="${escapeHtml(product.img)}"
-            alt="${escapeHtml(product.name)}"
+            alt="${escapeHtml(tName(product))}"
             loading="lazy"
             onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
           />
