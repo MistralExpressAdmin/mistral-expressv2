@@ -566,8 +566,10 @@ html.nav-open body { overflow: hidden; }
   position: absolute;
   inset: 0;
   opacity: 0;
-  will-change: opacity, transform;
-  animation: heroCycle 24s ease-in-out infinite;
+  transition: opacity 1.4s ease-in-out;
+}
+.hero-bg__slide.active {
+  opacity: 1;
 }
 .hero-bg__slide img {
   position: absolute;
@@ -577,23 +579,12 @@ html.nav-open body { overflow: hidden; }
   object-fit: cover;
   object-position: center 40%;
 }
-.hero-bg__slide--1 { animation-delay: -1.5s; }
-.hero-bg__slide--2 { animation-delay: 8s; }
-.hero-bg__slide--3 { animation-delay: 16s; }
 .hero-bg__slide--1 img { object-position: center 38%; }
 .hero-bg__slide--2 img { object-position: center 50%; }
 .hero-bg__slide--3 img { object-position: center 58%; }
 
-@keyframes heroCycle {
-  0%   { opacity: 0; transform: scale(1.06); }
-  6%   { opacity: 1; transform: scale(1.04); }
-  33%  { opacity: 1; transform: scale(1.00); }
-  39%  { opacity: 0; transform: scale(1.00); }
-  100% { opacity: 0; transform: scale(1.00); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg__slide { display: none; }
+  .hero-bg__slide { transition: none; }
 }
 
 .hero-grid {
@@ -1724,9 +1715,9 @@ html.nav-open body { overflow: hidden; }
   /* hero */
   .hero { padding: 40px 0 32px; }
   .hero { background-position: 62% 38%; }
-  .hero-bg__slide--1 img { object-position: 62% 38%; }
-  .hero-bg__slide--2 img { object-position: 40% 50%; }
-  .hero-bg__slide--3 img { object-position: 45% 58%; }
+  .hero-bg__slide--1 img { object-position: 62% 38% !important; }
+  .hero-bg__slide--2 img { object-position: 40% 50% !important; }
+  .hero-bg__slide--3 img { object-position: 45% 58% !important; }
   .hero h1 {
     font-size: 46px;
     line-height: 1.0;
