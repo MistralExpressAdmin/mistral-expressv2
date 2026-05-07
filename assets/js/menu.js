@@ -522,6 +522,13 @@
     catch { return fallback; }
   };
 
+  function tName(p) { return T(`menu.item.${p.id}.name`, p.name); }
+  function tDesc(p) { return T(`menu.item.${p.id}.desc`, p.desc); }
+  function tOptLabel(p, opt) { return T(`menu.item.${p.id}.opt.${opt.id}.label`, opt.label); }
+  function tOptDetail(p, opt) { return T(`menu.item.${p.id}.opt.${opt.id}.detail`, opt.detail || p.desc || ""); }
+  function tCatTitle(id, fallback) { return T(`menu.cat.${id}.title`, fallback); }
+  function tCatSub(id, fallback) { return T(`menu.cat.${id}.subtitle`, fallback); }
+
   function isMobileMenuMode() {
     return mobileMenuMq.matches;
   }
@@ -577,24 +584,26 @@
     if (!option) {
       return {
         id: product.id,
-        name: product.name,
-        desc: product.desc,
+        name: tName(product),
+        desc: tDesc(product),
         img: product.img,
         price: product.price,
         badge: product.badge || ""
       };
     }
 
+    const label = tOptLabel(product, option);
+    const detail = tOptDetail(product, option);
     return {
       id: `${product.id}-${option.id}`,
       baseId: product.id,
       optionId: option.id,
-      name: `${product.name} — ${option.label}`,
-      desc: option.detail || product.desc,
+      name: `${tName(product)} — ${label}`,
+      desc: detail,
       img: product.img,
       price: option.price,
       badge: product.badge || "",
-      optionLabel: option.label
+      optionLabel: label
     };
   }
 
@@ -697,7 +706,7 @@
     });
 
     const category = MENU.find(c => c.id === currentChip);
-    setCategoriesToggleLabel(category ? category.title : "Catégories");
+    setCategoriesToggleLabel(category ? tCatTitle(category.id, category.title) : T("menu.cat.all.title", "Catégories"));
   }
 
   function renderChips() {
@@ -705,7 +714,7 @@
     if (!chips) return;
 
     chips.innerHTML = MENU.map(c => `
-      <button class="chip" type="button" data-chip="${escapeHtml(c.id)}">${escapeHtml(c.title)}</button>
+      <button class="chip" type="button" data-chip="${escapeHtml(c.id)}">${escapeHtml(tCatTitle(c.id, c.title))}</button>
     `).join("");
 
     if (chips.dataset.bound === "1") return;
@@ -743,9 +752,9 @@
               type="button"
               class="package-option ${opt.id === first.id ? "active" : ""}"
               data-option-id="${escapeHtml(opt.id)}"
-              aria-label="${escapeHtml(opt.label)}"
+              aria-label="${escapeHtml(tOptLabel(product, opt))}"
             >
-              ${escapeHtml(getOptionDisplayLabel(opt.label))}
+              ${escapeHtml(getOptionDisplayLabel(tOptLabel(product, opt)))}
             </button>
           `).join("")}
         </div>
@@ -780,8 +789,8 @@
         <div class="formule-card__body">
           <div class="formule-card__top">
             ${badge}
-            <h3>${escapeHtml(product.name)}</h3>
-            <p class="formule-card__desc">${escapeHtml(product.desc)}</p>
+            <h3>${escapeHtml(tName(product))}</h3>
+            <p class="formule-card__desc">${escapeHtml(tDesc(product))}</p>
           </div>
           ${renderOptionsInline(product)}
           <div class="formule-card__foot">
@@ -817,8 +826,8 @@
         aria-label="${escapeHtml(product.name)}"
       >
         <div class="wine-row__info">
-          <span class="wine-row__name">${escapeHtml(product.name)}</span>
-          <span class="wine-row__desc">${escapeHtml(product.desc)}</span>
+          <span class="wine-row__name">${escapeHtml(tName(product))}</span>
+          <span class="wine-row__desc">${escapeHtml(tDesc(product))}</span>
         </div>
         <div class="wine-row__right">
           ${badge}
@@ -860,8 +869,8 @@
 
         <div class="meta">
           <div class="meta-copy">
-            <h3>${escapeHtml(product.name)}</h3>
-            <p class="desc">${escapeHtml(product.desc)}</p>
+            <h3>${escapeHtml(tName(product))}</h3>
+            <p class="desc">${escapeHtml(tDesc(product))}</p>
           </div>
           <div class="meta-side">
             ${badge}
@@ -916,8 +925,8 @@
       const cat = byCat.get(catId);
       const head = `
         <div class="menu-section__head">
-          <h2>${escapeHtml(cat.title)}</h2>
-          ${cat.subtitle ? `<p class="muted">${escapeHtml(cat.subtitle)}</p>` : ``}
+          <h2>${escapeHtml(tCatTitle(catId, cat.title))}</h2>
+          ${cat.subtitle ? `<p class="muted">${escapeHtml(tCatSub(catId, cat.subtitle))}</p>` : ``}
         </div>`;
 
       if (cat.layout === "formule") {
@@ -1030,13 +1039,13 @@
   }
 
   function renderModalOptions(product, optionId) {
-    if (!product.options?.length) return escapeHtml(product.desc || "");
+    if (!product.options?.length) return escapeHtml(tDesc(product) || "");
 
     const selected = getSelectedOption(product, optionId) || getDefaultOption(product);
 
     return `
       <div class="modal-package">
-        <p class="muted">${escapeHtml(product.desc || "")}</p>
+        <p class="muted">${escapeHtml(tDesc(product) || "")}</p>
 
         <div class="package-picker package-picker--modal">
           <div class="package-picker__label">${escapeHtml(getPackageLabel())}</div>
@@ -1046,16 +1055,16 @@
                 type="button"
                 class="package-option package-option--modal ${opt.id === selected.id ? "active" : ""}"
                 data-modal-option-id="${escapeHtml(opt.id)}"
-                aria-label="${escapeHtml(opt.label)}"
+                aria-label="${escapeHtml(tOptLabel(product, opt))}"
               >
-                ${escapeHtml(getOptionDisplayLabel(opt.label))}
+                ${escapeHtml(getOptionDisplayLabel(tOptLabel(product, opt)))}
               </button>
             `).join("")}
           </div>
         </div>
 
         <p class="tiny muted modal-package__detail" id="productModalOptionDetail">
-          ${escapeHtml(selected.detail || "")}
+          ${escapeHtml(tOptDetail(product, selected))}
         </p>
       </div>
     `;
@@ -1074,7 +1083,7 @@
         const detailEl = qs("#productModalOptionDetail");
         if (detailEl) {
           const option = getSelectedOption(product, currentModalOptionId);
-          detailEl.textContent = option?.detail || "";
+          detailEl.textContent = option ? tOptDetail(product, option) : "";
         }
 
         const priceEl = qs("#productModalPrice");
@@ -1097,14 +1106,14 @@
 
     const effective = getEffectiveProduct(product, currentModalOptionId);
 
-    qs("#productModalTitle").textContent = product.name;
+    qs("#productModalTitle").textContent = tName(product);
 
     const descEl = qs("#productModalDesc");
     if (descEl) {
       if (product.options?.length) {
         descEl.innerHTML = renderModalOptions(product, currentModalOptionId);
       } else {
-        descEl.textContent = product.desc || "";
+        descEl.textContent = tDesc(product) || "";
       }
     }
 
@@ -1123,7 +1132,7 @@
     const img = qs("#productModalImg");
     if (img) {
       img.src = product.img || "";
-      img.alt = product.name || "Produit";
+      img.alt = tName(product) || "Produit";
     }
 
     const addBtn = qs("#productModalAdd");

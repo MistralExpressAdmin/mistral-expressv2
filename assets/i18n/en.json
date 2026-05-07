@@ -21,6 +21,8 @@
     "mentions": "Legal notice",
     "privacy": "Privacy",
     "cgv": "Terms",
+    "contactTitle": "Contact",
+    "hours": "Open 7 days a week, 7:30 am to 9:30 pm.",
     "partner": "Partner",
     "partnerText": "Boat rental — external link.",
     "partnerCta": "Open partner website",
@@ -78,7 +80,122 @@
     "badge": {
       "delivery": "Delivery included"
     },
-    "disclaimer": "Photos for illustration only. Allergens and details available on request."
+    "disclaimer": "Photos for illustration only. Allergens and details available on request.",
+    "cat": {
+      "formules": { "title": "Set Menus", "subtitle": "Full meals for 2, 4 or 8 persons — delivery included" },
+      "maison": { "title": "House", "subtitle": "Curated selection" },
+      "tartares": { "title": "Tartares", "subtitle": "Prepared to order" },
+      "salades": { "title": "Salads", "subtitle": "Fresh and balanced" },
+      "planches": { "title": "Boards & platters", "subtitle": "To share onboard" },
+      "brochettes": { "title": "Skewers", "subtitle": "Sharing service" },
+      "wraps": { "title": "Wraps", "subtitle": "Ready to take to sea" },
+      "champagnes": { "title": "Champagnes", "subtitle": "Cellar selection" },
+      "vins-blancs": { "title": "White wines", "subtitle": "Freshness and elegance" },
+      "vins-roses": { "title": "Rosé wines", "subtitle": "Riviera selection" },
+      "softs": { "title": "Soft drinks & energy", "subtitle": "Cans & fresh beverages" }
+    },
+    "item": {
+      "formule-petit-dejeuner": {
+        "name": "Onboard Breakfast",
+        "desc": "Artisan morning pastries, traditional baguette, butter, artisan jams, freshly squeezed orange juice and seasonal fresh fruit.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "2 croissants, 2 pains au chocolat, ½ baguette, butter, jam, 2 fresh orange juices, fresh fruit." },
+          "4p": { "label": "4 pers.", "detail": "4 croissants, 4 pains au chocolat, 1 baguette, butter, jams, 4 fresh orange juices, fresh fruit." },
+          "8p": { "label": "8 pers.", "detail": "8 croissants, 8 pains au chocolat, 2 baguettes, butter, jams, 8 fresh orange juices, fresh fruit." }
+        }
+      },
+      "formule-cocktail-dinatoire": {
+        "name": "Evening Cocktail",
+        "desc": "Selected charcuterie, French cheese board, melon & ham skewers and fresh fruit platter. Ready to serve onboard.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "Charcuterie board, cheese board, 6 melon-ham skewers, fruit platter — 2 pers." },
+          "4p": { "label": "4 pers.", "detail": "Charcuterie board, cheese board, 12 melon-ham skewers, fruit platter — 4 pers." },
+          "8p": { "label": "8 pers.", "detail": "2 charcuterie boards, 2 cheese boards, 24 melon-ham skewers, fruit platter — 8 pers." }
+        }
+      },
+      "formule-dejeuner-complet": {
+        "name": "Full Lunch",
+        "desc": "Fresh salad, tartare of the day and a seasonal fruit platter. A complete lunch, ready to serve at sea.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "1 salad of your choice, 1 tartare of the day, fruit platter for 2." },
+          "4p": { "label": "4 pers.", "detail": "2 salads of your choice, 2 tartares of the day, fruit platter for 4." },
+          "8p": { "label": "8 pers.", "detail": "4 salads of your choice, 4 tartares of the day, fruit platter for 8." }
+        }
+      },
+      "caviar-baeri": {
+        "name": "Baeri Caviar",
+        "desc": "Baeri caviar, premium selection.",
+        "opt": {
+          "30g": { "label": "30g", "detail": "Caviar Baeri 30g." },
+          "50g": { "label": "50g", "detail": "Caviar Baeri 50g." },
+          "100g": { "label": "100g", "detail": "Caviar Baeri 100g." },
+          "250g": { "label": "250g", "detail": "Caviar Baeri 250g." }
+        }
+      },
+      "foie-gras-classic": { "name": "Classic foie gras 2×40g", "desc": "Classic foie gras." },
+      "foie-gras-truffe": { "name": "Truffle foie gras 2×40g", "desc": "Truffle foie gras." },
+      "saumon-100": { "name": "Smoked salmon 100g", "desc": "Smoked salmon." },
+      "saumon-200": { "name": "Smoked salmon 200g", "desc": "Smoked salmon." },
+      "tartare-saumon": { "name": "Salmon tartare", "desc": "Label Rouge salmon, prepared to order, delicate seasoning." },
+      "tartare-boeuf": { "name": "Beef tartare", "desc": "Charolais beef, freshly minced, classic or spiced seasoning." },
+      "tartare-thon": { "name": "Tuna tartare", "desc": "Albacore tuna, fine cut, light citrus marinade." },
+      "salade-cesar": { "name": "Caesar salad", "desc": "Chicken, croutons, parmesan, dressing." },
+      "salade-nicoise": { "name": "Niçoise salad", "desc": "Fresh and Mediterranean." },
+      "salade-pates": { "name": "Pasta salad", "desc": "Generous, ideal onboard." },
+      "planche-charcuterie": {
+        "name": "Charcuterie board",
+        "desc": "Fine selection, sliced and ready to serve.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "Charcuterie board for 2 persons." },
+          "4p": { "label": "4 pers.", "detail": "Charcuterie board for 4 persons." },
+          "8p": { "label": "8 pers.", "detail": "Charcuterie board for 8 persons." }
+        }
+      },
+      "planche-fromages": {
+        "name": "Cheese board",
+        "desc": "Selection of French cheeses, ready to serve.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "Cheese board for 2 persons." },
+          "4p": { "label": "4 pers.", "detail": "Cheese board for 4 persons." },
+          "8p": { "label": "8 pers.", "detail": "Cheese board for 8 persons." }
+        }
+      },
+      "plateau-fruits": {
+        "name": "Fruit platter",
+        "desc": "Seasonal fruits, ready to serve.",
+        "opt": {
+          "2p": { "label": "2 pers.", "detail": "Fruit platter for 2 persons." },
+          "4p": { "label": "4 pers.", "detail": "Fruit platter for 4 persons." },
+          "8p": { "label": "8 pers.", "detail": "Fruit platter for 8 persons." }
+        }
+      },
+      "brochettes-melon-jambon": { "name": "6 melon & ham skewers", "desc": "Sweet and savoury pairing." },
+      "brochettes-fruits": { "name": "6 fruit skewers", "desc": "Fresh and light." },
+      "brochettes-tomate-mozza": { "name": "6 tomato & mozzarella skewers", "desc": "Simple and ready to serve." },
+      "wrap-poulet": { "name": "Chicken wraps", "desc": "Roasted chicken, crunchy vegetables, house sauce. Mini format suited for onboard." },
+      "wrap-saumon": { "name": "Salmon wraps", "desc": "Smoked salmon, cream cheese, dill. Delicate texture and briny freshness." },
+      "champ-neuville-autolyse": { "name": "Neuville Blanc de Blancs", "desc": "Champagne de Vignerons — fine bubbles, floral freshness, mineral finish." },
+      "champ-neuville-2012": { "name": "Brut de Neuville", "desc": "Champagne de Vignerons — balanced brut, notes of green apple and brioche." },
+      "champ-ruinart-bdb": { "name": "Ruinart Brut", "desc": "Ruinart — iconic cuvée, persistent bubbles, classic elegance." },
+      "champ-extra-brut-bdn": { "name": "Ruinart Blanc de Blancs", "desc": "Ruinart — 100% Chardonnay, extra-brut, purity and citrus tension." },
+      "champ-roederer-246": { "name": "Louis Roederer Blanc de Blancs", "desc": "Roederer — Grand Cru Blanc de Blancs, depth and creamy texture." },
+      "champ-perrier-jouet-2016": { "name": "Perrier-Jouët Belle Époque 2016", "desc": "Exceptional vintage — floral bouquet, airy palate, long finish." },
+      "champ-cristal": { "name": "Cristal Roederer", "desc": "Louis Roederer — prestige cuvée, world icon, brilliance and depth." },
+      "blanc-secret-lunes-chardo": { "name": "Chardonnay de Lunès", "desc": "IGP Pays d'Oc — fresh Chardonnay, notes of citrus and white flowers." },
+      "blanc-minuty-prestige-2024": { "name": "Minuty Prestige Blanc 2024", "desc": "AOC Côtes de Provence — Rolle and Clairette, fresh and mineral." },
+      "blanc-minuty-blanc-or-2024": { "name": "Minuty Blanc et Or 2024", "desc": "AOC Côtes de Provence — premium cuvée, complexity and length." },
+      "rose-minuty-prestige-2024": { "name": "Minuty Prestige Rosé 2024", "desc": "AOC Côtes de Provence — pale rosé, notes of strawberry and grapefruit." },
+      "rose-minuty-rose-or-2024": { "name": "Minuty Rosé et Or 2024", "desc": "AOC Côtes de Provence — prestige cuvée, balance and finesse." },
+      "rose-chateau-281": { "name": "Château 281", "desc": "Provence — gastronomic rosé, structure and length on the palate." },
+      "coca-33": { "name": "Coca-Cola 33cl", "desc": "Can." },
+      "coca-zero-33": { "name": "Coca-Cola Zero 33cl", "desc": "Can." },
+      "sprite-33": { "name": "Sprite 33cl", "desc": "Can." },
+      "fanta-33": { "name": "Fanta 33cl", "desc": "Can." },
+      "oasis-33": { "name": "Oasis 33cl", "desc": "Can." },
+      "fuze-tea-33": { "name": "Fuze Tea 33cl", "desc": "Can." },
+      "redbull-33": { "name": "Red Bull 33cl", "desc": "Can." },
+      "redbull-zero-33": { "name": "Red Bull Zero 33cl", "desc": "Can." }
+    }
   },
   "zones": {
     "eyebrow": "Areas",

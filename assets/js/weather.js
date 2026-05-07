@@ -158,7 +158,8 @@ const ME_WEATHER = (() => {
 
   document.addEventListener("DOMContentLoaded", () => {
     render().catch(() => {});
-    setInterval(() => render().catch(() => {}), 10 * 60 * 1000);
+    const intervalId = setInterval(() => render().catch(() => {}), 10 * 60 * 1000);
+    window.addEventListener("beforeunload", () => clearInterval(intervalId));
   });
 
   window.addEventListener("me:lang", () => {

@@ -21,6 +21,8 @@
     "mentions": "Mentions légales",
     "privacy": "Confidentialité",
     "cgv": "CGV",
+    "contactTitle": "Contact",
+    "hours": "Service 7j/7 de 7h30 à 21h30.",
     "partner": "Partenaire",
     "partnerText": "Location de bateaux — lien externe.",
     "partnerCta": "Accéder au site partenaire",
@@ -78,7 +80,122 @@
     "badge": {
       "delivery": "Livraison incluse"
     },
-    "disclaimer": "Photos indicatives. Allergènes et détails disponibles sur demande."
+    "disclaimer": "Photos indicatives. Allergènes et détails disponibles sur demande.",
+    "cat": {
+      "formules": { "title": "Formules", "subtitle": "Repas complets pour 2, 4 ou 8 personnes — livraison incluse" },
+      "maison": { "title": "Maison", "subtitle": "Produits sélectionnés" },
+      "tartares": { "title": "Tartares", "subtitle": "Préparés minute" },
+      "salades": { "title": "Salades", "subtitle": "Fraîches et équilibrées" },
+      "planches": { "title": "Planches & plateaux", "subtitle": "À partager à bord" },
+      "brochettes": { "title": "Brochettes", "subtitle": "Service à partager" },
+      "wraps": { "title": "Wraps", "subtitle": "Prêts à emporter en mer" },
+      "champagnes": { "title": "Champagnes", "subtitle": "Sélection de cave" },
+      "vins-blancs": { "title": "Vins blancs", "subtitle": "Fraîcheur et élégance" },
+      "vins-roses": { "title": "Vins rosés", "subtitle": "Sélection Riviera" },
+      "softs": { "title": "Softs & énergie", "subtitle": "Canettes & boissons fraîches" }
+    },
+    "item": {
+      "formule-petit-dejeuner": {
+        "name": "Petit déjeuner à bord",
+        "desc": "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d'orange pressé et fruits frais de saison.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "2 croissants, 2 pains au chocolat, ½ baguette, beurre, confiture, 2 jus d'orange pressés, fruits frais." },
+          "4p": { "label": "4 personnes", "detail": "4 croissants, 4 pains au chocolat, 1 baguette, beurre, confitures, 4 jus d'orange pressés, fruits frais." },
+          "8p": { "label": "8 personnes", "detail": "8 croissants, 8 pains au chocolat, 2 baguettes, beurre, confitures, 8 jus d'orange pressés, fruits frais." }
+        }
+      },
+      "formule-cocktail-dinatoire": {
+        "name": "Cocktail Dînatoire",
+        "desc": "Charcuterie sélectionnée, plateau de fromages français, brochettes melon & jambon et plateau de fruits frais. Prêt à servir à bord.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "Planche charcuterie, planche fromages, 6 brochettes melon-jambon, plateau fruits — 2 pers." },
+          "4p": { "label": "4 personnes", "detail": "Planche charcuterie, planche fromages, 12 brochettes melon-jambon, plateau fruits — 4 pers." },
+          "8p": { "label": "8 personnes", "detail": "2 planches charcuterie, 2 planches fromages, 24 brochettes melon-jambon, plateau fruits — 8 pers." }
+        }
+      },
+      "formule-dejeuner-complet": {
+        "name": "Déjeuner Complet",
+        "desc": "Salade fraîche, tartare du jour et plateau de fruits de saison. Un déjeuner complet, prêt à servir en mer.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "Salade au choix × 1, tartare du jour × 1, plateau fruits 2 pers." },
+          "4p": { "label": "4 personnes", "detail": "Salade au choix × 2, tartare du jour × 2, plateau fruits 4 pers." },
+          "8p": { "label": "8 personnes", "detail": "Salade au choix × 4, tartare du jour × 4, plateau fruits 8 pers." }
+        }
+      },
+      "caviar-baeri": {
+        "name": "Caviar Baeri",
+        "desc": "Caviar Baeri, sélection premium.",
+        "opt": {
+          "30g": { "label": "30g", "detail": "Caviar Baeri 30g." },
+          "50g": { "label": "50g", "detail": "Caviar Baeri 50g." },
+          "100g": { "label": "100g", "detail": "Caviar Baeri 100g." },
+          "250g": { "label": "250g", "detail": "Caviar Baeri 250g." }
+        }
+      },
+      "foie-gras-classic": { "name": "Foie gras 2x40g classic", "desc": "Foie gras classique." },
+      "foie-gras-truffe": { "name": "Foie gras 2x40g truffe", "desc": "Foie gras truffé." },
+      "saumon-100": { "name": "Saumon 100g", "desc": "Saumon fumé." },
+      "saumon-200": { "name": "Saumon 200g", "desc": "Saumon fumé." },
+      "tartare-saumon": { "name": "Tartare de saumon", "desc": "Saumon Label Rouge, préparé minute, assaisonnement délicat." },
+      "tartare-boeuf": { "name": "Tartare de bœuf", "desc": "Bœuf Charolais, haché minute, assaisonnement classique ou relevé." },
+      "tartare-thon": { "name": "Tartare de thon", "desc": "Thon albacore, découpe fine, marinade légère aux agrumes." },
+      "salade-cesar": { "name": "Salade César", "desc": "Poulet, croûtons, parmesan, sauce." },
+      "salade-nicoise": { "name": "Salade niçoise", "desc": "Fraîche et méditerranéenne." },
+      "salade-pates": { "name": "Salade de pâtes", "desc": "Généreuse, idéale à bord." },
+      "planche-charcuterie": {
+        "name": "Planche de charcuterie",
+        "desc": "Sélection fine, tranchée et prête à servir.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "Planche de charcuterie pour 2 personnes." },
+          "4p": { "label": "4 personnes", "detail": "Planche de charcuterie pour 4 personnes." },
+          "8p": { "label": "8 personnes", "detail": "Planche de charcuterie pour 8 personnes." }
+        }
+      },
+      "planche-fromages": {
+        "name": "Planche de fromages",
+        "desc": "Sélection de fromages français prête à servir.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "Planche de fromages pour 2 personnes." },
+          "4p": { "label": "4 personnes", "detail": "Planche de fromages pour 4 personnes." },
+          "8p": { "label": "8 personnes", "detail": "Planche de fromages pour 8 personnes." }
+        }
+      },
+      "plateau-fruits": {
+        "name": "Plateau de fruits",
+        "desc": "Fruits de saison, prêt à servir.",
+        "opt": {
+          "2p": { "label": "2 personnes", "detail": "Plateau de fruits pour 2 personnes." },
+          "4p": { "label": "4 personnes", "detail": "Plateau de fruits pour 4 personnes." },
+          "8p": { "label": "8 personnes", "detail": "Plateau de fruits pour 8 personnes." }
+        }
+      },
+      "brochettes-melon-jambon": { "name": "6 brochettes melon et jambon", "desc": "Accord sucré-salé." },
+      "brochettes-fruits": { "name": "6 brochettes de fruits", "desc": "Fraîches et légères." },
+      "brochettes-tomate-mozza": { "name": "6 brochettes tomates mozza", "desc": "Simple et prêt à servir." },
+      "wrap-poulet": { "name": "Wraps poulet", "desc": "Poulet rôti, crudités croquantes, sauce maison. Format mini adapté au bord." },
+      "wrap-saumon": { "name": "Wraps saumon", "desc": "Saumon fumé, fromage frais, aneth. Texture délicate et fraîcheur iodée." },
+      "champ-neuville-autolyse": { "name": "Neuville Blanc de Blancs", "desc": "Champagne de Vignerons — bulles fines, fraîcheur florale, finale minérale." },
+      "champ-neuville-2012": { "name": "Brut de Neuville", "desc": "Champagne de Vignerons — brut équilibré, notes de pomme verte et brioche." },
+      "champ-ruinart-bdb": { "name": "Ruinart Brut", "desc": "Ruinart — cuvée emblématique, bulles persistantes, élégance classique." },
+      "champ-extra-brut-bdn": { "name": "Ruinart Blanc de Blancs", "desc": "Ruinart — 100% Chardonnay, extra-brut, pureté et tension citronnée." },
+      "champ-roederer-246": { "name": "Louis Roederer Blanc de Blancs", "desc": "Roederer — Blanc de Blancs Grand Cru, profondeur et texture crémeuse." },
+      "champ-perrier-jouet-2016": { "name": "Perrier-Jouët Belle Époque 2016", "desc": "Millésime d'exception — bouquet floral, palais aérien, finale longue." },
+      "champ-cristal": { "name": "Cristal Roederer", "desc": "Louis Roederer — cuvée prestige, icône mondiale, éclat et profondeur." },
+      "blanc-secret-lunes-chardo": { "name": "Chardonnay de Lunès", "desc": "IGP Pays d'Oc — Chardonnay frais, notes d'agrumes et de fleurs blanches." },
+      "blanc-minuty-prestige-2024": { "name": "Minuty Prestige Blanc 2024", "desc": "AOC Côtes de Provence — Rolle et Clairette, frais et minéral." },
+      "blanc-minuty-blanc-or-2024": { "name": "Minuty Blanc et Or 2024", "desc": "AOC Côtes de Provence — cuvée premium, complexité et longueur." },
+      "rose-minuty-prestige-2024": { "name": "Minuty Prestige Rosé 2024", "desc": "AOC Côtes de Provence — rosé pâle, notes de fraise et pamplemousse." },
+      "rose-minuty-rose-or-2024": { "name": "Minuty Rosé et Or 2024", "desc": "AOC Côtes de Provence — cuvée prestige, équilibre et finesse." },
+      "rose-chateau-281": { "name": "Château 281", "desc": "Provence — rosé gastronomique, structure et longueur en bouche." },
+      "coca-33": { "name": "Coca Cola 33cl", "desc": "Canette." },
+      "coca-zero-33": { "name": "Coca Cola Zero 33cl", "desc": "Canette." },
+      "sprite-33": { "name": "Sprite 33cl", "desc": "Canette." },
+      "fanta-33": { "name": "Fanta 33cl", "desc": "Canette." },
+      "oasis-33": { "name": "Oasis 33cl", "desc": "Canette." },
+      "fuze-tea-33": { "name": "Fuze Tea 33cl", "desc": "Canette." },
+      "redbull-33": { "name": "Red Bull 33cl", "desc": "Canette." },
+      "redbull-zero-33": { "name": "Red Bull Zero 33cl", "desc": "Canette." }
+    }
   },
   "zones": {
     "eyebrow": "Zones",
