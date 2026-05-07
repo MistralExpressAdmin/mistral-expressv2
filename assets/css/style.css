@@ -1722,7 +1722,7 @@ html.nav-open body { overflow: hidden; }
   }
   .pill-row .pill:last-child:nth-child(odd) { grid-column: 1/-1; }
 
-  .hero-card { width: 100%; margin-top: 32px; }
+  .hero-card { display: none; }
   .hero-card .card {
     padding: 20px;
     border-radius: 10px;
