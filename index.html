@@ -47,7 +47,7 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=20260507" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260508" />
 
   <link rel="dns-prefetch" href="https://api.open-meteo.com" />
 
@@ -227,53 +227,60 @@
         </header>
         <div class="testi-grid">
           <blockquote class="card testi-card" data-reveal>
-            <p class="testi-quote">« Service impeccable. Le plateau était livré à l'heure exacte, au ponton, sans le moindre stress. »</p>
-            <footer class="testi-footer"><cite>Capitaine, yacht 22 m — Beaulieu-sur-Mer</cite></footer>
+            <p class="testi-stars" aria-label="5 étoiles">★★★★★</p>
+            <p class="testi-quote">« Service impeccable. Le plateau était livré à l'heure exacte, au ponton, sans le moindre stress. On a rien eu à faire. »</p>
+            <footer class="testi-footer"><cite>J.-L. M. — Capitaine, yacht 22 m · Beaulieu-sur-Mer</cite></footer>
           </blockquote>
           <blockquote class="card testi-card" data-reveal>
-            <p class="testi-quote">« Le déjeuner était frais, bien présenté et parfaitement adapté à la mer. On recommande. »</p>
-            <footer class="testi-footer"><cite>Équipage, voilier 16 m — Saint-Jean-Cap-Ferrat</cite></footer>
+            <p class="testi-stars" aria-label="5 étoiles">★★★★★</p>
+            <p class="testi-quote">« Le déjeuner était frais, bien présenté et parfaitement adapté à la mer. La communication avant la livraison était claire et rassurante. »</p>
+            <footer class="testi-footer"><cite>A. & P. D. — Équipage, voilier 16 m · Saint-Jean-Cap-Ferrat</cite></footer>
           </blockquote>
           <blockquote class="card testi-card" data-reveal>
-            <p class="testi-quote">« Très bonne communication, livraison discrète et plateau digne d'un traiteur haut de gamme. »</p>
-            <footer class="testi-footer"><cite>Propriétaire, motoryacht — Villefranche-sur-Mer</cite></footer>
+            <p class="testi-stars" aria-label="5 étoiles">★★★★★</p>
+            <p class="testi-quote">« Communication parfaite, livraison discrète et plateau digne d'un traiteur haut de gamme. Je recommande sans réserve. »</p>
+            <footer class="testi-footer"><cite>B. R. — Propriétaire, motoryacht · Villefranche-sur-Mer</cite></footer>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="partner-title">
+    <section class="section section-engagements" aria-labelledby="engagements-title">
       <div class="container">
-        <div class="split">
-          <div>
-            <h2 id="partner-title" data-i18n="home.partnerTitle">Partenaire</h2>
-            <p class="muted" data-i18n="home.partnerDesc">
-              En collaboration avec un loueur de bateaux sélectionné.
-            </p>
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Notre promesse</p>
+          <h2 id="engagements-title">Trois engagements, sans exception.</h2>
+          <p class="muted">Ce que nous promettons à chaque commande, quel que soit le bateau ou le créneau.</p>
+        </header>
 
-            <a
-              class="btn btn-secondary"
-              id="partnerLink"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="home.partnerCta"
-            >
-              Découvrir le partenaire
-            </a>
-
-            <p class="tiny muted" data-i18n="home.partnerNote">
-              Lien externe — ouverture dans un nouvel onglet.
-            </p>
+        <div class="engagements-grid">
+          <div class="engagement-item" data-reveal>
+            <p class="engagement-num" aria-hidden="true">01</p>
+            <h3 class="engagement-title">Ponctualité garantie</h3>
+            <p class="muted">Nous confirmons votre créneau par message et livrons au ponton à l'heure convenue. Aucun retard non communiqué.</p>
           </div>
 
+          <div class="engagement-item" data-reveal>
+            <p class="engagement-num" aria-hidden="true">02</p>
+            <h3 class="engagement-title">Fraîcheur du jour</h3>
+            <p class="muted">Chaque plateau est préparé le jour même avec des produits frais sélectionnés. Aucun article réchauffé ou préparé à l'avance.</p>
+          </div>
+
+          <div class="engagement-item" data-reveal>
+            <p class="engagement-num" aria-hidden="true">03</p>
+            <h3 class="engagement-title">Discrétion absolue</h3>
+            <p class="muted">Tenue soignée, comportement discret, interaction minimale si vous le souhaitez. Votre bord reste votre espace.</p>
+          </div>
+        </div>
+
+        <div class="engagements-process" data-reveal>
           <section class="card glass" aria-labelledby="process-title">
             <h3 id="process-title" data-i18n="home.processTitle">Comment ça marche</h3>
 
             <ol class="steps">
-              <li data-i18n="home.step1">Choisissez vos produits sur la carte.</li>
-              <li data-i18n="home.step2">Indiquez le port + nom du bateau + créneau.</li>
-              <li data-i18n="home.step3">Nous confirmons et livrons à bord.</li>
+              <li data-i18n="home.step1">Choisissez vos produits sur la carte et ajoutez-les au panier.</li>
+              <li data-i18n="home.step2">Indiquez votre port, ponton, nom du bateau et le créneau souhaité.</li>
+              <li data-i18n="home.step3">Nous confirmons sous 1h et livrons à bord à l'heure convenue.</li>
             </ol>
 
             <a class="link" href="zones.html" data-i18n="home.processLink">Voir les zones &amp; délais →</a>
@@ -282,17 +289,15 @@
       </div>
     </section>
 
-    <section class="section alt" aria-labelledby="cta2-title">
+    <section class="section section-cta-dark" aria-labelledby="cta2-title">
+      <div class="section-bg" aria-hidden="true">
+        <img src="assets/images/hero/home-hero.jpg" alt="" loading="lazy">
+      </div>
       <div class="container">
-        <div class="cta-wide" role="region" aria-label="Contact express" data-reveal>
-          <div>
-            <h2 id="cta2-title" data-i18n="home.cta2Title">Besoin d’une livraison aujourd’hui ?</h2>
-            <p class="muted" data-i18n="home.cta2Desc">Contact express : réponse rapide, service clair.</p>
-          </div>
-
-          <a class="btn btn-primary" href="contact.html" data-i18n="home.cta2Btn">
-            Contacter Mistral Express
-          </a>
+        <div class="cta-dark-inner" data-reveal>
+          <h2 id="cta2-title" data-i18n="home.cta2Title">Prêt à commander ?</h2>
+          <p data-i18n="home.cta2Desc">Réponse garantie sous 1 heure. Service 7j/7 de 7h30 à 21h30.</p>
+          <a class="btn btn-cta-dark" href="carte.html" data-i18n="home.cta2Btn">Commander maintenant</a>
         </div>
       </div>
     </section>

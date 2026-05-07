@@ -97,7 +97,7 @@
   "gallery": {
     "eyebrow": "Gallery",
     "h1": "Atmosphere & presentation",
-    "lead": "Add your photos here: platters, presentation, sea views and onboard moments.",
+    "lead": "Platters, presentation, sea views and onboard moments — our gallery is coming soon.",
     "ph1": "Photo slot 1",
     "ph2": "Photo slot 2",
     "ph3": "Photo slot 3",
@@ -108,13 +108,23 @@
   "faq": {
     "eyebrow": "FAQ",
     "h1": "Frequently asked questions",
-    "lead": "Simple answers. Clear service.",
-    "q1": "Do prices include delivery?",
-    "a1": "Yes. Displayed prices are all-inclusive. No extra fees are added to the order.",
+    "lead": "Everything you need to know before ordering.",
+    "q1": "Are delivery fees included in the prices?",
+    "a1": "Yes. All displayed prices are all-inclusive. No additional fees are added to your order.",
     "q2": "How does onboard delivery work?",
-    "a2": "After ordering, we confirm a time slot. We deliver to the dock with the boat name and an onboard contact.",
-    "q3": "Allergens and specific requests?",
-    "a3": "Message us via the Contact page: we adapt whenever possible."
+    "a2": "After your order is confirmed, we arrange a time slot by message. We deliver directly to your berth — no need to move from the boat.",
+    "q3": "Do you accommodate dietary requirements?",
+    "a3": "Yes. Contact us via the Contact page or WhatsApp with your dietary needs. We confirm what's possible before delivery.",
+    "q4": "Is there a minimum order amount?",
+    "a4": "No. There is no minimum order. You can order a single item or a full platter.",
+    "q5": "How far in advance should I order?",
+    "a5": "Ideally the day before or before 10am on the day of delivery. For urgent orders, contact us on WhatsApp — we do our best based on availability.",
+    "q6": "What happens in bad weather or if access to the port is impossible?",
+    "a6": "If weather conditions or port access prevent delivery, we contact you immediately to postpone or cancel at no charge.",
+    "q7": "Do you offer vegetarian or gluten-free options?",
+    "a7": "Several menu items are vegetarian. For gluten-free or vegan requests, contact us and we'll advise on available options.",
+    "q8": "How can I modify or cancel my order?",
+    "a8": "Any changes or cancellations must be communicated at least 2 hours before the confirmed time slot via WhatsApp or email."
   },
   "contact": {
     "eyebrow": "Contact",
