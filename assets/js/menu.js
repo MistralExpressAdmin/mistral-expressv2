@@ -1051,7 +1051,23 @@
     document.addEventListener("keydown", (e) => {
       const modal = qs("#productModal");
       if (!modal?.classList.contains("open")) return;
-      if (e.key === "Escape") closeModal();
+
+      if (e.key === "Escape") { closeModal(); return; }
+      if (e.key !== "Tab") return;
+
+      const panel = modal.querySelector(".me-modal__panel");
+      const focusable = Array.from(panel.querySelectorAll(
+        'button:not([disabled]), [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )).filter(el => !el.closest('[aria-hidden="true"]'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        last.focus(); e.preventDefault();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        first.focus(); e.preventDefault();
+      }
     });
 
     qs("#productModalGoCart")?.addEventListener("click", () => {

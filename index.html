@@ -11,7 +11,7 @@
     content="Livraison traiteur à bord sur la Côte d’Azur. Service discret, précis et soigné à Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat et Villefranche-sur-Mer."
   />
 
-  <link rel="canonical" href="./" />
+  <link rel="canonical" href="https://mistralexpress.fr/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
   <meta property="og:locale" content="fr_FR" />
@@ -22,7 +22,7 @@
     property="og:description"
     content="Service discret et soigné à Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat et Villefranche-sur-Mer."
   />
-  <meta property="og:url" content="./" />
+  <meta property="og:url" content="https://mistralexpress.fr/" />
   <meta property="og:image" content="assets/img/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -49,22 +49,43 @@
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
+  <link rel="dns-prefetch" href="https://api.open-meteo.com" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "FoodEstablishment"],
     "name": "Mistral Express",
-    "description": "Traiteur livré directement à bord sur la Côte d’Azur.",
+    "description": "Livraison traiteur à bord sur la Côte d’Azur. Service discret, ponctuel et soigné à Beaulieu-sur-Mer, Saint-Jean-Cap-Ferrat et Villefranche-sur-Mer.",
+    "url": "https://mistralexpress.fr",
+    "telephone": "+33668443067",
+    "email": "contactmistralexpress@gmail.com",
+    "servesCuisine": "Méditerranéen",
+    "priceRange": "€€€",
+    "openingHours": "Mo-Su 07:30-21:30",
     "areaServed": [
-      "Beaulieu-sur-Mer",
-      "Saint-Jean-Cap-Ferrat",
-      "Villefranche-sur-Mer"
+      { "@type": "City", "name": "Beaulieu-sur-Mer" },
+      { "@type": "City", "name": "Saint-Jean-Cap-Ferrat" },
+      { "@type": "City", "name": "Villefranche-sur-Mer" }
     ],
-    "url": "./",
-    "serviceType": "Yacht Catering Delivery",
-    "priceRange": "€€€"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.7076,
+      "longitude": 7.3329
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Provence-Alpes-Côte d’Azur",
+      "addressCountry": "FR"
+    },
+    "sameAs": []
   }
   </script>
+
+  <link rel="alternate" hreflang="fr" href="https://mistralexpress.fr/" />
+  <link rel="alternate" hreflang="en" href="https://mistralexpress.fr/" />
+  <link rel="alternate" hreflang="ru" href="https://mistralexpress.fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://mistralexpress.fr/" />
 
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/cart.js" defer></script>
@@ -126,9 +147,9 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="service-title">
+    <section class="section alt" aria-labelledby="service-title">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head" data-reveal>
           <h2 id="service-title" data-i18n="home.h2">Un service pensé pour les amoureux du goût.</h2>
           <p class="muted" data-i18n="home.h2sub">
             Du petit-déjeuner au sunset apéritif : qualité, simplicité, zéro surprise.
@@ -136,21 +157,21 @@
         </header>
 
         <div class="cards-3" role="list">
-          <article class="card" role="listitem">
+          <article class="card" role="listitem" data-reveal>
             <h3 data-i18n="home.b1t">Livraison à bord</h3>
             <p data-i18n="home.b1d">
               Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.
             </p>
           </article>
 
-          <article class="card" role="listitem">
+          <article class="card" role="listitem" data-reveal>
             <h3 data-i18n="home.b2t">Sélection traiteur</h3>
             <p data-i18n="home.b2d">
               Produits frais, options végétariennes et sans alcool. Présentation soignée.
             </p>
           </article>
 
-          <article class="card" role="listitem">
+          <article class="card" role="listitem" data-reveal>
             <h3 data-i18n="home.b3t">Prix tout compris</h3>
             <p data-i18n="home.b3d">
               Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.
@@ -160,7 +181,56 @@
       </div>
     </section>
 
-    <section class="section alt" aria-labelledby="partner-title">
+    <section class="section" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="approach-grid" data-reveal>
+          <div class="approach-intro">
+            <p class="eyebrow">Notre approche</p>
+            <h2 id="approach-title">Un service conçu pour la mer</h2>
+            <p class="muted">Chaque livraison est préparée pour le bord : formats adaptés, timing précis, exécution discrète. Rien n'est laissé au hasard.</p>
+          </div>
+          <div class="approach-pillars">
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Ponctualité</p>
+              <p class="muted">À l'heure au ponton, confirmé par message avant livraison.</p>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Sélection</p>
+              <p class="muted">Produits frais, options végétariennes et sans alcool disponibles.</p>
+            </div>
+            <div class="approach-pillar">
+              <p class="approach-pillar__title">Transparence</p>
+              <p class="muted">Prix tout compris, zéro surprise. Ce que vous voyez est ce que vous payez.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="testi-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Témoignages</p>
+          <h2 id="testi-title">Ce que disent nos clients</h2>
+        </header>
+        <div class="testi-grid">
+          <blockquote class="card testi-card" data-reveal>
+            <p class="testi-quote">« Service impeccable. Le plateau était livré à l'heure exacte, au ponton, sans le moindre stress. »</p>
+            <footer class="testi-footer"><cite>Capitaine, yacht 22 m — Beaulieu-sur-Mer</cite></footer>
+          </blockquote>
+          <blockquote class="card testi-card" data-reveal>
+            <p class="testi-quote">« Le déjeuner était frais, bien présenté et parfaitement adapté à la mer. On recommande. »</p>
+            <footer class="testi-footer"><cite>Équipage, voilier 16 m — Saint-Jean-Cap-Ferrat</cite></footer>
+          </blockquote>
+          <blockquote class="card testi-card" data-reveal>
+            <p class="testi-quote">« Très bonne communication, livraison discrète et plateau digne d'un traiteur haut de gamme. »</p>
+            <footer class="testi-footer"><cite>Propriétaire, motoryacht — Villefranche-sur-Mer</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="partner-title">
       <div class="container">
         <div class="split">
           <div>
@@ -200,9 +270,9 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="cta2-title">
+    <section class="section alt" aria-labelledby="cta2-title">
       <div class="container">
-        <div class="cta-wide" role="region" aria-label="Contact express">
+        <div class="cta-wide" role="region" aria-label="Contact express" data-reveal>
           <div>
             <h2 id="cta2-title" data-i18n="home.cta2Title">Besoin d’une livraison aujourd’hui ?</h2>
             <p class="muted" data-i18n="home.cta2Desc">Contact express : réponse rapide, service clair.</p>

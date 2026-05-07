@@ -1,0 +1,13 @@
+{
+  "name": "Mistral Express",
+  "short_name": "Mistral Express",
+  "description": "Traiteur premium livré à bord — Côte d'Azur",
+  "icons": [
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fcfbf8",
+  "theme_color": "#fcfbf8",
+  "lang": "fr"
+}

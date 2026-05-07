@@ -165,24 +165,79 @@ function setupMobileNav() {
 }
 
 /* ==========================================================
+   WHATSAPP FLOATING WIDGET
+   ========================================================== */
+function setupWaFloat() {
+  const btn = document.getElementById("waFloatBtn");
+  if (!btn) return;
+
+  const phone = "33668443067";
+  const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+
+  let msg = "Bonjour Mistral Express — je souhaite passer une commande.";
+  if (page.includes("carte"))    msg = "Bonjour Mistral Express — je suis sur la carte et j'aimerais commander.";
+  else if (page.includes("zones"))   msg = "Bonjour Mistral Express — j'ai une question sur les zones de livraison.";
+  else if (page.includes("contact")) msg = "Bonjour Mistral Express — je souhaite faire une demande express.";
+  else if (page.includes("faq"))     msg = "Bonjour Mistral Express — j'ai une question avant de commander.";
+
+  btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+  setTimeout(() => btn.classList.add("show"), 3500);
+}
+
+/* ==========================================================
+   SCROLL REVEAL
+   ========================================================== */
+function setupScrollReveal() {
+  const els = document.querySelectorAll("[data-reveal]");
+  if (!els.length) return;
+  if (!window.IntersectionObserver) {
+    els.forEach(el => el.classList.add("visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("visible");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+  );
+  els.forEach(el => io.observe(el));
+}
+
+/* ==========================================================
+   BACK TO TOP
+   ========================================================== */
+function setupBackToTop() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("show", window.scrollY > 400);
+  }, { passive: true });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
+
+/* ==========================================================
    INIT
    ========================================================== */
 async function initSite() {
-  // 1) Inject header/footer (elements must exist before binding)
   await inject("site-header", "assets/partials/header.html");
   await inject("site-footer", "assets/partials/footer.html");
 
-  // 2) Small dynamic bits
   setupFooterYear();
   setupPartnerLinks();
   setupWhatsAppLink();
+  setupWaFloat();
+  setupScrollReveal();
+  setupBackToTop();
 
-  // 3) Bind UI (after injection)
   setupLangMenuA11y();
   setupMobileNav();
   window.ME_CART?.bindCartUI?.();
 
-  // 4) i18n (single source of truth)
   const initial = window.ME_I18N?.getInitialLang?.() || "fr";
   await window.ME_I18N?.load?.(initial);
 }

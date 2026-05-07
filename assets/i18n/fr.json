@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skip": "Aller au contenu"
+  },
   "nav": {
     "home": "Accueil",
     "menu": "Carte",
@@ -20,7 +23,9 @@
     "cgv": "CGV",
     "partner": "Partenaire",
     "partnerText": "Location de bateaux — lien externe.",
-    "partnerCta": "Accéder au site partenaire"
+    "partnerCta": "Accéder au site partenaire",
+    "gallery": "Galerie",
+    "partnerNote": "Ouverture dans un nouvel onglet."
   },
   "home": {
     "eyebrow": "Yacht Catering Delivery • Côte d’Azur",
@@ -31,6 +36,7 @@
     "pill1": "Prix livraison incluse",
     "pill2": "Commande simple",
     "pill3": "Présentation soignée",
+    "weatherLoading": "Chargement de la météo…",
     "weatherTitle": "Météo en direct — Ports",
     "weatherSub": "Actualisée automatiquement",
     "weatherNote": "Indication confort à titre informatif.",
@@ -79,7 +85,7 @@
     "h1": "Ports desservis",
     "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t": "Créneaux",
-    "b1d": "Créneaux sur demande. Confirmation par message après validation.",
+    "b1d": "Livraison de 7h30 à 21h30, 7j/7.",
     "b2t": "Point de livraison",
     "b2d": "Ponton, nom du bateau et contact à bord pour une livraison fluide.",
     "b3t": "Prix tout compris",

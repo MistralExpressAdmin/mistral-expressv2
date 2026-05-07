@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skip": "Skip to content"
+  },
   "nav": {
     "home": "Home",
     "menu": "Menu",
@@ -20,7 +23,9 @@
     "cgv": "Terms",
     "partner": "Partner",
     "partnerText": "Boat rental — external link.",
-    "partnerCta": "Open partner website"
+    "partnerCta": "Open partner website",
+    "gallery": "Gallery",
+    "partnerNote": "Opens in a new tab."
   },
   "home": {
     "eyebrow": "Yacht Catering Delivery • French Riviera",
@@ -31,6 +36,7 @@
     "pill1": "Delivery included",
     "pill2": "Easy ordering",
     "pill3": "Refined presentation",
+    "weatherLoading": "Loading weather…",
     "weatherTitle": "Live weather — Ports",
     "weatherSub": "Auto-updated",
     "weatherNote": "Comfort indication for information only.",
@@ -79,7 +85,7 @@
     "h1": "Served ports",
     "lead": "Beaulieu-sur-Mer • Saint-Jean-Cap-Ferrat • Villefranche-sur-Mer",
     "b1t": "Time slots",
-    "b1d": "Time slots on request. Confirmation by message after validation.",
+    "b1d": "Delivery from 7:30 am to 9:30 pm, 7 days a week.",
     "b2t": "Delivery point",
     "b2d": "Dock, boat name and onboard contact for a smooth handover.",
     "b3t": "All-inclusive pricing",

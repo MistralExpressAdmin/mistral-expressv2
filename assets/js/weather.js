@@ -78,7 +78,14 @@ const ME_WEATHER = (() => {
 
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${port.lat}&longitude=${port.lon}&current=temperature_2m,wind_speed_10m,wind_direction_10m,weather_code&timezone=Europe%2FParis`;
 
-    const res = await fetch(url, { cache: "no-store" });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    let res;
+    try {
+      res = await fetch(url, { cache: "no-store", signal: controller.signal });
+    } finally {
+      clearTimeout(timeoutId);
+    }
     if (!res.ok) throw new Error("weather fetch failed");
 
     const data = await res.json();
