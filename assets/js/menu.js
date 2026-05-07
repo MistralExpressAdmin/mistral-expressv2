@@ -3,36 +3,47 @@
 
   const MENU = [
     {
-      id: "packages",
-      group: "food",
-      title: "Petit déjeuner à bord",
-      subtitle: "Service du matin prêt à servir",
+      id: "formules",
+      group: "formules",
+      featured: true,
+      layout: "formule",
+      title: "Formules",
+      subtitle: "Repas complets pour 2, 4 ou 8 personnes — livraison incluse",
       items: [
         {
-          id: "dejeuner-a-bord",
+          id: "formule-petit-dejeuner",
           name: "Petit déjeuner à bord",
           desc: "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d’orange pressé et fruits frais de saison.",
-          badge: "À bord",
+          badge: "Matin",
           img: "assets/images/menu/dejeuner-bord.jpg",
           options: [
-            {
-              id: "2p",
-              label: "2 personnes",
-              price: 48,
-              detail: "2 croissants, 2 pains au chocolat, 1/2 baguette, beurre, confiture, 2 jus d’orange frais et fruits frais."
-            },
-            {
-              id: "4p",
-              label: "4 personnes",
-              price: 88,
-              detail: "4 croissants, 4 pains au chocolat, 1 baguette, beurre, confitures, 4 jus d’orange frais et fruits frais."
-            },
-            {
-              id: "8p",
-              label: "8 personnes",
-              price: 168,
-              detail: "8 croissants, 8 pains au chocolat, 2 baguettes, beurre, confitures, 8 jus d’orange frais et fruits frais."
-            }
+            { id: "2p", label: "2 personnes", price: 48, detail: "2 croissants, 2 pains au chocolat, ½ baguette, beurre, confiture, 2 jus d’orange pressés, fruits frais." },
+            { id: "4p", label: "4 personnes", price: 88, detail: "4 croissants, 4 pains au chocolat, 1 baguette, beurre, confitures, 4 jus d’orange pressés, fruits frais." },
+            { id: "8p", label: "8 personnes", price: 168, detail: "8 croissants, 8 pains au chocolat, 2 baguettes, beurre, confitures, 8 jus d’orange pressés, fruits frais." }
+          ]
+        },
+        {
+          id: "formule-cocktail-dinatoire",
+          name: "Cocktail Dînatoire",
+          desc: "Charcuterie sélectionnée, plateau de fromages français, brochettes melon & jambon et plateau de fruits frais. Prêt à servir à bord.",
+          badge: "Soir",
+          img: "assets/images/menu/mix-charcuterie.jpg",
+          options: [
+            { id: "2p", label: "2 personnes", price: 165, detail: "Planche charcuterie, planche fromages, 6 brochettes melon-jambon, plateau fruits — 2 pers." },
+            { id: "4p", label: "4 personnes", price: 285, detail: "Planche charcuterie, planche fromages, 12 brochettes melon-jambon, plateau fruits — 4 pers." },
+            { id: "8p", label: "8 personnes", price: 540, detail: "2 planches charcuterie, 2 planches fromages, 24 brochettes melon-jambon, plateau fruits — 8 pers." }
+          ]
+        },
+        {
+          id: "formule-dejeuner-complet",
+          name: "Déjeuner Complet",
+          desc: "Salade fraîche, tartare du jour et plateau de fruits de saison. Un déjeuner complet, prêt à servir en mer.",
+          badge: "Midi",
+          img: "assets/images/menu/salade-cesar.jpg",
+          options: [
+            { id: "2p", label: "2 personnes", price: 125, detail: "Salade au choix × 1, tartare du jour × 1, plateau fruits 2 pers." },
+            { id: "4p", label: "4 personnes", price: 225, detail: "Salade au choix × 2, tartare du jour × 2, plateau fruits 4 pers." },
+            { id: "8p", label: "8 personnes", price: 420, detail: "Salade au choix × 4, tartare du jour × 4, plateau fruits 8 pers." }
           ]
         }
       ]
@@ -120,8 +131,8 @@
       items: [
         {
           id: "tartare-saumon",
-          name: "Tartare saumon",
-          desc: "Préparé minute.",
+          name: "Tartare de saumon",
+          desc: "Saumon Label Rouge, préparé minute, assaisonnement délicat.",
           price: 38,
           badge: "Frais",
           img: "assets/images/menu/tartare-saumon.jpg"
@@ -129,15 +140,15 @@
         {
           id: "tartare-boeuf",
           name: "Tartare de bœuf",
-          desc: "Goût net et assaisonnement juste.",
+          desc: "Bœuf Charolais, haché minute, assaisonnement classique ou relevé.",
           price: 32,
           badge: "Classique",
           img: "assets/images/menu/tartare-boeuf.jpg"
         },
         {
           id: "tartare-thon",
-          name: "Tartare thon",
-          desc: "Découpe fine et texture délicate.",
+          name: "Tartare de thon",
+          desc: "Thon albacore, découpe fine, marinade légère aux agrumes.",
           price: 42,
           badge: "Maison",
           img: "assets/images/menu/tartare-thon.jpg"
@@ -264,16 +275,16 @@
       items: [
         {
           id: "wrap-poulet",
-          name: "4 petits wrap poulet",
-          desc: "Pratique et gourmand.",
+          name: "Wraps poulet",
+          desc: "Poulet rôti, crudités croquantes, sauce maison. Format mini adapté au bord.",
           price: 40,
           badge: "À bord",
           img: "assets/images/menu/wrap-poulet.jpg"
         },
         {
           id: "wrap-saumon",
-          name: "4 petits wrap saumon",
-          desc: "Saumon et texture délicate.",
+          name: "Wraps saumon",
+          desc: "Saumon fumé, fromage frais, aneth. Texture délicate et fraîcheur iodée.",
           price: 42,
           badge: "Maison",
           img: "assets/images/menu/wrap-saumon.jpg"
@@ -290,15 +301,31 @@
         {
           id: "champ-neuville-autolyse",
           name: "Neuville Blanc de Blancs",
-          desc: "Champagne.",
+          desc: "Champagne de Vignerons — bulles fines, fraîcheur florale, finale minérale.",
           price: 95,
           badge: "Cave",
           img: "assets/images/menu/neuville-blanc-de-blancs.jpg"
         },
         {
+          id: "champ-neuville-2012",
+          name: "Brut de Neuville",
+          desc: "Champagne de Vignerons — brut équilibré, notes de pomme verte et brioche.",
+          price: 114.4,
+          badge: "Cave",
+          img: "assets/images/menu/brut-de-neuville.jpg"
+        },
+        {
+          id: "champ-ruinart-bdb",
+          name: "Ruinart Brut",
+          desc: "Ruinart — cuvée emblématique, bulles persistantes, élégance classique.",
+          price: 180,
+          badge: "Cave",
+          img: "assets/images/menu/ruinart-brut.jpg"
+        },
+        {
           id: "champ-extra-brut-bdn",
           name: "Ruinart Blanc de Blancs",
-          desc: "Champagne.",
+          desc: "Ruinart — 100% Chardonnay, extra-brut, pureté et tension citronnée.",
           price: 220,
           badge: "Cave",
           img: "assets/images/menu/ruinart-blanc-de-blancs.jpg"
@@ -306,31 +333,15 @@
         {
           id: "champ-roederer-246",
           name: "Louis Roederer Blanc de Blancs",
-          desc: "Champagne.",
+          desc: "Roederer — Blanc de Blancs Grand Cru, profondeur et texture crémeuse.",
           price: 242,
           badge: "Cave",
           img: "assets/images/menu/louis-roederer-blanc-de-blancs.jpg"
         },
         {
-          id: "champ-neuville-2012",
-          name: "Brut de Neuville",
-          desc: "Champagne.",
-          price: 114.4,
-          badge: "Cave",
-          img: "assets/images/menu/brut-de-neuville.jpg"
-        },
-        {
-          id: "champ-ruinart-bdb",
-          name: "Ruinart brut",
-          desc: "Champagne.",
-          price: 180,
-          badge: "Cave",
-          img: "assets/images/menu/ruinart-brut.jpg"
-        },
-        {
           id: "champ-perrier-jouet-2016",
-          name: "Perrier Jouet 2016",
-          desc: "Champagne.",
+          name: "Perrier-Jouët Belle Époque 2016",
+          desc: "Millésime d'exception — bouquet floral, palais aérien, finale longue.",
           price: 545,
           badge: "Millésime",
           img: "assets/images/menu/perrier-jouet-2016.jpg"
@@ -338,9 +349,9 @@
         {
           id: "champ-cristal",
           name: "Cristal Roederer",
-          desc: "Champagne.",
+          desc: "Louis Roederer — cuvée prestige, icône mondiale, éclat et profondeur.",
           price: 595,
-          badge: "Cuvée",
+          badge: "Prestige",
           img: "assets/images/menu/crystal-roederer.jpg"
         }
       ]
@@ -353,28 +364,28 @@
       subtitle: "Fraîcheur et élégance",
       items: [
         {
+          id: "blanc-secret-lunes-chardo",
+          name: "Chardonnay de Lunès",
+          desc: "IGP Pays d'Oc — Chardonnay frais, notes d'agrumes et de fleurs blanches.",
+          price: 32,
+          badge: "Cave",
+          img: "assets/images/menu/vin-blanc-3.jpg"
+        },
+        {
           id: "blanc-minuty-prestige-2024",
-          name: "Minuty Prestige 2024",
-          desc: "Vin blanc.",
+          name: "Minuty Prestige Blanc 2024",
+          desc: "AOC Côtes de Provence — Rolle et Clairette, frais et minéral.",
           price: 49,
           badge: "Cave",
           img: "assets/images/menu/vin-blanc-1.jpg"
         },
         {
           id: "blanc-minuty-blanc-or-2024",
-          name: "Minuty blanc et or 2024",
-          desc: "Vin blanc.",
+          name: "Minuty Blanc et Or 2024",
+          desc: "AOC Côtes de Provence — cuvée premium, complexité et longueur.",
           price: 82,
           badge: "Cave",
           img: "assets/images/menu/vin-blanc-2.jpg"
-        },
-        {
-          id: "blanc-secret-lunes-chardo",
-          name: "Chardonnay de Lunès",
-          desc: "Chardonnay.",
-          price: 32,
-          badge: "Cave",
-          img: "assets/images/menu/vin-blanc-3.jpg"
         }
       ]
     },
@@ -387,16 +398,16 @@
       items: [
         {
           id: "rose-minuty-prestige-2024",
-          name: "Minuty Prestige 2024",
-          desc: "Vin rosé.",
+          name: "Minuty Prestige Rosé 2024",
+          desc: "AOC Côtes de Provence — rosé pâle, notes de fraise et pamplemousse.",
           price: 49,
           badge: "Cave",
           img: "assets/images/menu/vin-rose-1.jpg"
         },
         {
           id: "rose-minuty-rose-or-2024",
-          name: "Minuty Rose et or 2024",
-          desc: "Vin rosé.",
+          name: "Minuty Rosé et Or 2024",
+          desc: "AOC Côtes de Provence — cuvée prestige, équilibre et finesse.",
           price: 82,
           badge: "Cave",
           img: "assets/images/menu/vin-rose-2.jpg"
@@ -404,7 +415,7 @@
         {
           id: "rose-chateau-281",
           name: "Château 281",
-          desc: "Vin rosé.",
+          desc: "Provence — rosé gastronomique, structure et longueur en bouche.",
           price: 162,
           badge: "Cave",
           img: "assets/images/menu/vin-rose-3.jpg"
@@ -742,6 +753,84 @@
     `;
   }
 
+  function renderFormuleCard(product) {
+    const effective = getEffectiveProduct(product, getDefaultOption(product)?.id || null);
+    const badge = product.badge ? `<span class="badge">${escapeHtml(product.badge)}</span>` : "";
+
+    return `
+      <article class="product formule-card me-clickable" tabindex="0" role="button"
+        data-id="${escapeHtml(product.id)}"
+        data-name="${escapeHtml(product.name)}"
+        data-desc="${escapeHtml(product.desc)}"
+        data-img="${escapeHtml(product.img)}"
+        data-price="${effective.price ?? ""}"
+        data-has-options="${product.options?.length ? "1" : "0"}"
+        data-selected-option="${escapeHtml(getDefaultOption(product)?.id || "")}"
+        ${canAdd(effective.price) ? "" : "data-disabled='1'"}
+        aria-label="${escapeHtml(product.name)}"
+      >
+        <div class="formule-card__photo">
+          <img
+            src="${escapeHtml(product.img)}"
+            alt="${escapeHtml(product.name)}"
+            loading="lazy"
+            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+          />
+        </div>
+        <div class="formule-card__body">
+          <div class="formule-card__top">
+            ${badge}
+            <h3>${escapeHtml(product.name)}</h3>
+            <p class="formule-card__desc">${escapeHtml(product.desc)}</p>
+          </div>
+          ${renderOptionsInline(product)}
+          <div class="formule-card__foot">
+            <span class="price formule-card__price" data-price-for="${escapeHtml(product.id)}">${escapeHtml(formatPrice(effective.price))}</span>
+            <button class="btn btn-primary me-add" type="button" ${canAdd(effective.price) ? "" : "disabled"} aria-label="Ajouter ${escapeHtml(product.name)}">
+              Ajouter
+            </button>
+            <div class="qty" aria-label="Quantité">
+              <button type="button" class="me-dec" aria-label="Retirer">−</button>
+              <span class="me-qty" data-qty-for="${escapeHtml(product.id)}">0</span>
+              <button type="button" class="me-inc" aria-label="Ajouter">+</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderWineRow(product) {
+    const canAddItem = canAdd(product.price);
+    const badge = product.badge ? `<span class="badge">${escapeHtml(product.badge)}</span>` : "";
+
+    return `
+      <div class="product wine-row me-clickable" tabindex="0" role="button"
+        data-id="${escapeHtml(product.id)}"
+        data-name="${escapeHtml(product.name)}"
+        data-desc="${escapeHtml(product.desc)}"
+        data-img="${escapeHtml(product.img)}"
+        data-price="${product.price ?? ""}"
+        data-has-options="0"
+        data-selected-option=""
+        ${canAddItem ? "" : "data-disabled='1'"}
+        aria-label="${escapeHtml(product.name)}"
+      >
+        <div class="wine-row__info">
+          <span class="wine-row__name">${escapeHtml(product.name)}</span>
+          <span class="wine-row__desc">${escapeHtml(product.desc)}</span>
+        </div>
+        <div class="wine-row__right">
+          ${badge}
+          <span class="price wine-row__price">${escapeHtml(formatPrice(product.price))}</span>
+          <button class="btn btn-chip me-add" type="button" ${canAddItem ? "" : "disabled"} aria-label="Ajouter ${escapeHtml(product.name)}">
+            ${escapeHtml(T("menu.add", "Ajouter"))}
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
   function renderProductCard(product) {
     const effective = getEffectiveProduct(product, getDefaultOption(product)?.id || null);
     const badge = product.badge ? `<span class="badge">${escapeHtml(product.badge)}</span>` : "";
@@ -814,6 +903,7 @@
         byCat.set(it.catId, {
           title: def?.title || it.catTitle,
           subtitle: def?.subtitle || "",
+          layout: def?.layout || null,
           items: []
         });
       }
@@ -824,18 +914,39 @@
 
     root.innerHTML = orderedCatIds.map(catId => {
       const cat = byCat.get(catId);
+      const head = `
+        <div class="menu-section__head">
+          <h2>${escapeHtml(cat.title)}</h2>
+          ${cat.subtitle ? `<p class="muted">${escapeHtml(cat.subtitle)}</p>` : ``}
+        </div>`;
+
+      if (cat.layout === "formule") {
+        return `
+          <div class="menu-section is-featured" id="cat-${escapeHtml(catId)}">
+            ${head}
+            <div class="formule-grid">
+              ${cat.items.map(renderFormuleCard).join("")}
+            </div>
+          </div>`;
+      }
+
+      if (cat.layout === "cave") {
+        return `
+          <div class="menu-section" id="cat-${escapeHtml(catId)}">
+            ${head}
+            <div class="wine-list">
+              ${cat.items.map(renderWineRow).join("")}
+            </div>
+          </div>`;
+      }
+
       return `
         <div class="menu-section" id="cat-${escapeHtml(catId)}">
-          <div class="menu-section__head">
-            <h2>${escapeHtml(cat.title)}</h2>
-            ${cat.subtitle ? `<p class="muted">${escapeHtml(cat.subtitle)}</p>` : ``}
-          </div>
-
+          ${head}
           <div class="product-grid">
             ${cat.items.map(renderProductCard).join("")}
           </div>
-        </div>
-      `;
+        </div>`;
     }).join("");
 
     bindProductClicks();

@@ -75,9 +75,9 @@
   <section class="menu-navigation">
     <div class="container">
       <div class="menu-tabs">
-        <button class="tab-btn active" data-chip="all" type="button">Tout</button>
-        <button class="tab-btn" data-chip="food" type="button">Food</button>
-        <button class="tab-btn" data-chip="drinks" type="button">Boissons</button>
+        <button class="tab-btn active" type="button" data-chip="all">Tout</button>
+        <button class="tab-btn" type="button" data-chip="food">Food</button>
+        <button class="tab-btn" type="button" data-chip="drinks">Boissons</button>
       </div>
     </div>
   </section>
@@ -86,7 +86,6 @@
   <section class="section section-menu-tools">
     <div class="container">
       <div class="toolbar toolbar-menu">
-
         <div class="menu-categories-wrap">
           <button
             class="btn btn-secondary menu-categories-toggle"
@@ -98,14 +97,10 @@
             <span id="menuCategoriesToggleLabel">Catégories</span>
             <span aria-hidden="true">▾</span>
           </button>
-
           <div class="menu-categories-panel" id="menuCategoriesPanel">
-            <div class="chips" id="menuChips">
-              <!-- rempli par menu.js -->
-            </div>
+            <div class="chips" id="menuChips"></div>
           </div>
         </div>
-
         <div class="search">
           <input
             id="menuSearch"
@@ -114,7 +109,6 @@
             aria-label="Rechercher un produit"
           />
         </div>
-
       </div>
     </div>
   </section>
