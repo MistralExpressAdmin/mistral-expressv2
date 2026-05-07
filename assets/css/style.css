@@ -536,7 +536,22 @@ html.nav-open body { overflow: hidden; }
    ---------------------------------------------------------- */
 .hero {
   padding: 60px 0 48px;
+  position: relative;
+  background: url('../images/hero/home-hero.jpg') center 38% / cover no-repeat;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    rgba(6,14,11,.82) 0%,
+    rgba(6,14,11,.64) 50%,
+    rgba(6,14,11,.32) 100%
+  );
+  pointer-events: none;
+}
+.hero .container { position: relative; z-index: 1; }
 
 .hero-grid {
   display: grid;
@@ -546,11 +561,29 @@ html.nav-open body { overflow: hidden; }
 }
 .hero-copy { padding: 6px 0; }
 
+/* Hero text — blanc sur photo */
+.hero .eyebrow { color: rgba(255,255,255,.55); }
+.hero h1       { color: #fff; }
+.hero .lead    { color: rgba(255,255,255,.80); }
+
 .hero-ctas {
   display: flex;
   gap: 12px;
   margin: 18px 0 14px;
   flex-wrap: wrap;
+}
+
+/* Ghost button sur fond sombre */
+.hero .btn-ghost {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.32);
+  color: #fff;
+}
+.hero .btn-ghost:hover {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.52);
+  color: #fff;
+  transform: translateY(-1px);
 }
 
 .pill-row {
@@ -568,6 +601,38 @@ html.nav-open body { overflow: hidden; }
   padding: 8px 10px;
   border-radius: 999px;
 }
+
+/* Pills sur fond sombre */
+.hero .pill {
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.18);
+  color: rgba(255,255,255,.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Carte météo — glass dark */
+.hero .hero-card .card {
+  background: rgba(10,20,16,.42);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-color: rgba(255,255,255,.14);
+  box-shadow: 0 20px 48px rgba(0,0,0,.30);
+}
+.hero .card-head { border-bottom-color: rgba(255,255,255,.10); }
+.hero .card-head .h3,
+.hero .card-head h3 { color: #fff; }
+.hero .card-head .muted { color: rgba(255,255,255,.50); }
+.hero .card-note { color: rgba(255,255,255,.36); border-top-color: rgba(255,255,255,.08); }
+.hero .weather {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.10);
+}
+.hero .weather:hover { border-color: rgba(255,255,255,.22); }
+.hero .weather .w-title { color: rgba(255,255,255,.92); }
+.hero .weather .w-sub,
+.hero .weather .w-wind  { color: rgba(255,255,255,.48); }
+.hero .weather .w-temp  { color: #fff; }
 
 /* Section avec image de fond */
 .with-bg {
@@ -1597,7 +1662,7 @@ html.nav-open body { overflow: hidden; }
   }
 
   /* hero */
-  .hero { padding: 40px 0 32px; }
+  .hero { padding: 40px 0 32px; background-position: 62% 38%; }
   .hero h1 {
     font-size: 46px;
     line-height: 1.0;
@@ -1644,9 +1709,11 @@ html.nav-open body { overflow: hidden; }
   .hero-card .card {
     padding: 20px;
     border-radius: 10px;
-    background: rgba(255,255,255,.86);
-    border: 1px solid rgba(22,22,22,.08);
-    box-shadow: 0 14px 32px rgba(0,0,0,.05);
+    background: rgba(10,20,16,.42);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 14px 32px rgba(0,0,0,.22);
   }
 
   /* weather card */
