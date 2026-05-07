@@ -574,7 +574,8 @@ html.nav-open body { overflow: hidden; }
 /* Fond photo sections — overlay crème */
 .section-services,
 .section-approche,
-.section-testi {
+.section-testi,
+.section-engagements {
   position: relative;
   overflow: hidden;
 }
@@ -597,7 +598,8 @@ html.nav-open body { overflow: hidden; }
 }
 .section-services .container,
 .section-approche .container,
-.section-testi .container {
+.section-testi .container,
+.section-engagements .container {
   position: relative;
   z-index: 1;
 }
