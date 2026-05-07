@@ -634,7 +634,24 @@ html.nav-open body { overflow: hidden; }
 .hero .weather .w-wind  { color: rgba(255,255,255,.48); }
 .hero .weather .w-temp  { color: #fff; }
 
-/* Section avec image de fond */
+/* Section témoignages — photo home-ambiance en fond */
+.section-testi {
+  position: relative;
+  background:
+    linear-gradient(rgba(247,242,235,.72), rgba(247,242,235,.72)),
+    url('../images/hero/home-ambiance.jpg') center 42% / cover no-repeat;
+}
+.section-testi .section-head h2,
+.section-testi .section-head .eyebrow { color: var(--ink); }
+.section-testi .testi-card {
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(255,255,255,.70);
+  box-shadow: 0 8px 28px rgba(0,0,0,.07);
+}
+
+/* Section avec image de fond (legacy) */
 .with-bg {
   position: relative;
   padding: 100px 0;
