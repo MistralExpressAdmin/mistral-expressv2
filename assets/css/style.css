@@ -1465,6 +1465,8 @@ html.nav-open body { overflow: hidden; }
 @media (max-width: 820px) {
   .btn { min-height: 48px; }
   .qty button { min-width: 44px; min-height: 44px; }
+  .section { padding: 32px 0; }
+  .page-hero { padding: 24px 0 10px; }
 
   /* header */
   .site-header {
@@ -1595,50 +1597,50 @@ html.nav-open body { overflow: hidden; }
   }
 
   /* hero */
-  .hero { padding: 26px 0 18px; }
+  .hero { padding: 40px 0 32px; }
   .hero h1 {
-    font-size: 62px;
-    line-height: .92;
-    letter-spacing: -.03em;
-    margin: 0 0 18px;
+    font-size: 46px;
+    line-height: 1.0;
+    letter-spacing: -.02em;
+    margin: 0 0 12px;
   }
   .hero .lead {
     max-width: 100%;
-    font-size: 17px;
-    line-height: 1.55;
-    margin: 0 0 22px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 18px;
   }
-  .hero .eyebrow { font-size: 11px; letter-spacing: .18em; margin-bottom: 14px; }
+  .hero .eyebrow { font-size: 11px; letter-spacing: .18em; margin-bottom: 10px; }
 
   .hero-ctas {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
-    margin: 0 0 18px;
+    gap: 10px;
+    margin: 0 0 14px;
     width: 100%;
   }
-  .hero-ctas .btn { width: 100%; min-height: 56px; font-size: 13px; letter-spacing: .10em; }
+  .hero-ctas .btn { width: 100%; min-height: 50px; font-size: 13px; letter-spacing: .08em; }
 
   .pill-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
     margin-top: 0;
   }
   .pill {
-    min-height: 52px;
+    min-height: 40px;
     display: flex; align-items: center; justify-content: center;
     text-align: center;
-    padding: 12px 14px;
+    padding: 8px 12px;
     line-height: 1.35;
     border-radius: 8px;
     background: rgba(255,255,255,.72);
     border: 1px solid var(--line);
-    font-size: 12px;
+    font-size: 11px;
   }
   .pill-row .pill:last-child:nth-child(odd) { grid-column: 1/-1; }
 
-  .hero-card { width: 100%; margin-top: 4px; }
+  .hero-card { width: 100%; margin-top: 32px; }
   .hero-card .card {
     padding: 20px;
     border-radius: 10px;
@@ -1811,6 +1813,17 @@ html.nav-open body { overflow: hidden; }
   .contact-premium,
   .contact-side-card { padding: 18px; }
 
+  /* approach pillars */
+  .approach-pillar { padding: 14px 16px; }
+  .approach-pillar__title { font-size: 16px; }
+
+  /* testimonials */
+  .testi-quote { font-size: 16px; }
+  .testi-card { padding: 18px; gap: 12px; }
+
+  /* section head */
+  .section-head { margin-bottom: 10px; }
+
   /* footer */
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
   .footer-partner-link:hover { transform: none; }
@@ -1844,13 +1857,13 @@ html.nav-open body { overflow: hidden; }
   h3, .h3 { font-size: 20px; }
   .lead { font-size: 15px; }
 
-  .hero { padding: 22px 0 16px; }
-  .hero h1 { font-size: 52px; line-height: .94; margin-bottom: 16px; }
-  .hero .lead { font-size: 15px; margin-bottom: 20px; }
-  .hero-ctas .btn { min-height: 52px; font-size: 12px; }
+  .hero { padding: 28px 0 20px; }
+  .hero h1 { font-size: 40px; line-height: 1.0; margin-bottom: 12px; }
+  .hero .lead { font-size: 14px; margin-bottom: 16px; }
+  .hero-ctas .btn { min-height: 48px; font-size: 12px; }
 
-  .pill-row { gap: 8px; }
-  .pill { min-height: 48px; padding: 10px 10px; font-size: 11px; }
+  .pill-row { gap: 6px; }
+  .pill { min-height: 36px; padding: 7px 10px; font-size: 10px; }
 
   .hero-card .card { padding: 18px; }
   .weather { padding: 14px; gap: 8px; }
@@ -2096,6 +2109,9 @@ html.nav-open body { overflow: hidden; }
   }
   .back-top {
     bottom: max(20px, env(safe-area-inset-bottom));
+  }
+  .floating-cart {
+    bottom: max(18px, env(safe-area-inset-bottom));
   }
 }
 
