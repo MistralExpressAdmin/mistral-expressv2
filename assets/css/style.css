@@ -555,37 +555,61 @@ html.nav-open body { overflow: hidden; }
 }
 .hero .container { position: relative; z-index: 2; }
 
-/* Diaporama hero — 3 photos en crossfade */
+/* Fond photo hero */
 .hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
 }
-.hero-bg__slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 1.4s ease-in-out;
-}
-.hero-bg__slide.active {
-  opacity: 1;
-}
-.hero-bg__slide img {
+.hero-bg img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 38%;
 }
-.hero-bg__slide--1 img { object-position: center 38%; }
-.hero-bg__slide--2 img { object-position: center 50%; }
-.hero-bg__slide--3 img { object-position: center 58%; }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-bg__slide { transition: none; }
+/* Fond photo sections — overlay crème */
+.section-services,
+.section-approche,
+.section-testi {
+  position: relative;
+  overflow: hidden;
 }
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.section-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(247,242,235,.74);
+}
+.section-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+.section-services .container,
+.section-approche .container,
+.section-testi .container {
+  position: relative;
+  z-index: 1;
+}
+.section-services .card,
+.section-approche .approach-pillar {
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.section-services  .section-bg img { object-position: center 45%; }
+.section-approche  .section-bg img { object-position: center 55%; }
+.section-testi     .section-bg img { object-position: center 42%; }
 
 .hero-grid {
   display: grid;
@@ -668,15 +692,7 @@ html.nav-open body { overflow: hidden; }
 .hero .weather .w-wind  { color: rgba(255,255,255,.48); }
 .hero .weather .w-temp  { color: #fff; }
 
-/* Section témoignages — photo home-ambiance en fond */
-.section-testi {
-  position: relative;
-  background:
-    linear-gradient(rgba(247,242,235,.72), rgba(247,242,235,.72)),
-    url('../images/hero/home-ambiance.jpg') center 42% / cover no-repeat;
-}
-.section-testi .section-head h2,
-.section-testi .section-head .eyebrow { color: var(--ink); }
+/* Section témoignages */
 .section-testi .testi-card {
   background: rgba(255,255,255,.88);
   backdrop-filter: blur(8px);

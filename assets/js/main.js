@@ -70,23 +70,10 @@
   }
 
 
-  function initHeroSlideshow() {
-    const slides = Array.from(document.querySelectorAll('.hero-bg__slide'));
-    if (slides.length < 2) return;
-    let current = 0;
-    slides[0].classList.add('active');
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 7000);
-  }
-
   function initAll() {
     initFooterYear();
     initCartEverywhere();
     setActiveNavLink();
-    initHeroSlideshow();
   }
 
   document.addEventListener("DOMContentLoaded", () => {
