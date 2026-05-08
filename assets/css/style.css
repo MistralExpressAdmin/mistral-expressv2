@@ -791,12 +791,17 @@ html.nav-open body { overflow: hidden; }
 
 /* Section témoignages */
 .section-testi .testi-card {
-  background: rgba(255,255,255,.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-color: rgba(255,255,255,.70);
-  box-shadow: 0 8px 28px rgba(0,0,0,.07);
+  background: rgba(11,31,58,.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(201,146,42,.25);
+  border-radius: var(--r);
+  padding: 40px 48px;
+  box-shadow: none;
 }
+.section-testi .testi-quote  { color: #fff; }
+.section-testi .testi-footer cite { color: rgba(255,255,255,.65); }
+.section-testi .testi-stars  { color: #C9922A; }
 
 /* Section avec image de fond (legacy) */
 .with-bg {
@@ -2074,6 +2079,7 @@ html.nav-open body { overflow: hidden; }
   /* testimonials */
   .testi-quote { font-size: 16px; }
   .testi-card { padding: 18px; gap: 12px; }
+  .section-testi .testi-card { padding: 24px; }
 
   /* section head */
   .section-head { margin-bottom: 10px; }
@@ -2401,9 +2407,13 @@ html.nav-open body { overflow: hidden; }
   transform: translateY(0);
 }
 .cards-3 .card:nth-child(2)[data-reveal],
-.testi-grid .testi-card:nth-child(2)[data-reveal] { transition-delay: 90ms; }
+.testi-grid .testi-card:nth-child(2)[data-reveal],
+.features-item:nth-child(2)[data-reveal],
+.engagement-item:nth-child(2)[data-reveal] { transition-delay: 80ms; }
 .cards-3 .card:nth-child(3)[data-reveal],
-.testi-grid .testi-card:nth-child(3)[data-reveal] { transition-delay: 180ms; }
+.testi-grid .testi-card:nth-child(3)[data-reveal],
+.features-item:nth-child(3)[data-reveal],
+.engagement-item:nth-child(3)[data-reveal] { transition-delay: 160ms; }
 
 
 /* ==========================================================
