@@ -76,9 +76,24 @@
     setActiveNavLink();
   }
 
+  function initNavScroll() {
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const header = document.querySelector(".site-header");
+          if (header) header.classList.toggle("is-scrolled", window.scrollY > 80);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     preparePublicCartSession();
     initAll();
+    initNavScroll();
 
     let tries = 0;
     const t = setInterval(() => {

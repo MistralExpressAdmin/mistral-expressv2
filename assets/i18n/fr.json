@@ -103,6 +103,7 @@
       "dinner": "Dîner",
       "beverages": "Boissons"
     },
+    "sg": { "vins": "Vins", "spiritueux": "Spiritueux" },
     "add": "Ajouter",
     "ui": {
       "categories": "Catégories",
@@ -123,7 +124,10 @@
       "champagnes": { "title": "Champagnes", "subtitle": "Sélection de cave" },
       "vins-blancs": { "title": "Vins blancs", "subtitle": "Fraîcheur et élégance" },
       "vins-roses": { "title": "Vins rosés", "subtitle": "Sélection Riviera" },
-      "softs": { "title": "Softs & énergie", "subtitle": "Canettes & boissons fraîches" }
+      "softs": { "title": "Softs & énergie", "subtitle": "Canettes & boissons fraîches" },
+      "gin": { "title": "Gin", "subtitle": "Sélection artisanale" },
+      "tequila": { "title": "Tequila", "subtitle": "100% Agave Bleu" },
+      "vodka": { "title": "Vodka", "subtitle": "Sélection premium" }
     },
     "item": {
       "formule-petit-dejeuner": {
@@ -225,7 +229,16 @@
       "oasis-33": { "name": "Oasis 33cl", "desc": "Canette." },
       "fuze-tea-33": { "name": "Fuze Tea 33cl", "desc": "Canette." },
       "redbull-33": { "name": "Red Bull 33cl", "desc": "Canette." },
-      "redbull-zero-33": { "name": "Red Bull Zero 33cl", "desc": "Canette." }
+      "redbull-zero-33": { "name": "Red Bull Zero 33cl", "desc": "Canette." },
+      "gin-yu-yuzu-black-lemon": { "name": "Yu Gin Yuzu & Black Lemon", "desc": "Gin artisanal aux agrumes — yuzu frais et citron noir fumé. Aromatique, persistant, idéal on the rocks ou en cocktail." },
+      "gin-yu-relax-refresh": { "name": "Yu Gin Relax & Refresh", "desc": "Gin floral conçu pour la détente — notes de camomille et d'agrumes frais. Léger et rafraîchissant." },
+      "gin-monkey-47": { "name": "Monkey 47", "desc": "Gin de la Forêt-Noire — 47 botaniques, complexité unique. Persistance longue et finesse aromatique exceptionnelle." },
+      "tequila-1800-reposado": { "name": "Tequila 1800 Reposado", "desc": "Vieillie en fût de chêne — couleur ambrée, notes de vanille et d'agave rôti. Ronde et équilibrée." },
+      "tequila-1800-blanco": { "name": "Tequila 1800 Blanco", "desc": "100% Agave Bleu — pureté cristalline, notes d'agave frais et de citron vert. Vive et droite." },
+      "tequila-patron-silver": { "name": "Tequila Silver Patron", "desc": "Patrón Silver — tequila artisanale ultra-premium, notes florales et poivrées. Exceptionnellement douce en bouche." },
+      "vodka-grey-goose": { "name": "Grey Goose", "desc": "Vodka française d'exception — distillée en Charente, blé tendre de Beauce. Rondeur soyeuse et finale longue." },
+      "vodka-pyla-origine": { "name": "Pyla Vodka Origine", "desc": "Vodka artisanale du Bassin d'Arcachon — grain français, distillation en colonne de cuivre. Élégante et pure." },
+      "vodka-beluga-gold": { "name": "Beluga Gold Line", "desc": "Vodka de prestige — vieillissement en cave, filtration à l'agate. Texture veloutée, finale d'une longueur exceptionnelle." }
     }
   },
   "zones": {

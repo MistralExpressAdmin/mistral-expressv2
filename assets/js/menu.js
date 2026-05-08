@@ -357,6 +357,7 @@
     {
       id: "vins-blancs",
       group: "drinks",
+      subgroup: "vins",
       title: "Vins blancs",
       subtitle: "Fraîcheur et élégance",
       items: [
@@ -390,6 +391,7 @@
     {
       id: "vins-roses",
       group: "drinks",
+      subgroup: "vins",
       title: "Vins rosés",
       subtitle: "Sélection Riviera",
       items: [
@@ -491,6 +493,108 @@
           img: "assets/images/menu/redbull-zero.jpg"
         }
       ]
+    },
+
+    {
+      id: "gin",
+      group: "drinks",
+      subgroup: "spiritueux",
+      title: "Gin",
+      subtitle: "Sélection artisanale",
+      items: [
+        {
+          id: "gin-yu-yuzu-black-lemon",
+          name: "Yu Gin Yuzu & Black Lemon",
+          desc: "Gin artisanal aux agrumes — yuzu frais et citron noir fumé. Aromatique, persistant, idéal on the rocks ou en cocktail.",
+          price: 150,
+          badge: "Spiritueux",
+          img: "assets/images/menu/gin-yu-yuzu.jpg"
+        },
+        {
+          id: "gin-yu-relax-refresh",
+          name: "Yu Gin Relax & Refresh",
+          desc: "Gin floral conçu pour la détente — notes de camomille et d'agrumes frais. Léger et rafraîchissant.",
+          price: 135,
+          badge: "Spiritueux",
+          img: "assets/images/menu/gin-yu-relax.jpg"
+        },
+        {
+          id: "gin-monkey-47",
+          name: "Monkey 47",
+          desc: "Gin de la Forêt-Noire — 47 botaniques, complexité unique. Persistance longue et finesse aromatique exceptionnelle.",
+          price: 100,
+          badge: "Spiritueux",
+          img: "assets/images/menu/gin-monkey-47.jpg"
+        }
+      ]
+    },
+
+    {
+      id: "tequila",
+      group: "drinks",
+      subgroup: "spiritueux",
+      title: "Tequila",
+      subtitle: "100% Agave Bleu",
+      items: [
+        {
+          id: "tequila-1800-reposado",
+          name: "Tequila 1800 Reposado",
+          desc: "Vieillie en fût de chêne — couleur ambrée, notes de vanille et d'agave rôti. Ronde et équilibrée.",
+          price: 160,
+          badge: "Spiritueux",
+          img: "assets/images/menu/tequila-1800-reposado.jpg"
+        },
+        {
+          id: "tequila-1800-blanco",
+          name: "Tequila 1800 Blanco",
+          desc: "100% Agave Bleu — pureté cristalline, notes d'agave frais et de citron vert. Vive et droite.",
+          price: 150,
+          badge: "Spiritueux",
+          img: "assets/images/menu/tequila-1800-blanco.jpg"
+        },
+        {
+          id: "tequila-patron-silver",
+          name: "Tequila Silver Patron",
+          desc: "Patrón Silver — tequila artisanale ultra-premium, notes florales et poivrées. Exceptionnellement douce en bouche.",
+          price: 135,
+          badge: "Spiritueux",
+          img: "assets/images/menu/tequila-patron-silver.jpg"
+        }
+      ]
+    },
+
+    {
+      id: "vodka",
+      group: "drinks",
+      subgroup: "spiritueux",
+      title: "Vodka",
+      subtitle: "Sélection premium",
+      items: [
+        {
+          id: "vodka-grey-goose",
+          name: "Grey Goose",
+          desc: "Vodka française d'exception — distillée en Charente, blé tendre de Beauce. Rondeur soyeuse et finale longue.",
+          price: 110,
+          badge: "Spiritueux",
+          img: "assets/images/menu/vodka-grey-goose.jpg"
+        },
+        {
+          id: "vodka-pyla-origine",
+          name: "Pyla Vodka Origine",
+          desc: "Vodka artisanale du Bassin d'Arcachon — grain français, distillation en colonne de cuivre. Élégante et pure.",
+          price: 140,
+          badge: "Spiritueux",
+          img: "assets/images/menu/vodka-pyla.jpg"
+        },
+        {
+          id: "vodka-beluga-gold",
+          name: "Beluga Gold Line",
+          desc: "Vodka de prestige — vieillissement en cave, filtration à l'agate. Texture veloutée, finale d'une longueur exceptionnelle.",
+          price: 300,
+          badge: "Prestige",
+          img: "assets/images/menu/vodka-beluga-gold.jpg"
+        }
+      ]
     }
   ];
 
@@ -500,7 +604,8 @@
       catId: cat.id,
       catTitle: cat.title,
       catSubtitle: cat.subtitle || "",
-      group: cat.group || "food"
+      group: cat.group || "food",
+      subgroup: cat.subgroup || ""
     }))
   );
 
@@ -525,6 +630,7 @@
   function tOptDetail(p, opt) { return T(`menu.item.${p.id}.opt.${opt.id}.detail`, opt.detail || p.desc || ""); }
   function tCatTitle(id, fallback) { return T(`menu.cat.${id}.title`, fallback); }
   function tCatSub(id, fallback) { return T(`menu.cat.${id}.subtitle`, fallback); }
+  function tSubgroup(sg) { return T(`menu.sg.${sg}`, sg); }
 
   function isMobileMenuMode() {
     return mobileMenuMq.matches;
@@ -710,18 +816,30 @@
     const chips = qs("#menuChips");
     if (!chips) return;
 
-    chips.innerHTML = MENU.map(c => `
-      <button class="chip" type="button" data-chip="${escapeHtml(c.id)}">${escapeHtml(tCatTitle(c.id, c.title))}</button>
-    `).join("");
+    const seen = new Set();
+    const entries = [];
+    MENU.forEach(c => {
+      if (c.subgroup) {
+        const key = `sg:${c.subgroup}`;
+        if (!seen.has(key)) {
+          seen.add(key);
+          entries.push({ id: key, label: tSubgroup(c.subgroup) });
+        }
+      } else {
+        entries.push({ id: c.id, label: tCatTitle(c.id, c.title) });
+      }
+    });
+
+    chips.innerHTML = entries.map(e =>
+      `<button class="chip" type="button" data-chip="${escapeHtml(e.id)}">${escapeHtml(e.label)}</button>`
+    ).join("");
 
     if (chips.dataset.bound === "1") return;
 
     chips.addEventListener("click", (e) => {
       const btn = e.target.closest(".chip");
       if (!btn) return;
-
       applyState({ chip: btn.dataset.chip, query: currentQuery });
-      closeCategoriesPanel();
     });
 
     chips.dataset.bound = "1";
@@ -1005,6 +1123,9 @@
       list = list.filter(x => x.group === "food");
     } else if (chip === "drinks") {
       list = list.filter(x => x.group === "drinks");
+    } else if (chip.startsWith("sg:")) {
+      const sg = chip.slice(3);
+      list = list.filter(x => x.subgroup === sg);
     } else if (chip !== "all") {
       list = list.filter(x => x.catId === chip);
     }
@@ -1283,7 +1404,6 @@
   document.addEventListener("DOMContentLoaded", () => {
     bindModal();
     setupTabs();
-    setupCategoriesPanel();
     renderChips();
 
     currentChip = qs(".tab-btn.active")?.dataset.chip || "all";
@@ -1297,9 +1417,6 @@
       renderChips();
       applyState({ chip: currentChip, query: currentQuery });
       updateQtyBadges();
-      syncCategoriesPanelMode();
     });
-
-    syncCategoriesPanelMode();
   });
 })();

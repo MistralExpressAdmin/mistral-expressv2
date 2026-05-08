@@ -106,6 +106,7 @@
       <div class="hero-bg" aria-hidden="true">
         <img src="assets/images/hero/home-hero.jpg" alt="" loading="eager" fetchpriority="high">
       </div>
+      <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="home.eyebrow">Mistral Express • Côte d’Azur</p>
@@ -122,9 +123,30 @@
           </div>
 
           <div class="pill-row" aria-label="Points clés">
-            <span class="pill" data-i18n="home.pill1">Prix livraison incluse</span>
-            <span class="pill" data-i18n="home.pill2">Commande simple</span>
-            <span class="pill" data-i18n="home.pill3">Packaging premium</span>
+            <span class="pill">
+              <svg class="pill-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#C9922A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="6" cy="2.5" r="1.2"/>
+                <line x1="6" y1="3.7" x2="6" y2="10.5"/>
+                <line x1="2.5" y1="5" x2="9.5" y2="5"/>
+                <path d="M2.5,5 Q1,7 3,10.5"/>
+                <path d="M9.5,5 Q11,7 9,10.5"/>
+              </svg>
+              <span data-i18n="home.pill1">Prix livraison incluse</span>
+            </span>
+            <span class="pill">
+              <svg class="pill-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#C9922A" stroke-width="1.2" stroke-linecap="round" aria-hidden="true">
+                <circle cx="6" cy="6" r="4.5"/>
+                <polyline points="6,3.5 6,6 8.5,7.5"/>
+              </svg>
+              <span data-i18n="home.pill2">Commande simple</span>
+            </span>
+            <span class="pill">
+              <svg class="pill-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#C9922A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2,10 C2,4 8,1 10,2 C11,4 8,10 2,10"/>
+                <line x1="2" y1="10" x2="7.5" y2="4.5"/>
+              </svg>
+              <span data-i18n="home.pill3">Packaging premium</span>
+            </span>
           </div>
         </div>
 
@@ -153,9 +175,6 @@
     </section>
 
     <section class="section section-services" aria-labelledby="service-title">
-      <div class="section-bg" aria-hidden="true">
-        <img src="assets/images/hero/ambiance-hero1.jpg" alt="" loading="lazy">
-      </div>
       <div class="container">
         <header class="section-head" data-reveal>
           <h2 id="service-title" data-i18n="home.h2">Un service pensé pour les amoureux du goût.</h2>
@@ -164,28 +183,37 @@
           </p>
         </header>
 
-        <div class="cards-3" role="list">
-          <article class="card" role="listitem" data-reveal>
-            <h3 data-i18n="home.b1t">Livraison à bord</h3>
-            <p data-i18n="home.b1d">
-              Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.
-            </p>
-          </article>
+        <ol class="features-list">
+          <li class="features-item" data-reveal>
+            <span class="features-num" aria-hidden="true">01</span>
+            <div class="features-body">
+              <h3 class="features-title" data-i18n="home.b1t">Livraison à bord</h3>
+              <p class="features-desc" data-i18n="home.b1d">
+                Nous livrons au ponton, à l’heure convenue. Communication claire, exécution discrète.
+              </p>
+            </div>
+          </li>
 
-          <article class="card" role="listitem" data-reveal>
-            <h3 data-i18n="home.b2t">Sélection traiteur</h3>
-            <p data-i18n="home.b2d">
-              Produits frais, options végétariennes et sans alcool. Présentation soignée.
-            </p>
-          </article>
+          <li class="features-item" data-reveal>
+            <span class="features-num" aria-hidden="true">02</span>
+            <div class="features-body">
+              <h3 class="features-title" data-i18n="home.b2t">Sélection traiteur</h3>
+              <p class="features-desc" data-i18n="home.b2d">
+                Produits frais, options végétariennes et sans alcool. Présentation soignée.
+              </p>
+            </div>
+          </li>
 
-          <article class="card" role="listitem" data-reveal>
-            <h3 data-i18n="home.b3t">Prix tout compris</h3>
-            <p data-i18n="home.b3d">
-              Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.
-            </p>
-          </article>
-        </div>
+          <li class="features-item" data-reveal>
+            <span class="features-num" aria-hidden="true">03</span>
+            <div class="features-body">
+              <h3 class="features-title" data-i18n="home.b3t">Prix tout compris</h3>
+              <p class="features-desc" data-i18n="home.b3d">
+                Les prix affichés incluent la livraison — aucun frais additionnel pour vos commandes.
+              </p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -193,6 +221,7 @@
       <div class="section-bg" aria-hidden="true">
         <img src="assets/images/hero/ambiance-hero2.jpg" alt="" loading="lazy">
       </div>
+      <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="approach-grid" data-reveal>
           <div class="approach-intro">
@@ -222,6 +251,7 @@
       <div class="section-bg" aria-hidden="true">
         <img src="assets/images/hero/home-ambiance.jpg" alt="" loading="lazy">
       </div>
+      <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
         <header class="section-head" data-reveal>
           <p class="eyebrow" data-i18n="home.testiEyebrow">Témoignages</p>
@@ -251,6 +281,7 @@
       <div class="section-bg" aria-hidden="true">
         <img src="assets/images/hero/ambiance-hero3.jpg" alt="" loading="lazy">
       </div>
+      <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
         <header class="section-head" data-reveal>
           <p class="eyebrow" data-i18n="home.engEyebrow">Notre promesse</p>
@@ -298,11 +329,15 @@
       <div class="section-bg" aria-hidden="true">
         <img src="assets/images/hero/home-hero.jpg" alt="" loading="lazy">
       </div>
-      <div class="container">
-        <div class="cta-dark-inner" data-reveal>
-          <h2 id="cta2-title" data-i18n="home.cta2Title">Prêt à commander ?</h2>
-          <p data-i18n="home.cta2Desc">Réponse garantie sous 1 heure. Service 7j/7 de 7h30 à 21h30.</p>
-          <a class="btn btn-cta-dark" href="carte.html" data-i18n="home.cta2Btn">Commander maintenant</a>
+      <div class="grain-overlay" aria-hidden="true"></div>
+      <div class="cta-editorial">
+        <div class="cta-editorial__inner" data-reveal>
+          <p class="cta-editorial__label">COMMANDER</p>
+          <h2 id="cta2-title" class="cta-editorial__title">Votre prochain repas<br>en mer commence ici.</h2>
+          <a class="cta-editorial__wa" href="https://wa.me/33668443067" target="_blank" rel="noopener noreferrer" aria-label="Nous contacter sur WhatsApp">
+            <span class="cta-editorial__phone">+33 6 68 44 30 67</span>
+            <span class="cta-editorial__arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>

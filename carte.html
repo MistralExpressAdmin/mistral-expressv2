@@ -87,41 +87,25 @@
     </div>
   </section>
 
-  <!-- ================= SEARCH + CATEGORIES ================= -->
-  <section class="section section-menu-tools">
+  <!-- ================= CATEGORIES + SEARCH ================= -->
+  <section class="section section-menu-filter">
     <div class="container">
-      <div class="toolbar toolbar-menu">
-        <div class="menu-categories-wrap">
-          <button
-            class="btn btn-secondary menu-categories-toggle"
-            id="menuCategoriesToggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="menuCategoriesPanel"
-          >
-            <span id="menuCategoriesToggleLabel" data-i18n="menu.ui.categories">Catégories</span>
-            <span aria-hidden="true">▾</span>
-          </button>
-          <div class="menu-categories-panel" id="menuCategoriesPanel">
-            <div class="chips" id="menuChips"></div>
-          </div>
-        </div>
-        <div class="search">
-          <input
-            id="menuSearch"
-            type="search"
-            placeholder="Rechercher un produit…"
-            data-i18n-placeholder="carte.searchPlaceholder"
-            data-i18n-aria-label="carte.searchPlaceholder"
-            aria-label="Rechercher un produit"
-          />
-        </div>
+      <div class="chips" id="menuChips"></div>
+      <div class="search">
+        <input
+          id="menuSearch"
+          type="search"
+          placeholder="Rechercher un produit…"
+          data-i18n-placeholder="carte.searchPlaceholder"
+          data-i18n-aria-label="carte.searchPlaceholder"
+          aria-label="Rechercher un produit"
+        />
       </div>
     </div>
   </section>
 
   <!-- ================= MENU ================= -->
-  <section class="section">
+  <section class="section section-menu-main">
     <div class="container">
       <div id="menuRoot">
         <!-- rendu dynamique menu.js -->
