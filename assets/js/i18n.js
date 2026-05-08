@@ -51,6 +51,11 @@ const ME_I18N = (() => {
       const key = el.getAttribute("data-i18n-placeholder");
       el.setAttribute("placeholder", t(key));
     });
+
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria-label");
+      el.setAttribute("aria-label", t(key));
+    });
   }
 
   function updateLangUI() {

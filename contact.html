@@ -76,20 +76,20 @@
               <div class="form-row">
                 <label class="form-field">
                   <span data-i18n="contact.name">Nom</span>
-                  <input name="name" type="text" required placeholder="Votre nom" />
+                  <input name="name" type="text" required placeholder="Votre nom" data-i18n-placeholder="contact.namePlaceholder" />
                 </label>
 
                 <label class="form-field">
                   <span data-i18n="contact.email">Email</span>
-                  <input name="email" type="email" required placeholder="votre@email.com" />
+                  <input name="email" type="email" required placeholder="votre@email.com" data-i18n-placeholder="contact.emailPlaceholder" />
                 </label>
               </div>
 
               <div class="form-row">
                 <label class="form-field">
-                  <span>Port de livraison</span>
+                  <span data-i18n="contact.port">Port de livraison</span>
                   <select name="port" required>
-                    <option value="" disabled selected>Choisir un port…</option>
+                    <option value="" disabled selected data-i18n="contact.portPlaceholder">Choisir un port…</option>
                     <option value="Beaulieu-sur-Mer">Beaulieu-sur-Mer</option>
                     <option value="Saint-Jean-Cap-Ferrat">Saint-Jean-Cap-Ferrat</option>
                     <option value="Villefranche-sur-Mer">Villefranche-sur-Mer</option>
@@ -97,38 +97,38 @@
                 </label>
 
                 <label class="form-field">
-                  <span>Date souhaitée</span>
+                  <span data-i18n="contact.date">Date souhaitée</span>
                   <input name="date" type="date" required />
                 </label>
               </div>
 
               <div class="form-row">
                 <label class="form-field">
-                  <span>Créneau</span>
+                  <span data-i18n="contact.slot">Créneau</span>
                   <select name="creneau" required>
-                    <option value="" disabled selected>Choisir un créneau…</option>
-                    <option value="Petit-déjeuner (7h30–10h)">Petit-déjeuner — 7h30 à 10h</option>
-                    <option value="Déjeuner (12h–14h)">Déjeuner — 12h à 14h</option>
-                    <option value="Apéritif (17h–20h)">Apéritif — 17h à 20h</option>
-                    <option value="Dîner (19h–21h30)">Dîner — 19h à 21h30</option>
+                    <option value="" disabled selected data-i18n="contact.slotPlaceholder">Choisir un créneau…</option>
+                    <option value="Petit-déjeuner (7h30–10h)" data-i18n="contact.slotBreakfast">Petit-déjeuner — 7h30 à 10h</option>
+                    <option value="Déjeuner (12h–14h)" data-i18n="contact.slotLunch">Déjeuner — 12h à 14h</option>
+                    <option value="Apéritif (17h–20h)" data-i18n="contact.slotAperitif">Apéritif — 17h à 20h</option>
+                    <option value="Dîner (19h–21h30)" data-i18n="contact.slotDinner">Dîner — 19h à 21h30</option>
                   </select>
                 </label>
 
                 <label class="form-field">
-                  <span>Nombre de personnes</span>
+                  <span data-i18n="contact.guests">Nombre de personnes</span>
                   <select name="personnes">
-                    <option value="" disabled selected>Combien ?</option>
-                    <option value="1-2">1 – 2 personnes</option>
-                    <option value="3-5">3 – 5 personnes</option>
-                    <option value="6-10">6 – 10 personnes</option>
-                    <option value="11+">11 personnes et plus</option>
+                    <option value="" disabled selected data-i18n="contact.guestsPlaceholder">Combien ?</option>
+                    <option value="1-2" data-i18n="contact.guests12">1 – 2 personnes</option>
+                    <option value="3-5" data-i18n="contact.guests35">3 – 5 personnes</option>
+                    <option value="6-10" data-i18n="contact.guests610">6 – 10 personnes</option>
+                    <option value="11+" data-i18n="contact.guests11">11 personnes et plus</option>
                   </select>
                 </label>
               </div>
 
               <label class="form-field">
-                <span>Nom du bateau & ponton</span>
-                <input name="bateau" type="text" placeholder="Ex : S/Y Cassiopée — Ponton B, anneau 12" />
+                <span data-i18n="contact.boat">Nom du bateau & ponton</span>
+                <input name="bateau" type="text" placeholder="Ex : S/Y Cassiopée — Ponton B, anneau 12" data-i18n-placeholder="contact.boatPlaceholder" />
               </label>
 
               <label class="form-field">
@@ -137,6 +137,7 @@
                   name="message"
                   rows="4"
                   placeholder="Allergènes, demandes spécifiques, options souhaitées…"
+                  data-i18n-placeholder="contact.messagePlaceholder"
                 ></textarea>
               </label>
 

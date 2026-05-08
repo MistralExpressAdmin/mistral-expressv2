@@ -22,21 +22,21 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu</a>
   <div id="site-header" role="banner"></div>
 
   <main id="main" class="page" role="main">
     <section class="section" style="min-height:60vh;display:flex;align-items:center;">
       <div class="container" style="text-align:center;max-width:480px;margin:0 auto;">
-        <p class="eyebrow">Erreur 404</p>
-        <h1 style="font-size:clamp(2rem,6vw,3.5rem);margin-bottom:12px;">Page introuvable</h1>
-        <p class="lead muted" style="margin-bottom:32px;">
+        <p class="eyebrow" data-i18n="notfound.eyebrow">Erreur 404</p>
+        <h1 style="font-size:clamp(2rem,6vw,3.5rem);margin-bottom:12px;" data-i18n="notfound.h1">Page introuvable</h1>
+        <p class="lead muted" style="margin-bottom:32px;" data-i18n="notfound.lead">
           La page que vous cherchez n'existe pas ou a été déplacée.
         </p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn btn-primary" href="index.html">Accueil</a>
-          <a class="btn btn-ghost" href="carte.html">Voir la carte</a>
-          <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+          <a class="btn btn-primary" href="index.html" data-i18n="notfound.home">Accueil</a>
+          <a class="btn btn-ghost" href="carte.html" data-i18n="notfound.menu">Voir la carte</a>
+          <a class="btn btn-ghost" href="contact.html" data-i18n="notfound.contact">Nous contacter</a>
         </div>
       </div>
     </section>

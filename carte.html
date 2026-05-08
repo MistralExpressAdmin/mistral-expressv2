@@ -65,11 +65,11 @@
   <!-- ================= HERO ================= -->
   <header class="page-hero">
     <div class="container">
-      <p class="eyebrow">Carte • Mistral Express</p>
+      <p class="eyebrow" data-i18n="carte.eyebrow">Carte • Mistral Express</p>
 
-      <h1>La carte</h1>
+      <h1 data-i18n="carte.h1">La carte</h1>
 
-      <p class="lead">
+      <p class="lead" data-i18n="carte.lead">
         Sélection premium prête à être livrée directement à bord.
         Cliquez sur un produit pour voir les détails et l'ajouter au panier.
       </p>
@@ -80,9 +80,9 @@
   <section class="menu-navigation">
     <div class="container">
       <div class="menu-tabs">
-        <button class="tab-btn active" type="button" data-chip="all">Tout</button>
-        <button class="tab-btn" type="button" data-chip="food">Plats</button>
-        <button class="tab-btn" type="button" data-chip="drinks">Boissons</button>
+        <button class="tab-btn active" type="button" data-chip="all" data-i18n="carte.tabAll">Tout</button>
+        <button class="tab-btn" type="button" data-chip="food" data-i18n="carte.tabFood">Plats</button>
+        <button class="tab-btn" type="button" data-chip="drinks" data-i18n="carte.tabDrinks">Boissons</button>
       </div>
     </div>
   </section>
@@ -99,7 +99,7 @@
             aria-expanded="false"
             aria-controls="menuCategoriesPanel"
           >
-            <span id="menuCategoriesToggleLabel">Catégories</span>
+            <span id="menuCategoriesToggleLabel" data-i18n="menu.ui.categories">Catégories</span>
             <span aria-hidden="true">▾</span>
           </button>
           <div class="menu-categories-panel" id="menuCategoriesPanel">
@@ -111,6 +111,8 @@
             id="menuSearch"
             type="search"
             placeholder="Rechercher un produit…"
+            data-i18n-placeholder="carte.searchPlaceholder"
+            data-i18n-aria-label="carte.searchPlaceholder"
             aria-label="Rechercher un produit"
           />
         </div>
@@ -150,6 +152,7 @@
         class="icon-btn"
         id="productModalClose"
         type="button"
+        data-i18n-aria-label="carte.modalClose"
         aria-label="Fermer"
       >
         ✕
@@ -189,6 +192,7 @@
             class="btn btn-primary"
             id="productModalAdd"
             type="button"
+            data-i18n="carte.addToCart"
           >
             Ajouter au panier
           </button>
@@ -197,12 +201,13 @@
             class="btn btn-ghost"
             id="productModalGoCart"
             type="button"
+            data-i18n="carte.viewCart"
           >
             Voir le panier
           </button>
         </div>
 
-        <p class="tiny muted" id="productModalHint">
+        <p class="tiny muted" id="productModalHint" data-i18n="carte.priceHint">
           Si le prix n’est pas encore renseigné, l’ajout au panier est désactivé.
         </p>
       </div>
@@ -222,6 +227,7 @@
         class="icon-btn"
         id="cartCloseBtn"
         type="button"
+        data-i18n-aria-label="carte.closeCartAria"
         aria-label="Fermer le panier"
       >
         ✕
@@ -272,6 +278,7 @@
   id="floatingCartBtn"
   type="button"
   hidden
+  data-i18n-aria-label="carte.openCartAria"
   aria-label="Ouvrir le panier"
 >
   <svg class="floating-cart__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
