@@ -703,7 +703,7 @@
     });
 
     const category = MENU.find(c => c.id === currentChip);
-    setCategoriesToggleLabel(category ? tCatTitle(category.id, category.title) : T("menu.cat.all.title", "Catégories"));
+    setCategoriesToggleLabel(category ? tCatTitle(category.id, category.title) : T("menu.ui.categories", "Catégories"));
   }
 
   function renderChips() {

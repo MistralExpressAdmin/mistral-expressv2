@@ -77,6 +77,10 @@
       "beverages": "Boissons"
     },
     "add": "Ajouter",
+    "ui": {
+      "categories": "Catégories",
+      "empty": "Aucun produit ne correspond à votre recherche."
+    },
     "badge": {
       "delivery": "Livraison incluse"
     },

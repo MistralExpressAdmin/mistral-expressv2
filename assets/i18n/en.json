@@ -77,6 +77,10 @@
       "beverages": "Beverages"
     },
     "add": "Add",
+    "ui": {
+      "categories": "Categories",
+      "empty": "No products match your search."
+    },
     "badge": {
       "delivery": "Delivery included"
     },
