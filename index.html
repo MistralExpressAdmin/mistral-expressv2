@@ -47,10 +47,10 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=20260508" />
+  <link rel="stylesheet" href="assets/dist/css/style.css" />
 
   <link rel="dns-prefetch" href="https://api.open-meteo.com" />
-  <link rel="preload" href="assets/images/hero/home-hero.jpg" as="image" fetchpriority="high" />
+  <link rel="preload" href="assets/images/hero/home-hero.webp" as="image" type="image/webp" fetchpriority="high" />
 
   <script type="application/ld+json">
   {
@@ -89,11 +89,12 @@
   <link rel="alternate" hreflang="ru" href="https://mistralexpress.fr/" />
   <link rel="alternate" hreflang="x-default" href="https://mistralexpress.fr/" />
 
-  <script src="assets/js/i18n.js" defer></script>
-  <script src="assets/js/cart.js" defer></script>
-  <script src="assets/js/weather.js" defer></script>
-  <script src="assets/js/include.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/dist/js/config.js" defer></script>
+  <script src="assets/dist/js/i18n.js" defer></script>
+  <script src="assets/dist/js/cart.js" defer></script>
+  <script src="assets/dist/js/weather.js" defer></script>
+  <script src="assets/dist/js/include.js" defer></script>
+  <script src="assets/dist/js/main.js" defer></script>
 </head>
 
 <body>
@@ -104,7 +105,10 @@
   <main id="main" class="page" role="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true">
-        <img src="assets/images/hero/home-hero.jpg" alt="" loading="eager" fetchpriority="high">
+        <picture>
+          <source srcset="assets/images/hero/home-hero.webp" type="image/webp">
+          <img src="assets/images/hero/home-hero.jpg" alt="" loading="eager" fetchpriority="high">
+        </picture>
       </div>
       <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container hero-grid">
@@ -219,7 +223,10 @@
 
     <section class="section section-approche" aria-labelledby="approach-title">
       <div class="section-bg" aria-hidden="true">
-        <img src="assets/images/hero/ambiance-hero2.jpg" alt="" loading="lazy">
+        <picture>
+          <source srcset="assets/images/hero/ambiance-hero2.webp" type="image/webp">
+          <img src="assets/images/hero/ambiance-hero2.jpg" alt="" loading="lazy">
+        </picture>
       </div>
       <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
@@ -249,7 +256,10 @@
 
     <section class="section section-testi" aria-labelledby="testi-title">
       <div class="section-bg" aria-hidden="true">
-        <img src="assets/images/hero/home-ambiance.jpg" alt="" loading="lazy">
+        <picture>
+          <source srcset="assets/images/hero/home-ambiance.webp" type="image/webp">
+          <img src="assets/images/hero/home-ambiance.jpg" alt="" loading="lazy">
+        </picture>
       </div>
       <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
@@ -283,7 +293,10 @@
 
     <section class="section section-engagements" aria-labelledby="engagements-title">
       <div class="section-bg" aria-hidden="true">
-        <img src="assets/images/hero/ambiance-hero3.jpg" alt="" loading="lazy">
+        <picture>
+          <source srcset="assets/images/hero/ambiance-hero3.webp" type="image/webp">
+          <img src="assets/images/hero/ambiance-hero3.jpg" alt="" loading="lazy">
+        </picture>
       </div>
       <div class="grain-overlay" aria-hidden="true"></div>
       <div class="container">
@@ -336,7 +349,10 @@
 
     <section class="section section-cta-dark" aria-labelledby="cta2-title">
       <div class="section-bg" aria-hidden="true">
-        <img src="assets/images/hero/home-hero.jpg" alt="" loading="lazy">
+        <picture>
+          <source srcset="assets/images/hero/home-hero.webp" type="image/webp">
+          <img src="assets/images/hero/home-hero.jpg" alt="" loading="lazy">
+        </picture>
       </div>
       <div class="grain-overlay" aria-hidden="true"></div>
       <div class="cta-editorial">

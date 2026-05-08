@@ -25,12 +25,13 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="assets/css/style.css?v=20260508" />
+  <link rel="stylesheet" href="assets/dist/css/style.css" />
 
-  <script src="assets/js/i18n.js" defer></script>
-  <script src="assets/js/cart.js" defer></script>
-  <script src="assets/js/include.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/dist/js/config.js"></script>
+  <script src="assets/dist/js/i18n.js" defer></script>
+  <script src="assets/dist/js/cart.js" defer></script>
+  <script src="assets/dist/js/include.js" defer></script>
+  <script src="assets/dist/js/main.js" defer></script>
 </head>
 
 <body>
@@ -109,7 +110,7 @@
         } catch { return fallback; }
       }
 
-      const phone = "33668443067";
+      const phone = window.SITE_CONFIG?.phone ?? "33668443067";
       const intro   = t("success.waIntro",  "Bonjour Mistral Express, mon paiement a bien été effectué.");
       const header  = t("success.waHeader", "Voici mes informations de livraison :");
       const li1     = t("success.li1",  "Port");

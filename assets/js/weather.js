@@ -156,11 +156,35 @@ const ME_WEATHER = (() => {
     }
   }
 
+  let intervalId = null;
+
+  function startRefresh() {
+    if (intervalId !== null) return;
+    intervalId = setInterval(() => render().catch(() => {}), 10 * 60 * 1000);
+  }
+
+  function stopRefresh() {
+    if (intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     render().catch(() => {});
-    const intervalId = setInterval(() => render().catch(() => {}), 10 * 60 * 1000);
-    window.addEventListener("beforeunload", () => clearInterval(intervalId));
+    startRefresh();
   });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopRefresh();
+    } else {
+      render().catch(() => {});
+      startRefresh();
+    }
+  });
+
+  window.addEventListener("beforeunload", stopRefresh);
 
   window.addEventListener("me:lang", () => {
     render().catch(() => {});

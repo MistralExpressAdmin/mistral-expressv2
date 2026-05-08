@@ -9,6 +9,10 @@
     "node": "24.x"
   },
   "scripts": {
-    "build": "echo \"no build\""
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "sharp": "^0.34.5"
   }
 }

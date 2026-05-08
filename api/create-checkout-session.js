@@ -1,10 +1,32 @@
 const Stripe = require("stripe");
 
+const ALLOWED_ORIGIN = process.env.SITE_URL || "https://mistralexpress.fr";
+
+function isOriginAllowed(req) {
+  const origin = req.headers.origin || req.headers.referer || "";
+  return (
+    origin.startsWith(ALLOWED_ORIGIN) ||
+    origin.startsWith("http://localhost") ||
+    origin.startsWith("http://127.0.0.1")
+  );
+}
+
 module.exports = async (req, res) => {
-  // Autoriser uniquement POST
+  res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+  res.setHeader("Access-Control-Allow-Methods", "POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
+  }
+
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  if (!isOriginAllowed(req)) {
+    return res.status(403).json({ error: "Forbidden" });
   }
 
   try {

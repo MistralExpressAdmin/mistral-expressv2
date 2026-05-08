@@ -222,7 +222,7 @@ const ME_CART = (() => {
 
     totalEl.textContent = euro(total());
 
-    const phone = "33668443067";
+    const phone = window.SITE_CONFIG?.phone ?? "33668443067";
     const base = `https://wa.me/${phone}`;
     const lines = cart
       .map(

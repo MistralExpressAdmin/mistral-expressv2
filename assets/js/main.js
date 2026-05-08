@@ -80,35 +80,78 @@
     const track = document.getElementById("testiTrack");
     if (!track) return;
 
-    const slides = Array.from(track.querySelectorAll(".testi-slide"));
-    const dots   = Array.from(document.querySelectorAll(".testi-dot"));
-    let current  = 0;
-    let timer;
+    const slides    = Array.from(track.querySelectorAll(".testi-slide"));
+    const dots      = Array.from(document.querySelectorAll(".testi-dot"));
+    const container = track.closest(".testi-slider") || track.parentElement;
+    let current = 0;
+    let timer   = null;
+    let paused  = false;
 
     function goTo(idx) {
       slides[current].classList.remove("is-active");
       dots[current].classList.remove("active");
       dots[current].setAttribute("aria-pressed", "false");
-      current = idx;
+      current = (idx + slides.length) % slides.length;
       slides[current].classList.add("is-active");
       dots[current].classList.add("active");
       dots[current].setAttribute("aria-pressed", "true");
     }
 
-    function startAuto() {
-      timer = setInterval(() => goTo((current + 1) % slides.length), 5000);
+    function stop() {
+      clearInterval(timer);
+      timer = null;
     }
 
+    function start() {
+      if (paused) return;
+      stop();
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function pause() {
+      paused = true;
+      stop();
+    }
+
+    function resume() {
+      paused = false;
+      start();
+    }
+
+    // Clic sur un point → pause (l'utilisateur lit à son rythme)
     dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        clearInterval(timer);
-        goTo(i);
-        startAuto();
+      dot.addEventListener("click", () => { pause(); goTo(i); });
+
+      // Navigation clavier : flèches gauche/droite entre les points
+      dot.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          const prev = (i - 1 + dots.length) % dots.length;
+          pause();
+          goTo(prev);
+          dots[prev].focus();
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          const next = (i + 1) % dots.length;
+          pause();
+          goTo(next);
+          dots[next].focus();
+        }
       });
     });
 
+    // Pause au survol
+    container.addEventListener("mouseenter", pause);
+    container.addEventListener("mouseleave", resume);
+
+    // Pause quand le focus entre dans le carrousel, reprise à la sortie
+    container.addEventListener("focusin", pause);
+    container.addEventListener("focusout", (e) => {
+      if (!container.contains(e.relatedTarget)) resume();
+    });
+
     goTo(0);
-    startAuto();
+    start();
   }
 
   function initNavScroll() {

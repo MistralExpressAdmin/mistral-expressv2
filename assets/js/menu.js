@@ -1,613 +1,21 @@
 (() => {
   "use strict";
 
-  const MENU = [
-    {
-      id: "formules",
-      group: "formules",
-      featured: true,
-      layout: "formule",
-      title: "Formules",
-      subtitle: "Repas complets pour 2, 4 ou 8 personnes — livraison incluse",
-      items: [
-        {
-          id: "formule-petit-dejeuner",
-          name: "Petit déjeuner à bord",
-          desc: "Viennoiseries artisanales du matin, baguette tradition, beurre, confitures artisanales, jus d’orange pressé et fruits frais de saison.",
-          img: "assets/images/menu/dejeuner-bord.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 48, detail: "2 croissants, 2 pains au chocolat, ½ baguette, beurre, confiture, 2 jus d’orange pressés, fruits frais." },
-            { id: "4p", label: "4 personnes", price: 88, detail: "4 croissants, 4 pains au chocolat, 1 baguette, beurre, confitures, 4 jus d’orange pressés, fruits frais." },
-            { id: "8p", label: "8 personnes", price: 168, detail: "8 croissants, 8 pains au chocolat, 2 baguettes, beurre, confitures, 8 jus d’orange pressés, fruits frais." }
-          ]
-        },
-        {
-          id: "formule-cocktail-dinatoire",
-          name: "Cocktail Dînatoire",
-          desc: "Charcuterie sélectionnée, plateau de fromages français, brochettes melon & jambon et plateau de fruits frais. Prêt à servir à bord.",
-          img: "assets/images/menu/mix-charcuterie.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 165, detail: "Planche charcuterie, planche fromages, 6 brochettes melon-jambon, plateau fruits — 2 pers." },
-            { id: "4p", label: "4 personnes", price: 285, detail: "Planche charcuterie, planche fromages, 12 brochettes melon-jambon, plateau fruits — 4 pers." },
-            { id: "8p", label: "8 personnes", price: 540, detail: "2 planches charcuterie, 2 planches fromages, 24 brochettes melon-jambon, plateau fruits — 8 pers." }
-          ]
-        },
-        {
-          id: "formule-dejeuner-complet",
-          name: "Déjeuner Complet",
-          desc: "Salade fraîche, tartare du jour et plateau de fruits de saison. Un déjeuner complet, prêt à servir en mer.",
-          img: "assets/images/menu/salade-cesar.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 125, detail: "Salade au choix × 1, tartare du jour × 1, plateau fruits 2 pers." },
-            { id: "4p", label: "4 personnes", price: 225, detail: "Salade au choix × 2, tartare du jour × 2, plateau fruits 4 pers." },
-            { id: "8p", label: "8 personnes", price: 420, detail: "Salade au choix × 4, tartare du jour × 4, plateau fruits 8 pers." }
-          ]
-        }
-      ]
-    },
+  let MENU = [];
+  let FLAT_MENU = [];
 
-    {
-  id: "maison",
-  group: "food",
-  title: "Maison",
-  subtitle: "Produits sélectionnés",
-  items: [
-    {
-      id: "caviar-baeri",
-      name: "Caviar Baeri",
-      desc: "Caviar Baeri, sélection premium.",
-      badge: "Maison",
-      img: "assets/images/menu/caviar-baeri.jpg",
-      options: [
-        {
-          id: "30g",
-          label: "30g",
-          price: 145,
-          detail: "Caviar Baeri 30g."
-        },
-        {
-          id: "50g",
-          label: "50g",
-          price: 265,
-          detail: "Caviar Baeri 50g."
-        },
-        {
-          id: "100g",
-          label: "100g",
-          price: 505,
-          detail: "Caviar Baeri 100g."
-        },
-        {
-          id: "250g",
-          label: "250g",
-          price: 1155,
-          detail: "Caviar Baeri 250g."
-        }
-      ]
-    },
-    {
-      id: "foie-gras-classic",
-      name: "Foie gras 2x40g classic",
-      desc: "Foie gras classique.",
-      price: 55,
-      badge: "Maison",
-      img: "assets/images/menu/foie-gras.jpg"
-    },
-    {
-      id: "foie-gras-truffe",
-      name: "Foie gras 2x40g truffe",
-      desc: "Foie gras truffé.",
-      price: 105,
-      badge: "Maison",
-      img: "assets/images/menu/foie-gras.jpg"
-    },
-    {
-      id: "saumon-100",
-      name: "Saumon 100g",
-      desc: "Saumon fumé.",
-      price: 45,
-      badge: "Maison",
-      img: "assets/images/menu/saumon-fume.jpg"
-    },
-    {
-      id: "saumon-200",
-      name: "Saumon 200g",
-      desc: "Saumon fumé.",
-      price: 85,
-      badge: "Maison",
-      img: "assets/images/menu/saumon-fume1.jpg"
-    }
-  ]
-},
-
-    {
-      id: "tartares",
-      group: "food",
-      title: "Tartares",
-      subtitle: "Préparés minute",
-      items: [
-        {
-          id: "tartare-saumon",
-          name: "Tartare de saumon",
-          desc: "Saumon Label Rouge, préparé minute, assaisonnement délicat.",
-          price: 38,
-          badge: "Frais",
-          img: "assets/images/menu/tartare-saumon.jpg"
-        },
-        {
-          id: "tartare-boeuf",
-          name: "Tartare de bœuf",
-          desc: "Bœuf Charolais, haché minute, assaisonnement classique ou relevé.",
-          price: 32,
-          badge: "Classique",
-          img: "assets/images/menu/tartare-boeuf.jpg"
-        },
-        {
-          id: "tartare-thon",
-          name: "Tartare de thon",
-          desc: "Thon albacore, découpe fine, marinade légère aux agrumes.",
-          price: 42,
-          badge: "Maison",
-          img: "assets/images/menu/tartare-thon.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "salades",
-      group: "food",
-      title: "Salades",
-      subtitle: "Fraîches et équilibrées",
-      items: [
-        {
-          id: "salade-cesar",
-          name: "Salade César",
-          desc: "Poulet, croûtons, parmesan, sauce.",
-          price: 36,
-          badge: "Maison",
-          img: "assets/images/menu/salade-cesar.jpg"
-        },
-        {
-          id: "salade-nicoise",
-          name: "Salade niçoise",
-          desc: "Fraîche et méditerranéenne.",
-          price: 36,
-          badge: "Maison",
-          img: "assets/images/menu/salade-nicoise.jpg"
-        },
-        {
-          id: "salade-pates",
-          name: "Salade de pâtes",
-          desc: "Généreuse, idéale à bord.",
-          price: 30,
-          badge: "À bord",
-          img: "assets/images/menu/salade-pates.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "planches",
-      group: "food",
-      title: "Planches & plateaux",
-      subtitle: "À partager à bord",
-      items: [
-        {
-          id: "planche-charcuterie",
-          name: "Planche de charcuterie",
-          desc: "Sélection fine, tranchée et prête à servir.",
-          badge: "À partager",
-          img: "assets/images/menu/mix-charcuterie.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 55, detail: "Planche de charcuterie pour 2 personnes." },
-            { id: "4p", label: "4 personnes", price: 85, detail: "Planche de charcuterie pour 4 personnes." },
-            { id: "8p", label: "8 personnes", price: 165, detail: "Planche de charcuterie pour 8 personnes." }
-          ]
-        },
-        {
-          id: "planche-fromages",
-          name: "Planche de fromages",
-          desc: "Sélection de fromages français prête à servir.",
-          badge: "À partager",
-          img: "assets/images/menu/mix-fromages.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 55, detail: "Planche de fromages pour 2 personnes." },
-            { id: "4p", label: "4 personnes", price: 85, detail: "Planche de fromages pour 4 personnes." },
-            { id: "8p", label: "8 personnes", price: 165, detail: "Planche de fromages pour 8 personnes." }
-          ]
-        },
-        {
-          id: "plateau-fruits",
-          name: "Plateau de fruits",
-          desc: "Fruits de saison, prêt à servir.",
-          badge: "Frais",
-          img: "assets/images/menu/plateau-fruits.jpg",
-          options: [
-            { id: "2p", label: "2 personnes", price: 39, detail: "Plateau de fruits pour 2 personnes." },
-            { id: "4p", label: "4 personnes", price: 79, detail: "Plateau de fruits pour 4 personnes." },
-            { id: "8p", label: "8 personnes", price: 148, detail: "Plateau de fruits pour 8 personnes." }
-          ]
-        }
-      ]
-    },
-
-    {
-      id: "brochettes",
-      group: "food",
-      title: "Brochettes",
-      subtitle: "Service à partager",
-      items: [
-        {
-          id: "brochettes-melon-jambon",
-          name: "6 brochettes melon et jambon",
-          desc: "Accord sucré-salé.",
-          price: 35,
-          badge: "À partager",
-          img: "assets/images/menu/brochettes-melon-jambon.jpg"
-        },
-        {
-          id: "brochettes-fruits",
-          name: "6 brochettes de fruits",
-          desc: "Fraîches et légères.",
-          price: 35,
-          badge: "Frais",
-          img: "assets/images/menu/brochettes-fruits.jpg"
-        },
-        {
-          id: "brochettes-tomate-mozza",
-          name: "6 brochettes tomates mozza",
-          desc: "Simple et prêt à servir.",
-          price: 35,
-          badge: "Végé",
-          img: "assets/images/menu/brochettes-tomate-mozza.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "wraps",
-      group: "food",
-      title: "Wraps",
-      subtitle: "Prêts à emporter en mer",
-      items: [
-        {
-          id: "wrap-poulet",
-          name: "Wraps poulet",
-          desc: "Poulet rôti, crudités croquantes, sauce maison. Format mini adapté au bord.",
-          price: 40,
-          badge: "À bord",
-          img: "assets/images/menu/wrap-poulet.jpg"
-        },
-        {
-          id: "wrap-saumon",
-          name: "Wraps saumon",
-          desc: "Saumon fumé, fromage frais, aneth. Texture délicate et fraîcheur iodée.",
-          price: 42,
-          badge: "Maison",
-          img: "assets/images/menu/wrap-saumon.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "champagnes",
-      group: "drinks",
-      title: "Champagnes",
-      subtitle: "Sélection de cave",
-      items: [
-        {
-          id: "champ-neuville-autolyse",
-          name: "Neuville Blanc de Blancs",
-          desc: "Champagne de Vignerons — bulles fines, fraîcheur florale, finale minérale.",
-          price: 95,
-          badge: "Cave",
-          img: "assets/images/menu/neuville-blanc-de-blancs.jpg"
-        },
-        {
-          id: "champ-neuville-2012",
-          name: "Brut de Neuville",
-          desc: "Champagne de Vignerons — brut équilibré, notes de pomme verte et brioche.",
-          price: 114.4,
-          badge: "Cave",
-          img: "assets/images/menu/brut-de-neuville.jpg"
-        },
-        {
-          id: "champ-ruinart-bdb",
-          name: "Ruinart Brut",
-          desc: "Ruinart — cuvée emblématique, bulles persistantes, élégance classique.",
-          price: 180,
-          badge: "Cave",
-          img: "assets/images/menu/ruinart-brut.jpg"
-        },
-        {
-          id: "champ-extra-brut-bdn",
-          name: "Ruinart Blanc de Blancs",
-          desc: "Ruinart — 100% Chardonnay, extra-brut, pureté et tension citronnée.",
-          price: 220,
-          badge: "Cave",
-          img: "assets/images/menu/ruinart-blanc-de-blancs.jpg"
-        },
-        {
-          id: "champ-roederer-246",
-          name: "Louis Roederer Blanc de Blancs",
-          desc: "Roederer — Blanc de Blancs Grand Cru, profondeur et texture crémeuse.",
-          price: 242,
-          badge: "Cave",
-          img: "assets/images/menu/louis-roederer-blanc-de-blancs.jpg"
-        },
-        {
-          id: "champ-perrier-jouet-2016",
-          name: "Perrier-Jouët Belle Époque 2016",
-          desc: "Millésime d'exception — bouquet floral, palais aérien, finale longue.",
-          price: 545,
-          badge: "Millésime",
-          img: "assets/images/menu/perrier-jouet-2016.jpg"
-        },
-        {
-          id: "champ-cristal",
-          name: "Cristal Roederer",
-          desc: "Louis Roederer — cuvée prestige, icône mondiale, éclat et profondeur.",
-          price: 595,
-          badge: "Prestige",
-          img: "assets/images/menu/crystal-roederer.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "vins-blancs",
-      group: "drinks",
-      subgroup: "vins",
-      title: "Vins blancs",
-      subtitle: "Fraîcheur et élégance",
-      items: [
-        {
-          id: "blanc-secret-lunes-chardo",
-          name: "Chardonnay de Lunès",
-          desc: "IGP Pays d'Oc — Chardonnay frais, notes d'agrumes et de fleurs blanches.",
-          price: 32,
-          badge: "Cave",
-          img: "assets/images/menu/vin-blanc-3.jpg"
-        },
-        {
-          id: "blanc-minuty-prestige-2024",
-          name: "Minuty Prestige Blanc 2024",
-          desc: "AOC Côtes de Provence — Rolle et Clairette, frais et minéral.",
-          price: 49,
-          badge: "Cave",
-          img: "assets/images/menu/vin-blanc-1.jpg"
-        },
-        {
-          id: "blanc-minuty-blanc-or-2024",
-          name: "Minuty Blanc et Or 2024",
-          desc: "AOC Côtes de Provence — cuvée premium, complexité et longueur.",
-          price: 82,
-          badge: "Cave",
-          img: "assets/images/menu/vin-blanc-2.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "vins-roses",
-      group: "drinks",
-      subgroup: "vins",
-      title: "Vins rosés",
-      subtitle: "Sélection Riviera",
-      items: [
-        {
-          id: "rose-minuty-prestige-2024",
-          name: "Minuty Prestige Rosé 2024",
-          desc: "AOC Côtes de Provence — rosé pâle, notes de fraise et pamplemousse.",
-          price: 49,
-          badge: "Cave",
-          img: "assets/images/menu/vin-rose-1.jpg"
-        },
-        {
-          id: "rose-minuty-rose-or-2024",
-          name: "Minuty Rosé et Or 2024",
-          desc: "AOC Côtes de Provence — cuvée prestige, équilibre et finesse.",
-          price: 82,
-          badge: "Cave",
-          img: "assets/images/menu/vin-rose-2.jpg"
-        },
-        {
-          id: "rose-chateau-281",
-          name: "Château 281",
-          desc: "Provence — rosé gastronomique, structure et longueur en bouche.",
-          price: 162,
-          badge: "Cave",
-          img: "assets/images/menu/vin-rose-3.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "softs",
-      group: "drinks",
-      title: "Softs & énergie",
-      subtitle: "Canettes & boissons fraîches",
-      items: [
-        {
-          id: "coca-33",
-          name: "Coca Cola 33cl",
-          desc: "Canette.",
-          price: 4.5,
-          badge: "Soft",
-          img: "assets/images/menu/coca.jpg"
-        },
-        {
-          id: "coca-zero-33",
-          name: "Coca Cola Zero 33cl",
-          desc: "Canette.",
-          price: 4.5,
-          badge: "Soft",
-          img: "assets/images/menu/coca-zero.jpg"
-        },
-        {
-          id: "sprite-33",
-          name: "Sprite 33cl",
-          desc: "Canette.",
-          price: 4.5,
-          badge: "Soft",
-          img: "assets/images/menu/sprite.jpg"
-        },
-        {
-          id: "fanta-33",
-          name: "Fanta 33cl",
-          desc: "Canette.",
-          price: 4.5,
-          badge: "Soft",
-          img: "assets/images/menu/fanta.jpg"
-        },
-        {
-          id: "oasis-33",
-          name: "Oasis 33cl",
-          desc: "Canette.",
-          price: 4.5,
-          badge: "Soft",
-          img: "assets/images/menu/oasis.jpg"
-        },
-        {
-          id: "fuze-tea-33",
-          name: "Fuze Tea 33cl",
-          desc: "Canette.",
-          price: 5.0,
-          badge: "Soft",
-          img: "assets/images/menu/fuze-tea.jpg"
-        },
-        {
-          id: "redbull-33",
-          name: "Red Bull 33cl",
-          desc: "Canette.",
-          price: 6.5,
-          badge: "Énergie",
-          img: "assets/images/menu/redbull.jpg"
-        },
-        {
-          id: "redbull-zero-33",
-          name: "Red Bull Zero 33cl",
-          desc: "Canette.",
-          price: 6.5,
-          badge: "Énergie",
-          img: "assets/images/menu/redbull-zero.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "gin",
-      group: "drinks",
-      subgroup: "spiritueux",
-      title: "Gin",
-      subtitle: "Sélection artisanale",
-      items: [
-        {
-          id: "gin-yu-yuzu-black-lemon",
-          name: "Yu Gin Yuzu & Black Lemon",
-          desc: "Gin artisanal aux agrumes — yuzu frais et citron noir fumé. Aromatique, persistant, idéal on the rocks ou en cocktail.",
-          price: 150,
-          badge: "Spiritueux",
-          img: "assets/images/menu/gin-yu-yuzu.jpg"
-        },
-        {
-          id: "gin-yu-relax-refresh",
-          name: "Yu Gin Relax & Refresh",
-          desc: "Gin floral conçu pour la détente — notes de camomille et d'agrumes frais. Léger et rafraîchissant.",
-          price: 135,
-          badge: "Spiritueux",
-          img: "assets/images/menu/gin-yu-relax.jpg"
-        },
-        {
-          id: "gin-monkey-47",
-          name: "Monkey 47",
-          desc: "Gin de la Forêt-Noire — 47 botaniques, complexité unique. Persistance longue et finesse aromatique exceptionnelle.",
-          price: 100,
-          badge: "Spiritueux",
-          img: "assets/images/menu/gin-monkey-47.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "tequila",
-      group: "drinks",
-      subgroup: "spiritueux",
-      title: "Tequila",
-      subtitle: "100% Agave Bleu",
-      items: [
-        {
-          id: "tequila-1800-reposado",
-          name: "Tequila 1800 Reposado",
-          desc: "Vieillie en fût de chêne — couleur ambrée, notes de vanille et d'agave rôti. Ronde et équilibrée.",
-          price: 160,
-          badge: "Spiritueux",
-          img: "assets/images/menu/tequila-1800-reposado.jpg"
-        },
-        {
-          id: "tequila-1800-blanco",
-          name: "Tequila 1800 Blanco",
-          desc: "100% Agave Bleu — pureté cristalline, notes d'agave frais et de citron vert. Vive et droite.",
-          price: 150,
-          badge: "Spiritueux",
-          img: "assets/images/menu/tequila-1800-blanco.jpg"
-        },
-        {
-          id: "tequila-patron-silver",
-          name: "Tequila Silver Patron",
-          desc: "Patrón Silver — tequila artisanale ultra-premium, notes florales et poivrées. Exceptionnellement douce en bouche.",
-          price: 135,
-          badge: "Spiritueux",
-          img: "assets/images/menu/tequila-patron-silver.jpg"
-        }
-      ]
-    },
-
-    {
-      id: "vodka",
-      group: "drinks",
-      subgroup: "spiritueux",
-      title: "Vodka",
-      subtitle: "Sélection premium",
-      items: [
-        {
-          id: "vodka-grey-goose",
-          name: "Grey Goose",
-          desc: "Vodka française d'exception — distillée en Charente, blé tendre de Beauce. Rondeur soyeuse et finale longue.",
-          price: 110,
-          badge: "Spiritueux",
-          img: "assets/images/menu/vodka-grey-goose.jpg"
-        },
-        {
-          id: "vodka-pyla-origine",
-          name: "Pyla Vodka Origine",
-          desc: "Vodka artisanale du Bassin d'Arcachon — grain français, distillation en colonne de cuivre. Élégante et pure.",
-          price: 140,
-          badge: "Spiritueux",
-          img: "assets/images/menu/vodka-pyla.jpg"
-        },
-        {
-          id: "vodka-beluga-gold",
-          name: "Beluga Gold Line",
-          desc: "Vodka de prestige — vieillissement en cave, filtration à l'agate. Texture veloutée, finale d'une longueur exceptionnelle.",
-          price: 300,
-          badge: "Prestige",
-          img: "assets/images/menu/vodka-beluga-gold.jpg"
-        }
-      ]
-    }
-  ];
-
-  const FLAT_MENU = MENU.flatMap(cat =>
-    (cat.items || []).map(it => ({
-      ...it,
-      catId: cat.id,
-      catTitle: cat.title,
-      catSubtitle: cat.subtitle || "",
-      group: cat.group || "food",
-      subgroup: cat.subgroup || ""
-    }))
-  );
+  function buildFlatMenu() {
+    FLAT_MENU = MENU.flatMap(cat =>
+      (cat.items || []).map(it => ({
+        ...it,
+        catId: cat.id,
+        catTitle: cat.title,
+        catSubtitle: cat.subtitle || "",
+        group: cat.group || "food",
+        subgroup: cat.subgroup || ""
+      }))
+    );
+  }
 
   const qs = (s, r = document) => r.querySelector(s);
   const qsa = (s, r = document) => [...r.querySelectorAll(s)];
@@ -894,12 +302,15 @@
         aria-label="${escapeHtml(product.name)}"
       >
         <div class="formule-card__photo">
-          <img
-            src="${escapeHtml(product.img)}"
-            alt="${escapeHtml(tName(product))}"
-            loading="lazy"
-            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
-          />
+          <picture>
+            <source srcset="${escapeHtml(product.img.replace('.jpg', '.webp'))}" type="image/webp">
+            <img
+              src="${escapeHtml(product.img)}"
+              alt="${escapeHtml(tName(product))}"
+              loading="lazy"
+              onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+            />
+          </picture>
         </div>
         <div class="formule-card__body">
           <div class="formule-card__top">
@@ -974,12 +385,15 @@
         aria-label="${escapeHtml(product.name)}"
       >
         <div class="me-product-media">
-          <img
-            src="${escapeHtml(product.img)}"
-            alt="${escapeHtml(tName(product))}"
-            loading="lazy"
-            onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
-          />
+          <picture>
+            <source srcset="${escapeHtml(product.img.replace('.jpg', '.webp'))}" type="image/webp">
+            <img
+              src="${escapeHtml(product.img)}"
+              alt="${escapeHtml(tName(product))}"
+              loading="lazy"
+              onerror="this.style.display='none';this.parentElement.classList.add('is-missing')"
+            />
+          </picture>
         </div>
 
         <div class="meta">
@@ -1247,6 +661,8 @@
       }
     }
 
+    const imgSource = qs("#productModalImgSource");
+    if (imgSource) imgSource.srcset = (product.img || "").replace(".jpg", ".webp");
     const img = qs("#productModalImg");
     if (img) {
       img.src = product.img || "";
@@ -1401,7 +817,21 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", async () => {
+    const root = document.getElementById("menuRoot");
+    if (root) root.innerHTML = '<p class="muted" style="padding:2rem">Chargement…</p>';
+
+    try {
+      const res = await fetch("assets/data/menu.json");
+      if (!res.ok) throw new Error(res.status);
+      MENU = await res.json();
+      buildFlatMenu();
+    } catch (e) {
+      console.error("Menu load failed", e);
+      if (root) root.innerHTML = '<p class="muted" style="padding:2rem">Impossible de charger la carte. Veuillez recharger la page.</p>';
+      return;
+    }
+
     bindModal();
     setupTabs();
     renderChips();

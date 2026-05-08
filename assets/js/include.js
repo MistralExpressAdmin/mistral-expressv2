@@ -23,9 +23,18 @@ function setupPartnerLinks() {
   setLink(document.getElementById("partnerLinkFooter"), partnerUrl);
 }
 
+function setupFooterContacts() {
+  const cfg = window.SITE_CONFIG;
+  if (!cfg) return;
+  const wa = document.getElementById("footerWaLink");
+  if (wa) wa.href = `https://wa.me/${cfg.phone}`;
+  const email = document.getElementById("footerEmailLink");
+  if (email) { email.href = `mailto:${cfg.email}`; email.textContent = cfg.email; }
+}
+
 function setupWhatsAppLink() {
   // Page contact (si tu as un bouton #whatsappLink)
-  const phone = "33668443067"; // format international sans +
+  const phone = window.SITE_CONFIG?.phone ?? "33668443067";
   const base = `https://wa.me/${phone}`;
   const wa = document.getElementById("whatsappLink");
   if (!wa) return;
@@ -171,7 +180,7 @@ function setupWaFloat() {
   const btn = document.getElementById("waFloatBtn");
   if (!btn) return;
 
-  const phone = "33668443067";
+  const phone = window.SITE_CONFIG?.phone ?? "33668443067";
   const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   let msg = "Bonjour Mistral Express — je souhaite passer une commande.";
@@ -228,6 +237,7 @@ async function initSite() {
   await inject("site-footer", "assets/partials/footer.html");
 
   setupFooterYear();
+  setupFooterContacts();
   setupPartnerLinks();
   setupWhatsAppLink();
   setupWaFloat();
