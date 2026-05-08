@@ -76,6 +76,41 @@
     setActiveNavLink();
   }
 
+  function initTestiSlider() {
+    const track = document.getElementById("testiTrack");
+    if (!track) return;
+
+    const slides = Array.from(track.querySelectorAll(".testi-slide"));
+    const dots   = Array.from(document.querySelectorAll(".testi-dot"));
+    let current  = 0;
+    let timer;
+
+    function goTo(idx) {
+      slides[current].classList.remove("is-active");
+      dots[current].classList.remove("active");
+      dots[current].setAttribute("aria-pressed", "false");
+      current = idx;
+      slides[current].classList.add("is-active");
+      dots[current].classList.add("active");
+      dots[current].setAttribute("aria-pressed", "true");
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo((current + 1) % slides.length), 5000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        clearInterval(timer);
+        goTo(i);
+        startAuto();
+      });
+    });
+
+    goTo(0);
+    startAuto();
+  }
+
   function initNavScroll() {
     let ticking = false;
     window.addEventListener("scroll", () => {
@@ -93,6 +128,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     preparePublicCartSession();
     initAll();
+    initTestiSlider();
     initNavScroll();
 
     let tries = 0;

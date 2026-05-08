@@ -257,22 +257,26 @@
           <p class="eyebrow" data-i18n="home.testiEyebrow">Témoignages</p>
           <h2 id="testi-title" data-i18n="home.testiH2">Ce que disent nos clients</h2>
         </header>
-        <div class="testi-grid">
-          <blockquote class="card testi-card" data-reveal>
-            <p class="testi-stars" data-i18n-aria-label="home.testiStars" aria-label="5 étoiles">★★★★★</p>
-            <p class="testi-quote" data-i18n="home.testi1Quote">« Service impeccable. Le plateau était livré à l'heure exacte, au ponton, sans le moindre stress. On a rien eu à faire. »</p>
-            <footer class="testi-footer"><cite data-i18n="home.testi1Cite">J.-L. M. — Capitaine, yacht 22 m · Beaulieu-sur-Mer</cite></footer>
-          </blockquote>
-          <blockquote class="card testi-card" data-reveal>
-            <p class="testi-stars" data-i18n-aria-label="home.testiStars" aria-label="5 étoiles">★★★★★</p>
-            <p class="testi-quote" data-i18n="home.testi2Quote">« Le déjeuner était frais, bien présenté et parfaitement adapté à la mer. La communication avant la livraison était claire et rassurante. »</p>
-            <footer class="testi-footer"><cite data-i18n="home.testi2Cite">A. & P. D. — Équipage, voilier 16 m · Saint-Jean-Cap-Ferrat</cite></footer>
-          </blockquote>
-          <blockquote class="card testi-card" data-reveal>
-            <p class="testi-stars" data-i18n-aria-label="home.testiStars" aria-label="5 étoiles">★★★★★</p>
-            <p class="testi-quote" data-i18n="home.testi3Quote">« Communication parfaite, livraison discrète et plateau digne d'un traiteur haut de gamme. Je recommande sans réserve. »</p>
-            <footer class="testi-footer"><cite data-i18n="home.testi3Cite">B. R. — Propriétaire, motoryacht · Villefranche-sur-Mer</cite></footer>
-          </blockquote>
+        <div class="testi-slider" data-reveal>
+          <div class="testi-slider__track" id="testiTrack">
+            <blockquote class="testi-slide is-active" aria-label="Témoignage 1 sur 3">
+              <p class="testi-quote" data-i18n="home.testi1Quote">« Service impeccable. Le plateau était livré à l'heure exacte, au ponton, sans le moindre stress. On a rien eu à faire. »</p>
+              <footer class="testi-footer"><cite data-i18n="home.testi1Cite">J.-L. M. — Capitaine, yacht 22 m · Beaulieu-sur-Mer</cite></footer>
+            </blockquote>
+            <blockquote class="testi-slide" aria-label="Témoignage 2 sur 3">
+              <p class="testi-quote" data-i18n="home.testi2Quote">« Le déjeuner était frais, bien présenté et parfaitement adapté à la mer. La communication avant la livraison était claire et rassurante. »</p>
+              <footer class="testi-footer"><cite data-i18n="home.testi2Cite">A. & P. D. — Équipage, voilier 16 m · Saint-Jean-Cap-Ferrat</cite></footer>
+            </blockquote>
+            <blockquote class="testi-slide" aria-label="Témoignage 3 sur 3">
+              <p class="testi-quote" data-i18n="home.testi3Quote">« Communication parfaite, livraison discrète et plateau digne d'un traiteur haut de gamme. Je recommande sans réserve. »</p>
+              <footer class="testi-footer"><cite data-i18n="home.testi3Cite">B. R. — Propriétaire, motoryacht · Villefranche-sur-Mer</cite></footer>
+            </blockquote>
+          </div>
+          <div class="testi-dots" role="group" aria-label="Navigation témoignages">
+            <button class="testi-dot active" type="button" data-testi="0" aria-label="Témoignage 1" aria-pressed="true"></button>
+            <button class="testi-dot" type="button" data-testi="1" aria-label="Témoignage 2" aria-pressed="false"></button>
+            <button class="testi-dot" type="button" data-testi="2" aria-label="Témoignage 3" aria-pressed="false"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -289,24 +293,29 @@
           <p class="muted" data-i18n="home.engMuted">Ce que nous promettons à chaque commande, quel que soit le bateau ou le créneau.</p>
         </header>
 
-        <div class="engagements-grid">
-          <div class="engagement-item" data-reveal>
+        <div class="eng-timeline">
+          <div class="eng-timeline__item" data-reveal>
             <p class="engagement-num" aria-hidden="true">01</p>
             <h3 class="engagement-title" data-i18n="home.eng1Title">Ponctualité garantie</h3>
-            <p class="muted" data-i18n="home.eng1Desc">Nous confirmons votre créneau par message et livrons au ponton à l'heure convenue. Aucun retard non communiqué.</p>
+            <p class="engagement-desc" data-i18n="home.eng1Desc">Nous confirmons votre créneau par message et livrons au ponton à l'heure convenue. Aucun retard non communiqué.</p>
+            <div class="eng-timeline__node" aria-hidden="true"></div>
           </div>
 
-          <div class="engagement-item" data-reveal>
+          <div class="eng-timeline__item" data-reveal>
             <p class="engagement-num" aria-hidden="true">02</p>
             <h3 class="engagement-title" data-i18n="home.eng2Title">Fraîcheur du jour</h3>
-            <p class="muted" data-i18n="home.eng2Desc">Chaque plateau est préparé le jour même avec des produits frais sélectionnés. Aucun article réchauffé ou préparé à l'avance.</p>
+            <p class="engagement-desc" data-i18n="home.eng2Desc">Chaque plateau est préparé le jour même avec des produits frais sélectionnés. Aucun article réchauffé ou préparé à l'avance.</p>
+            <div class="eng-timeline__node" aria-hidden="true"></div>
           </div>
 
-          <div class="engagement-item" data-reveal>
+          <div class="eng-timeline__item" data-reveal>
             <p class="engagement-num" aria-hidden="true">03</p>
             <h3 class="engagement-title" data-i18n="home.eng3Title">Discrétion absolue</h3>
-            <p class="muted" data-i18n="home.eng3Desc">Tenue soignée, comportement discret, interaction minimale si vous le souhaitez. Votre bord reste votre espace.</p>
+            <p class="engagement-desc" data-i18n="home.eng3Desc">Tenue soignée, comportement discret, interaction minimale si vous le souhaitez. Votre bord reste votre espace.</p>
+            <div class="eng-timeline__node" aria-hidden="true"></div>
           </div>
+
+          <div class="eng-timeline__line" aria-hidden="true"></div>
         </div>
 
         <div class="engagements-process" data-reveal>
