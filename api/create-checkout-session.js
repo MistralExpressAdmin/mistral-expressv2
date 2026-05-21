@@ -1,18 +1,26 @@
 const Stripe = require("stripe");
 
-const ALLOWED_ORIGIN = process.env.SITE_URL || "https://mistralexpress.fr";
-
-function isOriginAllowed(req) {
+function getAllowedOrigin(req) {
   const origin = req.headers.origin || req.headers.referer || "";
-  return (
-    origin.startsWith(ALLOWED_ORIGIN) ||
-    origin.startsWith("http://localhost") ||
-    origin.startsWith("http://127.0.0.1")
-  );
+  if (!origin) return null;
+
+  // Domaine configuré explicitement
+  const siteUrl = process.env.SITE_URL;
+  if (siteUrl && origin.startsWith(siteUrl)) return origin;
+
+  // Même host que le serveur (URL Vercel preview, domaine custom, etc.)
+  const host = req.headers.host;
+  if (host && (origin === `https://${host}` || origin === `http://${host}`)) return origin;
+
+  // Développement local
+  if (origin.startsWith("http://localhost") || origin.startsWith("http://127.0.0.1")) return origin;
+
+  return null;
 }
 
 module.exports = async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+  const allowedOrigin = getAllowedOrigin(req);
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin || "null");
   res.setHeader("Access-Control-Allow-Methods", "POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -25,7 +33,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
-  if (!isOriginAllowed(req)) {
+  if (!allowedOrigin) {
     return res.status(403).json({ error: "Forbidden" });
   }
 
